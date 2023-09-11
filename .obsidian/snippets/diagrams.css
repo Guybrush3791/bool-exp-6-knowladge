@@ -1,0 +1,36 @@
+/* table */
+th, tr, td {
+
+    border-color: #dadada !important;
+}
+
+/* ER */
+.er.attributeBoxOdd,
+.er.attributeBoxEven {
+    
+    fill: transparent !important;
+}
+
+/* Pie */
+.journey-section, .task {
+
+    fill: grey !important;
+}
+
+.legend text {
+
+    fill: white !important;
+    stroke: white !important;
+}
+
+text.slice {
+
+    fill: black !important;
+    stroke: black !important;
+}
+
+/* Diagrams */
+path {
+
+    stroke: #dadada !important;
+}

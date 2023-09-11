@@ -1,3 +1,12 @@
 {
-  "accentColor": ""
+  "accentColor": "#6a015c",
+  "cssTheme": "ITS Theme",
+  "nativeMenus": true,
+  "enabledCssSnippets": [
+    "diagrams",
+    "ITSTtheme2",
+    "ITSTtheme3"
+  ],
+  "baseFontSize": 17,
+  "textFontFamily": ""
 }
