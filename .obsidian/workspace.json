@@ -4,41 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "d1fd172d5aaf56ed",
+        "id": "73162107b97a1c92",
         "type": "tabs",
         "children": [
           {
-            "id": "787ccf6926a394cb",
+            "id": "971f9d82c6a2a3a7",
             "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "8290864acefe833b",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "__assets/images/Pasted image 20230911124335.png"
-              }
-            }
-          },
-          {
-            "id": "30e3923a718e1240",
-            "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Full Stack Web & Java - Boolean - Experis - Classe 6.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "pinned": true
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -165,12 +148,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a65468d107a2dfa8",
+  "active": "971f9d82c6a2a3a7",
   "lastOpenFiles": [
-    "Personal/Test.md",
     "__assets/images/Pasted image 20230911124335.png",
-    "Personal",
+    "Personal/Test.md",
     "Full Stack Web & Java - Boolean - Experis - Classe 6.md",
+    "Personal",
     "__assets/images",
     "__assets",
     "Tips & Tricks",
