@@ -6,4 +6,4 @@ Personal/**
 .obsidian/workspace.json
 
 # Obsidian GIT
-# .obsidian/plugins/obsidian-git/**
+.obsidian/plugins/obsidian-git/**
