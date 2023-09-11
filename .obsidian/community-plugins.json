@@ -2,5 +2,6 @@
   "code-files",
   "embed-code-file",
   "obsidian-git",
-  "open-vscode"
+  "open-vscode",
+  "url-into-selection"
 ]
