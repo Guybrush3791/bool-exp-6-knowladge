@@ -7,18 +7,28 @@
 # Giovanni
 ![[Pasted image 20230911124515.png|600]]
 
-# Useful data
+# Fundamentals
 ## Obsidian
-- [[Update Vault|How to get updates]]
+[Homepage](https://obsidian.md/)
+[[Update Vault|How to get updates]]
 
-## Code
-Just open **Workspace** folder with Eclipse, in order to get pushed code
+## Daily
+### Code
+Just open **Workspace** folder with Eclipse, in order to get daily code
 
-## Exercise
+### Exercise
 The daily exercises will go in **Snacks** folder
 
-## Live
+### Live
 The daily live session code will goes in **Live** folder
 
+### Database
+Structure, ER schema and dump will go hire
 
+## Extra
+### Tips & Tricks
+Extra tutorials will go hire
+
+### Personal
+![[Main Instruction]]
 
