@@ -12,3 +12,6 @@ git pull
 
 ### From Obsidian
 Open command prompt with `CTRL + P`:
+![[Pasted image 20230911162950.png]]
+
+Execute `Obsidian git: pull` command.
