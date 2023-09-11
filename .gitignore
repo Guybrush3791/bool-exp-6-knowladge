@@ -1,3 +1,9 @@
+# Personal folder
 Personal/**
-.obsidian/workspace.json
 !Personal/Main Instruction.md
+
+# Obsidian workspace
+.obsidian/workspace.json
+
+# Obsidian GIT
+.obsidian/obsidian-git/**
