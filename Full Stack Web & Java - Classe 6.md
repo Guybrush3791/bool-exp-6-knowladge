@@ -30,5 +30,5 @@ Structure, ER schema and dump will go hire
 Extra tutorials will go hire
 
 ### Personal
-![[Main Instruction]]
+![[Personal folder - Main Instruction]]
 
