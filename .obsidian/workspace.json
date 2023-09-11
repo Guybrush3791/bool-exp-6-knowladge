@@ -1,0 +1,184 @@
+{
+  "main": {
+    "id": "07179abf8f4b42b3",
+    "type": "split",
+    "children": [
+      {
+        "id": "d1fd172d5aaf56ed",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "787ccf6926a394cb",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "8290864acefe833b",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "__assets/images/Pasted image 20230911124335.png"
+              }
+            }
+          },
+          {
+            "id": "30e3923a718e1240",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Full Stack Web & Java - Boolean - Experis - Classe 6.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f139a5ea5bb92870",
+    "type": "split",
+    "children": [
+      {
+        "id": "282b1c209ed16d1c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a65468d107a2dfa8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "bd2c47bee7538eb1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "369c4983325624cf",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "63ccbf656a1929a2",
+    "type": "split",
+    "children": [
+      {
+        "id": "8bc45f99c321c4d0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bbdf83642423e117",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Full Stack Web & Java - Boolean - Experis - Classe 6.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b7146fbb86eca12a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Full Stack Web & Java - Boolean - Experis - Classe 6.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "92ca4059f374f9c7",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "1082cd2e96e54839",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Full Stack Web & Java - Boolean - Experis - Classe 6.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "a65468d107a2dfa8",
+  "lastOpenFiles": [
+    "Personal/Test.md",
+    "__assets/images/Pasted image 20230911124335.png",
+    "Personal",
+    "Full Stack Web & Java - Boolean - Experis - Classe 6.md",
+    "__assets/images",
+    "__assets",
+    "Tips & Tricks",
+    "Snacks",
+    "Lives",
+    "Database/Untitled",
+    "Databases",
+    "__assets/images/Pasted image 20230911124515.png",
+    "__assets/images/Pasted image 20230911124355.png"
+  ]
+}
