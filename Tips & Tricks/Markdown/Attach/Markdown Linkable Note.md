@@ -1,0 +1,1 @@
+This is just a note you can embed in any other note
