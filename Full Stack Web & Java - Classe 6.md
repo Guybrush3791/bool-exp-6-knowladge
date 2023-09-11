@@ -15,5 +15,10 @@
 Just open **Workspace** folder with Eclipse, in order to get pushed code
 
 ## Exercise
-The daily ex
+The daily exercises will go in **Snacks** folder
+
+## Live
+The daily live session code will goes in **Live** folder
+
+
 
