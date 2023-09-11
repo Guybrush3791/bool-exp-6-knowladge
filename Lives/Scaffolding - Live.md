@@ -14,3 +14,10 @@ More info will goes hire
 System.out.println("Hello, World");
 
 ```
+
+
+```embed-java
+PATH: "vault://Workspace/JavaTest_1/src/org/experis/Main.java"
+LINES: 5-8
+TITLE: "Java Hello World"
+```

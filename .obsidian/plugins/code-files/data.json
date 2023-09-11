@@ -1,0 +1,10 @@
+{
+  "extensions": [
+    "java"
+  ],
+  "folding": true,
+  "lineNumbers": true,
+  "minimap": true,
+  "semanticValidation": true,
+  "syntaxValidation": true
+}
