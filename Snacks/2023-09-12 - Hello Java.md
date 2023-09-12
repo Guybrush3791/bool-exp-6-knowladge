@@ -26,7 +26,10 @@ Definire il nome del progetto in alto e eliminare la spunta da `Create module-in
 ![[Pasted image 20230912151013.png]]
 Premere su `Finish`
 ### Nuova classe su Eclipse
-Tasto dx del mouse su cartella `src` nel progetto, `New` -> `Class`
+Tasto dx del mouse su cartella `src` nel progetto, `New` -> `Class`.
+Definire `nome` e `package` della classe
+![[Pasted image 20230912151226.png]]
+Premere su `Finish`
 
 ### Comandi da terminale per il Git
 Comandi per il push di cartella su progetto nuovo da terminale:
