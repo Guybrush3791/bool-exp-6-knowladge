@@ -23,4 +23,6 @@ git push -u origin main
 ```
 ![[Pasted image 20230912150732.png]]
 
-### MacOS 
+### MacOS `Content Assistant` fix
+In **MacOs** lo shortscut di Eclipse `CTRL` + `SPACE` potrebbe andare in conflitto con *Spotlight*. In questo caso e' possibile cambiare la combinazione di tasti per il menu di Eclipse attraverso il menu in alto `Eclipse` -> `Settings`, ricercare la parola `keys`, selezionare `General` -> `Keys` nel menu sulla sinistra.
+Nel menu degli shortscut di `Eclipse`, cercare il comando `Content Assistant` e modificare con una combinazione di tasti che sia libera sul proprio sistema operativo (es: `Z` + `SPACE`)
