@@ -43,7 +43,18 @@ public class Main {
 		String sR2 = x + s2; // 10 + "hello" = "10hello"
 		System.out.println("sR2: " + sR2);
 		
-		int intConcat = x + y;
+		String intConcat = "" + x + y;
 		System.out.println("intConcat: " + intConcat);
+		
+		// -----------------------------------------
+		
+		// LETTURA/SCRITTURA DA TERMINALE
+		String line = null;
+		Scanner in = new Scanner(System.in);
+		
+		System.out.print("Type something: ");
+		line = in.nextLine();
+		
+		System.out.println("You typed: '" + line + "'");
 	}
 }
