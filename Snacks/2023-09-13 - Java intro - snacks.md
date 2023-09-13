@@ -27,3 +27,23 @@ Il programma dovrà chiedere all’utente il *numero di chilometri che vuole per
 Come sempre create un progetto java con lo stesso nome del repo (`java-biglietto-treno`), aggiungete  una classe `CalcolaBiglietto` nel package `org.lessons.java`. 
 Il programma va implementato nel metodo `main` della classe `CalcolaBiglietto`.
 Per acquisire l’input dell’utente usate la classe `Scanner`, come visto stamattina a lezione.
+
+---
+
+# Bonus
+
+## Es 3
+### Repo
+`java-cibi-preferiti`
+
+## Todo
+- nel progetto `java-cibi-preferiti` aggiungete la classe `CibiPreferiti` nel package `org.lessons.java.array` col suo metodo `main`
+- nel programma inizializzare un array (con i metodi visti a lezione) con la classifica dei vostri cibi preferiti (minimo 5, massimo 10 elementi)
+
+Poi stampate a video:
+- la lunghezza della classifica
+- il vostro cibo top (prima posizione della classifica)
+- il vostro cibo preferito ma non troppo (ultima posizione della classifica)
+
+Stampate a video anche il cibo di mezza classifica, cioè che si trova nella posizione mediana
+> [!attention] attenzione agli array di lunghezza pari
