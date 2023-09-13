@@ -161,6 +161,8 @@ public class Main {
 		System.out.println(arr2[9]);
 		System.out.println(arr2[1]);
 		
+		System.out.println(Arrays.toString(arr2));
+		
 		// -----------------------------------------
 		// -----------------------------------------
 		// -----------------------------------------
