@@ -8,7 +8,13 @@ public class MyPairAndOdd {
 		
 		Scanner sc = new Scanner(System.in);
 
+		System.out.print("Pari o dispari: ");
+		String word = sc.nextLine();
 		
+		boolean pair = false;
+		if (word.toLowerCase().equals("pari")) { // word == "pari"
+			pair = true;
+		}
 		
 		sc.close();
 	}
