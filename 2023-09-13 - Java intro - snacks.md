@@ -16,16 +16,14 @@ La sua password sarà **`Pinco-Pallo-magenta-2011`**
 
 # Es 2
 ## Repo
- java-biglietto-treno
+`java-biglietto-treno`
  
 ## Todo
-Ciao!
-Esercitazione di oggi: Biglietto del treno
-Nome repo:
-Il programma dovrà chiedere all’utente il numero di chilometri che vuole percorrere e l’età del passeggero. Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
-il prezzo del biglietto è definito in base ai km (0.21 € al km)
-va applicato uno sconto del 20% per i minorenni
-va applicato uno sconto del 40% per gli over 65
-Come sempre create un progetto java con lo stesso nome del repo (java-biglietto-treno), aggiungete un package org.lessons.java e una classe CalcolaBiglietto. Il programma va implementato nel metodo main della classe CalcolaBiglietto.
-Per acquisire l’input dell’utente usate la classe Scanner, come visto stamattina a lezione.
-Buon lavoro!
+Il programma dovrà chiedere all’utente il *numero di chilometri che vuole percorrere* e l’*età del passeggero*. Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
+- il prezzo del biglietto è definito in base ai km (0.21 € al km)
+- va applicato uno sconto del 20% per i minorenni
+- va applicato uno sconto del 40% per gli over 65
+
+Come sempre create un progetto java con lo stesso nome del repo (`java-biglietto-treno`), aggiungete  una classe `CalcolaBiglietto` nel package `org.lessons.java`. 
+Il programma va implementato nel metodo `main` della classe `CalcolaBiglietto`.
+Per acquisire l’input dell’utente usate la classe `Scanner`, come visto stamattina a lezione.
