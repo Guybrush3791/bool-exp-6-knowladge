@@ -1,4 +1,4 @@
-package org.experis;
+package org.java;
 
 public class Main {
 
