@@ -2,7 +2,7 @@ package org.java;
 
 import java.util.Scanner;
 
-public class Main {
+public class MyEta {
 
 	public static void main(String[] args) {
 		
