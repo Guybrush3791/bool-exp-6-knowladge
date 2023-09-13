@@ -63,6 +63,8 @@ public class Main {
 //		System.out.print("Type something: ");
 //		line = in.nextLine();
 //		
+//		in.close();
+//		
 //		System.out.println("You typed: '" + line + "'");
 //		
 //		System.out.println("// -----------------------------------------");
@@ -99,7 +101,7 @@ public class Main {
 		// CLASSE RANDOM
 		
 		Random rnd = new Random();
-		rnd.setSeed(100);
+//		rnd.setSeed(100); // OPTIONAL: ottiene sempre lo stesso valore random
 		
 		int val = rnd.nextInt(10, 20);
 		System.out.println("val: " + val);
