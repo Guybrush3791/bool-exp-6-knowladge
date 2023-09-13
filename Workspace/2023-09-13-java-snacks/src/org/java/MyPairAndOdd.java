@@ -1,5 +1,6 @@
 package org.java;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class MyPairAndOdd {
@@ -12,9 +13,16 @@ public class MyPairAndOdd {
 		String word = sc.nextLine();
 		
 		boolean pair = false;
-		if (word.toLowerCase().equals("pari")) { // word == "pari"
+		if (word.trim().toLowerCase().equals("pari")) { // word == "pari"
 			pair = true;
 		}
+		
+		System.out.print("Dammi il tuo numero: ");
+		int userValue = sc.nextInt();
+		
+		Random rnd = new Random();
+		
+		int pcValue = rnd.nextInt(Integer.MAX_VALUE);
 		
 		sc.close();
 	}

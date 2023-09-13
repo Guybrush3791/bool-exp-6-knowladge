@@ -9,10 +9,10 @@ Chiediamo all'utente due parole in successione. Andiamo poi a verificare quale d
 ![[MyLongestWord.java]]
 
 ### Pari e Dispari
-- chiedere all'utente di scegliere **PARI** o **DISPARI**
-- chiedere all'utente un numero
-- calcolare un numero **random** per il PC
-- calcolare se la somma dei due valori e' **PARI** o **DISPARI**
-- scrivere all'utente se ha vinto
+- [x] chiedere all'utente di scegliere **PARI** o **DISPARI**
+- [x] chiedere all'utente un numero
+- [x] calcolare un numero **random** per il PC
+- [ ] calcolare se la somma dei due valori e' **PARI** o **DISPARI**
+- [ ] scrivere all'utente se ha vinto
 ![[MyPairAndOdd.java]]
 
