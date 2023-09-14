@@ -27,23 +27,54 @@ public class Main {
 //			System.out.println(val1 + " ~ " + val2);
 //		}
 		
-		// ES2
-		System.out.print("Parola 1: ");
-		String word1 = sc.nextLine();
+//		// ES2
+//		System.out.print("Parola 1: ");
+//		String word1 = sc.nextLine();
+//		
+//		System.out.print("Parola 2: ");
+//		String word2 = sc.nextLine();
+//		
+//		int lng1 = word1.length();
+//		int lng2 = word2.length();
+//		
+//		if (lng1 > lng2) {
+//			
+//			System.out.println(word2 + " ~ " + word1);
+//		} else {
+//			
+//			System.out.println(word1 + " ~ " + word2);
+//		}
 		
-		System.out.print("Parola 2: ");
-		String word2 = sc.nextLine();
+//		// ES3
+//		int sum = 0;
+//		for (int x=0;x<10;x++) {
+//			
+//			System.out.print("Numero: ");
+//			int value = sc.nextInt();
+//			
+//			sum += value;
+//		}
+//		System.out.println("Sommatoria: " + sum);
 		
-		int lng1 = word1.length();
-		int lng2 = word2.length();
+		// ES4
+		String[] goodNames = {
+			"Marco", "Giorgia", "Filippo"
+		};
+		System.out.print("Nome utente: ");
+		String name = sc.nextLine();
 		
-		if (lng1 > lng2) {
+		for (int x=0;x<goodNames.length;x++) {
 			
-			System.out.println(word2 + " ~ " + word1);
-		} else {
+			String goodName = goodNames[x];
 			
-			System.out.println(word1 + " ~ " + word2);
+			if (name.toLowerCase().equals(goodName.toLowerCase())) {
+				
+				System.out.println("Puoi entrare!!");
+				return;
+			}
 		}
+		
+		System.out.println("NON PUOI ENTRARE! VATTENE!");
 		
 		// END ES
 		
