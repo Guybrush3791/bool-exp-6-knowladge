@@ -116,10 +116,6 @@ public class Main {
 		
 		// ES8
 		
-		char c = 'A';
-		int intC = Integer.valueOf(c);
-		System.out.println(intC);
-		
 //		System.out.print("Numero di 4 cifre: ");
 //		String value = sc.nextLine();
 //		
@@ -132,11 +128,22 @@ public class Main {
 //		for (int x=0;x<value.length();x++) {
 //			
 //			char c = value.charAt(x);
-//			int intC = Integer.valueOf(c);
+//			int intC = Integer.valueOf("" + c);
 //			
 //			sum += intC;
 //		}
 //		System.out.println("Somma delle cifre: " + sum);
+		
+		// ES9
+		
+		int sum = 0;
+		for (int x=1;x<=10;x++) {
+			
+			sum += x;
+		}
+		float avg = sum / 10f;
+		System.out.println("Somma: " + sum);
+		System.out.println("Media: " + String.format("%.02f", avg));
 		
 		// END ES
 		
