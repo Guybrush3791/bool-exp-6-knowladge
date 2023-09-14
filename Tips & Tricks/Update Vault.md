@@ -14,6 +14,10 @@ git pull
 Open command prompt with `CTRL + P`:
 ![[Pasted image 20230911162950.png|300]]
 
-Execute `Obsidian git: pull` command. 
+Execute `Obsidian git: pull` command
 
-In case of error clear local changes with `Obsidian git: CAUTITION: Discard all changes`
+> [!attention] IN CASE OF ERROR
+> 
+> Clear local changes with 
+> `CTRL + P` --> `Obsidian git: CAUTITION: Discard all changes`
+
