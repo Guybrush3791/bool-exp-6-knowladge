@@ -1,3 +1,6 @@
+## Correzione
+![[Workspace/2023-09-14-java-snacks/src/org/java/Main.java]]
+
 ## Todo
 ### Snack1
 L’utente inserisce due numeri in successione.
