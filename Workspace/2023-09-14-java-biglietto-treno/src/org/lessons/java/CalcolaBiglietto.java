@@ -28,6 +28,6 @@ public class CalcolaBiglietto {
 			price = price / 100 * 60;
 		}
 		
-		System.out.println("Prezzo finale: " + price);		
+		System.out.println("Prezzo finale: " + String.format("%.02f", price) + "euro");		
 	}
 }
