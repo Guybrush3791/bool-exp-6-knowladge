@@ -1,1 +1,10 @@
-{}
+{
+  "slides:start": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "`"
+    }
+  ]
+}
