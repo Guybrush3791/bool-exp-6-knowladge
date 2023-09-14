@@ -18,5 +18,12 @@ public class Main {
 		}
 		
 		System.out.println("the end");
+		
+		for (;x>2;) {
+			
+		}
+		while (x > 2) {
+			
+		}
 	}
 }
