@@ -10,7 +10,6 @@ public class CibiPreferiti {
 			"cibo 3",
 			"cibo 4",
 			"cibo 5",
-
 		};
 		
 		System.out.println("Numero cibi: " + bestFoods.length);
@@ -19,13 +18,19 @@ public class CibiPreferiti {
 
 		int medIndex = bestFoods.length / 2;
 		boolean pairArray = bestFoods.length % 2 == 0;
+
+//		if (pairArray) {
+//		
+//			System.out.println("Cibo med: " + bestFoods[medIndex - 1] + " ~ " + bestFoods[medIndex]);
+//		} else {
+//			
+//			System.out.println("Cibo med: " + bestFoods[medIndex]);
+//		}
 		
-		if (pairArray) {
-			
-			System.out.println("Cibo med: " + bestFoods[medIndex - 1] + " ~ " + bestFoods[medIndex]);
-		} else {
-			
-			System.out.println("Cibo med: " + bestFoods[medIndex]);
-		}
+		System.out.println("Cibo med: " + (
+				pairArray
+				? bestFoods[medIndex - 1] + " ~ " + bestFoods[medIndex]
+				: bestFoods[medIndex]
+			));
 	}
 }
