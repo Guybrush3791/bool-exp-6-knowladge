@@ -76,24 +76,44 @@ public class Main {
 //		
 //		System.out.println("NON PUOI ENTRARE! VATTENE!");
 		
-		// ES5
-		for (int x=0;x<6;x++) {
-			
-			System.out.println("Dimmi un valore: ");
-			int value = sc.nextInt();
-			
-//			if (value % 2 == 0) {
-//				System.out.println("Il valore e' pari");
-//			} else {
-//				System.out.println("Il valore e' dispari");
-//			}
-			
-			System.out.println(
-					value % 2 == 0
-					? "Il valore e' pari"
-					: "Il valore e' dispari"
-				);
+//		// ES5
+//		for (int x=0;x<6;x++) {
+//			
+//			System.out.println("Dimmi un valore: ");
+//			int value = sc.nextInt();
+//			
+////			if (value % 2 == 0) {
+////				System.out.println("Il valore e' pari");
+////			} else {
+////				System.out.println("Il valore e' dispari");
+////			}
+//			
+//			System.out.println(
+//					value % 2 == 0
+//					? "Il valore e' pari"
+//					: "Il valore e' dispari"
+//				);
+//		}
+		
+//		// ES6 
+//		
+//		System.out.print("Quanti cubi vuoi?");
+//		int count = sc.nextInt();
+//		
+//		for (int x=1;x<=count;x++) {
+//			
+//			int cube = x * x * x;
+//			System.out.println("Cube: " + cube);
+//		}
+		
+		// ES7
+		int value = 1;
+		while (value < 1000) {
+		
+			System.out.println(value);
+			value *= 2;
 		}
+		
 		
 		// END ES
 		
