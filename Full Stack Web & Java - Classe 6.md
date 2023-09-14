@@ -13,16 +13,21 @@
 [[Update Vault|How to get updates]]
 
 ## Daily
-### Code
+### Tutorial
+#### Obsidian update&upgrade
+![[Update Vault#From Obsidian]]
+
+### Main Folder tree
+#### Code
 Just open **Workspace** folder with Eclipse, in order to get daily code
 
-### Exercise
+#### Exercise
 The daily exercises will go in **Snacks** folder
 
-### Live
+#### Live
 The daily live session code will goes in **Live** folder
 
-### Database
+#### Database
 Structure, ER schema and dump will go hire
 
 ## Extra
