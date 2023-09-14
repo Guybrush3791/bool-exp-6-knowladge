@@ -107,13 +107,36 @@ public class Main {
 //		}
 		
 		// ES7
-		int value = 1;
-		while (value < 1000) {
+//		int value = 1;
+//		while (value < 1000) {
+//		
+//			System.out.println(value);
+//			value *= 2;
+//		}
 		
-			System.out.println(value);
-			value *= 2;
-		}
+		// ES8
 		
+		char c = 'A';
+		int intC = Integer.valueOf(c);
+		System.out.println(intC);
+		
+//		System.out.print("Numero di 4 cifre: ");
+//		String value = sc.nextLine();
+//		
+//		if (value.length() != 4) {
+//			System.out.println("Numero errato!");
+//			return;
+//		}
+//		
+//		int sum = 0;
+//		for (int x=0;x<value.length();x++) {
+//			
+//			char c = value.charAt(x);
+//			int intC = Integer.valueOf(c);
+//			
+//			sum += intC;
+//		}
+//		System.out.println("Somma delle cifre: " + sum);
 		
 		// END ES
 		
