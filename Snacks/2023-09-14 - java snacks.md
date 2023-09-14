@@ -39,3 +39,11 @@ Scrivere un programma che dati dei secondi li converta in ore, minuti, secondi e
 Creare un array di 10 interi randomici compresi tra 100 e 150. Stampare tutti i valori contenuti nell'array (dopo averli inseriti). Stampare inoltre il valore minimo, massimo e la media
 
 #### Snack 9
+Chiedere all'utente numeri interi e calcolarene la somma. Continuare a chiedere numeri, finche' la sommatoria non supera il valore `1000`
+
+#### Snack 10
+Creare un array di 10 elementi randomici compresi tra 100 e 1000 e stampare:
+- tutti gli elementi pari
+- tutti gli elementi dispari
+- tutti gli elementi in indice pari
+- tutti gli elementi in indice dispari
