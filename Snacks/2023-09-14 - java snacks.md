@@ -33,3 +33,9 @@ Es. “25” come stringa deve essere convertito in intero 25.
 
 #### Snack 7
 Scrivere un programma che dati dei secondi li converta in ore, minuti, secondi e mostri a video la stringa generata (secondi → “hh:mm:ss”) 
+
+### Bonus++
+#### Snack 8
+Creare un array di 10 interi randomici compresi tra 100 e 150. Stampare tutti i valori contenuti nell'array (dopo averli inseriti). Stampare inoltre il valore minimo, massimo e la media
+
+#### Snack 9
