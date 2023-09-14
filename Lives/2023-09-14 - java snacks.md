@@ -16,7 +16,7 @@ In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby, c
 
 ### Snack5
 Chiedi per 6 volte all’utente di inserire un numero,
-se è dispari mostrare questa informazione a video
+e dire all'utente se il valore e' dispari oppure no.
 
 ### Snack6
 Stampa il cubo dei primi N numeri,

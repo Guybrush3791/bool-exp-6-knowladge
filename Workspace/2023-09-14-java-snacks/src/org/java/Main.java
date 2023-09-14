@@ -56,25 +56,44 @@ public class Main {
 //		}
 //		System.out.println("Sommatoria: " + sum);
 		
-		// ES4
-		String[] goodNames = {
-			"Marco", "Giorgia", "Filippo"
-		};
-		System.out.print("Nome utente: ");
-		String name = sc.nextLine();
+//		// ES4
+//		String[] goodNames = {
+//			"Marco", "Giorgia", "Filippo"
+//		};
+//		System.out.print("Nome utente: ");
+//		String name = sc.nextLine();
+//		
+//		for (int x=0;x<goodNames.length;x++) {
+//			
+//			String goodName = goodNames[x];
+//			
+//			if (name.toLowerCase().equals(goodName.toLowerCase())) {
+//				
+//				System.out.println("Puoi entrare!!");
+//				return;
+//			}
+//		}
+//		
+//		System.out.println("NON PUOI ENTRARE! VATTENE!");
 		
-		for (int x=0;x<goodNames.length;x++) {
+		// ES5
+		for (int x=0;x<6;x++) {
 			
-			String goodName = goodNames[x];
+			System.out.println("Dimmi un valore: ");
+			int value = sc.nextInt();
 			
-			if (name.toLowerCase().equals(goodName.toLowerCase())) {
-				
-				System.out.println("Puoi entrare!!");
-				return;
-			}
+//			if (value % 2 == 0) {
+//				System.out.println("Il valore e' pari");
+//			} else {
+//				System.out.println("Il valore e' dispari");
+//			}
+			
+			System.out.println(
+					value % 2 == 0
+					? "Il valore e' pari"
+					: "Il valore e' dispari"
+				);
 		}
-		
-		System.out.println("NON PUOI ENTRARE! VATTENE!");
 		
 		// END ES
 		
