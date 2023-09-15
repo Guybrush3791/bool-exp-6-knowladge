@@ -1,5 +1,7 @@
 package org.java;
 
+import java.util.Random;
+
 import org.java.ecommerce.Infografica;
 
 public class Main {
@@ -22,7 +24,10 @@ public class Main {
 //		System.out.println("infog 1 category: " + infoG1.category);
 //		System.out.println("infog 1 numero immagini: " + infoG1.nImmagini);
 		
-		System.out.println("infog 1 all: " + infoG1.getString());
+		// System.out.println("infog 1 all: " + infoG1.getString());
+		infoG1.printMe();
+		Random rnd = new Random();
+		rnd.nextInt();
 		
 		System.out.println("\n-------------------------------------\n");
 		
@@ -30,6 +35,7 @@ public class Main {
 //		System.out.println("infog 2 category: " + infoG2.category);
 //		System.out.println("infog 2 numero immagini: " + infoG2.nImmagini);
 		
-		System.out.println("infog 2 all: " + infoG2.getString());
+//		System.out.println("infog 2 all: " + infoG1.getString());
+		infoG2.printMe(2);
 	}
 }
