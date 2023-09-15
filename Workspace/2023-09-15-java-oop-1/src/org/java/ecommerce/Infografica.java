@@ -6,4 +6,8 @@ public class Infografica {
 	public String category;
 	public int nImmagini;
 	
+	public String getString() {
+		
+		return titolo + " - " + category + " - " + nImmagini;
+	}
 }
