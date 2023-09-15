@@ -71,20 +71,53 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("Stringa: ");
-		String str = sc.nextLine();
-		String revStr = "";
-		for (int x=str.length()-1;x>=0;x--) {
+		String str = sc.nextLine().toLowerCase(); // anna : lng = 4
+		
+		System.out.println("/n---------------------\n");
+		
+		boolean palindrom = true;
+		for (int x=0;x<str.length();x++) {
 			
-			revStr += str.charAt(x);
+			// primo e ultimo
+			// secondo e penultimo
+			// terzo e terzultimo
+			// ...
+			int revX = str.length() - 1 - x;
+			
+			System.out.println("x: " + x);
+			System.out.println("revX: " + revX);
+			
+			char charX = str.charAt(x);
+			char charRevX = str.charAt(revX);
+			
+			System.out.println("charX: " + charX );
+			System.out.println("charRevX: " + charRevX);
+			
+			if (charX != charRevX) {
+				
+				palindrom = false;
+				break;
+			}
+			
+			System.out.println("/n---------------------\n");
 		}
 		
-		if (str.equals(revStr)) {
-			
-			System.out.println("La stringa e' palindroma");
-		} else {
-			
-			System.out.println("La stringa NON e' palindroma");
-		}
+		System.out.println("Palindoma: " + palindrom);
+		
+//		OPZIONE 1
+//		String revStr = "";
+//		for (int x=str.length()-1;x>=0;x--) {
+//			
+//			revStr += str.charAt(x);
+//		}
+//		
+//		if (str.equals(revStr)) {
+//			
+//			System.out.println("La stringa e' palindroma");
+//		} else {
+//			
+//			System.out.println("La stringa NON e' palindroma");
+//		}
 	}
 }
 
