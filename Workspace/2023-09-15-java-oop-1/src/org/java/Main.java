@@ -14,11 +14,11 @@ public class Main {
 		infoG1.category = "Programming infographic";
 		infoG1.nImmagini = 100;
 		
-		Infografica infoG2 = new Infografica();
+		Infografica infoG2 = new Infografica("My best info V2.0", "Coding", 7);
 		
-		infoG2.titolo = "My best info V2.0";
-		infoG2.category = "Coding";
-		infoG2.nImmagini = 7;
+//		infoG2.titolo = "My best info V2.0";
+//		infoG2.category = "Coding";
+//		infoG2.nImmagini = 7;
 		
 //		System.out.println("infog 1 titolo: " + infoG1.titolo);
 //		System.out.println("infog 1 category: " + infoG1.category);
