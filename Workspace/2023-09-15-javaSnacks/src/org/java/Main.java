@@ -48,14 +48,42 @@ public class Main {
 //		}
 		
 		// Snack 3
-		Random rnd = new Random();
+//		Random rnd = new Random();
+//		
+//		final int lng = 10;
+//		int[] arr = new int[lng];
+//		
+//		for (int x=0;x<lng;x++) {
+//			
+//			arr[x] = rnd.nextInt(10);
+//		}
+//		
+//		int sum = 0;
+//		for (int x=1;x<lng;x+=2) {
+//			
+//			System.out.println("[" + x + "] " + arr[x]);
+//			sum += arr[x];
+//		}
+//		
+//		System.out.println("sum: " + sum);
 		
-		int lng = 10;
-		int[] arr = new int[lng];
+		// Snack 4
+		Scanner sc = new Scanner(System.in);
 		
-		for (int x=0;x<lng;x++) {
+		System.out.print("Stringa: ");
+		String str = sc.nextLine();
+		String revStr = "";
+		for (int x=str.length()-1;x>=0;x--) {
 			
+			revStr += str.charAt(x);
+		}
+		
+		if (str.equals(revStr)) {
 			
+			System.out.println("La stringa e' palindroma");
+		} else {
+			
+			System.out.println("La stringa NON e' palindroma");
 		}
 	}
 }
