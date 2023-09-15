@@ -4,6 +4,8 @@ import java.util.Random;
 
 public class Main {
 
+	String color = "red";
+	
 	public static void main(String[] args) {
 		
 		// Snack 1
