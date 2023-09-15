@@ -118,56 +118,73 @@ public class Main {
 ////		}
 		
 		// Snack 5
-		boolean end = false;
-		while(!end) {
-			Scanner sc = new Scanner(System.in);
+//		while(true) {
+//			Scanner sc = new Scanner(System.in);
+//			
+//			System.out.print("Stringa: ");
+//			String str = sc.nextLine();
+//			
+//			if (str.equals("0"))
+//				break;
+//			
+//			char[] alphaList = new char[(int) 'z' - (int) 'a' + 1];
+//			for (int x=0;x<alphaList.length;x++) {
+//				
+//				char c = (char) ((int) 'a' + x);
+//				alphaList[x] = c;
+//			}
+//			
+//			char[] numbList = new char[(int) '9' - (int) '0' + 1];
+//			for (int x=0;x<numbList.length;x++) {
+//				
+//				char c = (char) ((int) '0' + x);
+//				numbList[x] = c;
+//			}
+//			
+//			int alphaCount = 0;
+//			int numberCount = 0;
+//			int symbolCount = 0;
+//			
+//			for (int x=0;x<str.length();x++) {
+//				
+//				char c = str.charAt(x);
+//				
+//				if (Character.isDigit(c)) {
+//					
+//					numberCount++;
+//				} else if (Character.isLetter(c)) {
+//					
+//					alphaCount++;
+//				} else {
+//					
+//					symbolCount++;
+//				}
+//			}
+//			
+//			System.out.println("Alpha count: " + alphaCount);
+//			System.out.println("Number count: " + numberCount);
+//			System.out.println("Symbol count: " + symbolCount);
+//		}
+//		
+//		System.out.println("The end");
+		
+		// Snack 6
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Stringa: ");
+		String str = sc.nextLine().toLowerCase();
+		
+		int res = 0;
+		for (int x=0;x<str.length();x++) {
 			
-			System.out.print("Stringa: ");
-			String str = sc.nextLine();
+			char c = str.charAt(x);
+			int valC = (int) c - (int) '0';
 			
-			if (str.equals("0")) 
-				break;
-			
-			char[] alphaList = new char[(int) 'z' - (int) 'a' + 1];
-			for (int x=0;x<alphaList.length;x++) {
-				
-				char c = (char) ((int) 'a' + x);
-				alphaList[x] = c;
-			}
-			
-			char[] numbList = new char[(int) '9' - (int) '0' + 1];
-			for (int x=0;x<numbList.length;x++) {
-				
-				char c = (char) ((int) '0' + x);
-				numbList[x] = c;
-			}
-			
-			int alphaCount = 0;
-			int numberCount = 0;
-			int symbolCount = 0;
-			
-			for (int x=0;x<str.length();x++) {
-				
-				char c = str.charAt(x);
-				
-				if (Character.isDigit(c)) {
-					
-					numberCount++;
-				} else if (Character.isLetter(c)) {
-					
-					alphaCount++;
-				} else {
-					
-					symbolCount++;
-				}
-			}
-			
-			System.out.println("Alpha count: " + alphaCount);
-			System.out.println("Number count: " + numberCount);
-			System.out.println("Symbol count: " + symbolCount);
+			res = res * 10 + valC;
 		}
 		
-		System.out.println("The end");
+		System.out.println("Integer value: " + res);
+		 
 	}
 }
 
