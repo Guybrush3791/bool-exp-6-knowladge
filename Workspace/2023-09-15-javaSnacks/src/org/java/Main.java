@@ -122,6 +122,12 @@ public class Main {
 		System.out.print("Stringa: ");
 		String str = sc.nextLine();
 		
+		char[] alphaList = new char[(int) 'z' - (int) 'a'];
+		for (int x=0;x<alphaList.length;x++) {
+			
+			alphaList[x] = ((int) 'a') + x;
+		}
+		
 		int alphaCount = 0;
 		int numberCount = 0;
 		int symbolCount = 0;
