@@ -1,8 +1,6 @@
 package org.java;
 
-import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Main {
 
@@ -186,21 +184,32 @@ public class Main {
 //		System.out.println("Integer value: " + res);
 		 
 		// Snack 7
-		Scanner sc = new Scanner(System.in);
+//		Scanner sc = new Scanner(System.in);
+//		
+//		while(true) {
+//			System.out.print("Secondi: ");
+//			int secondTot = sc.nextInt();
+//			
+//			int hour = secondTot / (60 * 60);
+//			int minutes = (secondTot % (60 * 60)) / 60;
+//			int seconds = secondTot % 60;
+//			
+//			System.out.println(
+//					String.format("%02d", hour) + ":" 
+//				    + String.format("%02d", minutes) + ":" 
+//					+ String.format("%02d", seconds) 
+//			);
+//		}
 		
-		while(true) {
-			System.out.print("Secondi: ");
-			int secondTot = sc.nextInt();
+		// Snack 8
+		Random rnd = new Random();
+		final int lng = 10;
+		int[] values = new int[lng];
+		
+		for (int x=0;x<lng;x++) {
 			
-			int hour = secondTot / (60 * 60);
-			int minutes = (secondTot % (60 * 60)) / 60;
-			int seconds = (secondTot % (60 * 60)) % 60;
-			
-			System.out.println(
-					String.format("%02d", hour) + ":" 
-				    + String.format("%02d", minutes) + ":" 
-					+ String.format("%02d", seconds) 
-			);
+			int value = rnd.nextInt(100, 151);
+			values[x] = value;
 		}
 	}
 }
