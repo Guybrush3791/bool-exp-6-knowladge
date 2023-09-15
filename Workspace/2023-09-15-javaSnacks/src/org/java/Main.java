@@ -9,14 +9,24 @@ public class Main {
 		// Snack 1
 		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("value: ");
 		int value = sc.nextInt();
 		
-		if (value % 2 == 0) {
-			
-			System.out.println("value: " + value);
-		} else {
-			
-			System.out.println("value: " + (value + 1));
-		}
+		sc.close();
+		
+//		if (value % 2 == 0) {
+//			
+//			System.out.println("value: " + value);
+//		} else {
+//			
+//			System.out.println("value: " + (value + 1));
+//		}
+		
+		System.out.println("value: " + (value + (
+				value % 2 == 0
+				? 0
+				: 1
+			))
+		);
 	}
 }
