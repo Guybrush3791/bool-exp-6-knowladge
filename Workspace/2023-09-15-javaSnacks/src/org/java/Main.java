@@ -260,6 +260,40 @@ public class Main {
 			final int value = rnd.nextInt(100, 1001);
 			values[x] = value;
 		}
+		
+		for (int x=0;x<lng;x++) {
+			
+			final int value = values[x];
+			
+			if (value % 2 == 0) { // e' pari
+				
+				System.out.println("valore pari: " + value);
+			}
+		}
+		System.out.println("\n-----------------------\n");
+		for (int x=0;x<lng;x++) {
+			
+			final int value = values[x];
+			
+			if (value % 2 > 0) { // e' pari
+				
+				System.out.println("valore dispari: " + value);
+			}
+		}
+		System.out.println("\n-----------------------\n");
+		for (int x=0;x<lng;x+=2) {
+			
+			final int value = values[x];
+			
+			System.out.println("valore indice pari: [" + x + "]: " + value);
+		}
+		System.out.println("\n-----------------------\n");
+		for (int x=1;x<lng;x+=2) {
+			
+			final int value = values[x];
+			
+			System.out.println("valore indice dispari: [" + x + "]: " + value);
+		}
 	}
 }
 

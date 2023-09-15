@@ -1,6 +1,9 @@
 ## Repo
 `java-snacks`
 
+## Correzione
+![[Workspace/2023-09-15-javaSnacks/src/org/java/Main.java]]
+
 ## Todo
 ### Snack1
 Inserisci un numero, se è pari stampa il numero, se è dispari stampa il numero successivo.
