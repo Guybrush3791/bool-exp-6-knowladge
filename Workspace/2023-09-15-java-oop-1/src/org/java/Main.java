@@ -18,17 +18,17 @@ public class Main {
 		infoG2.category = "Coding";
 		infoG2.nImmagini = 7;
 		
-		System.out.println("infog 1 titolo: " + infoG1.titolo);
-		System.out.println("infog 1 category: " + infoG1.category);
-		System.out.println("infog 1 numero immagini: " + infoG1.nImmagini);
+//		System.out.println("infog 1 titolo: " + infoG1.titolo);
+//		System.out.println("infog 1 category: " + infoG1.category);
+//		System.out.println("infog 1 numero immagini: " + infoG1.nImmagini);
 		
 		System.out.println("infog 1 all: " + infoG1.getString());
 		
 		System.out.println("\n-------------------------------------\n");
 		
-		System.out.println("infog 2 titolo: " + infoG2.titolo);
-		System.out.println("infog 2 category: " + infoG2.category);
-		System.out.println("infog 2 numero immagini: " + infoG2.nImmagini);
+//		System.out.println("infog 2 titolo: " + infoG2.titolo);
+//		System.out.println("infog 2 category: " + infoG2.category);
+//		System.out.println("infog 2 numero immagini: " + infoG2.nImmagini);
 		
 		System.out.println("infog 2 all: " + infoG2.getString());
 	}
