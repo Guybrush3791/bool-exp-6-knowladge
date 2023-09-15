@@ -169,22 +169,39 @@ public class Main {
 //		System.out.println("The end");
 		
 		// Snack 6
+//		Scanner sc = new Scanner(System.in);
+//		
+//		System.out.print("Stringa: ");
+//		String str = sc.nextLine().toLowerCase(); // 234
+//		
+//		int res = 0;
+//		for (int x=0;x<str.length();x++) {
+//			
+//			char c = str.charAt(x); // 2 -- 3
+//			int valC = (int) c - (int) '0'; // 2 -- 3
+//			
+//			res = res * 10 + valC; // 0 * 10 + 2 = 2 -- 2 * 10 + 3 = 23
+//		}
+//		
+//		System.out.println("Integer value: " + res);
+		 
+		// Snack 7
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("Stringa: ");
-		String str = sc.nextLine().toLowerCase();
-		
-		int res = 0;
-		for (int x=0;x<str.length();x++) {
+		while(true) {
+			System.out.print("Secondi: ");
+			int secondTot = sc.nextInt();
 			
-			char c = str.charAt(x);
-			int valC = (int) c - (int) '0';
+			int hour = secondTot / (60 * 60);
+			int minutes = (secondTot % (60 * 60)) / 60;
+			int seconds = (secondTot % (60 * 60)) % 60;
 			
-			res = res * 10 + valC;
+			System.out.println(
+					String.format("%02d", hour) + ":" 
+				    + String.format("%02d", minutes) + ":" 
+					+ String.format("%02d", seconds) 
+			);
 		}
-		
-		System.out.println("Integer value: " + res);
-		 
 	}
 }
 
