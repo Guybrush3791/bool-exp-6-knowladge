@@ -73,10 +73,10 @@ public class Main {
 		System.out.print("Stringa: ");
 		String str = sc.nextLine().toLowerCase(); // anna : lng = 4
 		
-		System.out.println("/n---------------------\n");
+		System.out.println("\n---------------------\n");
 		
 		boolean palindrom = true;
-		for (int x=0;x<str.length();x++) {
+		for (int x=0;x<str.length()/2;x++) {
 			
 			// primo e ultimo
 			// secondo e penultimo
@@ -99,7 +99,7 @@ public class Main {
 				break;
 			}
 			
-			System.out.println("/n---------------------\n");
+			System.out.println("\n---------------------\n");
 		}
 		
 		System.out.println("Palindoma: " + palindrom);
