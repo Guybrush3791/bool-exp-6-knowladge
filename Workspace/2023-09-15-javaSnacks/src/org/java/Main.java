@@ -166,6 +166,8 @@ public class Main {
 			System.out.println("Number count: " + numberCount);
 			System.out.println("Symbol count: " + symbolCount);
 		}
+		
+		System.out.println("The end");
 	}
 }
 
