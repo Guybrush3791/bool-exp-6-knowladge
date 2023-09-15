@@ -294,6 +294,9 @@ public class Main {
 //			
 //			System.out.println("valore indice dispari: [" + x + "]: " + value);
 //		}
+		
+		String str1 = "hello";
+		String str2 = "world";
 	}
 }
 
