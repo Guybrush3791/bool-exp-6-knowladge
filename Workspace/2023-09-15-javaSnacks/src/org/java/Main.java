@@ -1,5 +1,6 @@
 package org.java;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -122,11 +123,20 @@ public class Main {
 		System.out.print("Stringa: ");
 		String str = sc.nextLine();
 		
-		char[] alphaList = new char[(int) 'z' - (int) 'a'];
+		char[] alphaList = new char[(int) 'z' - (int) 'a' + 1];
 		for (int x=0;x<alphaList.length;x++) {
 			
-			alphaList[x] = ((int) 'a') + x;
+			char c = (char) ((int) 'a' + x);
+			alphaList[x] = c;
 		}
+		
+		char[] numbList = new char[(int) '9' - (int) '0' + 1];
+		for (int x=0;x<numbList.length;x++) {
+			
+			char c = (char) ((int) '0' + x);
+			numbList[x] = c;
+		}
+		System.out.println(Arrays.toString(numbList));
 		
 		int alphaCount = 0;
 		int numberCount = 0;
