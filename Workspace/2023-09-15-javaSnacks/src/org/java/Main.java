@@ -141,6 +141,10 @@ public class Main {
 				symbolCount++;
 			}
 		}
+		
+		System.out.println("Alpha count: " + alphaCount);
+		System.out.println("Number count: " + numberCount);
+		System.out.println("Symbol count: " + symbolCount);
 	}
 }
 
