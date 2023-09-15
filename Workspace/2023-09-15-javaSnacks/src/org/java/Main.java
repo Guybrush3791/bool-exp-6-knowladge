@@ -235,12 +235,30 @@ public class Main {
 //		System.out.println("avg: " + avg);
 		
 		// Snack 9
+//		Scanner sc = new Scanner(System.in);
+//		
+//		int sum = 0;
+//		while (sum < 1_000) {
+//			
+//			System.out.print("Next value: ");
+//			int value = sc.nextInt();
+//			
+//			sum += value;
+//		}
+//		sc.close();
+//		
+//		System.out.println("sum: " + sum);
+		
+		// Snack 10
 		Random rnd = new Random();
 		
-		int sum = 0;
-		while (sum < 1_000) {
+		final int lng = 10;
+		int[] values = new int[lng];
+		
+		for (int x=0;x<10;x++) {
 			
-			
+			final int value = rnd.nextInt(100, 1001);
+			values[x] = value;
 		}
 	}
 }
