@@ -202,14 +202,45 @@ public class Main {
 //		}
 		
 		// Snack 8
-		Random rnd = new Random();
-		final int lng = 10;
-		int[] values = new int[lng];
+//		Random rnd = new Random();
+//		final int lng = 10;
+//		int[] values = new int[lng];
+//		
+//		for (int x=0;x<lng;x++) {
+//			
+//			int value = rnd.nextInt(100, 151);
+//			values[x] = value;
+//		}
+//		
+//		int min = Integer.MAX_VALUE;
+//		int max = Integer.MIN_VALUE;
+//		int avg = 0;
+//		for (int x=0;x<values.length;x++) {
+//			
+//			final int value = values[x];
+//			
+//			if (value < min)
+//				min = value;
+//			
+//			if (value > max) 
+//				max = value;
+//			
+//			avg += value;
+//		}
+//		
+//		avg /= values.length;
+//		
+//		System.out.println("min: " + min);
+//		System.out.println("max: " + max);
+//		System.out.println("avg: " + avg);
 		
-		for (int x=0;x<lng;x++) {
+		// Snack 9
+		Random rnd = new Random();
+		
+		int sum = 0;
+		while (sum < 1_000) {
 			
-			int value = rnd.nextInt(100, 151);
-			values[x] = value;
+			
 		}
 	}
 }
