@@ -31,20 +31,31 @@ public class Main {
 //		);
 		
 		// Snack 2
+//		Random rnd = new Random();
+//		
+//		String[] names = { "name1", "name2", "name3" };
+//		String[] lastnames = { "lastname1", "lastname2", "lastname3", "lastname4"};
+//		
+//		for (int x=0;x<5;x++) {
+//			
+//			int rndNameIndex = rnd.nextInt(names.length);
+//			int rndLastnameIndex = rnd.nextInt(lastnames.length);
+//			
+//			String name = names[rndNameIndex];
+//			String lastname = lastnames[rndLastnameIndex];
+//			
+//			System.out.println("fullname: " + name + " " + lastname);
+//		}
+		
+		// Snack 3
 		Random rnd = new Random();
 		
-		String[] names = { "name1", "name2", "name3" };
-		String[] lastnames = { "lastname1", "lastname2", "lastname3", "lastname4"};
+		int lng = 10;
+		int[] arr = new int[lng];
 		
-		for (int x=0;x<5;x++) {
+		for (int x=0;x<lng;x++) {
 			
-			int rndNameIndex = rnd.nextInt(names.length);
-			int rndLastnameIndex = rnd.nextInt(lastnames.length);
 			
-			String name = names[rndNameIndex];
-			String lastname = lastnames[rndLastnameIndex];
-			
-			System.out.println("fullname: " + name + " " + lastname);
 		}
 	}
 }
