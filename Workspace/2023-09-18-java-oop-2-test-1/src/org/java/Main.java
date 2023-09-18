@@ -37,16 +37,51 @@ public class Main {
 	}
 	public static class Rectangle extends Square {
 
-		public Rectangle(int x) {
+		private int y;
+		
+		public Rectangle(int x, int y) {
 			super(x);
 			
+			setY(y);
+		}
+		
+		public int getY() {
 			
+			return y;
+		}
+		public void setY(int y) {
+			
+			this.y = y;
+		}
+		
+		@Override
+		public int getArea() {
+			
+			return getX() * getY();
+		}
+		@Override
+		public int getPerim() {
+			
+			return 2 * (getX() + getY());
+		}
+		
+		@Override
+		public String toString() {
+			
+			return "rect: " 
+					+ getX() + "x" + getY() 
+					+ " | a: " + getArea() 
+					+ " | p: " + getPerim()
+			;
 		}
 	}
 	
 	public static void main(String[] args) {
 		
-		Square s = new Square(5);
-		System.out.println(s);
+		Square s1 = new Square(5);
+		System.out.println(s1);
+		
+		Rectangle r1 = new Rectangle(7, 3);
+		System.out.println(r1);
 	}
 }
