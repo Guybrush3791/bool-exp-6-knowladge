@@ -138,6 +138,6 @@ public class Main {
 		Boss b1 = new Boss("Francesca", "Bianchi", "10/01/1999",
 						   "Megadirettore", 4500,
 						   10000);
-		System.out.println(b1);
+		System.out.println(b1.toString());
 	}
 }
