@@ -35,7 +35,14 @@ public class Main {
 			return "square: " + x + " | a: " + getArea() + " | p: " + getPerim();
 		}
 	}
-//	public static class Rectangle extends Square {}
+	public static class Rectangle extends Square {
+
+		public Rectangle(int x) {
+			super(x);
+			
+			
+		}
+	}
 	
 	public static void main(String[] args) {
 		
