@@ -11,7 +11,7 @@ public class Main {
 		
 //		r3.setBase(-7);
 		System.out.println("Numero rettangoli istanziati: " 
-					+ r4.getInstanceCounter()
+					+ Rettangolo.getInstanceCounter()
 		);
 		
 		System.out.println("R1:\n-------------------");
