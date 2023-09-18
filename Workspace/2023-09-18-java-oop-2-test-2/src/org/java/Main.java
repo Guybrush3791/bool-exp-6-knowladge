@@ -98,6 +98,33 @@ public class Main {
 			return super.toString() + " | year salary: " + getYearSalary(); 
 		}
 	}
+	public static class Boss extends Employee {
+
+		private int bonus;
+		
+		public Boss(String name, String lastname, String dateOfBirth, 
+					String title, int salary,
+					int bonus) {
+			super(name, lastname, dateOfBirth, title, salary);
+			
+			setBonus(bonus);
+		}
+		
+		public int getBonus() {
+			
+			return bonus;
+		}
+		public void setBonus(int bonus) {
+			
+			this.bonus = bonus;
+		}
+		
+		@Override
+		public int getYearSalary() {
+			
+			return super.getYearSalary() + bonus;
+		}
+	}
 	
 	public static void main(String[] args) {
 		
@@ -107,5 +134,10 @@ public class Main {
 		Employee e1 = new Employee("Marco", "Rossi", "10/07/2000",
 					"Java Programmer", 2800);
 		System.out.println(e1);
+		
+		Boss b1 = new Boss("Francesca", "Bianchi", "10/01/1999",
+						   "Megadirettore", 4500,
+						   10000);
+		System.out.println(b1);
 	}
 }
