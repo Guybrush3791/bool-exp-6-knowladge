@@ -39,8 +39,8 @@ public class Main {
 		
 		int promossoIndex = 0;
 		int bocciatoIndex = 0;
-		Studente[] promossi = new Studente[LNG];
-		Studente[] bocciati = new Studente[LNG];
+		Studente[] promossi = new Studente[promossiCounter];
+		Studente[] bocciati = new Studente[LNG - promossiCounter];
 		for (int x=0;x<LNG;x++) {
 		
 			Studente s = studenti[x];
@@ -51,5 +51,22 @@ public class Main {
 				promossi[promossoIndex++] = s;
 			}
 		}
+		
+		Studente bocciatoMinVoto = null;
+		float minVoto = Float.MAX_VALUE;
+		for (int x=0;x<bocciatoIndex;x++) {
+			
+			Studente s = bocciati[x];
+			
+			if (minVoto > s.mediaVoti) {
+				
+				bocciatoMinVoto = bocciati[x];
+				minVoto = s.mediaVoti;
+			}
+		}
+		System.out.println("Voto minimo per bocciati: " 
+				+ String.format("%.02f", minVoto) + "/5"
+				+ " (id: " + bocciatoMinVoto.id + ")"
+		);
 	}
 }
