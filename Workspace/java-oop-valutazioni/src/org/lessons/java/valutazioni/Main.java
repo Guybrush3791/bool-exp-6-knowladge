@@ -36,5 +36,20 @@ public class Main {
 		}
 		
 		System.out.println("Numero promossi: " + promossiCounter);
+		
+		int promossoIndex = 0;
+		int bocciatoIndex = 0;
+		Studente[] promossi = new Studente[LNG];
+		Studente[] bocciati = new Studente[LNG];
+		for (int x=0;x<LNG;x++) {
+		
+			Studente s = studenti[x];
+			
+			if (s.isBocciato()) {
+				bocciati[bocciatoIndex++] = s;
+			} else {
+				promossi[promossoIndex++] = s;
+			}
+		}
 	}
 }
