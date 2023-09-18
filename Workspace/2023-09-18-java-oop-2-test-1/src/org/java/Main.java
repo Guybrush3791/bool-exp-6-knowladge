@@ -72,6 +72,7 @@ public class Main {
 					+ getX() + "x" + getY() 
 					+ " | a: " + getArea() 
 					+ " | p: " + getPerim()
+					+ " | original p: " + super.getPerim()
 			;
 		}
 	}
