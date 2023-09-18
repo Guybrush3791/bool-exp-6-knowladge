@@ -19,4 +19,16 @@ public class Rettangolo {
 		
 		return 2 * (base + altezza);
 	}
+	
+	public String getDrawing() {
+		
+		String str = "";
+		
+		for (int x=0;x<base;x++) {
+			
+			str += "0";
+		}
+		
+		return str;
+	}
 }

@@ -12,6 +12,8 @@ public class Main {
 		System.out.println("area: " + r1.getArea());
 		System.out.println("perimetro: " + r1.getPerimetro());
 		
+		System.out.println("\n" + r1.getDrawing() + "\n"); 
+		
 		System.out.println("\n\nR2:\n-------------------");
 		System.out.println("area: " + r2.getArea());
 		System.out.println("perimetro: " + r2.getPerimetro());
