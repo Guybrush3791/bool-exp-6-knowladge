@@ -24,9 +24,15 @@ public class Rettangolo {
 		
 		String str = "";
 		
-		for (int x=0;x<base;x++) {
+		for (int x=0;x<altezza;x++) {
+			for (int y=0;y<base;y++) {
+				
+				if (x == 0 || x == altezza -1 || y == 0 || y == base -1)
+					str += "0";
+				else str += " ";
+			}
 			
-			str += "0";
+			str += "\n";
 		}
 		
 		return str;

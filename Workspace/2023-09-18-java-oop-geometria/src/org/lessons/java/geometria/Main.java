@@ -18,8 +18,12 @@ public class Main {
 		System.out.println("area: " + r2.getArea());
 		System.out.println("perimetro: " + r2.getPerimetro());
 		
+		System.out.println("\n" + r2.getDrawing() + "\n"); 
+		
 		System.out.println("\n\nR3:\n-------------------");
 		System.out.println("area: " + r3.getArea());
 		System.out.println("perimetro: " + r3.getPerimetro());
+		
+		System.out.println("\n" + r3.getDrawing() + "\n"); 
 	}
 }
