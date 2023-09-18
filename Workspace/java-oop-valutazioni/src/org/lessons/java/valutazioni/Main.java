@@ -9,13 +9,14 @@ public class Main {
 		final int LNG = 20;
 		Studente[] studenti = new Studente[LNG];
 		
+		int promossiCounter = 0;
 		Random rnd = new Random();
 		for (int x=0;x<LNG;x++) {
 			
 			Studente s = new Studente(
 					x + 1, 
 					rnd.nextInt(0, 101),
-					rnd.nextFloat(0, 5)
+					rnd.nextFloat(0, 5.1f)
 			);
 			
 			studenti[x] = s;
@@ -29,6 +30,11 @@ public class Main {
 			System.out.println("\nbocciato: " + (s.isBocciato() ? "YES" : "NO"));
 			
 			System.out.println("\n\n");
+			
+			if (!s.isBocciato()) 
+				promossiCounter++;
 		}
+		
+		System.out.println("Numero promossi: " + promossiCounter);
 	}
 }
