@@ -7,7 +7,25 @@ public class Rettangolo {
 	
 	public Rettangolo(int base, int altezza) {
 		
-		this.base = base;
+		setBase(base);
+		setAltezza(altezza);
+	}
+	
+	public int getBase() {
+		
+		return base;
+	}
+	public void setBase(int base) {
+		
+		if (base > 0) 
+			this.base = base;
+	}
+	public int getAltezza() {
+		
+		return altezza;
+	}
+	public void setAltezza(int altezza) {
+		
 		this.altezza = altezza;
 	}
 	

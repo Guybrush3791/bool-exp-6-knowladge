@@ -8,7 +8,7 @@ public class Main {
 		Rettangolo r2 = new Rettangolo(5, 10);
 		Rettangolo r3 = new Rettangolo(1, 3);
 		
-		r3.base = 7;
+		r3.setBase(7);
 		
 		System.out.println("R1:\n-------------------");
 		System.out.println("area: " + r1.getArea());
