@@ -103,5 +103,9 @@ public class Main {
 		
 		Person p1 = new Person("Guybrush", "Threepwood", "15/10/1989");
 		System.out.println(p1);
+		
+		Employee e1 = new Employee("Marco", "Rossi", "10/07/2000",
+					"Java Programmer", 2800);
+		System.out.println(e1);
 	}
 }
