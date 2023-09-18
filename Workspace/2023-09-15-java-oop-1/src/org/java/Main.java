@@ -26,8 +26,6 @@ public class Main {
 		
 		// System.out.println("infog 1 all: " + infoG1.getString());
 		infoG1.printMe();
-		Random rnd = new Random();
-		rnd.nextInt();
 		
 		System.out.println("\n-------------------------------------\n");
 		
