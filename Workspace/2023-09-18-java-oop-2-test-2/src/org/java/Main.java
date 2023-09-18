@@ -103,9 +103,14 @@ public class Main {
 		private int bonus;
 		
 		public Boss(String name, String lastname, String dateOfBirth, 
-					String title, int salary,
-					int bonus) {
+					String title, int salary) {
 			super(name, lastname, dateOfBirth, title, salary);
+		}
+		public Boss(String name, String lastname, String dateOfBirth, 
+				String title, int salary,
+				int bonus) {
+			
+			this(name, lastname, dateOfBirth, title, salary);
 			
 			setBonus(bonus);
 		}
@@ -136,8 +141,7 @@ public class Main {
 		System.out.println(e1);
 		
 		Boss b1 = new Boss("Francesca", "Bianchi", "10/01/1999",
-						   "Megadirettore", 4500,
-						   10000);
+						   "Megadirettore", 4500);
 		System.out.println(b1.toString());
 	}
 }
