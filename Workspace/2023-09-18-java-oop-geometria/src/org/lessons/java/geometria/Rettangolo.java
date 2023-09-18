@@ -2,6 +2,8 @@ package org.lessons.java.geometria;
 
 public class Rettangolo {
 
+	private static int instanceCounter = 0;
+	
 	private int base;
 	private int altezza;
 	
@@ -9,6 +11,8 @@ public class Rettangolo {
 		
 		setBase(base);
 		setAltezza(altezza);
+		
+		instanceCounter++;
 	}
 	
 	public int getBase() {
@@ -36,6 +40,11 @@ public class Rettangolo {
 	public int getPerimetro() {
 		
 		return 2 * (base + altezza);
+	}
+	
+	public static int getInstanceCounter() {
+		
+		return instanceCounter;
 	}
 	
 	public String getDrawing() {
