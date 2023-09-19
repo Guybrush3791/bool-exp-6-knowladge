@@ -47,13 +47,16 @@ public class Prodotto {
 		
 		return prezzo;
 	}
-	protected float getFullPrice(boolean fedelta) {
+	protected float getFullPrice(boolean fedelta) throws Exception  {
 		
 		float fullPrice = getPrezzo() / 100f * (100 + getIva());
 		
+		if (fullPrice > 10)
+			throw new Exception();
+		
 		return fullPrice;
 	}
-	public float getFullPriceFedelta(boolean fedelta) {
+	public float getFullPriceFedelta(boolean fedelta) throws Exception {
 		
 		float fullPrice = getFullPrice(fedelta);
 		
@@ -61,11 +64,11 @@ public class Prodotto {
 		
 		return fullPrice;
 	}
-	public String getFullPriceStr() {
+	public String getFullPriceStr() throws Exception {
 		
 		return getFullPriceStr(false);
 	}
-	public String getFullPriceStr(boolean fedelta) {
+	public String getFullPriceStr(boolean fedelta) throws Exception {
 		
 		float fullPrice = getFullPriceFedelta(fedelta);		
 		return String.format("%.02f euro", fullPrice);
@@ -87,8 +90,8 @@ public class Prodotto {
 	public String toString() {
 		
 		return "[" + getCodice() + "] " + getMarca() + ": " + getNome()
-			+ "\nprezzo: " + getFullPriceStr() + " (" + getPrezzo() + ")"
-			+ "\nprezzo fedelta': " + getFullPriceStr(true)
+//			+ "\nprezzo: " + getFullPriceStr() + " (" + getPrezzo() + ")"
+//			+ "\nprezzo fedelta': " + getFullPriceStr(true)
 			+ "\niva: " + getIva() + "%";
 	}
 }
