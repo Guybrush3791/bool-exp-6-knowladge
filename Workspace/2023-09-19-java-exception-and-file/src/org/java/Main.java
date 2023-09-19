@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class Main {
 
+	private static final String FILE_PATH = "/tmp/tmp/java.out";
+	
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
@@ -42,12 +44,10 @@ public class Main {
 		
 		System.out.println("\n------------------------------\n");
 		
-		File tmpFile = new File("/tmp/tmp/java.out");
-		
 		FileWriter myWriter = null;
 		try {
 			
-			myWriter = new FileWriter(tmpFile, true);
+			myWriter = new FileWriter(FILE_PATH, true);
 		
 			for (int x=0;x<persCount;x++) {
 				
@@ -69,6 +69,27 @@ public class Main {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}
+		
+		// lettura di tutto il file
+		File tmpFile = new File(FILE_PATH);
+		Scanner reader = null;
+		try {
+			
+			reader = new Scanner(tmpFile);
+			
+			while (reader.hasNextLine()) {
+				
+				String line = reader.nextLine();
+				System.out.println(line);
+			}
+		} catch (Exception e) { 
+		
+			System.out.println("Error reading file: " + e.getMessage());
+		} finally {
+			
+			if (reader != null)
+				reader.close();
 		}
 	}
 }
