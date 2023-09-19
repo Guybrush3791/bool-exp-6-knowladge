@@ -127,24 +127,34 @@ public class Carrello {
 		
 		System.out.println("\n-----------------------------\n");
 		
+		
+		
 		System.out.println("Carrello:");
-		System.out.println("---------------");
-		for (int x=0;x<smartphoneIndex;x++) {
-			
-			System.out.println("Smartphone " + (x + 1) + ":");
-			System.out.println(smartphones[x] + "\n");
+		if (smartphoneIndex > 0) {
+			System.out.println("---------------");
+			for (int x=0;x<smartphoneIndex;x++) {
+				
+				System.out.println("Smartphone " + (x + 1) + ":");
+				System.out.println(smartphones[x] + "\n");
+			}
 		}
-		System.out.println("---------------");
-		for (int x=0;x<televisoriIndex;x++) {
-			
-			System.out.println("Televisore " + (x + 1) + ":");
-			System.out.println(televisori[x] + "\n");
+		
+		if (televisoriIndex > 0) {
+			System.out.println("---------------");
+			for (int x=0;x<televisoriIndex;x++) {
+				
+				System.out.println("Televisore " + (x + 1) + ":");
+				System.out.println(televisori[x] + "\n");
+			}
 		}
-		System.out.println("---------------");
-		for (int x=0;x<cuffieIndex;x++) {
-			
-			System.out.println("Cuffie " + (x + 1) + ":");
-			System.out.println(cuffie[x] + "\n");
+		
+		if (cuffieIndex > 0) {
+			System.out.println("---------------");
+			for (int x=0;x<cuffieIndex;x++) {
+				
+				System.out.println("Cuffie " + (x + 1) + ":");
+				System.out.println(cuffie[x] + "\n");
+			}
 		}
 		
 		System.out.println("The End");

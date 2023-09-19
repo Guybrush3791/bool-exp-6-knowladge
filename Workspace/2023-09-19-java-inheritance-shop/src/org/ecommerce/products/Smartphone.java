@@ -15,6 +15,17 @@ public class Smartphone extends Prodotto {
 		setMemory(memory);
 	}
 	
+	@Override
+	protected float getFullPriceFedelta(boolean fedelta) {
+		
+		float fullPrice = getFullPrice(fedelta);
+		
+		if (fedelta)
+			fullPrice *= getMemory() >= 32 ? .98 : .95;
+		
+		return fullPrice;
+	}
+	
 	public String getImei() {
 		
 		return imei;

@@ -15,6 +15,17 @@ public class Cuffie extends Prodotto {
 		setWireless(wireless);
 	}
 
+	@Override
+	protected float getFullPriceFedelta(boolean fedelta) {
+		
+		float fullPrice = getFullPrice(fedelta);
+		
+		if (fedelta)
+			fullPrice *= isWireless() ? .98 : .93;
+		
+		return fullPrice;
+	}
+	
 	public String getColore() {
 		
 		return colore;
