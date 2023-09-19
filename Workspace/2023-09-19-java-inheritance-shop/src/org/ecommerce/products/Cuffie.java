@@ -16,7 +16,7 @@ public class Cuffie extends Prodotto {
 	}
 
 	@Override
-	protected float getFullPriceFedelta(boolean fedelta) {
+	public float getFullPriceFedelta(boolean fedelta) {
 		
 		float fullPrice = getFullPrice(fedelta);
 		

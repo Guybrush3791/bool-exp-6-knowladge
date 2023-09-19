@@ -39,6 +39,9 @@ public class Carrello {
 		Televisore[] televisori = new Televisore[10];
 		Cuffie[] cuffie = new Cuffie[10];
 		
+		System.out.print("Tessera federlta' [Y/n]: ");
+		boolean fedelta = sc.nextLine().equalsIgnoreCase("y");
+		
 		String userValue = "";
 		while (true) {
 			
@@ -64,8 +67,7 @@ public class Carrello {
 				continue;
 			}
 				
-			System.out.print("Tessera federlta' [Y/n]: ");
-			boolean fedelta = sc.nextLine().equalsIgnoreCase("y");
+			
 			
 			System.out.print("codice: ");
 			String codice = sc.nextLine();
@@ -127,12 +129,14 @@ public class Carrello {
 		
 		System.out.println("\n-----------------------------\n");
 		
-		
+		float carrelloPrice = 0;
 		
 		System.out.println("Carrello:");
 		if (smartphoneIndex > 0) {
 			System.out.println("---------------");
 			for (int x=0;x<smartphoneIndex;x++) {
+				
+				carrelloPrice += smartphones[x].getFullPriceFedelta(fedelta);
 				
 				System.out.println("Smartphone " + (x + 1) + ":");
 				System.out.println(smartphones[x] + "\n");
@@ -143,6 +147,8 @@ public class Carrello {
 			System.out.println("---------------");
 			for (int x=0;x<televisoriIndex;x++) {
 				
+				carrelloPrice += televisori[x].getFullPriceFedelta(fedelta);
+				
 				System.out.println("Televisore " + (x + 1) + ":");
 				System.out.println(televisori[x] + "\n");
 			}
@@ -152,11 +158,18 @@ public class Carrello {
 			System.out.println("---------------");
 			for (int x=0;x<cuffieIndex;x++) {
 				
+				carrelloPrice += cuffie[x].getFullPriceFedelta(fedelta);
+				
 				System.out.println("Cuffie " + (x + 1) + ":");
 				System.out.println(cuffie[x] + "\n");
 			}
 		}
 		
+		System.out.println("\n-----------------------------\n");
+		
+		System.out.println("Prezzo carrello: " + carrelloPrice + " euro");
+		
+		System.out.println("\n-----------------------------\n");		
 		System.out.println("The End");
 	}
 }

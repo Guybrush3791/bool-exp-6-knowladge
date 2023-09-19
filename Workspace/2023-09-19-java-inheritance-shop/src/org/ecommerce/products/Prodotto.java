@@ -53,7 +53,7 @@ public class Prodotto {
 		
 		return fullPrice;
 	}
-	protected float getFullPriceFedelta(boolean fedelta) {
+	public float getFullPriceFedelta(boolean fedelta) {
 		
 		float fullPrice = getFullPrice(fedelta);
 		
