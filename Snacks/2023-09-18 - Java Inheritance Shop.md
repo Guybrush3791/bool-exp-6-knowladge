@@ -31,7 +31,7 @@ Al termine dell’inserimento stampate il carrello (fate l’`override` del meto
 ### BONUS 
 Aggiungete alla classe `Prodotto` un metodo per il calcolo del *prezzo scontato* per clienti con tessera fedeltà, che applica al prezzo uno sconto del **2%**.
 Per gli `Smartphone`, lo sconto è del **5%** se la quantità di memoria è inferiore a `32GB`, altrimenti rimane del **2%**.
-Per i `Televisori` lo sconto è del **10%** se la televisione n**on è smart**, altrimenti rimane del **2%**.
+Per i `Televisori` lo sconto è del **10%** se la televisione **non è smart**, altrimenti rimane del **2%**.
 Per le `Cuffie` lo sconto è del **7%** se sono **cablate**, altrimenti rimane del **2%**.
 
 Nella classe carrello chiedere all’utente se possiede una carta fedeltà. In base alla risposta, calcolare il totale del carrello come somma dei prezzi base o dei prezzi scontati.

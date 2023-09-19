@@ -132,6 +132,18 @@ public class Carrello {
 			System.out.println("Smartphone " + (x + 1) + ":");
 			System.out.println(smartphones[x] + "\n");
 		}
+		System.out.println("---------------");
+		for (int x=0;x<televisoriIndex;x++) {
+			
+			System.out.println("Televisore " + (x + 1) + ":");
+			System.out.println(televisori[x] + "\n");
+		}
+		System.out.println("---------------");
+		for (int x=0;x<cuffieIndex;x++) {
+			
+			System.out.println("Cuffie " + (x + 1) + ":");
+			System.out.println(cuffie[x] + "\n");
+		}
 		
 		System.out.println("The End");
 	}
