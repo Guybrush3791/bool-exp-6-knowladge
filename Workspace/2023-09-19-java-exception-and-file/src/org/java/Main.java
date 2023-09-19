@@ -1,5 +1,6 @@
 package org.java;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -41,12 +42,12 @@ public class Main {
 		
 		System.out.println("\n------------------------------\n");
 		
-//		File tmpFile = new File("/tmp/tmp/java.out");
+		File tmpFile = new File("/tmp/tmp/java.out");
 		
 		FileWriter myWriter = null;
 		try {
 			
-			myWriter = new FileWriter("/tmp/tmp/java.out");
+			myWriter = new FileWriter(tmpFile, true);
 		
 			for (int x=0;x<persCount;x++) {
 				
