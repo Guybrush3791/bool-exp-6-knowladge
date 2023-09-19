@@ -12,6 +12,10 @@ public class Prodotto {
 				    int prezzo, int iva) {
 		
 		setCodice(codice);
+		setNome(nome);
+		setMarca(marca);
+		setPrezzo(prezzo);
+		setIva(iva);
 	}
 	
 	public String getCodice() {
@@ -22,11 +26,11 @@ public class Prodotto {
 		
 		this.codice = codice;
 	}
-	public String getName() {
+	public String getNome() {
 		
 		return nome;
 	}
-	public void setName(String name) {
+	public void setNome(String name) {
 		
 		this.nome = name;
 	}
@@ -43,6 +47,11 @@ public class Prodotto {
 		
 		return prezzo;
 	}
+	public String getFullPrice() {
+		
+		return String.format("%.02f euro", 
+				getPrezzo() / 100f * (100 + getIva()));
+	}
 	public void setPrezzo(int prezzo) {
 		
 		this.prezzo = prezzo;
@@ -54,5 +63,13 @@ public class Prodotto {
 	public void setIva(int iva) {
 		
 		this.iva = iva;
+	}
+
+	@Override
+	public String toString() {
+		
+		return "[" + getCodice() + "] " + getMarca() + ": " + getNome()
+			+ "\nprezzo: " + getFullPrice() + " (" + getPrezzo() + ")"
+			+ "\niva: " + getIva() + "%";
 	}
 }
