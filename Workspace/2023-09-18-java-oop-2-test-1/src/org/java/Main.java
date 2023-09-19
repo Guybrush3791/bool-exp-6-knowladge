@@ -1,5 +1,7 @@
 package org.java;
 
+import java.util.Scanner;
+
 public class Main {
 
 	public static class Square {
@@ -82,14 +84,22 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		Scanner sc = null;
 		try {
 			
-			Square s1 = new Square(-1);
+			sc = new Scanner(System.in);
+			int lato = Integer.valueOf(sc.nextLine());
+			
+			Square s1 = new Square(lato);
 			System.out.println(s1);
 		} catch (Exception e) {
 
 			System.err.println("Il lato non puo' essere 0 o inferiore");
 			System.err.println(e.getMessage());
+		} finally {
+			
+			if (sc != null)
+				sc.close();
 		}
 		
 //		
