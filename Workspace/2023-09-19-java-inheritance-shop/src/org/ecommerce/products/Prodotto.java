@@ -80,7 +80,8 @@ public class Prodotto {
 	public String toString() {
 		
 		return "[" + getCodice() + "] " + getMarca() + ": " + getNome()
-			+ "\nprezzo: " + getFullPrice() + " (" + getPrezzo() + ")"
+			+ "\nprezzo: " + getFullPriceStr() + " (" + getPrezzo() + ")"
+			+ "\nprezzo fedelta': " + getFullPriceStr(true)
 			+ "\niva: " + getIva() + "%";
 	}
 }

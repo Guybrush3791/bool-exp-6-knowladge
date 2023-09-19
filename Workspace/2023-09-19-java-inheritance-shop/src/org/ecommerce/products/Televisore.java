@@ -18,7 +18,12 @@ public class Televisore extends Prodotto {
 	@Override
 	public String getFullPriceStr(boolean fedelta) {
 		
-		return null;
+		float fullPrice = getFullPrice();
+		
+		if (fedelta)
+			fullPrice *= isSmart() ? .98 : .9;
+		
+		return String.format("%.02f euro", fullPrice);
 	}
 	
 	public int getDimensione() {
