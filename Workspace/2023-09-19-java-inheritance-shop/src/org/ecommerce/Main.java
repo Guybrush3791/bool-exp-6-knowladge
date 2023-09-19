@@ -1,5 +1,7 @@
 package org.ecommerce;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import org.ecommerce.products.Cuffie;
@@ -50,7 +52,18 @@ public class Main {
 		
 			userValue = sc.nextLine();
 			
-			if (userValue.equals("0")) break;
+			
+			
+			if (!Arrays
+					.asList(new String[] {"1", "2", "3"})
+					.contains(userValue)) {
+				
+				if (userValue.equals("0")) break;
+				
+				System.err.println("Comando non compreso");
+				continue;
+			}
+				
 			
 			System.out.print("codice: ");
 			String codice = sc.nextLine();
@@ -109,5 +122,8 @@ public class Main {
 				break;
 			}
 		}
+		
+		System.out.println("...stampa carrello [TODO]...");
+		System.out.println("The End");
 	}
 }
