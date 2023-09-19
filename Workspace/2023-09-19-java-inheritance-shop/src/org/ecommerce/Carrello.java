@@ -64,6 +64,8 @@ public class Carrello {
 				continue;
 			}
 				
+			System.out.print("Tessera federlta' [Y/n]: ");
+			boolean fedelta = sc.nextLine().equalsIgnoreCase("y");
 			
 			System.out.print("codice: ");
 			String codice = sc.nextLine();

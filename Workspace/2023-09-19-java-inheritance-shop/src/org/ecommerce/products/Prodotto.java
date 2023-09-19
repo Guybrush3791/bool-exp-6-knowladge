@@ -49,8 +49,15 @@ public class Prodotto {
 	}
 	public String getFullPrice() {
 		
-		return String.format("%.02f euro", 
-				getPrezzo() / 100f * (100 + getIva()));
+		return getFullPrice(false);
+	}
+	public String getFullPrice(boolean fedelta) {
+		
+		float fullPrice = getPrezzo() / 100f * (100 + getIva());
+		
+		if (fedelta) fullPrice *= .98;
+		
+		return String.format("%.02f euro", fullPrice);
 	}
 	public void setPrezzo(int prezzo) {
 		
