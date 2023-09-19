@@ -47,13 +47,17 @@ public class Prodotto {
 		
 		return prezzo;
 	}
-	public String getFullPrice() {
+	public float getFullPrice() {
 		
-		return getFullPrice(false);
+		return getPrezzo() / 100f * (100 + getIva());
 	}
-	public String getFullPrice(boolean fedelta) {
+	public String getFullPriceStr() {
 		
-		float fullPrice = getPrezzo() / 100f * (100 + getIva());
+		return getFullPriceStr(false);
+	}
+	public String getFullPriceStr(boolean fedelta) {
+		
+		float fullPrice = getFullPrice();
 		
 		if (fedelta) fullPrice *= .98;
 		

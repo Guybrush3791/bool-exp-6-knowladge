@@ -15,6 +15,12 @@ public class Televisore extends Prodotto {
 		setSmart(smart);
 	}
 	
+	@Override
+	public String getFullPriceStr(boolean fedelta) {
+		
+		return null;
+	}
+	
 	public int getDimensione() {
 		
 		return dimensione;
