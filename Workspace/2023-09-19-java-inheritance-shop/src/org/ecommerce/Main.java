@@ -1,9 +1,6 @@
 package org.ecommerce;
 
-import org.ecommerce.products.Cuffie;
-import org.ecommerce.products.Prodotto;
-import org.ecommerce.products.Smartphone;
-import org.ecommerce.products.Televisore;
+import java.util.Scanner;
 
 public class Main {
 
@@ -26,6 +23,8 @@ public class Main {
 //		System.out.println("\n-----------------------------\n");
 //		System.out.println(c1);
 		
+		Scanner sc = new Scanner(System.in);
+		
 		String userValue = "";
 		while (!userValue.equals("0")) {
 			
@@ -36,6 +35,10 @@ public class Main {
 			System.out.println("3) Cuffie");
 			System.out.println("---------------");
 			System.out.println("0) terminare e uscire");
+		
+			userValue = sc.nextLine();
+			
+			int intUserValue = Integer.valueOf(userValue);
 		}
 	}
 }
