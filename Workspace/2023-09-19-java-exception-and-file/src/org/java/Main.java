@@ -30,6 +30,8 @@ public class Main {
 				persone[x] = p;
 			} catch (Exception e) {
 				
+				System.err.println("Invalid Persona data: " + e.getMessage());
+				
 				x--;
 			}
 		}
