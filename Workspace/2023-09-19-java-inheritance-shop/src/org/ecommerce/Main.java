@@ -2,6 +2,10 @@ package org.ecommerce;
 
 import java.util.Scanner;
 
+import org.ecommerce.products.Cuffie;
+import org.ecommerce.products.Smartphone;
+import org.ecommerce.products.Televisore;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -25,6 +29,14 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		int smartphoneIndex = 0;
+		int televisoriIndex = 0;
+		int cuffieIndex = 0;
+		
+		Smartphone[] smartphones = new Smartphone[10];
+		Televisore[] televisori = new Televisore[10];
+		Cuffie[] cuffie = new Cuffie[10];
+		
 		String userValue = "";
 		while (!userValue.equals("0")) {
 			
@@ -38,7 +50,43 @@ public class Main {
 		
 			userValue = sc.nextLine();
 			
-			int intUserValue = Integer.valueOf(userValue);
+			System.out.print("codice: ");
+			String codice = sc.nextLine();
+			
+			System.out.print("nome: ");
+			String nome = sc.nextLine();
+			
+			System.out.print("marca: ");
+			String marca = sc.nextLine();
+			
+			System.out.print("prezzo: ");
+			int prezzo = Integer.valueOf(sc.nextLine());
+			
+			System.out.print("iva: ");
+			int iva = Integer.valueOf(sc.nextLine());
+			
+			switch(userValue) {
+			
+				case "1": 
+					System.out.print("imei: ");
+					String imei = sc.nextLine();
+					
+					System.out.print("memoria: ");
+					int memoria = Integer.valueOf(sc.nextLine());
+					 
+					smartphones[smartphoneIndex++] = 
+							new Smartphone(codice, nome, marca, 
+										   prezzo, iva, imei, memoria);
+				break;
+				case "2":
+					
+					String memoria = "hello, world!";
+					
+				break;
+				case "3": break;
+			}
+		}
+			}
 		}
 	}
 }
