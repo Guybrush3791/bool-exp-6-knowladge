@@ -11,6 +11,8 @@ public class Main {
 		System.out.print("Numero persone: ");
 		int persCount = Integer.valueOf(sc.nextLine());
 		
+		Persona[] persone = new Persona[persCount];
+		
 		for (int x=0;x<persCount;x++) {
 			
 			try {
@@ -25,12 +27,22 @@ public class Main {
 				int age = Integer.valueOf(sc.nextLine());
 				
 				Persona p = new Persona(name, lastname, age);
+				persone[x] = p;
 			} catch (Exception e) {
 				
 				x--;
 			}
 		}
-		
 		sc.close();
+		
+		System.out.println("\n------------------------------\n");
+		
+		for (int x=0;x<persCount;x++) {
+			
+			System.out.println("Persona " + (x + 1));
+			System.out.println("------------------");
+			System.out.println(persone[x]);
+			System.out.println("");
+		}
 	}
 }
