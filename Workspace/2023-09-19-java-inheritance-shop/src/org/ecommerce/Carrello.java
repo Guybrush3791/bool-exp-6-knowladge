@@ -10,7 +10,7 @@ import org.ecommerce.products.Televisore;
 
 public class Carrello {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 //		Prodotto p1 = new Prodotto("12345", "Super-monitor", "Dell", 399, 22);
 //		

@@ -16,7 +16,7 @@ public class Smartphone extends Prodotto {
 	}
 	
 	@Override
-	public float getFullPriceFedelta(boolean fedelta) {
+	public float getFullPriceFedelta(boolean fedelta) throws Exception {
 		
 		float fullPrice = getFullPrice(fedelta);
 		
