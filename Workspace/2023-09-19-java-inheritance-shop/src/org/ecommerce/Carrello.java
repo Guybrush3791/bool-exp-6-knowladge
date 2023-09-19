@@ -10,7 +10,7 @@ import org.ecommerce.products.Televisore;
 
 public class Carrello {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		
 //		Prodotto p1 = new Prodotto("12345", "Super-monitor", "Dell", 399, 22);
 //		
@@ -136,10 +136,17 @@ public class Carrello {
 			System.out.println("---------------");
 			for (int x=0;x<smartphoneIndex;x++) {
 				
-				carrelloPrice += smartphones[x].getFullPriceFedelta(fedelta);
+				try {
+					carrelloPrice += smartphones[x].getFullPriceFedelta(fedelta);
+					
+					System.out.println("Smartphone " + (x + 1) + ":");
+					System.out.println(smartphones[x] + "\n");
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
-				System.out.println("Smartphone " + (x + 1) + ":");
-				System.out.println(smartphones[x] + "\n");
+				
 			}
 		}
 		
@@ -167,7 +174,7 @@ public class Carrello {
 		
 		System.out.println("\n-----------------------------\n");
 		
-		System.out.println("Prezzo carrello: " + carrelloPrice + " euro");
+		System.out.println("Prezzo carrello: " + carrelloPrice + "");
 		
 		System.out.println("\n-----------------------------\n");		
 		System.out.println("The End");
