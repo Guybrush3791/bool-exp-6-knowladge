@@ -33,6 +33,10 @@ public class Persona {
 		
 		this.lastname = lastname;
 	}
+	public String getFullname() {
+		
+		return getName() + " " + getLastname();
+	}
 	public int getAge() {
 		return age;
 	}
