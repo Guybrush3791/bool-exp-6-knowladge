@@ -1,5 +1,7 @@
 package org.java;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -39,12 +41,33 @@ public class Main {
 		
 		System.out.println("\n------------------------------\n");
 		
-		for (int x=0;x<persCount;x++) {
+//		File tmpFile = new File("/tmp/tmp/java.out");
+		
+		FileWriter myWriter = null;
+		try {
 			
-			System.out.println("Persona " + (x + 1));
-			System.out.println("------------------");
-			System.out.println(persone[x]);
-			System.out.println("");
+			myWriter = new FileWriter("/tmp/tmp/java.out");
+		
+			for (int x=0;x<persCount;x++) {
+				
+				myWriter.write(persone[x].getFullname() + "\n");
+				
+				System.out.println("Persona " + (x + 1));
+				System.out.println("------------------");
+				System.out.println(persone[x]);
+				System.out.println("");
+			}
+		} catch (IOException e) {
+			
+			System.err.println("Error updating file: " + e.getMessage());
+		} finally {
+			
+			try {
+				myWriter.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 }
