@@ -38,7 +38,7 @@ public class Main {
 		Cuffie[] cuffie = new Cuffie[10];
 		
 		String userValue = "";
-		while (!userValue.equals("0")) {
+		while (true) {
 			
 			System.out.println("Cosa vuoi fare:");
 			System.out.println("---------------");
@@ -49,6 +49,8 @@ public class Main {
 			System.out.println("0) terminare e uscire");
 		
 			userValue = sc.nextLine();
+			
+			if (userValue.equals("0")) break;
 			
 			System.out.print("codice: ");
 			String codice = sc.nextLine();
@@ -80,12 +82,10 @@ public class Main {
 				break;
 				case "2":
 					
-					String memoria = "hello, world!";
+					
 					
 				break;
 				case "3": break;
-			}
-		}
 			}
 		}
 	}
