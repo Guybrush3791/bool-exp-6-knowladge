@@ -6,7 +6,7 @@ public class Main {
 		
 		private int x;
 		
-		public Square(int x) {
+		public Square(int x) throws Exception {
 		
 			setX(x);
 		}
@@ -15,8 +15,11 @@ public class Main {
 			
 			return x;
 		}
-		public void setX(int x) {
+		public void setX(int x) throws Exception {
 			
+			if (x <= 0)
+				throw new Exception();
+				
 			this.x = x;
 		}
 		
@@ -35,54 +38,62 @@ public class Main {
 			return "square: " + x + " | a: " + getArea() + " | p: " + getPerim();
 		}
 	}
-	public static class Rectangle extends Square {
-
-		private int y;
-		
-		public Rectangle(int x, int y) {
-			super(x);
-			
-			setY(y);
-		}
-		
-		public int getY() {
-			
-			return y;
-		}
-		public void setY(int y) {
-			
-			this.y = y;
-		}
-		
-		@Override
-		public int getArea() {
-			
-			return getX() * getY();
-		}
-		@Override
-		public int getPerim() {
-			
-			return 2 * (getX() + getY());
-		}
-		
-		@Override
-		public String toString() {
-			
-			return "rect: " 
-					+ getX() + "x" + getY() 
-					+ " | a: " + getArea() 
-					+ " | p: " + getPerim()
-					+ " | original p: " + super.getPerim()
-			;
-		}
-	}
+//	public static class Rectangle extends Square {
+//
+//		private int y;
+//		
+//		public Rectangle(int x, int y) {
+//			super(x);
+//			
+//			setY(y);
+//		}
+//		
+//		public int getY() {
+//			
+//			return y;
+//		}
+//		public void setY(int y) {
+//			
+//			this.y = y;
+//		}
+//		
+//		@Override
+//		public int getArea() {
+//			
+//			return getX() * getY();
+//		}
+//		@Override
+//		public int getPerim() {
+//			
+//			return 2 * (getX() + getY());
+//		}
+//		
+//		@Override
+//		public String toString() {
+//			
+//			return "rect: " 
+//					+ getX() + "x" + getY() 
+//					+ " | a: " + getArea() 
+//					+ " | p: " + getPerim()
+//					+ " | original p: " + super.getPerim()
+//			;
+//		}
+//	}
 	
 	public static void main(String[] args) {
 		
-		Square s1 = new Square(5);
-		System.out.println(s1);
+		try {
+			
+			Square s1 = new Square(-1);
+			System.out.println(s1);
+		} catch (Exception e) {
+
+			System.err.println("Il lato non puo' essere 0 o inferiore");
+			System.err.println(e.getMessage());
+		}
 		
-		Rectangle r1 = new Rectangle(7, 3);
-		System.out.println(r1);
+//		
+//		Rectangle r1 = new Rectangle(7, 3);
+//		System.out.println(r1);
 	}
 }
