@@ -8,7 +8,7 @@ import org.ecommerce.products.Cuffie;
 import org.ecommerce.products.Smartphone;
 import org.ecommerce.products.Televisore;
 
-public class Main {
+public class Carrello {
 
 	public static void main(String[] args) {
 		
@@ -123,7 +123,16 @@ public class Main {
 			}
 		}
 		
-		System.out.println("...stampa carrello [TODO]...");
+		System.out.println("\n-----------------------------\n");
+		
+		System.out.println("Carrello:");
+		System.out.println("---------------");
+		for (int x=0;x<smartphoneIndex;x++) {
+			
+			System.out.println("Smartphone " + (x + 1) + ":");
+			System.out.println(smartphones[x] + "\n");
+		}
+		
 		System.out.println("The End");
 	}
 }
