@@ -11,6 +11,8 @@ public class Televisore extends Prodotto {
 		) {
 		super(codice, nome, marca, prezzo, iva);
 
+		setDimensione(dimensione);
+		setSmart(smart);
 	}
 	
 	public int getDimensione() {
