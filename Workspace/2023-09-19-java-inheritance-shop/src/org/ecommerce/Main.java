@@ -70,6 +70,7 @@ public class Main {
 			switch(userValue) {
 			
 				case "1": 
+					
 					System.out.print("imei: ");
 					String imei = sc.nextLine();
 					
@@ -82,10 +83,30 @@ public class Main {
 				break;
 				case "2":
 					
+					System.out.print("dimensione: ");
+					int dimensione = Integer.valueOf(sc.nextLine());
 					
+					System.out.print("smart [Y/n]: ");
+					boolean smart = sc.nextLine().equalsIgnoreCase("y");
+					 
+					televisori[televisoriIndex++] = 
+							new Televisore(codice, nome, marca, 
+										   prezzo, iva, dimensione, smart);
 					
 				break;
-				case "3": break;
+				case "3": 
+				
+					System.out.print("colore: ");
+					String colore = sc.nextLine();
+					
+					System.out.print("wireless [Y/n]: ");
+					boolean wireless = sc.nextLine().equalsIgnoreCase("y");
+					 
+					cuffie[cuffieIndex++] = 
+							new Cuffie(codice, nome, marca, 
+										   prezzo, iva, colore, wireless);
+					
+				break;
 			}
 		}
 	}
