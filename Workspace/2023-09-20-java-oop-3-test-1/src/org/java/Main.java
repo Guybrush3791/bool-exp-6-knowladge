@@ -10,9 +10,9 @@ public class Main {
 	}
 	public static interface FullNamed {
 		
-		public String getFullName();
+		public abstract String getFullName();
 	}
-	public static abstract class Person implements FullNamed {
+	public static abstract class Person implements SelfPrinter, FullNamed {
 		
 		private String name;
 		private String lastname;
@@ -150,5 +150,8 @@ public class Main {
 			System.out.println(p.getYearSalary());
 			p.printMe();
 		}
+		
+		SelfPrinter sp1 = new Employee("Guybrush", "Threepwood", "30/10/1989", 3000);
+		sp1.getName();
 	}
 }
