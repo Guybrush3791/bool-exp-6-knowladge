@@ -15,6 +15,8 @@ public class Main {
 			setDateOfBirth(dateOfBirth);
 		}
 
+		public abstract int getYearSalary();
+		
 		public String getName() {
 			return name;
 		}
@@ -68,8 +70,43 @@ public class Main {
 			
 			return super.toString() + " | " + getSalary() + " euro";
 		}
+
+//		@Override
+//		public int getYearSalary() {
+//			
+//			return getSalary() * 14;
+//		}
 	}
-//	public static class Boss extends Person {}
+	public static class Boss extends Person {
+		
+		int dividend;
+		
+		public Boss(String name, String lastname, String dateOfBirth, int dividend) {
+			
+			super(name, lastname, dateOfBirth);
+			
+			setDividend(dividend);
+		}
+
+		public int getDividend() {
+			return dividend;
+		}
+		public void setDividend(int dividend) {
+			this.dividend = dividend;
+		}
+		
+		@Override
+		public String toString() {
+			
+			return super.toString() + " | " + getDividend() + " euro";
+		}
+
+		@Override
+		public int getYearSalary() {
+			
+			return getDividend();
+		}
+	}
 	
 	public static void main(String[] args) {
 		
@@ -78,7 +115,7 @@ public class Main {
 //		
 //		System.out.println("\n---------------------------------\n");
 		
-		Employee e1 = new Employee("Guybrush", "Threepwood", "30/10/1989", 3000);
-		System.out.println(e1);
+		Person p1 = new Employee("Guybrush", "Threepwood", "30/10/1989", 3000);
+		Person p2 = new Boss("Marco", "Rossi", "10/01/2000", 20000);
 	}
 }
