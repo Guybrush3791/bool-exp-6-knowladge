@@ -1,7 +1,5 @@
-package org.java;
+package org.java.cars;
 
-import org.java.cars.SportCar;
-import org.java.cars.UtilityCar;
 import org.java.cars.abs.Auto;
 
 public class Main {

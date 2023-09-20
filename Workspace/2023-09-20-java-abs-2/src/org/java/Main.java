@@ -6,6 +6,9 @@ import org.java.shapes.inter.PolygonInterface;
 
 public class Main {
 
+	public static interface iNuota { /*...*/ }
+	public static interface iVola { /*...*/ }
+	
 	public static void main(String[] args) {
 		
 		Square s1 = new Square(5);
@@ -40,5 +43,10 @@ public class Main {
 		
 		System.out.println("media perimetro: " + avgPer);
 		System.out.println("media area: " + avgArea);
+	}
+
+	public static void faiVolare(iVola variabile) {
+		
+		
 	}
 }
