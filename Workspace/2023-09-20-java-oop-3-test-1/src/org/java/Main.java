@@ -17,7 +17,7 @@ public class Main {
 			setDateOfBirth(dateOfBirth);
 		}
 
-		public abstract int getYearSalary();
+		public int getYearSalary() { return -1; }
 		
 		public String getName() {
 			return name;
@@ -73,11 +73,11 @@ public class Main {
 			return super.toString() + " | " + getSalary() + " euro";
 		}
 
-		@Override
-		public int getYearSalary() {
-			
-			return getSalary() * 14;
-		}
+//		@Override
+//		public int getYearSalary() {
+//			
+//			return getSalary() * 14;
+//		}
 	}
 	public static class Boss extends Person {
 		
@@ -128,6 +128,7 @@ public class Main {
 			
 			Person p = people[x];
 			System.out.println(p.getYearSalary());
+			System.out.println(p);
 		}
 	}
 }
