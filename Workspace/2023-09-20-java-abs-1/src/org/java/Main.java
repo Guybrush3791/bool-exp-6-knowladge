@@ -46,6 +46,19 @@ public class Main {
 			
 			Auto a = cars[x];
 			
+			if (a instanceof UtilityCar) {
+				
+//				a.setDoorsCount(uc.getDoorsCount() + 1);
+				
+				UtilityCar uc = (UtilityCar) a;
+				uc.setDoorsCount(uc.getDoorsCount() + 1);
+			}
+			
+			System.out.println("-----------------------\n");
+			System.out.println(a);
+
+			System.out.println("\n-----------------------\n");
+			
 			avgMaxSpeed += a.getMaxSpeed();
 			avgDoorsCount += a.getDoorsCount();
 		}
