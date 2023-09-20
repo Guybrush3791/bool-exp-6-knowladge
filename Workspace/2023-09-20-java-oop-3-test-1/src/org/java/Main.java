@@ -1,5 +1,7 @@
 package org.java;
 
+import java.awt.Point;
+
 public class Main {
 
 	public static abstract class Person {
@@ -71,11 +73,11 @@ public class Main {
 			return super.toString() + " | " + getSalary() + " euro";
 		}
 
-//		@Override
-//		public int getYearSalary() {
-//			
-//			return getSalary() * 14;
-//		}
+		@Override
+		public int getYearSalary() {
+			
+			return getSalary() * 14;
+		}
 	}
 	public static class Boss extends Person {
 		
@@ -117,5 +119,15 @@ public class Main {
 		
 		Person p1 = new Employee("Guybrush", "Threepwood", "30/10/1989", 3000);
 		Person p2 = new Boss("Marco", "Rossi", "10/01/2000", 20000);
+		
+		Person[] people = new Person[2];
+		people[0] = p1;
+		people[1] = p2;
+		
+		for (int x=0;x<people.length;x++) {
+			
+			Person p = people[x];
+			System.out.println(p.getYearSalary());
+		}
 	}
 }
