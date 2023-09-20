@@ -7,7 +7,7 @@ public class Libro {
 	private String autore;
 	private String editore;
 	
-	public Libro(String titolo, int nPagine, String autore, String editore) {
+	public Libro(String titolo, int nPagine, String autore, String editore) throws Exception {
 		
 		setTitolo(titolo);
 		setnPagine(nPagine);
@@ -16,10 +16,15 @@ public class Libro {
 	}
 
 	public String getTitolo() {
+		
 		return titolo;
 	}
 
-	public void setTitolo(String titolo) {
+	public void setTitolo(String titolo) throws Exception {
+		
+		if (titolo.isBlank()) 
+			throw new Exception("Title can't be blank");
+		
 		this.titolo = titolo;
 	}
 
@@ -27,7 +32,11 @@ public class Libro {
 		return nPagine;
 	}
 
-	public void setnPagine(int nPagine) {
+	public void setnPagine(int nPagine) throws Exception {
+		
+		if (nPagine <= 0) 
+			throw new Exception("Page number can't be 0 or lezz");
+		
 		this.nPagine = nPagine;
 	}
 
@@ -35,7 +44,11 @@ public class Libro {
 		return autore;
 	}
 
-	public void setAutore(String autore) {
+	public void setAutore(String autore) throws Exception {
+		
+		if (autore.isBlank()) 
+			throw new Exception("Autore can't be blank");
+		
 		this.autore = autore;
 	}
 
@@ -43,7 +56,11 @@ public class Libro {
 		return editore;
 	}
 
-	public void setEditore(String editore) {
+	public void setEditore(String editore) throws Exception {
+		
+		if (editore.isBlank()) 
+			throw new Exception("Editore can't be blank");
+		
 		this.editore = editore;
 	}
 	
