@@ -15,7 +15,7 @@ public abstract class Auto {
 	
 	public void stampaVelocitaMassima() {
 		
-		System.out.println("max speed: " + getMaxSpeed());
+		System.out.println("max speed: " + getMaxSpeed() + "km/h");
 	}
 	public void accenditi() {
 		
@@ -43,7 +43,7 @@ public abstract class Auto {
 	public String toString() {
 		
 		return getName()  
-				+ ":\nmax speed: " + getMaxSpeed() 
+				+ ":\nmax speed: " + getMaxSpeed() + "km/h"
 		;
 	}
 }

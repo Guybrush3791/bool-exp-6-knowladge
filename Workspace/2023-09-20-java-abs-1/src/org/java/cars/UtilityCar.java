@@ -18,6 +18,11 @@ public class UtilityCar extends Auto {
 		System.out.println("Doors count: " + getDoorsCount());
 	}
 	
+	public void trainaAuto() {
+		
+		System.out.println("Sto trainando un'auto...");
+	}
+	
 	public int getDoorsCount() {
 		return doorsCount;
 	}
