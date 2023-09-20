@@ -14,8 +14,18 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("Quanti libri vuoi inserire?");
-		int nLibri = Integer.valueOf(sc.nextLine());
+		int nLibri = -1;
+		while (nLibri <= 0) {
+			
+			try {
+				
+				System.out.print("Quanti libri vuoi inserire?");
+				nLibri = Integer.valueOf(sc.nextLine());
+			} catch (Exception e) {
+				
+				System.out.println("Errore lettura numero libri");
+			}
+		}
 		
 		Libro[] libri = new Libro[nLibri];		
 		for (int x=0;x<nLibri;x++) {
@@ -84,7 +94,7 @@ public class Main {
 			}
 		} catch (Exception e) { 
 			
-			System.out.println("Error opening log file: " + e.getMessage());
+			System.out.println("Errore apertura file di log: " + e.getMessage());
 		} finally {
 			
 			if (reader != null) 
