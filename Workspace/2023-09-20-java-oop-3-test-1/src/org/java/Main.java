@@ -4,7 +4,11 @@ import java.awt.Point;
 
 public class Main {
 
-	public static abstract class Person {
+	public static interface SelfPrinter {
+		
+		public void printMe();
+	}
+	public static abstract class Person implements SelfPrinter {
 		
 		private String name;
 		private String lastname;
@@ -17,7 +21,7 @@ public class Main {
 			setDateOfBirth(dateOfBirth);
 		}
 
-		public int getYearSalary() { return -1; }
+		public abstract int getYearSalary();
 		
 		public String getName() {
 			return name;
@@ -47,6 +51,11 @@ public class Main {
 			
 			return getFullName() + ": " + getDateOfBirth();
 		}
+		@Override
+		public void printMe() {
+			
+			System.out.println(toString());
+		}
 	}
 	public static class Employee extends Person {
 
@@ -73,11 +82,11 @@ public class Main {
 			return super.toString() + " | " + getSalary() + " euro";
 		}
 
-//		@Override
-//		public int getYearSalary() {
-//			
-//			return getSalary() * 14;
-//		}
+		@Override
+		public int getYearSalary() {
+			
+			return getSalary() * 14;
+		}
 	}
 	public static class Boss extends Person {
 		
@@ -128,7 +137,7 @@ public class Main {
 			
 			Person p = people[x];
 			System.out.println(p.getYearSalary());
-			System.out.println(p);
+			p.printMe();
 		}
 	}
 }
