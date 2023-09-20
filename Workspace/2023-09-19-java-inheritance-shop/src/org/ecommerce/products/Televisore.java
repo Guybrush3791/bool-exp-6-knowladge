@@ -16,7 +16,7 @@ public class Televisore extends Prodotto {
 	}
 	
 	@Override
-	public float getFullPriceFedelta(boolean fedelta) throws Exception {
+	public float getFullPriceFedelta(boolean fedelta) {
 		
 		float fullPrice = getFullPrice(fedelta);
 		

@@ -47,12 +47,9 @@ public class Prodotto {
 		
 		return prezzo;
 	}
-	protected float getFullPrice(boolean fedelta) throws Exception  {
+	protected float getFullPrice(boolean fedelta) {
 		
 		float fullPrice = getPrezzo() / 100f * (100 + getIva());
-		
-		if (fullPrice > 10)
-			throw new Exception();
 		
 		return fullPrice;
 	}
