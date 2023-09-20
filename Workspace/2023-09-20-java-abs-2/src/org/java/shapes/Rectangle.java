@@ -34,6 +34,6 @@ public class Rectangle extends Square implements PolygonInterface {
 	@Override
 	public String toString() {
 		
-		return getX() + "x" + getY() + "\nperimetro: " + calcolaPerimetro() + "\narea: " + calcolaArea();
+		return "RECTANGLE:\n" + getX() + "x" + getY() + "\nperimetro: " + calcolaPerimetro() + "\narea: " + calcolaArea();
 	}
 }

@@ -32,6 +32,6 @@ public class Square implements PolygonInterface {
 	@Override
 	public String toString() {
 
-		return getX() + "\nperimetro: " + calcolaPerimetro() + "\narea: " + calcolaArea();
+		return "SQUARE:\n" + getX() + "\nperimetro: " + calcolaPerimetro() + "\narea: " + calcolaArea();
 	}
 }
