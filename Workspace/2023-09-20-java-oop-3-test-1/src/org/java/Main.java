@@ -149,6 +149,7 @@ public class Main {
 			Person p = people[x];
 			System.out.println(p.getYearSalary());
 			p.printMe();
+			p.getDividend();
 		}
 		
 		SelfPrinter sp1 = new Employee("Guybrush", "Threepwood", "30/10/1989", 3000);

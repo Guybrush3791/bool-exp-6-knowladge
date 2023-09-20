@@ -2,7 +2,7 @@ package org.java;
 
 public class Main {
 
-	public static class Person {
+	public static abstract class Person {
 		
 		private String name;
 		private String lastname;
@@ -133,8 +133,8 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		Person p1 = new Person("Guybrush", "Threepwood", "15/10/1989");
-		System.out.println(p1);
+//		Person p1 = new Person("Guybrush", "Threepwood", "15/10/1989");
+//		System.out.println(p1);
 		
 		Employee e1 = new Employee("Marco", "Rossi", "10/07/2000",
 					"Java Programmer", 2800);

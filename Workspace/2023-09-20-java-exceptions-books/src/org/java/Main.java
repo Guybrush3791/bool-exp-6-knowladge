@@ -21,7 +21,7 @@ public class Main {
 				
 				System.out.print("Quanti libri vuoi inserire?");
 				nLibri = Integer.valueOf(sc.nextLine());
-			} catch (Exception e) {
+			} catch (NumberFormatException e) {
 				
 				System.out.println("Errore lettura numero libri");
 			}
