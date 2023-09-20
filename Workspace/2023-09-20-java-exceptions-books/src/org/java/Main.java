@@ -1,6 +1,8 @@
 package org.java;
 
+import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 import org.java.library.Libro;
@@ -45,13 +47,48 @@ public class Main {
 			System.out.println("\n--------------------------------------\n");
 		}
 		
-		FileWriter writer = new FileWriter(null)
-		for (int x=0;x<nLibri;x++) {
+		FileWriter writer = null;
+		try {
+			writer = new FileWriter(LOG_PATH);
+		
+			for (int x=0;x<nLibri;x++) {
+				
+				Libro l = libri[x];
+				System.out.println("Libro " + (x + 1) + ":\n" + l);
+				
+				writer.write(l.getTitolo() + "\n");
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
 			
-			Libro l = libri[x];
-			System.out.println("Libro " + (x + 1) + ":\n" + l);
+			try {
+				writer.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		File logFile = new File(LOG_PATH);
+		Scanner reader = null;
+		try {
 			
+			reader = new Scanner(logFile);
 			
+			while(reader.hasNextLine()) {
+				
+				String line = reader.nextLine();
+				System.out.println(line);
+			}
+		} catch (Exception e) { 
+			
+			System.out.println("Error opening log file: " + e.getMessage());
+		} finally {
+			
+			if (reader != null) 
+				reader.close();
 		}
 	}
 }
