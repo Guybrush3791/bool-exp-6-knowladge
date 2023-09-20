@@ -8,7 +8,11 @@ public class Main {
 		
 		public void printMe();
 	}
-	public static abstract class Person implements SelfPrinter {
+	public static interface FullNamed {
+		
+		public String getFullName();
+	}
+	public static abstract class Person implements FullNamed {
 		
 		private String name;
 		private String lastname;
@@ -35,10 +39,6 @@ public class Main {
 		public void setLastname(String lastname) {
 			this.lastname = lastname;
 		}
-		public String getFullName() {
-			
-			return getName() + " " + getLastname();
-		}
 		public String getDateOfBirth() {
 			return dateOfBirth;
 		}
@@ -51,10 +51,11 @@ public class Main {
 			
 			return getFullName() + ": " + getDateOfBirth();
 		}
+		
 		@Override
-		public void printMe() {
+		public String getFullName() {
 			
-			System.out.println(toString());
+			return getName() + " " + getLastname();
 		}
 	}
 	public static class Employee extends Person {
@@ -87,6 +88,11 @@ public class Main {
 			
 			return getSalary() * 14;
 		}
+		@Override
+		public void printMe() {
+			
+			System.out.println(toString());
+		}
 	}
 	public static class Boss extends Person {
 		
@@ -116,6 +122,11 @@ public class Main {
 		public int getYearSalary() {
 			
 			return getDividend();
+		}
+		@Override
+		public void printMe() {
+			
+			System.out.println(toString());
 		}
 	}
 	
