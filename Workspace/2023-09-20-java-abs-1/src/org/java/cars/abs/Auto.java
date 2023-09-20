@@ -12,6 +12,7 @@ public abstract class Auto {
 	}
 
 	public abstract void stampaNumeroPorte();
+	public abstract int getDoorsCount();
 	
 	public void stampaVelocitaMassima() {
 		
@@ -44,6 +45,7 @@ public abstract class Auto {
 		
 		return getName()  
 				+ ":\nmax speed: " + getMaxSpeed() + "km/h"
+				+ "\ndoors count: " + getDoorsCount()
 		;
 	}
 }

@@ -13,18 +13,24 @@ public class SportCar extends Auto {
 	@Override
 	public void stampaNumeroPorte() {
 		
-		System.out.println("Doors count: " + DOORS_COUNT);
+		System.out.println("Doors count: " + getDoorsCount());
 	}
 
 	public void attivaIlTurbo() {
 		
 		System.out.println("Ho attivato il turbo!!!");
 	}
-	
+
 	@Override
-	public String toString() {
+	public int getDoorsCount() {
 		
-		return super.toString()
-				+ "\ndoors count: " + DOORS_COUNT;
+		return DOORS_COUNT;
 	}
+	
+//	@Override
+//	public String toString() {
+//		
+//		return super.toString()
+//				+ "\ndoors count: " + DOORS_COUNT;
+//	}
 }

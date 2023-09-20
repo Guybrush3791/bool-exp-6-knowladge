@@ -23,6 +23,7 @@ public class UtilityCar extends Auto {
 		System.out.println("Sto trainando un'auto...");
 	}
 	
+	@Override
 	public int getDoorsCount() {
 		return doorsCount;
 	}
@@ -30,10 +31,10 @@ public class UtilityCar extends Auto {
 		this.doorsCount = doorsCount;
 	}
 	
-	@Override
-	public String toString() {
-		
-		return super.toString() 
-				+ "doors count: " + getDoorsCount();
-	}
+//	@Override
+//	public String toString() {
+//		
+//		return super.toString() 
+//				+ "\ndoors count: " + getDoorsCount();
+//	}
 }
