@@ -1,25 +1,21 @@
-package org.java.cars;
+package org.java.cars.abs;
 
 public abstract class Auto {
 
 	private String name;
 	private int maxSpeed;
-	private int doorsCount;
 	
-	public Auto(String name, int maxSpeed, int doorsCount) {
+	public Auto(String name, int maxSpeed) {
 		
 		setName(name);
 		setMaxSpeed(maxSpeed);
-		setDoorsCount(doorsCount);
 	}
 
+	public abstract void stampaNumeroPorte();
+	
 	public void stampaVelocitaMassima() {
 		
 		System.out.println("max speed: " + getMaxSpeed());
-	}
-	public void stampaNumeroPorte() {
-		
-		System.out.println("doors count: " + getDoorsCount());
 	}
 	public void accenditi() {
 		
@@ -42,19 +38,12 @@ public abstract class Auto {
 	public void setMaxSpeed(int maxSpeed) {
 		this.maxSpeed = maxSpeed;
 	}
-	public int getDoorsCount() {
-		return doorsCount;
-	}
-	public void setDoorsCount(int doorsCount) {
-		this.doorsCount = doorsCount;
-	}
 	
 	@Override
 	public String toString() {
 		
 		return getName()  
 				+ ":\nmax speed: " + getMaxSpeed() 
-				+ "\ndoors count: " + getDoorsCount()
 		;
 	}
 }
