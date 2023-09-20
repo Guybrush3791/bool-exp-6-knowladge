@@ -2,6 +2,7 @@ package org.java;
 
 import org.java.cars.SportCar;
 import org.java.cars.UtilityCar;
+import org.java.cars.abs.Auto;
 
 public class Main {
 
@@ -20,7 +21,7 @@ public class Main {
 		
 		System.out.println("\n-----------------------\n\n");
 		
-		UtilityCar uc1 = new UtilityCar("Fiesta", 180, 5);
+		UtilityCar uc1 = new UtilityCar("Fiesta", 180, 14);
 		
 		System.out.println("UC 1:");
 		System.out.println("-----------------------\n");
@@ -32,5 +33,22 @@ public class Main {
 		uc1.stampaNumeroPorte();
 		
 		System.out.println("\n-----------------------\n\n");
+		
+		Auto[] cars = new Auto[2];
+		cars[0] = sc1;
+		cars[1] = uc1;
+		
+		// ----------------------
+		
+		int avgMaxSpeed = 0;
+		for (int x=0;x<cars.length;x++) {
+			
+			Auto a = cars[x];
+			
+			avgMaxSpeed += a.getMaxSpeed();
+		}
+		
+		avgMaxSpeed /= cars.length;
+		System.out.println("Velocita' massima media: " + avgMaxSpeed);
 	}
 }
