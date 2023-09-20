@@ -27,10 +27,8 @@ Gli animali che nuotano hanno il seguente metodo :
 
 Definire 2 metodi **static** sotto il metodo `main`:
 - `static void faiVolare(IVolante animale)`
-- `void faiNuotare(INuotante animale)`
+- `static void faiNuotare(INuotante animale)`
 
 Questi metodi prendono come parametro un animale che può o volare o nuotare, e richiamano il corrispondente metodo vola() o nuota().
 
-All'interno del `main` istanziare animali che volano e animali che nuotano. richiamare i metodi faiVolare / faiNuotare passandoglieli come parametro.
-
-Buon lavoro! :)
+All'interno del `main` istanziare animali che volano e animali che nuotano. Richiamare i metodi `faiVolare()`/`faiNuotare()` passandoglieli come parametro.
