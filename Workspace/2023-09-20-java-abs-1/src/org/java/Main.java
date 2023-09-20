@@ -21,7 +21,7 @@ public class Main {
 		
 		System.out.println("\n-----------------------\n\n");
 		
-		UtilityCar uc1 = new UtilityCar("Fiesta", 180, 14);
+		UtilityCar uc1 = new UtilityCar("Fiesta", 180, 5);
 		
 		System.out.println("UC 1:");
 		System.out.println("-----------------------\n");
@@ -41,14 +41,19 @@ public class Main {
 		// ----------------------
 		
 		int avgMaxSpeed = 0;
+		int avgDoorsCount = 0;
 		for (int x=0;x<cars.length;x++) {
 			
 			Auto a = cars[x];
 			
 			avgMaxSpeed += a.getMaxSpeed();
+			avgDoorsCount += a.getDoorsCount();
 		}
 		
 		avgMaxSpeed /= cars.length;
-		System.out.println("Velocita' massima media: " + avgMaxSpeed);
+		avgDoorsCount /= cars.length;
+
+		System.out.println("Velocita' massima media: " + avgMaxSpeed + "km/h");
+		System.out.println("Numero medio porte auto: " + avgDoorsCount);
 	}
 }
