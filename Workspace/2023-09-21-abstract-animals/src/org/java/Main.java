@@ -1,12 +1,12 @@
 package org.java;
 
-import java.util.concurrent.DelayQueue;
-
 import org.java.animals.Aquila;
 import org.java.animals.Cane;
 import org.java.animals.Delfino;
 import org.java.animals.Passerotto;
 import org.java.animals.abs.Animale;
+import org.java.animals.inter.INuotante;
+import org.java.animals.inter.IVolante;
 
 public class Main {
 
@@ -24,6 +24,8 @@ public class Main {
 		c1.verso();
 		c1.mangia();
 		
+		faiNuotare(c1);
+		
 		System.out.println("--------------------");
 		
 		System.out.println("Passerotto:");
@@ -32,6 +34,8 @@ public class Main {
 		p1.dormi();
 		p1.verso();
 		p1.mangia();
+		
+		faiVolare(p1);
 		
 		System.out.println("--------------------");
 		
@@ -42,6 +46,9 @@ public class Main {
 		a1.verso();
 		a1.mangia();
 		
+		faiVolare(a1);
+		faiNuotare(a1);
+		
 		System.out.println("--------------------");
 		
 		System.out.println("Delfino:");
@@ -50,6 +57,8 @@ public class Main {
 		d1.dormi();
 		d1.verso();
 		d1.mangia();
+		
+		faiNuotare(d1);
 		
 		System.out.println("--------------------");
 		System.out.println("--------------------");
@@ -71,9 +80,29 @@ public class Main {
 			a.verso();
 			a.mangia();
 			
+			if (a instanceof INuotante) {
+				
+				INuotante aNuotante = (INuotante) a;
+				
+				faiNuotare(aNuotante);
+			}
+			if (a instanceof IVolante) {
+				
+				IVolante aVolante = (IVolante) a;
+				
+				faiVolare(aVolante);
+			}
+			
 			System.out.println("--------------------");
 		}
 	}
 	
-	
+	static void faiVolare(IVolante animaleVolante) {
+		
+		animaleVolante.vola();
+	}
+	static void faiNuotare(INuotante animaleNuotante) {
+		
+		animaleNuotante.nuota();
+	}
 }
