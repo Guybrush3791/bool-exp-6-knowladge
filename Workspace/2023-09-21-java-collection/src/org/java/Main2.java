@@ -1,8 +1,10 @@
 package org.java;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class Main2 {
 
@@ -26,5 +28,13 @@ public class Main2 {
 				valuesLT50.add(value);
 		}
 		System.out.println(valuesLT50);
+		
+		List<Integer> valuesLT50Stream = values.stream().filter(x -> x < 50).toList();
+		String valueLT50StreamString = values.stream()
+												.filter(x -> x < 50)
+												.map(String::valueOf)
+											.collect(Collectors.joining(" - "));
+		System.out.println(valuesLT50Stream);
+		System.out.println(valueLT50StreamString);
 	}
 }
