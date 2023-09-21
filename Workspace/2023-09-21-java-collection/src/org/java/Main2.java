@@ -59,5 +59,21 @@ public class Main2 {
 			}
 		}
 		System.out.println(valueLT50String);
+		
+		values.add(-1);
+		boolean isAllPositive = values.stream().allMatch(x -> x >= 0);
+		System.out.println("is all positive: " + isAllPositive);
+		
+		int avg = 0;
+		for (Integer value : values) {
+			
+			avg += value;
+		}
+		
+		avg /= values.size();
+		System.out.println("avg: " + avg);
+		
+		int avg2 = values.stream().reduce(0, (value, oldValue) -> value + oldValue) / values.size();
+		System.out.println("avg2: " + avg2);
 	}
 }
