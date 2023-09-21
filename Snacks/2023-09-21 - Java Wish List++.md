@@ -11,7 +11,6 @@ Ad ogni iterazione mostrare la lunghezza della lista e chiedere all’utente se 
 
 Al termine dell’inserimento stampare la lista.
 
-
 #### Bonus
 - ogni elemento salvato in lista non deve avere solo il nome ma anche a chi è destinato (mamma, papà, cugino,  …)
 

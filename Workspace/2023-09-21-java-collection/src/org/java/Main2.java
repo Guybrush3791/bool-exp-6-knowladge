@@ -80,5 +80,7 @@ public class Main2 {
 												.sorted((x, y) -> y - x)
 											.toList();
 		System.out.println(orderedValue);
+		
+		Integer[] orderedValueArr = orderedValue.stream().toList().toArray(new Integer[0]);
 	}
 }
