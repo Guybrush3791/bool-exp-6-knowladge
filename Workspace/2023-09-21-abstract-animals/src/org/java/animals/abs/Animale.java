@@ -1,5 +1,12 @@
 package org.java.animals.abs;
 
-public class Animale {
+public abstract class Animale {
 
+	public abstract void verso();
+	public abstract void mangia();
+	
+	public void dormi() {
+		
+		System.out.println("Zzz");
+	}
 }
