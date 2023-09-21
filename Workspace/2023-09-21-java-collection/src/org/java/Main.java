@@ -3,6 +3,7 @@ package org.java;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -12,6 +13,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		Random rnd = new Random();
+		
 //		List<String> strings = new ArrayList<>();
 //		
 //		strings.add("Hello");
@@ -19,7 +22,6 @@ public class Main {
 //		
 //		System.out.println(strings);
 //		
-//		Random rnd = new Random();
 //		List<Integer> values = new ArrayList<>();
 //		for (int x=0;x<100;x++) {
 //			
@@ -37,6 +39,19 @@ public class Main {
 		}
 		
 		System.out.println(uniqueValues);
+		for (Integer value : uniqueValues) {
+			
+			System.out.println("value: " + value);
+		}
+		
+		System.out.println("-------------------------------------");
+		
+		Iterator<Integer> itValues = uniqueValues.iterator();
+		while(itValues.hasNext()) {
+			
+			Integer value = itValues.next();
+			System.out.println("value: " + value);
+		}
 		
 //		String lorem = "aabbccddefg";
 //		Map<Character, Integer> charCounter = new HashMap<>();
