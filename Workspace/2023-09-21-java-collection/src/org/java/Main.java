@@ -30,44 +30,47 @@ public class Main {
 //		}
 //		
 //		System.out.println(values);
-		
-		Set<Integer> uniqueValues = new HashSet<>();
-		for (int x=0;x<100;x++) {
-			
-			int value = rnd.nextInt(0, 10);
-			uniqueValues.add(value);
-		}
-		
-		System.out.println(uniqueValues);
-		for (Integer value : uniqueValues) {
-			
-			System.out.println("value: " + value);
-		}
-		
-		System.out.println("-------------------------------------");
-		
-		Iterator<Integer> itValues = uniqueValues.iterator();
-		while(itValues.hasNext()) {
-			
-			Integer value = itValues.next();
-			System.out.println("value: " + value);
-		}
-		
-//		String lorem = "aabbccddefg";
-//		Map<Character, Integer> charCounter = new HashMap<>();
-//		for (int x=0;x<lorem.length();x++) {
+//		
+//		Set<Integer> uniqueValues = new HashSet<>();
+//		for (int x=0;x<100;x++) {
 //			
-//			char loremChar = lorem.toLowerCase().charAt(x);
-//			
-//			if (charCounter.containsKey(loremChar)) {
-//				
-//				charCounter.put(loremChar, charCounter.get(loremChar) + 1);
-//			} else {
-//				
-//				charCounter.put(loremChar, 1);
-//			}
+//			int value = rnd.nextInt(0, 10);
+//			uniqueValues.add(value);
 //		}
 //		
-//		System.out.println(charCounter);
+//		System.out.println(uniqueValues);
+//		for (Integer value : uniqueValues) {
+//			
+//			System.out.println("value: " + value);
+//		}
+//		
+//		List<Integer> listUniqueValues = new ArrayList<>(uniqueValues);
+//		System.out.println("list: " + listUniqueValues);
+//		
+//		System.out.println("-------------------------------------");
+//		
+//		Iterator<Integer> itValues = uniqueValues.iterator();
+//		while(itValues.hasNext()) {
+//			
+//			Integer value = itValues.next();
+//			System.out.println("value: " + value);
+//		}
+//		
+		String lorem = "aabbccddefg";
+		Map<Character, Integer> charCounter = new HashMap<>();
+		for (int x=0;x<lorem.length();x++) {
+			
+			char loremChar = lorem.toLowerCase().charAt(x);
+			
+			if (charCounter.containsKey(loremChar)) {
+				
+				charCounter.put(loremChar, charCounter.get(loremChar) + 1);
+			} else {
+				
+				charCounter.put(loremChar, 1);
+			}
+		}
+		
+		System.out.println(charCounter);
 	}
 }
