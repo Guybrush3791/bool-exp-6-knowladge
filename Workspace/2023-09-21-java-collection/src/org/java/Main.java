@@ -52,33 +52,33 @@ public class Main {
 //			System.out.println("value: " + value);
 //		}
 //		
-		String lorem = "aabbccddefg";
-		Map<Character, Integer> charCounter = new HashMap<>();
-		for (int x=0;x<lorem.length();x++) {
-			
-			char loremChar = lorem.toLowerCase().charAt(x);
-			
-			if (charCounter.containsKey(loremChar)) {
-				
-				charCounter.put(loremChar, charCounter.get(loremChar) + 1);
-			} else {
-				
-				charCounter.put(loremChar, 1);
-			}
-		}
+//		String lorem = "aabbccddefg";
+//		Map<Character, Integer> charCounter = new HashMap<>();
+//		for (int x=0;x<lorem.length();x++) {
+//			
+//			char loremChar = lorem.toLowerCase().charAt(x);
+//			
+//			if (charCounter.containsKey(loremChar)) {
+//				
+//				charCounter.put(loremChar, charCounter.get(loremChar) + 1);
+//			} else {
+//				
+//				charCounter.put(loremChar, 1);
+//			}
+//		}
+//		
+//		for (Character k : charCounter.keySet()) {
+//			
+//			Integer v = charCounter.get(k);
+//			
+//			System.out.println(k + " --> " + v);
+//		}
+//		
+//		Collection<Integer> values = charCounter.values();
+//		for (Integer value : values) { 
+//			System.out.println("value: " + value);
+//		}
 		
-		for (Character k : charCounter.keySet()) {
-			
-			Integer v = charCounter.get(k);
-			
-			System.out.println(k + " --> " + v);
-		}
 		
-		Collection<Integer> values = charCounter.values();
-		for (Integer value : values) { 
-			System.out.println("value: " + value);
-		}
-		
-//		charCounter.
 	}
 }

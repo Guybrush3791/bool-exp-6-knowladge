@@ -42,6 +42,4 @@ La classe deve avere **un costruttore** che prende come parametro un array di in
 Internamente alla classe vogliamo mantenere l’elenco di interi come `array`, non come `ArrayList` o altre strutture dati.
 
 #### Bonus
-Prevedere anche un **costruttore che non prenda parametri** e un metodo `addElemento` che permetta di aggiungere un nuovo intero all’elenco da ciclare.
-
-Buon lavoro!
+Prevedere anche un **costruttore che non prenda parametri** e un metodo `addElemento` che permetta di aggiungere un nuovo intero all’elenco da ciclare
