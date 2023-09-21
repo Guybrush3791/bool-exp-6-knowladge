@@ -75,5 +75,10 @@ public class Main2 {
 		
 		int avg2 = values.stream().reduce(0, (value, oldValue) -> value + oldValue) / values.size();
 		System.out.println("avg2: " + avg2);
+		
+		List<Integer> orderedValue = values.stream()
+												.sorted((x, y) -> y - x)
+											.toList();
+		System.out.println(orderedValue);
 	}
 }
