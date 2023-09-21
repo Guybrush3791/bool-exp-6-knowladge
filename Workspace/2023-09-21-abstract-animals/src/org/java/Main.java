@@ -67,11 +67,13 @@ public class Main {
 			System.out.println(a.getClass().getSimpleName() + ":");
 			System.out.println("--------------------");
 			
-			d1.dormi();
-			d1.verso();
-			d1.mangia();
+			a.dormi();
+			a.verso();
+			a.mangia();
 			
 			System.out.println("--------------------");
 		}
 	}
+	
+	
 }
