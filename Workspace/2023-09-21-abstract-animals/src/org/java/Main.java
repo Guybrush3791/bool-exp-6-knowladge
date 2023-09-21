@@ -35,6 +35,8 @@ public class Main {
 		p1.verso();
 		p1.mangia();
 		
+//		p1.nuota();
+		
 		faiVolare(p1);
 		
 		System.out.println("--------------------");
