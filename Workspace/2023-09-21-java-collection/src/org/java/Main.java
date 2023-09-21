@@ -1,13 +1,9 @@
 package org.java;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 
 public class Main {
 
@@ -71,6 +67,19 @@ public class Main {
 			}
 		}
 		
-		System.out.println(charCounter);
+		for (Character k : charCounter.keySet()) {
+			
+			Integer v = charCounter.get(k);
+			
+			System.out.println(k + " --> " + v);
+			
+//			System.out.println("k: " + k);
+//			System.out.println("v: " + v);
+		}
+		
+		Collection<Integer> values = charCounter.values();
+		for (Integer value : values) { 
+			System.out.println("value: " + value);
+		}
 	}
 }
