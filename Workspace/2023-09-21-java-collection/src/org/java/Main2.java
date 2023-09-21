@@ -31,8 +31,11 @@ public class Main2 {
 		}
 		System.out.println(valuesLT50);
 		
-		values = values.stream().map(x -> x * 2).toList();
-		List<String> valuesString = values.stream().map(x -> "" + x).toList();
+//		values = values.stream().toList();
+		List<String> valuesString = values.stream()
+											.map(x -> x * 2)
+											.map(x -> "" + x)
+										.toList();
 		System.out.println("lista stringhe: " + valuesString);
 		
 		List<Integer> valuesLT50Stream = values.stream().filter(x -> x < 50).toList();
@@ -42,5 +45,19 @@ public class Main2 {
 											.collect(Collectors.joining(" - "));
 		System.out.println(valuesLT50Stream);
 		System.out.println(valueLT50StreamString);
+		
+		String valueLT50String = "";
+		for (int x=0;x<values.size();x++) {
+			
+			Integer value = values.get(x);
+			
+			if (value < 50) {
+				
+				valueLT50String += value + (
+						x < values.size() - 1 ? " - " : ""
+				);
+			}
+		}
+		System.out.println(valueLT50String);
 	}
 }
