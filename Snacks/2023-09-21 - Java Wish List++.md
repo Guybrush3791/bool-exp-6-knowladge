@@ -29,6 +29,9 @@ a:2
 m:2
 ```
 
+#### Bonus++
+Ottenere lo stesso risultato sfruttando le **funzioni lambda** delle `Collections`
+
 ### Es 3
 Vogliamo realizzare una classe che contenga un elenco di interi e che ci permetta di ciclarli (dal primo all’ultimo).
 
