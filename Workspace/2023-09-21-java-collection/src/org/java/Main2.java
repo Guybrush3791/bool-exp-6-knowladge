@@ -15,5 +15,16 @@ public class Main2 {
 			values.add(rnd.nextInt(0, 100));
 		
 		System.out.println(values);
+		
+//		values.stream().forEach(x -> System.out.println(x));
+//		values.stream().forEach(System.out::println);
+		
+		List<Integer> valuesLT50 = new ArrayList<>();
+		for (Integer value : values) {
+			
+			if (value < 50) 
+				valuesLT50.add(value);
+		}
+		System.out.println(valuesLT50);
 	}
 }
