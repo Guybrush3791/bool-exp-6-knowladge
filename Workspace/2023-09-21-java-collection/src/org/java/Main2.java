@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+import javax.management.ValueExp;
+
 public class Main2 {
 
 	public static void main(String[] args) {
@@ -28,6 +30,10 @@ public class Main2 {
 				valuesLT50.add(value);
 		}
 		System.out.println(valuesLT50);
+		
+		values = values.stream().map(x -> x * 2).toList();
+		List<String> valuesString = values.stream().map(x -> "" + x).toList();
+		System.out.println("lista stringhe: " + valuesString);
 		
 		List<Integer> valuesLT50Stream = values.stream().filter(x -> x < 50).toList();
 		String valueLT50StreamString = values.stream()
