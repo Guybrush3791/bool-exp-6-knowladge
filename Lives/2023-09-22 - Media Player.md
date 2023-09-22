@@ -43,5 +43,7 @@ esecuzione fornisce la possibilità di regolarne eventuali parametri (volume /
 luminosità).
 
 ## UML
-
+### Versione 1
 ![[Pasted image 20230922102443.png]]
+### Versione 2
+![[media-uml.drawio.png]]
