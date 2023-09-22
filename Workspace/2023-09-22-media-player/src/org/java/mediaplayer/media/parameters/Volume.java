@@ -23,7 +23,7 @@ public class Volume {
 	}
 	public void setVolume(int volume) throws Exception {
 		
-		if (volume < 0 || volume > 10) 
+		if (volume < MIN_VOLUME || volume > MAX_VOLUME) 
 			throw new Exception("Volume must be from 0 to 10 included");
 			
 		this.volume = volume;
