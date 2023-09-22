@@ -20,16 +20,19 @@ public class Image extends Media implements HasBrightness {
 	}
 	
 	@Override
-	public void darker() throws Exception {
+	public void darker() {
+		
 		brightness.darker();		
 	}
 	@Override
-	public void brighter() throws Exception {
+	public void brighter() {
+		
 		brightness.brighter();
 	}
 	@Override
 	public void printBrightness() {
-		System.out.println(brightness);
+		
+		brightness.printBrightness();
 	}
 
 	@Override

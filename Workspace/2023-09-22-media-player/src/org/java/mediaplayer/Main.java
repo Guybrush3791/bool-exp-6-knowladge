@@ -12,7 +12,7 @@ import org.java.mediaplayer.media.inter.HasVolume;
 
 public class Main {
 
-	private static final int MEDIA_COUNT = 2;
+	private static final int MEDIA_COUNT = 5;
 	
 	public static void main(String[] args) {
 		
