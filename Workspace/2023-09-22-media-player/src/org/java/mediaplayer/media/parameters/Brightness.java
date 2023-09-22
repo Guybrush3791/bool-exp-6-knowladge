@@ -26,8 +26,7 @@ public class Brightness {
 		
 		this.brightness = brightness;
 	}
-	
-	
+
 	public void darker() {
 		
 		brightness -= brightness > MIN_BRIGHTNESS ? .1 : 0;
