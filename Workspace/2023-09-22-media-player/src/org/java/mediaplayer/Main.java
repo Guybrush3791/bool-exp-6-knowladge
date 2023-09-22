@@ -16,7 +16,28 @@ public class Main {
 			
 			img1.darker();
 			img1.darker();
-			img1.darker();img1.darker();img1.darker();img1.darker();img1.darker();img1.darker();img1.darker();
+			img1.darker();
+			img1.darker();
+			img1.darker();
+			img1.darker();
+			img1.darker();
+			img1.darker();
+			img1.darker();
+			
+			mediaImg1.execute();
+			
+			img1.brighter();
+			img1.brighter();
+			img1.brighter();
+			img1.brighter();
+			img1.brighter();
+			img1.brighter();
+			img1.brighter();
+			img1.brighter();
+			img1.brighter();
+			img1.brighter();
+			img1.brighter();
+			img1.brighter();
 			
 			mediaImg1.execute();
 		} catch(Exception e) {

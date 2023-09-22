@@ -1,7 +1,5 @@
 package org.java.mediaplayer.media.parameters;
 
-import javax.annotation.processing.SupportedOptions;
-
 public class Brightness {
 
 	private static final double MIN_BRIGHTNESS = 0d;
@@ -36,7 +34,7 @@ public class Brightness {
 	}
 	public void brighter() throws Exception {
 		
-		int supportValue = (int) (brightness * 10) - (int) (brightness < MAX_BRIGHTNESS ? 1 : 0);
+		int supportValue = (int) (brightness * 10) + (int) (brightness < MAX_BRIGHTNESS ? 1 : 0);
 		setBrightness(supportValue / 10d);
 	}
 	
@@ -44,7 +42,7 @@ public class Brightness {
 	public String toString() {
 		
 		String res = "";
-		for (double x=0d;x<brightness;x+=.1)
+		for (double x=0d;x<brightness;x=((int) (x * 10) + 1) / 10d)
 			res += "*";
 		
 		return res + " (" + brightness + ")";
