@@ -7,6 +7,7 @@ import org.java.mediaplayer.media.Audio;
 import org.java.mediaplayer.media.Image;
 import org.java.mediaplayer.media.Video;
 import org.java.mediaplayer.media.abs.Media;
+import org.java.mediaplayer.media.inter.HasVolume;
 
 public class Main {
 
@@ -71,8 +72,24 @@ public class Main {
 			
 			userValue = Integer.valueOf(sc.nextLine());
 			
+			if (userValue < 1 || userValue >= medias.length) {
+				
+				userValue = -1;
+				
+				System.out.println("Valore non compreso");
+				
+				continue;
+			}
+			
 			Media selectedMedia = medias[userValue - 1];
 			selectedMedia.execute();
+			
+			if (selectedMedia instanceof HasVolume) {
+				
+				HasVolume volumeMedia = (HasVolume) selectedMedia;
+			}
+			
+			System.out.println("\n-----------------------------------\n");
 		}
 		
 		System.out.println("-----------------------------------");
