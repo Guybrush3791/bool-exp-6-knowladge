@@ -12,7 +12,7 @@ import org.java.mediaplayer.media.inter.HasVolume;
 
 public class Main {
 
-	private static final int MEDIA_COUNT = 5;
+	private static final int MEDIA_COUNT = 3;
 	
 	public static void main(String[] args) {
 		
@@ -144,5 +144,7 @@ public class Main {
 		
 		System.out.println("-----------------------------------");
 		System.out.println("The End");
+		
+		sc.close();
 	}
 }

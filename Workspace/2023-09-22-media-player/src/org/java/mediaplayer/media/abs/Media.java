@@ -4,7 +4,7 @@ public abstract class Media {
 
 	private String title;
 	
-	public Media(String title) {
+	public Media(String title) throws Exception {
 		
 		setTitle(title);
 	}
@@ -14,7 +14,11 @@ public abstract class Media {
 	public String getTitle() {
 		return title;
 	}
-	public void setTitle(String title) {
+	public void setTitle(String title) throws Exception {
+		
+		if (title.isBlank()) 
+			throw new Exception("Title can't be blank");
+		
 		this.title = title;
 	}
 	
