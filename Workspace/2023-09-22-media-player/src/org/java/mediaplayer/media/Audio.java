@@ -18,9 +18,18 @@ public class Audio extends Media implements HasVolume, Playable {
 	@Override
 	public void play() {
 		
-		System.out.println(this);
+		for (int x=0;x<getVolume().getVolume();x++) 
+			System.out.println(getTitle());
 	}
 	
+	public Volume getVolume() {
+		return volume;
+	}
+
+	public void setVolume(Volume volume) {
+		this.volume = volume;
+	}
+
 	@Override
 	public void weaker() {
 		

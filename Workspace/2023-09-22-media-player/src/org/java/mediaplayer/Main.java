@@ -18,12 +18,10 @@ public class Main {
 			a1.weaker();
 			a1.weaker();
 			a1.weaker();
-			a1.weaker();
-			a1.weaker();
-			a1.weaker();
 			
+			System.out.println("-----------------------------------");
 			
-			a1.execute();
+			mediaA1.execute();
 		} catch(Exception e) {
 			
 			System.out.println("Error: " + e.getMessage());

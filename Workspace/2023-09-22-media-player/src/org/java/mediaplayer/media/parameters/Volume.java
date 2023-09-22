@@ -5,11 +5,13 @@ public class Volume {
 	private static final int MIN_VOLUME = 0;
 	private static final int MAX_VOLUME = 10;
 	
+	private static final int DEFAULT_VOLUME = 5;
+	
 	int volume;
 	
 	public Volume() throws Exception {
 		
-		this(5);
+		this(DEFAULT_VOLUME);
 	}
 	public Volume(int volume) throws Exception {
 		
