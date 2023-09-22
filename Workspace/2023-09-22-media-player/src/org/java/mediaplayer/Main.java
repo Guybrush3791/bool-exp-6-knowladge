@@ -15,24 +15,24 @@ public class Main {
 			
 			mediaV1.execute();
 			
-			v1.brighter();
-			v1.brighter();
-			v1.brighter();
-			v1.brighter();
-			v1.brighter();
-			v1.brighter();
-			v1.brighter();
-			v1.brighter();
+			v1.darker();
+			v1.darker();
+			v1.darker();
+			v1.darker();
+			v1.darker();
+			v1.darker();
+			v1.darker();
 			
-			v1.louder();
-			v1.louder();
-			v1.louder();
-			v1.louder();
-			v1.louder();
-			v1.louder();
-			v1.louder();
-			v1.louder();
-			v1.louder();
+			
+			v1.weaker();
+			v1.weaker();
+			v1.weaker();
+			v1.weaker();
+			v1.weaker();
+			v1.weaker();
+			v1.weaker();
+			v1.weaker();
+			
 			
 			mediaV1.execute();
 		} catch(Exception e) {
