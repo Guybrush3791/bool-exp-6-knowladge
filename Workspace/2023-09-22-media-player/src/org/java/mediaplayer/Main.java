@@ -9,11 +9,21 @@ public class Main {
 		
 		try {
 		
-			Media mediaImg1 = new Image("test img");
+			Image img1 = new Image("test img");
+			Media mediaImg1 = img1;
 			
 			mediaImg1.execute();
 			
-//			mediaImg1.
+			img1.brighter();
+			img1.brighter();
+			img1.brighter();
+//			img1.brighter();
+//			img1.brighter();
+//			img1.brighter();
+//			img1.brighter();
+//			img1.brighter();
+			
+			mediaImg1.execute();
 		} catch(Exception e) {
 			
 			System.out.println("Error: " + e.getMessage());

@@ -9,7 +9,7 @@ public class Brightness {
 	
 	public Brightness() throws Exception {
 		
-		this(.5);
+		this(.5d);
 	}
 	public Brightness(double brightness) throws Exception {
 		
@@ -29,11 +29,11 @@ public class Brightness {
 
 	public void darker() {
 		
-		brightness -= brightness > MIN_BRIGHTNESS ? .1 : 0;
+		brightness -= brightness > MIN_BRIGHTNESS ? .1d : 0;
 	}
 	public void brighter() {
 		
-		brightness += brightness < MAX_BRIGHTNESS ? .1 : 0;
+		brightness += brightness < MAX_BRIGHTNESS ? .1d : 0;
 	}
 	
 	@Override
@@ -43,6 +43,6 @@ public class Brightness {
 		for (double x=0d;x<brightness;x+=.1)
 			res += "*";
 		
-		return res;
+		return res + " (" + brightness + ")";
 	}
 }
