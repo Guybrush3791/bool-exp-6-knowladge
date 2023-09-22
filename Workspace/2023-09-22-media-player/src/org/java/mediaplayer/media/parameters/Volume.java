@@ -37,6 +37,10 @@ public class Volume {
 		
 		volume += volume < MAX_VOLUME ? 1 : 0;
 	}
+	public void printVolume() {
+		
+		System.out.println("volume: " + getVolume());
+	}
 	
 	@Override
 	public String toString() {

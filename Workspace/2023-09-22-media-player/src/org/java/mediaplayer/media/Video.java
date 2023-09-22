@@ -64,7 +64,7 @@ public class Video extends Media implements HasVolume, HasBrightness, Playable {
 	@Override
 	public void printVolume() {
 		
-		System.out.println(volume);
+		volume.printVolume();
 	}
 	
 	@Override

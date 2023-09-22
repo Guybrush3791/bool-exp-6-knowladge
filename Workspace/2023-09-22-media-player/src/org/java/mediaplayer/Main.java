@@ -7,6 +7,7 @@ import org.java.mediaplayer.media.Audio;
 import org.java.mediaplayer.media.Image;
 import org.java.mediaplayer.media.Video;
 import org.java.mediaplayer.media.abs.Media;
+import org.java.mediaplayer.media.inter.HasBrightness;
 import org.java.mediaplayer.media.inter.HasVolume;
 
 public class Main {
@@ -72,7 +73,7 @@ public class Main {
 			
 			userValue = Integer.valueOf(sc.nextLine());
 			
-			if (userValue < 1 || userValue >= medias.length) {
+			if (userValue < 1 || userValue >= medias.length + 1) {
 				
 				userValue = -1;
 				
@@ -106,7 +107,14 @@ public class Main {
 							case "+": volumeMedia.louder(); break;
 							case "-": volumeMedia.weaker(); break;
 						}
+						
+						volumeMedia.printVolume();
 					}
+			}
+			
+			if (selectedMedia instanceof HasBrightness) {
+				
+				HasBrightness brightnessMedia = (HasBrightness) selectedMedia;
 			}
 			
 			System.out.println("\n-----------------------------------\n");

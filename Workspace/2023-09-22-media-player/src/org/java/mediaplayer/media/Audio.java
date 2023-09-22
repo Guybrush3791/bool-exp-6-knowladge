@@ -43,7 +43,7 @@ public class Audio extends Media implements HasVolume, Playable {
 	@Override
 	public void printVolume() {
 		
-		System.out.println(getVolume());
+		volume.printVolume();
 	}
 	
 	@Override
