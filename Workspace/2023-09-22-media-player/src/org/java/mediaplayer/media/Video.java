@@ -39,11 +39,11 @@ public class Video extends Media implements HasVolume, HasBrightness, Playable {
 	}
 	
 	@Override
-	public void darker() throws Exception {
+	public void darker() {
 		brightness.darker();		
 	}
 	@Override
-	public void brighter() throws Exception {
+	public void brighter() {
 		brightness.brighter();
 	}
 	@Override

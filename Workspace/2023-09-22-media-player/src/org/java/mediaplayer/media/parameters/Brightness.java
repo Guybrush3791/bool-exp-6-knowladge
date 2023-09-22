@@ -28,15 +28,18 @@ public class Brightness {
 		this.brightness = brightness;
 	}
 
-	public void darker() throws Exception {
+	public void darker() {
 		
 		int supportValue = (int) (brightness * 10) - (int) (brightness > MIN_BRIGHTNESS ? 1 : 0);
-		setBrightness(supportValue / 10d);
+		brightness = supportValue / 10d;
 	}
-	public void brighter() throws Exception {
+	public void brighter() {
 		
 		int supportValue = (int) (brightness * 10) + (int) (brightness < MAX_BRIGHTNESS ? 1 : 0);
-		setBrightness(supportValue / 10d);
+		brightness = supportValue / 10d;
+	}
+	public void printBrightness() {
+		System.out.println(getBrightness());
 	}
 	
 	@Override

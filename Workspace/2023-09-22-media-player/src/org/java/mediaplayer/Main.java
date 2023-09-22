@@ -95,7 +95,7 @@ public class Main {
 				if (subUserValue.equalsIgnoreCase("y"))
 					while(!subUserValue.equals("0")) {
 	
-						System.out.println("Azione:");
+						System.out.println("Azioni:");
 						System.out.println("+ --> aumenta volume");
 						System.out.println("- --> abbassa volume");
 						System.out.println("0 --> esci dalla regolazione");
@@ -115,6 +115,28 @@ public class Main {
 			if (selectedMedia instanceof HasBrightness) {
 				
 				HasBrightness brightnessMedia = (HasBrightness) selectedMedia;
+				
+				System.out.println("Vuoi regolare la luminosita'? [Y/n]");
+				String subUserValue = sc.nextLine();
+				
+				if (subUserValue.equalsIgnoreCase("y"))
+					while(!subUserValue.equals("0")) {
+						
+						System.out.println("Azioni:");
+						System.out.println("+ --> aumenta luminosita'");
+						System.out.println("- --> abbassa luminosita'");
+						System.out.println("0 --> esci dalla regolazione");
+
+						subUserValue = sc.nextLine();
+
+						switch (subUserValue) {
+							
+							case "+": brightnessMedia.brighter(); break;
+							case "-": brightnessMedia.darker(); break;
+						}
+						
+						brightnessMedia.printBrightness();
+					}
 			}
 			
 			System.out.println("\n-----------------------------------\n");
