@@ -8,8 +8,10 @@ public class Image extends Media implements HasBrightness {
 
 	private Brightness brightness;
 	
-	public Image(String title) {
+	public Image(String title) throws Exception {
 		super(title);
+		
+		brightness = new Brightness();
 	}
 
 	public void show() {
@@ -38,6 +40,6 @@ public class Image extends Media implements HasBrightness {
 	@Override
 	public String toString() {
 		
-		return getTitle() + " " + brightness;
+		return "Image:\ntitle: " + getTitle() + "\nbrightness: " + brightness;
 	}
 }
