@@ -39,6 +39,6 @@ public class Volume {
 	@Override
 	public String toString() {
 		
-		return "" + getVolume();
+		return "Volume: " + getVolume();
 	}
 }
