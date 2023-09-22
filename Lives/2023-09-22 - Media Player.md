@@ -6,6 +6,7 @@ Qualsiasi elemento multimediale può essere eseguito attraverso il metodo `execu
 Eseguire un elemento multimediale significa invocarne il metodo `show` se è
 un'*immagine* o il metodo `play` se è *riproducibile*.
 
+## Classi
 ### Audio
 Un audio è *riproducibile* e ha associato anche un *volume*  che e' un valore positivo di
 tipo `int` compreso tra `0` e `10`. Di default il volume è impostato a `5`.
@@ -35,12 +36,14 @@ quella dei `filmati`.
 - `show`: stampa il *titolo* concatenato a una *sequenza di asterischi* di lunghezza pari al valore corrente della *luminosità*
 
 
-
+## Sinossi
 Organizzare opportunamente con classi astratte, interfacce e classi concrete il
-codice di un lettore multimediale Player che memorizza 5 elementi multimediali
+codice di un lettore multimediale `Player` che memorizza 5 elementi multimediali
 (creati con valori letti da tastiera) in un array e poi chiede ripetutamente all'utente
 quale oggetto eseguire (leggendo un intero da 1 a 5 oppure 0 per finire) e dopo ogni
 esecuzione fornisce la possibilità di regolarne eventuali parametri (volume /
 luminosità).
+
+## UML
 
 ![[Pasted image 20230922102443.png]]
