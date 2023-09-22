@@ -39,6 +39,10 @@ public class Brightness {
 	@Override
 	public String toString() {
 		
-		return "Brightness: " + getBrightness();
+		String res = "";
+		for (double x=0d;x<brightness;x+=.1)
+			res += "*";
+		
+		return res;
 	}
 }

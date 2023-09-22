@@ -2,13 +2,21 @@ package org.java.mediaplayer.media;
 
 import org.java.mediaplayer.media.abs.Media;
 import org.java.mediaplayer.media.inter.HasBrightness;
+import org.java.mediaplayer.media.parameters.Brightness;
 
 public class Image extends Media implements HasBrightness {
 
+	private Brightness brightness;
+	
 	public Image(String title) {
 		super(title);
 	}
 
+	public void show() {
+		
+		System.out.println(this);
+	}
+	
 	@Override
 	public void darker() {
 		brightness.darker();		
@@ -24,8 +32,12 @@ public class Image extends Media implements HasBrightness {
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
-		
+		show();
 	}
 
+	@Override
+	public String toString() {
+		
+		return getTitle() + " " + brightness;
+	}
 }

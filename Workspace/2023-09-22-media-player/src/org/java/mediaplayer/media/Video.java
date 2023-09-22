@@ -37,10 +37,12 @@ public class Video extends Media implements HasVolume, HasBrightness, Playable {
 	
 	@Override
 	public void weaker() {
+		
 		volume.weaker();
 	}
 	@Override
 	public void louder() {
+		
 		volume.louder();
 	}
 	@Override
