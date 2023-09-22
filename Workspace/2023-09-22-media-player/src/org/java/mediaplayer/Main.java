@@ -87,6 +87,26 @@ public class Main {
 			if (selectedMedia instanceof HasVolume) {
 				
 				HasVolume volumeMedia = (HasVolume) selectedMedia;
+				
+				System.out.println("Vuoi regolare il volume? [Y/n]");
+				String subUserValue = sc.nextLine();
+
+				if (subUserValue.equalsIgnoreCase("y"))
+					while(!subUserValue.equals("0")) {
+	
+						System.out.println("Azione:");
+						System.out.println("+ --> aumenta volume");
+						System.out.println("- --> abbassa volume");
+						System.out.println("0 --> esci dalla regolazione");
+
+						subUserValue = sc.nextLine();
+
+						switch (subUserValue) {
+							
+							case "+": volumeMedia.louder(); break;
+							case "-": volumeMedia.weaker(); break;
+						}
+					}
 			}
 			
 			System.out.println("\n-----------------------------------\n");
