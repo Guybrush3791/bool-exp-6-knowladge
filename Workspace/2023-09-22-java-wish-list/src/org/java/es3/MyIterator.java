@@ -10,7 +10,7 @@ public class MyIterator {
 	
 	public MyIterator() {
 		
-		values = new int[16];
+		values = new int[3];
 	}
 //	public MyIterator(int[] values) {
 //		
@@ -38,7 +38,7 @@ public class MyIterator {
 	}
 	public boolean hasNext() {
 		
-		return index < values.length;
+		return index < counter;
 	}
 	
 	public int[] getValues() {

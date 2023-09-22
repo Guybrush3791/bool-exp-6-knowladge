@@ -1,5 +1,7 @@
 package org.java.es3;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Es3Main {
@@ -43,5 +45,8 @@ public class Es3Main {
 			
 			System.out.println("value: " + value);
 		}
+		
+		List<Integer> myL = new ArrayList<>();
+		myL.add(10);
 	}
 }
