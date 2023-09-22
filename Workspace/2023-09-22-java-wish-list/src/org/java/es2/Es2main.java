@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Es2main {
 
@@ -15,9 +16,15 @@ public class Es2main {
 		String phrase = sc.nextLine();
 		
 		Map<Character, Integer> occurences = new HashMap<>();
-		char[] characters = phrase.toCharArray();
-		List<char[]> listChar = Character.as.asList(characters);
-		System.out.println(listChar.get(0));
+		phrase.chars()
+        	.mapToObj(c -> (char) c)
+        	.forEach(c -> occurences.put(c, 
+					(
+							occurences.containsKey(c)
+							? occurences.get(c)
+							: 0
+					) + 1
+			));
 //		for (Character c : phrase.toCharArray()) {
 //			
 //			occurences.put(c, 
@@ -35,6 +42,6 @@ public class Es2main {
 ////			}
 //		}
 		
-//		System.out.println("Occurences:\n" + occurences);
+		System.out.println("Occurences:\n" + occurences);
 	}
 }
