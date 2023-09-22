@@ -1,4 +1,4 @@
-package org.java;
+package org.java.es1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +13,17 @@ public class Es1Main {
 		System.out.println("Java Wish List");
 		
 		String userContinue = "y";
-		List<String> wishes = new ArrayList<>();
+		List<Wish> wishes = new ArrayList<>();
 		while (userContinue.equalsIgnoreCase("y")) {
 			
 			System.out.print("Nome del regalo: ");
 			String wishName = sc.nextLine();
+			System.out.print("Destinatario del regalo: ");
+			String wishRecipient = sc.nextLine();
 			
-			wishes.add(wishName);
+			Wish wish = new Wish(wishName, wishRecipient);
+			
+			wishes.add(wish);
 			int lng = wishes.size();
 			
 			System.out.println("Numero regali: " + lng);
