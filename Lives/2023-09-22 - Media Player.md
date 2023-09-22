@@ -1,6 +1,4 @@
-Progettare una classe `Media` che rappresenta un generico elemento multimediale
-identificabile da una stringa non vuota, e gli elementi multimediali *Image*, *Video* e
-*Audio*. 
+Progettare una classe astratta `Media` che rappresenta un generico elemento multimediale identificabile da una stringa non vuota (`titolo`), e gli elementi multimediali *Image*, *Video* e *Audio*. 
 Un elemento multimediale è riproducibile se implementa il metodo `play`.
 Qualsiasi elemento multimediale può essere eseguito attraverso il metodo `execute`.
 Eseguire un elemento multimediale significa invocarne il metodo `show` se è

@@ -46,7 +46,7 @@ public class Es3Main {
 			System.out.println("value: " + value);
 		}
 		
-		List<Integer> myL = new ArrayList<>();
+		ArrayList<Integer> myL = new ArrayList<>();
 		myL.add(10);
 	}
 }

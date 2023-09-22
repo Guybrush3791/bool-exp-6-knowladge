@@ -10,7 +10,7 @@ public class MyIterator {
 	
 	public MyIterator() {
 		
-		values = new int[3];
+		values = new int[10];
 	}
 //	public MyIterator(int[] values) {
 //		
