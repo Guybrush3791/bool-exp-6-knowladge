@@ -9,14 +9,16 @@ public class Audio extends Media implements HasVolume, Playable {
 	
 	private Volume volume;
 	
-	public Audio(String title) {
+	public Audio(String title) throws Exception {
 		super(title);
+		
+		volume = new Volume();
 	}
 
 	@Override
 	public void play() {
-		// TODO
-		System.out.println("!! TODO !!");
+		
+		System.out.println(this);
 	}
 	
 	@Override
@@ -38,5 +40,11 @@ public class Audio extends Media implements HasVolume, Playable {
 	@Override
 	public void execute() {
 		play();
+	}
+	
+	@Override
+	public String toString() {
+		
+		return "Audio:\n" + super.toString() + "\nvolume: " + volume;
 	}
 }
