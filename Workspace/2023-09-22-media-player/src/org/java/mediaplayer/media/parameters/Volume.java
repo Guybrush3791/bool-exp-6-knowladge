@@ -39,6 +39,10 @@ public class Volume {
 	@Override
 	public String toString() {
 		
-		return "Volume: " + getVolume();
+		String res = "";
+		for (int x=0;x<volume;x++)
+			res += "*";
+		
+		return res + " (" + volume + ")";
 	}
 }

@@ -12,14 +12,17 @@ public class Video extends Media implements HasVolume, HasBrightness, Playable {
 	private Volume volume;
 	private Brightness brightness;
 	
-	public Video(String title) {
+	public Video(String title) throws Exception {
 		super(title);
+		
+		volume = new Volume();
+		brightness = new Brightness();
 	}
 	
 	@Override
 	public void play() {
-		// TODO
-		System.out.println("!! TODO !!");
+		
+		System.out.println(this);
 	}
 	
 	@Override
@@ -54,5 +57,11 @@ public class Video extends Media implements HasVolume, HasBrightness, Playable {
 	@Override
 	public void execute() {
 		play();
+	}
+	
+	@Override
+	public String toString() {
+		
+		return "Video:\n" + super.toString() + "\nvolume: " + volume + "\nbrightness: " + brightness;
 	}
 }

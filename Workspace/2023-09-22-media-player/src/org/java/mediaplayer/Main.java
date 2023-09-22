@@ -1,6 +1,7 @@
 package org.java.mediaplayer;
 
 import org.java.mediaplayer.media.Image;
+import org.java.mediaplayer.media.Video;
 import org.java.mediaplayer.media.abs.Media;
 
 public class Main {
@@ -9,37 +10,15 @@ public class Main {
 		
 		try {
 		
-			Image img1 = new Image("test img");
-			Media mediaImg1 = img1;
+			Video v1 = new Video("video 1");
+			Media mediaV1 = v1;
 			
-			mediaImg1.execute();
+			mediaV1.execute();
 			
-			img1.darker();
-			img1.darker();
-			img1.darker();
-			img1.darker();
-			img1.darker();
-			img1.darker();
-			img1.darker();
-			img1.darker();
-			img1.darker();
+			v1.brighter();
+			v1.louder();
 			
-			mediaImg1.execute();
-			
-			img1.brighter();
-			img1.brighter();
-			img1.brighter();
-			img1.brighter();
-			img1.brighter();
-			img1.brighter();
-			img1.brighter();
-			img1.brighter();
-			img1.brighter();
-			img1.brighter();
-			img1.brighter();
-			img1.brighter();
-			
-			mediaImg1.execute();
+			mediaV1.execute();
 		} catch(Exception e) {
 			
 			System.out.println("Error: " + e.getMessage());

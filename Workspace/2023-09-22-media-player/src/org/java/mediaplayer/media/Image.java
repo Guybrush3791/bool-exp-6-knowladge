@@ -40,6 +40,6 @@ public class Image extends Media implements HasBrightness {
 	@Override
 	public String toString() {
 		
-		return "Image:\ntitle: " + getTitle() + "\nbrightness: " + brightness;
+		return "Image:\n" + super.toString() + "\nbrightness: " + brightness;
 	}
 }

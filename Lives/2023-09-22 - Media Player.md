@@ -22,9 +22,7 @@ delle registrazioni audio e anche una *luminosità*, che e' un valore positivo d
 #### Metodi
 - `brighter` + `darker`: regolarla la luminosità
 - `printBrightness`: stampa la luminosità
-- `play`: ripete per un numero di volte pari al valore corrente del volume
-la stampa del *titolo* concatenato ad una *sequenza di asterischi* di lunghezza
-pari alla *luminosità*
+- `play`: stampare il *titolo* concatenato ad una sequenza di asterischi di lunghezza pari al *volume* e una sequenza di asterischi per la *luminosità*
 
 ### Immagine
 Un’immagine **non è riproducibile**, ma ha una *luminosità* regolabile analoga a
