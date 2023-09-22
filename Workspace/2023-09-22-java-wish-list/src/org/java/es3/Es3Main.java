@@ -11,5 +11,14 @@ public class Es3Main {
 		int[] values = new int[10];
 		for (int x=0;x<10;x++) 
 			values[x] = rnd.nextInt(0, 101);
+		
+		MyIterator myIt = new MyIterator(values);
+		
+		while(myIt.hasNext()) {
+			
+			int value = myIt.getNextElement();
+			
+			System.out.println("value: " + value);
+		}
 	}
 }

@@ -18,7 +18,7 @@ public class MyIterator {
 	}
 	public boolean hasNext() {
 		
-		return index < values.length - 1;
+		return index < values.length;
 	}
 	
 	public int[] getValues() {
