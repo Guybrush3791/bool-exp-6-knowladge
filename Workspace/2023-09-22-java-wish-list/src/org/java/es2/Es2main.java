@@ -1,7 +1,7 @@
 package org.java.es2;
 
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -15,8 +15,9 @@ public class Es2main {
 		String phrase = sc.nextLine();
 		
 		Map<Character, Integer> occurences = new HashMap<>();
-		Arrays.asList(phrase.toCharArray()).stream()
-			.forEach(c -> occurences.put(c, 1));
+		char[] characters = phrase.toCharArray();
+		List<char[]> listChar = Character.as.asList(characters);
+		System.out.println(listChar.get(0));
 //		for (Character c : phrase.toCharArray()) {
 //			
 //			occurences.put(c, 
@@ -34,6 +35,6 @@ public class Es2main {
 ////			}
 //		}
 		
-		System.out.println("Occurences:\n" + occurences);
+//		System.out.println("Occurences:\n" + occurences);
 	}
 }
