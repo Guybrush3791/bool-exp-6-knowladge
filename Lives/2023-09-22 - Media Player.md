@@ -1,14 +1,20 @@
-Progettare una classe Media che rappresenta un generico elemento multimediale
-identificabile da una stringa non vuota, e gli elementi multimediali Image, Video e
-Audio. Un elemento multimediale è riproducibile se implementa il metodo play.
-● Un audio è riproducibile e ha associato anche un volume (un valore positivo di
-tipo int compreso tra 0 e 10) e i metodi weaker e louder per regolarlo e il
-metodo printVolume che stampa il valore corrente del volume. Di default il
-volume è impostato a 5.
-Se riprodotto, ripete per un numero di volte pari al volume corrente la stampa
-del titolo
-● Un video è riproducibile e ha associato un volume regolabile analogo a quello
-delle registrazioni audio e anche una luminosità (un valore positivo di tipo
+Progettare una classe `Media` che rappresenta un generico elemento multimediale
+identificabile da una stringa non vuota, e gli elementi multimediali *Image*, *Video* e
+*Audio*. 
+Un elemento multimediale è riproducibile se implementa il metodo `play`.
+
+### Audio
+Un audio è *riproducibile* e ha associato anche un *volume*  che e' un valore positivo di
+tipo `int` compreso tra `0` e `10`. Di default il volume è impostato a `5`.
+
+#### Metodi
+- `weaker` + `louder`: regolare il volume
+- `printVolume`: stampa il valore corrente del volume 
+- `play`: ripete per un numero di volte pari al volume corrente la stampa del titolo
+
+### Video
+Un video è *riproducibile* e ha associato un *volume* regolabile analogo a quello
+delle registrazioni audio e anche una *luminosità*, che e' un valore positivo di tipo
 double compreso tra 0.0 e 0.9) e i metodi brighter e darker per regolarla e il
 metodo printBrightness che stampa il valore corrente della luminosità. Di
 default la luminosità è impostata a 0.5.
