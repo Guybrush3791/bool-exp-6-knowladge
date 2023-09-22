@@ -1,19 +1,17 @@
 package org.java.mediaplayer.media.parameters;
 
-import java.math.BigDecimal;
-
 public class Brightness {
 
-	private static final int MIN_BRIGHTNESS = 0;
-	private static final int MAX_BRIGHTNESS = 1;
+	private static final double MIN_BRIGHTNESS = 0d;
+	private static final double MAX_BRIGHTNESS = 1d;
 	
-	private BigDecimal brightness;
+	private double brightness;
 	
 	public Brightness() throws Exception {
 		
-		this(.5f);
+		this(.5d);
 	}
-	public Brightness(float brightness) throws Exception {
+	public Brightness(double brightness) throws Exception {
 		
 		setBrightness(brightness);
 	}
@@ -21,9 +19,9 @@ public class Brightness {
 	public double getBrightness() {
 		return brightness;
 	}
-	public void setBrightness(float brightness) throws Exception {
+	public void setBrightness(double brightness) throws Exception {
 		
-		if (brightness < 0f || brightness > 1f) 
+		if (brightness < 0d || brightness > 1d) 
 			throw new Exception("Brightness must be from 0.0 to 1.0 included");
 		
 		this.brightness = brightness;
@@ -31,18 +29,18 @@ public class Brightness {
 
 	public void darker() {
 		
-		brightness -= brightness > MIN_BRIGHTNESS ? .1f : 0;
+		brightness -= brightness > MIN_BRIGHTNESS ? .1d : 0;
 	}
 	public void brighter() {
 		
-		brightness += brightness < MAX_BRIGHTNESS ? .1f : 0;
+		brightness += brightness < MAX_BRIGHTNESS ? .1d : 0;
 	}
 	
 	@Override
 	public String toString() {
 		
 		String res = "";
-		for (double x=0f;x<brightness;x+=.1f)
+		for (double x=0d;x<brightness;x+=.1)
 			res += "*";
 		
 		return res + " (" + brightness + ")";
