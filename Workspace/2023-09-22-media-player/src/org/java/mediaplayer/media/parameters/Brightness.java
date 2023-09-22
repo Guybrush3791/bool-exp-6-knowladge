@@ -1,5 +1,7 @@
 package org.java.mediaplayer.media.parameters;
 
+import javax.annotation.processing.SupportedOptions;
+
 public class Brightness {
 
 	private static final double MIN_BRIGHTNESS = 0d;
@@ -27,13 +29,15 @@ public class Brightness {
 		this.brightness = brightness;
 	}
 
-	public void darker() {
+	public void darker() throws Exception {
 		
-		brightness -= brightness > MIN_BRIGHTNESS ? .1d : 0;
+		int supportValue = (int) (brightness * 10) - (int) (brightness > MIN_BRIGHTNESS ? 1 : 0);
+		setBrightness(supportValue / 10d);
 	}
-	public void brighter() {
+	public void brighter() throws Exception {
 		
-		brightness += brightness < MAX_BRIGHTNESS ? .1d : 0;
+		int supportValue = (int) (brightness * 10) - (int) (brightness < MAX_BRIGHTNESS ? 1 : 0);
+		setBrightness(supportValue / 10d);
 	}
 	
 	@Override
