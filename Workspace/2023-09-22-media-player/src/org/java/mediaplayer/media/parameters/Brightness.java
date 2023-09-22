@@ -4,12 +4,13 @@ public class Brightness {
 
 	private static final double MIN_BRIGHTNESS = 0d;
 	private static final double MAX_BRIGHTNESS = 1d;
+	private static final double DEFAULT_BRIGHTNESS = .5d;
 	
 	private double brightness;
 	
 	public Brightness() throws Exception {
 		
-		this(.5d);
+		this(DEFAULT_BRIGHTNESS);
 	}
 	public Brightness(double brightness) throws Exception {
 		

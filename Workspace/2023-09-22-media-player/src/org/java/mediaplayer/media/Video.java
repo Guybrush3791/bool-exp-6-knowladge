@@ -19,6 +19,19 @@ public class Video extends Media implements HasVolume, HasBrightness, Playable {
 		brightness = new Brightness();
 	}
 	
+	public Volume getVolume() {
+		return volume;
+	}
+	public void setVolume(Volume volume) {
+		this.volume = volume;
+	}
+	public Brightness getBrightness() {
+		return brightness;
+	}
+	public void setBrightness(Brightness brightness) {
+		this.brightness = brightness;
+	}
+
 	@Override
 	public void play() {
 		
@@ -35,7 +48,7 @@ public class Video extends Media implements HasVolume, HasBrightness, Playable {
 	}
 	@Override
 	public void printBrightness() {
-		System.out.println(brightness);
+		System.out.println(getBrightness());
 	}
 	
 	@Override
