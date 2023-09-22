@@ -1,0 +1,10 @@
+./java/mediaplayer/Main.java
+./java/mediaplayer/media/inter/HasVolume.java
+./java/mediaplayer/media/inter/Playable.java
+./java/mediaplayer/media/inter/HasBrightness.java
+./java/mediaplayer/media/Audio.java
+./java/mediaplayer/media/abs/Media.java
+./java/mediaplayer/media/parameters/Brightness.java
+./java/mediaplayer/media/parameters/Volume.java
+./java/mediaplayer/media/Image.java
+./java/mediaplayer/media/Video.java
