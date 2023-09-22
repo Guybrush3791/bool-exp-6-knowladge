@@ -57,17 +57,22 @@ public class Main {
 				medias[x] = newMedia;
 		}
 		
-		System.out.println("-----------------------------------");
+		System.out.println("\n-----------------------------------\n");
 		
-		String userValue = "-1";
-		while (!userValue.equals("0")) {
+		int userValue = -1;
+		while (userValue != 0) {
 			
-			System.out.println("Media:");
+			System.out.println("Media:\n-----------------------------------");
 			for (int x=0;x<MEDIA_COUNT;x++) 
-				System.out.println(medias[x]
-						+ "-----------------------------------\n");
+				System.out.println(
+						"Value: " + (x + 1) + "\n"
+						+ medias[x]
+						+ "\n-----------------------------------\n");
 			
-			userValue = sc.nextLine();
+			userValue = Integer.valueOf(sc.nextLine());
+			
+			Media selectedMedia = medias[userValue - 1];
+			selectedMedia.execute();
 		}
 		
 		System.out.println("-----------------------------------");
