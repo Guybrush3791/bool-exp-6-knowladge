@@ -45,6 +45,6 @@ public class Brightness {
 		for (double x=0d;x<brightness;x=((int) (x * 10) + 1) / 10d)
 			res += "*";
 		
-		return res + " (" + brightness + ")";
+		return res + " (" + brightness + "/1.0)";
 	}
 }

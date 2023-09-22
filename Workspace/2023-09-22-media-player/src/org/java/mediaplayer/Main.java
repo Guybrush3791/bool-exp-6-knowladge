@@ -16,6 +16,22 @@ public class Main {
 			mediaV1.execute();
 			
 			v1.brighter();
+			v1.brighter();
+			v1.brighter();
+			v1.brighter();
+			v1.brighter();
+			v1.brighter();
+			v1.brighter();
+			v1.brighter();
+			
+			v1.louder();
+			v1.louder();
+			v1.louder();
+			v1.louder();
+			v1.louder();
+			v1.louder();
+			v1.louder();
+			v1.louder();
 			v1.louder();
 			
 			mediaV1.execute();

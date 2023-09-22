@@ -43,6 +43,6 @@ public class Volume {
 		for (int x=0;x<volume;x++)
 			res += "*";
 		
-		return res + " (" + volume + ")";
+		return res + " (" + volume + "/10)";
 	}
 }
