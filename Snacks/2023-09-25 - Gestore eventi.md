@@ -57,10 +57,10 @@ Creare una classe `ProgrammEventi` con i seguenti attributi:
 Nel costruttore valorizzare il titolo, passato come parametro, e inizializzare la lista di eventi come un nuovo `ArrayList`.
 
 Aggiungere i seguenti metodi:
-- un metodo che aggiunge alla lista un `Evento`, passato come parametro
-- un metodo che *restituisce una lista con tutti gli eventi presenti in una certa data*
-- un metodo che *restituisce quanti eventi sono presenti nel programma*
-- un metodo che *svuota la lista di eventi*
+1. un metodo che aggiunge alla lista un `Evento`, passato come parametro
+2. un metodo che *restituisce una lista con tutti gli eventi presenti in una certa data*
+3. un metodo che *restituisce quanti eventi sono presenti nel programma*
+4. un metodo che *svuota la lista di eventi*
 - un metodo che restituisce una stringa che mostra il titolo del programma e tutti gli eventi ordinati per data nella forma:
 ```
 	- data1 - titolo1
@@ -68,3 +68,5 @@ Aggiungere i seguenti metodi:
 	- data3 - titolo3
 	- …
 ```
+
+### Milestone 5 - Bonus++
