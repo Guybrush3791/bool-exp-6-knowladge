@@ -73,7 +73,12 @@ Aggiungere i seguenti metodi:
 - testare nel `main` tutti i metodi della [[#MILESTONE 4 - Bonus|Milestone 4]] (e' possibile utilizzare dati `hard-coded` nel programma, evitando di leggere tutto da `console`)
 - svolgere il punto *2*, *3* e *5* anche attraverso le `lambda function`
 
-Aggiungere poi una classe `Spettacoli` (che dovra' estendere `Evento`) caratterizzata da:
+Aggiungere poi una classe `Spettacolo` (che dovra' estendere `Evento`) caratterizzata da:
 - `prezzo`: `BigDecimal`
 
+Aggiungere 3 funzioni in `ProgrammEventi` (da testare poi nel `main`):
+- `mediaPrezzoConcerto`: restituisce *la media dei prezzi* dei concerti
+- `mediaPrezzoSpettacolo`: restituisce *la media dei prezzi* degli spettacoli
+- `mediaPrezzoEvento`: restituisce *la media dei prezzi* di tutti gli eventi
 
+> [!attention] E' **POSSIBILE** utilizzare `classi astratte` e `interfacce` a piacere per migliorare la generalizzazione
