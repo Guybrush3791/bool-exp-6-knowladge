@@ -62,7 +62,9 @@ Aggiungere i seguenti metodi:
 - un metodo che *restituisce quanti eventi sono presenti nel programma*
 - un metodo che *svuota la lista di eventi*
 - un metodo che restituisce una stringa che mostra il titolo del programma e tutti gli eventi ordinati per data nella forma:
+```
 	- data1 - titolo1
 	- data2 - titolo2
 	- data3 - titolo3
 	- …
+```
