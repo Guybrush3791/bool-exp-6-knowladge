@@ -4,6 +4,7 @@ public class Brightness {
 
 	private static final double MIN_BRIGHTNESS = 0d;
 	private static final double MAX_BRIGHTNESS = 1d;
+	
 	private static final double DEFAULT_BRIGHTNESS = .5d;
 	
 	private double brightness;
