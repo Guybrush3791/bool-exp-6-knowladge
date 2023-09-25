@@ -6,7 +6,7 @@ Stiamo lavorando a un programma che deve gestire eventi (ad esempio concerti,
 conferenze, spettacoli,...)
 
 ### MILESTONE 1
-La consegna è di creare una classe Evento che abbia le seguenti proprietà:
+La consegna è di creare una classe `Evento` che abbia le seguenti proprietà:
 - `titolo`
 - `data`
 - `numero di posti in totale`
@@ -72,3 +72,8 @@ Aggiungere i seguenti metodi:
 ### Milestone 5 - Bonus++
 - testare nel `main` tutti i metodi della [[#MILESTONE 4 - Bonus|Milestone 4]] (e' possibile utilizzare dati `hard-coded` nel programma, evitando di leggere tutto da `console`)
 - svolgere il punto *2*, *3* e *5* anche attraverso le `lambda function`
+
+Aggiungere poi una classe `Spettacoli` (che dovra' estendere `Evento`) caratterizzata da:
+- `prezzo`: `BigDecimal`
+
+
