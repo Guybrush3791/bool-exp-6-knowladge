@@ -61,7 +61,7 @@ Aggiungere i seguenti metodi:
 2. un metodo che *restituisce una lista con tutti gli eventi presenti in una certa data*
 3. un metodo che *restituisce quanti eventi sono presenti nel programma*
 4. un metodo che *svuota la lista di eventi*
-- un metodo che restituisce una stringa che mostra il titolo del programma e tutti gli eventi ordinati per data nella forma:
+5. un metodo che restituisce una stringa che mostra il titolo del programma e tutti gli eventi ordinati per data nella forma:
 ```
 	- data1 - titolo1
 	- data2 - titolo2
@@ -70,3 +70,5 @@ Aggiungere i seguenti metodi:
 ```
 
 ### Milestone 5 - Bonus++
+- testare nel `main` tutti i metodi della [[#MILESTONE 4 - Bonus|Milestone 4]] (e' possibile utilizzare dati `hard-coded` nel programma, evitando di leggere tutto da `console`)
+- svolgere il punto *2*, *3* e *5* anche attraverso le `lambda function`
