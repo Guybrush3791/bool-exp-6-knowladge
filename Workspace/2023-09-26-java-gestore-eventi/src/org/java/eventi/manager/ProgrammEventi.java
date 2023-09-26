@@ -79,7 +79,7 @@ public class ProgrammEventi {
 			if (e instanceof Concerto) {
 				
 				elemCount++;
-				avg.add(((Concerto) e).getPrezzo());
+				avg = avg.add(((Concerto) e).getPrezzo());
 			}
 		}
 		

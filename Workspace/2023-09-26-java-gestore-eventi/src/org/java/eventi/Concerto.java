@@ -25,6 +25,12 @@ public class Concerto extends Evento {
 		setOra(ora);
 		setPrezzo(prezzo);
 	}
+	public Concerto(String titolo, String data, int postiTotali, String ora, BigDecimal prezzo) throws Exception {
+		super(titolo, data, postiTotali);
+		
+		setOra(ora);
+		setPrezzo(prezzo);
+	}
 	
 	public LocalTime getOra() {
 		return ora;
@@ -35,6 +41,10 @@ public class Concerto extends Evento {
 	}
 	public void setOra(LocalTime ora) {
 		this.ora = ora;
+	}
+	public void setOra(String ora) {
+		
+		setOra(LocalTime.parse(ora));
 	}
 	public BigDecimal getPrezzo() {
 		return prezzo;

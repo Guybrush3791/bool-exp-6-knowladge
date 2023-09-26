@@ -1,9 +1,11 @@
 package org.java;
 
-import java.util.List;
+import java.math.BigDecimal;
 import java.util.Scanner;
 
+import org.java.eventi.Concerto;
 import org.java.eventi.Evento;
+import org.java.eventi.Spettacolo;
 import org.java.eventi.manager.ProgrammEventi;
 
 public class Main {
@@ -18,13 +20,27 @@ public class Main {
 			Evento e2 = new Evento("mio titolo 2", "29/09/2023", 100);
 			Evento e3 = new Evento("mio titolo 3", "30/09/2023", 100);
 			
+			Concerto c1 = new Concerto("mio concerto 1", "29/09/2023", 100, "21:00", new BigDecimal(35));
+			Concerto c2 = new Concerto("mio concerto 2", "30/09/2023", 100, "21:00", new BigDecimal(50));
+			
+			Spettacolo s1 = new Spettacolo("mio spettacolo 1", "29/09/2023", 100, new BigDecimal(40));
+			Spettacolo s2 = new Spettacolo("mio spettacolo 2", "30/09/2023", 100, new BigDecimal(70));
+			
 			ProgrammEventi pe = new ProgrammEventi("Titolo serie");
+			
 			pe.addEvento(e1);
 			pe.addEvento(e3);
 			pe.addEvento(e2);
 			
-			System.out.println(pe.getEventi());
+			pe.addEvento(c1);
+			pe.addEvento(c2);
+			
+			pe.addEvento(s1);
+			pe.addEvento(s2);
+			
 			System.out.println(pe);
+			
+			System.out.println("Media prezzo concerto: " + pe.mediaPrezzoConcerto());
 			
 //			System.out.println("Numero eventi: " + pe.getNumeroEventi());
 			
