@@ -24,7 +24,7 @@ public class Main {
 			Concerto c2 = new Concerto("mio concerto 2", "30/09/2023", 100, "21:00", new BigDecimal(50));
 			
 			Spettacolo s1 = new Spettacolo("mio spettacolo 1", "29/09/2023", 100, new BigDecimal(40));
-			Spettacolo s2 = new Spettacolo("mio spettacolo 2", "30/09/2023", 100, new BigDecimal(70));
+			Spettacolo s2 = new Spettacolo("mio spettacolo 2", "30/09/2023", 100, new BigDecimal(70.5));
 			
 			ProgrammEventi pe = new ProgrammEventi("Titolo serie");
 			
