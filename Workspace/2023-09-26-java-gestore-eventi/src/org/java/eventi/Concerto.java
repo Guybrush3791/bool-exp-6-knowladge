@@ -1,6 +1,7 @@
 package org.java.eventi;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -28,13 +29,17 @@ public class Concerto extends Evento {
 	}
 	public String getFormattedOra() {
 		
-		return getOra().format(DateTimeFormatter.ofPattern("hh:mm"));
+		return getOra().format(DateTimeFormatter.ofPattern("HH:mm"));
 	}
 	public void setOra(LocalTime ora) {
 		this.ora = ora;
 	}
 	public BigDecimal getPrezzo() {
 		return prezzo;
+	}
+	public String getFormattedPrezzo() {
+		
+		return new DecimalFormat("##.00€").format(getPrezzo());
 	}
 	public void setPrezzo(BigDecimal prezzo) {
 		this.prezzo = prezzo;
