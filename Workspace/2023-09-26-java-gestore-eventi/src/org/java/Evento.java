@@ -1,6 +1,7 @@
 package org.java;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Evento {
 
@@ -72,7 +73,8 @@ public class Evento {
 	@Override
 	public String toString() {
 		
-		return 
+		return getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + " - "
+				+ getTitolo();
 	}
 	
 	private void checkDataPassata() throws Exception {
