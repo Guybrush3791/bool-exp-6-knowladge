@@ -17,6 +17,14 @@ public class Evento {
 		
 		setPostiPrenotati(0);
 	}
+	public Evento(String titolo, String date, int postiTotali) throws Exception {
+		
+		setTitolo(titolo);
+		setData(data);
+		setPostiPrenotati(postiTotali);
+		
+		setPostiPrenotati(0);
+	}
 	
 	public String getTitolo() {
 		return titolo;
@@ -33,6 +41,10 @@ public class Evento {
 			throw new Exception("La data dell'evento non puo' essere nel passato");
 		
 		this.data = data;
+	}
+	public void setData(String data) throws Exception {
+		
+		setData(LocalDate.parse(data));
 	}
 	public int getPostiTotali() {
 		return postiTotali;
