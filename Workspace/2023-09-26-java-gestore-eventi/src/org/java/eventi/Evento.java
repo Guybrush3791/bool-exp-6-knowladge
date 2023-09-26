@@ -39,6 +39,10 @@ public class Evento {
 	public LocalDate getData() {
 		return data;
 	}
+	protected String getFormattedData() {
+		
+		return getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+	}
 	public void setData(LocalDate data) throws Exception {
 		
 		if (data.isBefore(LocalDate.now()))
@@ -89,8 +93,7 @@ public class Evento {
 	@Override
 	public String toString() {
 		
-		return getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + " - "
-				+ getTitolo();
+		return getFormattedData() + " - " + getTitolo();
 	}
 	
 	private void checkDataPassata() throws Exception {
