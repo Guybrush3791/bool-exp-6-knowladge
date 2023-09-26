@@ -17,7 +17,7 @@ public class Evento {
 		
 		setPostiPrenotati(0);
 	}
-	public Evento(String titolo, String date, int postiTotali) throws Exception {
+	public Evento(String titolo, String data, int postiTotali) throws Exception {
 		
 		setTitolo(titolo);
 		setData(data);
