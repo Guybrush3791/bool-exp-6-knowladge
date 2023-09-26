@@ -110,7 +110,7 @@ public class ProgrammEventi {
 
 		for (Evento e : getEventi()) {
 
-			if (e instanceof Concerto || e instanceof Spettacolo) {
+			if (e instanceof Prezzabile) {
 
 				elemCount++;
 				avg = avg.add(((Prezzabile) e).getPrezzo());
