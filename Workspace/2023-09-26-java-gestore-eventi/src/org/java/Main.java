@@ -20,11 +20,15 @@ public class Main {
 			
 			ProgrammEventi pe = new ProgrammEventi("Titolo serie");
 			pe.addEvento(e1);
-			pe.addEvento(e2);
 			pe.addEvento(e3);
+			pe.addEvento(e2);
 			
-			List<Evento> eventi29 = pe.getEventiByDate("29/09/2023");
-			System.out.println(eventi29);
+			System.out.println(pe.getEventi());
+			
+//			System.out.println("Numero eventi: " + pe.getNumeroEventi());
+			
+//			List<Evento> eventi29 = pe.getEventiByDate("29/09/2023");
+//			System.out.println(eventi29);
 			
 //			Concerto c1 = new Concerto(
 //					"mio titolo", "29/09/2023", 100, 

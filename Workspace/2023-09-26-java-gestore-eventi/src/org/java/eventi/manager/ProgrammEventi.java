@@ -55,4 +55,26 @@ public class ProgrammEventi {
 		
 		return getEventiByDate(LocalDate.parse(date, DateTimeHelper.DATE_FORMATTER));
 	}
+	public int getNumeroEventi() {
+		
+		return (int) getEventi().stream().count();
+		
+//		return getEventi().size();
+	}
+	public void svuotaEventi() {
+		
+		getEventi().clear();
+	}
+	
+	@Override
+	public String toString() {
+		
+		List<Evento> eventiOrdinati = new ArrayList<>(getEventi());
+		
+		eventiOrdinati.sort((e1, e2) -> e1.getData().compareTo(e2.getData()));
+		
+		System.out.println(eventiOrdinati);
+		
+		return null;
+	}
 }
