@@ -10,6 +10,7 @@ import org.java.eventi.Concerto;
 import org.java.eventi.Evento;
 import org.java.eventi.Spettacolo;
 import org.java.eventi.helper.DateTimeHelper;
+import org.java.eventi.inter.Prezzabile;
 
 public class ProgrammEventi {
 
@@ -109,15 +110,10 @@ public class ProgrammEventi {
 		
 		for (Evento e : getEventi()) {
 			
-			if (e instanceof Concerto) {
+			if (e instanceof Prezzabile) {
 				
 				elemCount++;
-				avg = avg.add(((Concerto) e).getPrezzo());
-			}
-			if (e instanceof Spettacolo) {
-				
-				elemCount++;
-				avg = avg.add(((Spettacolo) e).getPrezzo());
+				avg = avg.add(((Prezzabile) e).getPrezzo());
 			}
 		}
 		

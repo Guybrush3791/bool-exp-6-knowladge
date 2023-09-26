@@ -5,8 +5,9 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 import org.java.eventi.helper.DateTimeHelper;
+import org.java.eventi.inter.Prezzabile;
 
-public class Concerto extends Evento {
+public class Concerto extends Evento implements Prezzabile {
 	
 	
 	
@@ -46,13 +47,16 @@ public class Concerto extends Evento {
 		
 		setOra(LocalTime.parse(ora));
 	}
+	@Override
 	public BigDecimal getPrezzo() {
 		return prezzo;
 	}
+	@Override
 	public String getFormattedPrezzo() {
 		
 		return DateTimeHelper.PREZZO_FORMATTER.format(getPrezzo());
 	}
+	@Override
 	public void setPrezzo(BigDecimal prezzo) {
 		this.prezzo = prezzo;
 	}

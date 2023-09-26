@@ -4,8 +4,9 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import org.java.eventi.helper.DateTimeHelper;
+import org.java.eventi.inter.Prezzabile;
 
-public class Spettacolo extends Evento {
+public class Spettacolo extends Evento implements Prezzabile {
 	
 	private BigDecimal prezzo;
 
@@ -20,13 +21,16 @@ public class Spettacolo extends Evento {
 		setPrezzo(prezzo);
 	}
 	
+	@Override
 	public BigDecimal getPrezzo() {
 		return prezzo;
 	}
-	public String getPrezzoFormattato() {
+	@Override
+	public String getFormattedPrezzo() {
 		
 		return DateTimeHelper.PREZZO_FORMATTER.format(getPrezzo());
 	}
+	@Override
 	public void setPrezzo(BigDecimal prezzo) {
 		this.prezzo = prezzo;
 	}
@@ -34,7 +38,7 @@ public class Spettacolo extends Evento {
 	@Override
 	public String toString() {
 		
-		return super.toString() + " - " + getPrezzoFormattato();
+		return super.toString() + " - " + getFormattedPrezzo();
 				 
 	}
 }
