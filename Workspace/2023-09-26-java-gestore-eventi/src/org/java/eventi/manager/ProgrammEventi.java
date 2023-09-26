@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import org.java.eventi.Concerto;
 import org.java.eventi.Evento;
+import org.java.eventi.Spettacolo;
 import org.java.eventi.helper.DateTimeHelper;
 
 public class ProgrammEventi {
@@ -80,6 +81,43 @@ public class ProgrammEventi {
 				
 				elemCount++;
 				avg = avg.add(((Concerto) e).getPrezzo());
+			}
+		}
+		
+		return avg.divide(new BigDecimal(elemCount));
+	}
+	public BigDecimal mediaPrezzoSpettacolo() {
+		
+		int elemCount = 0;
+		BigDecimal avg = new BigDecimal(0);
+		
+		for (Evento e : getEventi()) {
+			
+			if (e instanceof Spettacolo) {
+				
+				elemCount++;
+				avg = avg.add(((Spettacolo) e).getPrezzo());
+			}
+		}
+		
+		return avg.divide(new BigDecimal(elemCount));
+	}
+	public BigDecimal mediaPrezzoEvento() {
+		
+		int elemCount = 0;
+		BigDecimal avg = new BigDecimal(0);
+		
+		for (Evento e : getEventi()) {
+			
+			if (e instanceof Concerto) {
+				
+				elemCount++;
+				avg = avg.add(((Concerto) e).getPrezzo());
+			}
+			if (e instanceof Spettacolo) {
+				
+				elemCount++;
+				avg = avg.add(((Spettacolo) e).getPrezzo());
 			}
 		}
 		

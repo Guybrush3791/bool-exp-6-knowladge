@@ -41,6 +41,8 @@ public class Main {
 			System.out.println(pe);
 			
 			System.out.println("Media prezzo concerto: " + pe.mediaPrezzoConcerto());
+			System.out.println("Media prezzo spettacolo: " + pe.mediaPrezzoSpettacolo());
+			System.out.println("Media prezzo eventi: " + pe.mediaPrezzoEvento());
 			
 //			System.out.println("Numero eventi: " + pe.getNumeroEventi());
 			
