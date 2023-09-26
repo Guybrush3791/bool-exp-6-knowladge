@@ -3,8 +3,12 @@ package org.java.eventi;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import javax.swing.text.DateFormatter;
+
 public class Evento {
 
+	private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	
 	private String titolo;
 	private LocalDate data;
 	private int postiTotali;
@@ -41,7 +45,7 @@ public class Evento {
 	}
 	protected String getFormattedData() {
 		
-		return getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		return getData().format(DATE_FORMATTER);
 	}
 	public void setData(LocalDate data) throws Exception {
 		
@@ -52,7 +56,7 @@ public class Evento {
 	}
 	public void setData(String data) throws Exception {
 		
-		setData(LocalDate.parse(data));
+		setData(LocalDate.parse(data, DATE_FORMATTER));
 	}
 	public int getPostiTotali() {
 		return postiTotali;
