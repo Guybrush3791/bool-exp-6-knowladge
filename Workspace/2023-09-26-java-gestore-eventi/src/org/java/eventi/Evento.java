@@ -7,7 +7,7 @@ import javax.swing.text.DateFormatter;
 
 public class Evento {
 
-	private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	
 	
 	private String titolo;
 	private LocalDate data;
