@@ -9,21 +9,25 @@ public class Evento {
 	private LocalDate data;
 	private int postiTotali;
 	private int postiPrenotati;
-	public Evento(String titolo, LocalDate date, int postiTotali) throws Exception {
 	
+	private Evento(String titolo, int postiTotali) throws Exception {
+		
 		setTitolo(titolo);
-		setData(date);
 		setPostiTotali(postiTotali);
 		
 		setPostiPrenotati(0);
 	}
+	public Evento(String titolo, LocalDate data, int postiTotali) throws Exception {
+	
+		this(titolo, postiTotali);
+		
+		setData(data);
+	}
 	public Evento(String titolo, String data, int postiTotali) throws Exception {
 		
-		setTitolo(titolo);
-		setData(data);
-		setPostiPrenotati(postiTotali);
+		this(titolo, postiTotali);
 		
-		setPostiPrenotati(0);
+		setData(data);
 	}
 	
 	public String getTitolo() {
