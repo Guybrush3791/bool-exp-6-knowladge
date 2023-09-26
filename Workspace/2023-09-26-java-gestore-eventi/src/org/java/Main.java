@@ -24,6 +24,7 @@ public class Main {
 			pe.addEvento(e2);
 			
 			System.out.println(pe.getEventi());
+			System.out.println(pe);
 			
 //			System.out.println("Numero eventi: " + pe.getNumeroEventi());
 			

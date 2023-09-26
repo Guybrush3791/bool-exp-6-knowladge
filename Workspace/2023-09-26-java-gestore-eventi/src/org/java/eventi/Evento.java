@@ -40,7 +40,7 @@ public class Evento {
 	public LocalDate getData() {
 		return data;
 	}
-	protected String getFormattedData() {
+	public String getFormattedData() {
 		
 		return getData().format(DateTimeHelper.DATE_FORMATTER);
 	}

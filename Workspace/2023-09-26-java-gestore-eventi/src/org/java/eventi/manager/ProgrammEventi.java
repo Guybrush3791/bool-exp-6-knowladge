@@ -3,6 +3,7 @@ package org.java.eventi.manager;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.java.eventi.Evento;
 import org.java.eventi.helper.DateTimeHelper;
@@ -69,12 +70,20 @@ public class ProgrammEventi {
 	@Override
 	public String toString() {
 		
-		List<Evento> eventiOrdinati = new ArrayList<>(getEventi());
+		return getEventi().stream()
+					.sorted((e1, e2) -> e1.getData().compareTo(e2.getData()))
+					.map(e -> e.getFormattedData() + " - " + e.getTitolo())
+				.collect(Collectors.joining("\n"))
+		;
 		
-		eventiOrdinati.sort((e1, e2) -> e1.getData().compareTo(e2.getData()));
-		
-		System.out.println(eventiOrdinati);
-		
-		return null;
+//		List<Evento> eventiOrdinati = new ArrayList<>(getEventi());
+//		
+//		eventiOrdinati.sort((e1, e2) -> e1.getData().compareTo(e2.getData()));
+//		
+//		String res = "";
+//		for (Evento e : eventiOrdinati)
+//			res += e.getFormattedData() + " - " + e.getTitolo() + "\n";
+//		
+//		return res;
 	}
 }
