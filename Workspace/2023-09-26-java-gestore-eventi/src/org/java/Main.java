@@ -1,10 +1,10 @@
 package org.java;
 
-import java.math.BigDecimal;
-import java.time.LocalTime;
+import java.util.List;
 import java.util.Scanner;
 
-import org.java.eventi.Concerto;
+import org.java.eventi.Evento;
+import org.java.eventi.manager.ProgrammEventi;
 
 public class Main {
 
@@ -14,15 +14,27 @@ public class Main {
 		
 		try {
 			
-			Concerto c1 = new Concerto(
-					"mio titolo", "29/09/2023", 100, 
-					LocalTime.parse("21:00"), new BigDecimal(35)
-			);
+			Evento e1 = new Evento("mio titolo 1", "29/09/2023", 100);
+			Evento e2 = new Evento("mio titolo 2", "29/09/2023", 100);
+			Evento e3 = new Evento("mio titolo 3", "30/09/2023", 100);
 			
-			System.out.println(c1);
-			System.out.println("\n----------------------------------------------\n");
+			ProgrammEventi pe = new ProgrammEventi("Titolo serie");
+			pe.addEvento(e1);
+			pe.addEvento(e2);
+			pe.addEvento(e3);
 			
-			System.out.println("Prezzo: " + c1.getFormattedPrezzo());
+			List<Evento> eventi29 = pe.getEventiByDate("29/09/2023");
+			System.out.println(eventi29);
+			
+//			Concerto c1 = new Concerto(
+//					"mio titolo", "29/09/2023", 100, 
+//					LocalTime.parse("21:00"), new BigDecimal(35)
+//			);
+//			
+//			System.out.println(c1);
+//			System.out.println("\n----------------------------------------------\n");
+//			
+//			System.out.println("Prezzo: " + c1.getFormattedPrezzo());
 			
 //			sc = new Scanner(System.in);
 //			

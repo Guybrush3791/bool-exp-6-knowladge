@@ -1,15 +1,14 @@
 package org.java.eventi;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
+
+import org.java.eventi.helper.DateTimeHelper;
 
 public class Concerto extends Evento {
 	
-	private static final DecimalFormat PREZZO_FORMATTER = new DecimalFormat("##.00€");
-	private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("HH:mm");
+	
 	
 	private LocalTime ora;
 	private BigDecimal prezzo;
@@ -32,7 +31,7 @@ public class Concerto extends Evento {
 	}
 	public String getFormattedOra() {
 		
-		return getOra().format(TIME_FORMATTER);
+		return getOra().format(DateTimeHelper.TIME_FORMATTER);
 	}
 	public void setOra(LocalTime ora) {
 		this.ora = ora;
@@ -42,7 +41,7 @@ public class Concerto extends Evento {
 	}
 	public String getFormattedPrezzo() {
 		
-		return PREZZO_FORMATTER.format(getPrezzo());
+		return DateTimeHelper.PREZZO_FORMATTER.format(getPrezzo());
 	}
 	public void setPrezzo(BigDecimal prezzo) {
 		this.prezzo = prezzo;

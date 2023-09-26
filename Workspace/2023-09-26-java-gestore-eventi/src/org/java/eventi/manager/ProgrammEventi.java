@@ -1,9 +1,11 @@
 package org.java.eventi.manager;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.java.eventi.Evento;
+import org.java.eventi.helper.DateTimeHelper;
 
 public class ProgrammEventi {
 
@@ -28,4 +30,29 @@ public class ProgrammEventi {
 		this.eventi = eventi;
 	}
 	
+	public void addEvento(Evento evento) {
+		
+		eventi.add(evento);
+	}
+	public List<Evento> getEventiByDate(LocalDate date) {
+		
+		return getEventi().stream()
+					.filter(e -> e.getData().isEqual(date))
+				.toList();
+		
+//		List<Evento> eventiByDate = new ArrayList<>();
+//		for (int x=0;x<getEventi().size();x++) {
+//			
+//			Evento e = getEventi().get(x);
+//			
+//			if (e.getData().isEqual(date))
+//				eventiByDate.add(e);
+//		}
+//		
+//		return eventiByDate;
+	}
+	public List<Evento> getEventiByDate(String date) {
+		
+		return getEventiByDate(LocalDate.parse(date, DateTimeHelper.DATE_FORMATTER));
+	}
 }

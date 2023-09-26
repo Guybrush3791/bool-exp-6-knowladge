@@ -1,13 +1,10 @@
 package org.java.eventi;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
-import javax.swing.text.DateFormatter;
+import org.java.eventi.helper.DateTimeHelper;
 
 public class Evento {
-
-	
 	
 	private String titolo;
 	private LocalDate data;
@@ -45,7 +42,7 @@ public class Evento {
 	}
 	protected String getFormattedData() {
 		
-		return getData().format(DATE_FORMATTER);
+		return getData().format(DateTimeHelper.DATE_FORMATTER);
 	}
 	public void setData(LocalDate data) throws Exception {
 		
@@ -56,7 +53,7 @@ public class Evento {
 	}
 	public void setData(String data) throws Exception {
 		
-		setData(LocalDate.parse(data, DATE_FORMATTER));
+		setData(LocalDate.parse(data, DateTimeHelper.DATE_FORMATTER));
 	}
 	public int getPostiTotali() {
 		return postiTotali;
