@@ -48,5 +48,10 @@ public class Concerto extends Evento {
 		this.prezzo = prezzo;
 	}
 	
-	
+	@Override
+	public String toString() {
+		
+		return getFormattedData() + " - " + getFormattedOra()
+			+ " - " + getTitolo() + " - " + getFormattedPrezzo();
+	}
 }
