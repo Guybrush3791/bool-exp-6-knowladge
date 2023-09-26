@@ -36,7 +36,7 @@ public class Evento {
 	public int getPostiTotali() {
 		return postiTotali;
 	}
-	public void setPostiTotali(int postiTotali) throws Exception {
+	private void setPostiTotali(int postiTotali) throws Exception {
 		
 		if (postiTotali <= 0)
 			throw new Exception("Il numero di posti totali devono essere strettamente positivi");
@@ -46,8 +46,38 @@ public class Evento {
 	public int getPostiPrenotati() {
 		return postiPrenotati;
 	}
-	public void setPostiPrenotati(int postiPrenotati) {
+	private void setPostiPrenotati(int postiPrenotati) {
 		this.postiPrenotati = postiPrenotati;
 	}
 	
+	public void prenota() throws Exception {
+		
+		if (postiPrenotati >= postiTotali)
+			throw new Exception("Non ci sono posti disponibili");
+		
+		checkDataPassata();
+		
+		postiPrenotati++;
+	}
+	public void disdici() throws Exception {
+		
+		if (postiPrenotati == 0)
+			throw new Exception("Nessun posto prenotato da disdire");
+		
+		checkDataPassata();
+		
+		postiPrenotati--;
+	}
+	
+	@Override
+	public String toString() {
+		
+		return 
+	}
+	
+	private void checkDataPassata() throws Exception {
+		
+		if (getData().isBefore(LocalDate.now()))
+			throw new Exception("L'evento e' gia' passato");
+	}
 }
