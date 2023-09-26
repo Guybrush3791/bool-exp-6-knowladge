@@ -1,10 +1,12 @@
 package org.java.eventi.manager;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.java.eventi.Concerto;
 import org.java.eventi.Evento;
 import org.java.eventi.helper.DateTimeHelper;
 
@@ -65,6 +67,23 @@ public class ProgrammEventi {
 	public void svuotaEventi() {
 		
 		getEventi().clear();
+	}
+	
+	public BigDecimal mediaPrezzoConcerto() {
+		
+		int elemCount = 0;
+		BigDecimal avg = new BigDecimal(0);
+		
+		for (Evento e : getEventi()) {
+			
+			if (e instanceof Concerto) {
+				
+				elemCount++;
+				avg.add(((Concerto) e).getPrezzo());
+			}
+		}
+		
+		return avg.divide(new BigDecimal(elemCount));
 	}
 	
 	@Override
