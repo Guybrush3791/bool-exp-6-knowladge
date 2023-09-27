@@ -8,7 +8,7 @@ Cosa consegnare?
 Dopo aver testato le vostre query, riportatele in un file txt e caricatelo nella vostra repo.
 
 ### DB
-
+![[2023-09-27 - DB Videogames]]
 
 ### Query
 #### SELECT
