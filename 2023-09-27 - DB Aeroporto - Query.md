@@ -226,9 +226,16 @@ FROM flights f
 		ON fp.passenger_id = p.id;
 ```
 
-5. Selezionare tutti i voli che partono da 'Charleneland' e arrivano a 'Mauricestad' (3)
+5. Selezionare tutti i voli che partono da `Charleneland` e arrivano a `Mauricestad` (3)
 ```sql
-
+SELECT f.number, depA.city 'departure', arrA.city 'arrival'
+FROM flights f 
+	JOIN airports depA 
+		ON f.departure_airport_id = depA.id
+	JOIN airports arrA
+		ON f.arrival_airport_id = arrA.id
+WHERE depA.city = 'Charleneland'
+	AND arrA.city = 'Mauricestad';
 ```
 
 6. Selezionare tutti gli id dei voli che hanno almeno un passeggero il cui cognome inizia con 'L' (966)
