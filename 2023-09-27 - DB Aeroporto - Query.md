@@ -78,14 +78,18 @@ WHERE p.name LIKE 'Al%'
 
 10. Selezionare tutti i passeggeri nati nel 1960 (11)
 ```sql
-
+SELECT *
+FROM passengers p 
+WHERE YEAR(p.date_of_birth) = 1960;
 ```
 
 *********** BONUS ***********
 
 11. contare tutti gli aeroporti la cui città inizia per 'East' (7)
 ```sql
-
+SELECT COUNT(*) 
+FROM airports a 
+WHERE a.city LIKE 'east%';
 ```
 
 12. Contare quanti voli sono partiti il 4 luglio 2019 (3)
