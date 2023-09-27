@@ -73,7 +73,7 @@ WHERE YEAR(ae.layoff_date) < 2006;
 ```sql
 SELECT *
 FROM passengers p 
-WHERE p.name LIKE 'Al%'
+WHERE p.name LIKE 'Al%';
 ```
 
 10. Selezionare tutti i passeggeri nati nel 1960 (11)
@@ -106,7 +106,7 @@ WHERE DATE(f.departure_datetime) = '2019-07-04';
 ```sql
 SELECT emw.employee_id, COUNT(*)
 FROM employee_maintenance_work emw 
-GROUP BY emw.employee_id
+GROUP BY emw.employee_id;
 ```
 
 2. Contare quante volte ogni impiegato ha lasciato una compagnia aerea (non mostrare quelli che non hanno mai lasciato; dell'impiegato vogliamo solo l'ID) (8939)
@@ -114,24 +114,29 @@ GROUP BY emw.employee_id
 SELECT ae.employee_id, COUNT(*) 
 FROM airline_employee ae 
 WHERE ae.layoff_date IS NOT NULL
-GROUP BY ae.employee_id
+GROUP BY ae.employee_id;
 ```
 
 3. Contare per ogni volo il numero di passeggeri (del volo vogliamo solo l'ID) (1000)
 ```sql
 SELECT fp.flight_id, COUNT(*)
 FROM flight_passenger fp 
-GROUP BY fp.flight_id
+GROUP BY fp.flight_id;
 ```
 
 4. Ordinare gli aerei per numero di manutenzioni ricevute (da quello che ne ha di piu'; dell'aereo vogliamo solo l'ID) (100)
 ```sql
-
+SELECT mw.airplane_id, COUNT(*) AS 'maintCount'
+FROM maintenance_works mw 
+GROUP BY mw.airplane_id
+ORDER BY maintCount DESC;
 ```
 
 5. Contare quanti passeggeri sono nati nello stesso anno (61)
 ```sql
-
+SELECT YEAR(p.date_of_birth), COUNT(*)
+FROM passengers p 
+GROUP BY YEAR(p.date_of_birth);
 ```
 
 6. Contare quanti voli ci sono stati ogni anno (tenendo conto della data di partenza) (11)
