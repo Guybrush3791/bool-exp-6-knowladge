@@ -9,20 +9,24 @@
 1. Selezionare tutti i passeggeri (1000)
 ```sql
 SELECT *
-FROM passengers;
+FROM passengers p;
 ```
 
 2. Selezionare tutti i nomi degli aeroporti, ordinati per nome (100)
 ```sql
-
+SELECT *
+FROM airports a
+ORDER BY name;
 ```
 
 3. Selezionare tutti i passeggeri che hanno come cognome 'Bartell' (2)
 ```sql
-
+SELECT *
+FROM passengers p
+WHERE lastname LIKE 'Bartell';
 ```
 
-4. Selezionare tutti i passeggeri minorenni (considerando solo l'anno di nascita) (117 . nel 2022)
+4. Selezionare tutti i passeggeri minorenni
 ```sql
 
 ```
