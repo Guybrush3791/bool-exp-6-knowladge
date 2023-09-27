@@ -14,4 +14,4 @@ I **giocatori**, al momento dell'iscrizione, devono fornire nome, cognome, nickn
 
 I **videogames** possono essere recensiti dai giocatori, i quali oltre al titolo e al testo, possono valutare i videogame con un *rating da 1 a 5*.
 
-Ogni anno vengono votati i migliori videogiochi, che possono così vincere diversi premi (gioco dell'anno, miglior narrativa, miglior colonna sonora, miglior gioco indipendente, gioco più atteso, ...).
+Ogni anno vengono votati i migliori videogiochi, che possono così vincere diversi **premi** (gioco dell'anno, miglior narrativa, miglior colonna sonora, miglior gioco indipendente, gioco più atteso, ...).
