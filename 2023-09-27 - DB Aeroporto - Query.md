@@ -175,12 +175,14 @@ GROUP BY mw.airplane_id;
 
 9. Selezionare gli impiegati che non hanno mai cambiato compagnia aerea per cui lavorano (1061)
 ```sql
-
+SELECT ae.employee_id 
+FROM airline_employee ae
+WHERE ae.layoff_date IS NULL;
 ```
 
 ### Query con join
 
-1. Selezionare tutti i passeggeri del volo 70021493-2 (85)
+1. Selezionare tutti i passeggeri del volo `70021493-2` (85)
 ```sql
 
 ```
