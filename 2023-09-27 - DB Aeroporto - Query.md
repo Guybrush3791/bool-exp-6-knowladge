@@ -28,17 +28,24 @@ WHERE lastname LIKE 'Bartell';
 
 4. Selezionare tutti i passeggeri minorenni
 ```sql
-
+SELECT *
+FROM passengers p 
+WHERE YEAR(date_of_birth) > YEAR(NOW()) - 18;
 ```
 
 5. Selezionare tutti gli aerei che hanno piu' di 200 posti (84)
 ```sql
-
+SELECT *
+FROM airplanes a 
+WHERE a.seating_capacity > 200;
 ```
 
 6. Selezionare tutti gli aerei che hanno un numero di posti compreso tra 350 e 700 (30)
 ```sql
-
+SELECT *
+FROM airplanes a 
+WHERE a.seating_capacity >= 350
+	AND a.seating_capacity <= 700; 
 ```
 
 7. Selezionare tutti gli ID dei dipendenti che hanno lasciato almeno una compagnia aerea (31077)
