@@ -83,7 +83,7 @@ FROM passengers p
 WHERE YEAR(p.date_of_birth) = 1960;
 ```
 
-*********** BONUS ***********
+#### BONUS 
 
 11. contare tutti gli aeroporti la cui città inizia per 'East' (7)
 ```sql
@@ -94,7 +94,9 @@ WHERE a.city LIKE 'east%';
 
 12. Contare quanti voli sono partiti il 4 luglio 2019 (3)
 ```sql
-
+SELECT COUNT(*)
+FROM flights f 
+WHERE DATE(f.departure_datetime) = '2019-07-04';
 ```
 
 
@@ -130,7 +132,7 @@ WHERE a.city LIKE 'east%';
 
 ```
 
-*********** BONUS ***********
+#### BONUS 
 
 7. Per ogni manufacturer, trovare l'aereo con maggior numero di posti a sedere (8)
 ```sql
@@ -199,7 +201,7 @@ WHERE a.city LIKE 'east%';
 
 ```
 
-*********** BONUS ***********
+#### BONUS 
 
 11. Selezionare i dati di tutti i passeggeri che hanno volato su un qualche aereo riparato da 'Aaliyah Leannon' (590)
 ```sql
