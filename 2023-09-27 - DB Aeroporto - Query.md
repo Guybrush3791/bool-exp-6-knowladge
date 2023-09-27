@@ -258,12 +258,22 @@ WHERE p.lastname LIKE 'l%';
 
 7. Selezionare i dati delle compagnie dove almeno un impiegato si è licenziato (286)
 ```sql
-
+SELECT DISTINCT a.code, a.name
+FROM airlines a 
+	JOIN airline_employee ae 
+		ON a.id = ae.airline_id
+WHERE ae.layoff_date IS NOT NULL;
 ```
 
 8. Selezionare tutti gli aerei che sono partiti almeno una volta dalla città di 'Domingochester' (12)
 ```sql
-
+SELECT *
+FROM airplanes aplane
+	JOIN flights f 
+		ON aplane.id = f.airplane_id
+	JOIN airports aport
+		ON f.departure_airport_id = aport.id
+WHERE aport.city LIKE 'Domingochester';
 ```
 
 9. Selezionare i dati dei tecnici e gli aerei ai quali questi hanno fatto almeno un intervento di manutenzione (1506)
