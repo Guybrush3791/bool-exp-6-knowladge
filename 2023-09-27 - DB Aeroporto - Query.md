@@ -278,7 +278,16 @@ WHERE aport.city LIKE 'Domingochester';
 
 9. Selezionare i dati dei tecnici e gli aerei ai quali questi hanno fatto almeno un intervento di manutenzione (1506)
 ```sql
-
+SELECT e.name, e.lastname, r.name, a.model
+FROM airplanes a 
+	JOIN maintenance_works mw 
+		ON a.id = mw.airplane_id
+	JOIN employee_maintenance_work emw 
+		ON mw.id = emw.maintenance_work_id
+	JOIN employees e 
+		ON emw.employee_id = e.id
+	JOIN roles r 
+		ON e.role_id = r.id
 ```
 
 10. Selezionare tutti i piloti che hanno viaggiato nel 2021 verso l'aeroporto di 'Abshireland' (4)
