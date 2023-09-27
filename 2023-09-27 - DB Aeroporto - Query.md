@@ -238,12 +238,25 @@ WHERE depA.city = 'Charleneland'
 	AND arrA.city = 'Mauricestad';
 ```
 
-6. Selezionare tutti gli id dei voli che hanno almeno un passeggero il cui cognome inizia con 'L' (966)
+6. Selezionare tutti gli id dei voli che hanno almeno un passeggero il cui cognome inizia con 'L' (935)
 ```sql
+-- VER 1
+SELECT fp.flight_id
+FROM flight_passenger fp 
+	JOIN passengers p 
+		ON fp.passenger_id = p.id
+WHERE p.lastname LIKE 'l%'
+GROUP BY fp.flight_id;
 
+-- VER 2
+SELECT DISTINCT fp.flight_id
+FROM flight_passenger fp
+	JOIN passengers 
+		ON fp.passenger_id = p.id
+WHERE p.lastname LIKE 'l%';
 ```
 
-7. Selezionare i dati delle compagnie dove almeno un impiegato si è stato licenziato (286)
+7. Selezionare i dati delle compagnie dove almeno un impiegato si è licenziato (286)
 ```sql
 
 ```
