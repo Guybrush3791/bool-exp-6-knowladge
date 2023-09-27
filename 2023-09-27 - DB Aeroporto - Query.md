@@ -290,9 +290,21 @@ FROM airplanes a
 		ON e.role_id = r.id
 ```
 
-10. Selezionare tutti i piloti che hanno viaggiato nel 2021 verso l'aeroporto di 'Abshireland' (4)
+10. Selezionare tutti i piloti che hanno viaggiato nel 2021 dall'aeroporto di 'Abshireland' (4)
 ```sql
-
+SELECT e.name, e.lastname
+FROM flights f 
+	JOIN airports a 
+		ON f.departure_airport_id = a.id
+	JOIN employee_flight ef 
+		ON f.id = ef.flight_id
+	JOIN employees e 
+		ON ef.employee_id = e.id
+	JOIN roles r 
+		ON e.role_id = r.id
+WHERE YEAR(f.departure_datetime) = 2021
+	AND a.city LIKE 'abshireland'
+	AND r.name LIKE 'pilot';
 ```
 
 #### BONUS 
