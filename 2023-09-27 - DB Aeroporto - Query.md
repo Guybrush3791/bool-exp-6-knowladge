@@ -184,12 +184,25 @@ WHERE ae.layoff_date IS NULL;
 
 1. Selezionare tutti i passeggeri del volo `70021493-2` (85)
 ```sql
-
+SELECT DISTINCT p.name, p.lastname
+FROM passengers p 
+	JOIN flight_passenger fp 
+		ON p.id = fp.passenger_id
+	JOIN flights f 
+		ON fp.flight_id = f.id
+WHERE f.number LIKE '70021493-2'
 ```
 
 2. Selezionare i voli presi da 'Shirley Stokes' (61)
 ```sql
-
+SELECT f.*
+FROM passengers p 
+	JOIN flight_passenger fp 
+		ON p.id = fp.passenger_id
+	JOIN flights f
+		ON fp.flight_id = f.id
+WHERE p.name LIKE 'Shirley'
+	AND p.lastname LIKE 'Stokes'
 ```
 
 3. Selezionare tutti i passeggeri che hanno usato come documento 'Passport'(775)
