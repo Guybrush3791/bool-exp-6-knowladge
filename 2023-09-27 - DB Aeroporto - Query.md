@@ -150,7 +150,9 @@ GROUP BY YEAR(f.departure_datetime);
 
 7. Per ogni manufacturer, trovare l'aereo con maggior numero di posti a sedere (8)
 ```sql
-
+SELECT a.manufacturer, MAX(a.seating_capacity) 
+FROM airplanes a
+GROUP BY a.manufacturer;
 ```
 
 8. Contare quante manutenzioni ha ricevuto ciascun aereo nel 2021 (dell'aereo vogliamo solo l'ID) (36)
