@@ -311,10 +311,25 @@ WHERE YEAR(f.departure_datetime) = 2021
 
 11. Selezionare i dati di tutti i passeggeri che hanno volato su un qualche aereo riparato da 'Aaliyah Leannon' (590)
 ```sql
-
+SELECT DISTINCT p.name, p.lastname, p.date_of_birth, p.tax_code
+FROM employees e 
+	JOIN employee_maintenance_work emw 
+		ON e.id = emw.employee_id
+	JOIN maintenance_works mw 
+		ON emw.maintenance_work_id = mw.id
+	JOIN airplanes a 
+		ON mw.airplane_id = a.id
+	JOIN flights f 
+		ON a.id = f.airplane_id
+	JOIN flight_passenger fp 
+		ON f.id = fp.flight_id
+	JOIN passengers p 
+		ON fp.passenger_id = p.id
+WHERE e.name LIKE 'Aaliyah'
+	AND e.lastname LIKE 'Leannon'
 ```
 
-12. Contare quanti piloti ha la compagnia 'Maldivian (Q2)' (10)
+12. Contare quanti piloti ha la compagnia `Maldivian (Q2)` (10)
 ```sql
 
 ```
