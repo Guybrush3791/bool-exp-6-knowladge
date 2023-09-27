@@ -207,12 +207,23 @@ WHERE p.name LIKE 'Shirley'
 
 3. Selezionare tutti i passeggeri che hanno usato come documento 'Passport'(775)
 ```sql
-
+SELECT DISTINCT p.name, p.lastname
+FROM document_types dt 
+	JOIN document_type_passenger dtp 
+		ON dt.id = dtp.document_type_id
+	JOIN passengers p 
+		ON dtp.passenger_id = p.id
+WHERE dt.name LIKE 'passport';
 ```
 
 4. Selezionare tutti i voli con i relativi passeggeri (65296)
 ```sql
-
+SELECT *
+FROM flights f 
+	JOIN flight_passenger fp 
+		ON f.id = fp.flight_id
+	JOIN passengers p 
+		ON fp.passenger_id = p.id;
 ```
 
 5. Selezionare tutti i voli che partono da 'Charleneland' e arrivano a 'Mauricestad' (3)
