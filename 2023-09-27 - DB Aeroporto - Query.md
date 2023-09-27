@@ -50,17 +50,30 @@ WHERE a.seating_capacity >= 350
 
 7. Selezionare tutti gli ID dei dipendenti che hanno lasciato almeno una compagnia aerea (31077)
 ```sql
-
+SELECT *
+FROM airline_employee ae 
+WHERE ae.layoff_date IS NOT NULL;
 ```
 
 8. Selezionare tutti gli ID dei dipendenti che hanno lasciato almeno una compagnia aerea prima del 2006 (493)
 ```sql
+-- VER 1
+SELECT *
+FROM airline_employee ae 
+WHERE ae.layoff_date IS NOT NULL
+	AND YEAR(ae.layoff_date) < 2006;
 
+-- VER 2
+SELECT *
+FROM airline_employee ae 
+WHERE YEAR(ae.layoff_date) < 2006;
 ```
 
 9. Selezionare tutti i passeggeri il cui nome inizia con 'Al' (26)
 ```sql
-
+SELECT *
+FROM passengers p 
+WHERE p.name LIKE 'Al%'
 ```
 
 10. Selezionare tutti i passeggeri nati nel 1960 (11)
