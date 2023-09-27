@@ -104,17 +104,24 @@ WHERE DATE(f.departure_datetime) = '2019-07-04';
 
 1. Contare quanti lavori di manutenzione ha eseguito ogni impiegato (dell'impiegato vogliamo solo l'ID) (1136)
 ```sql
-
+SELECT emw.employee_id, COUNT(*)
+FROM employee_maintenance_work emw 
+GROUP BY emw.employee_id
 ```
 
 2. Contare quante volte ogni impiegato ha lasciato una compagnia aerea (non mostrare quelli che non hanno mai lasciato; dell'impiegato vogliamo solo l'ID) (8939)
 ```sql
-
+SELECT ae.employee_id, COUNT(*) 
+FROM airline_employee ae 
+WHERE ae.layoff_date IS NOT NULL
+GROUP BY ae.employee_id
 ```
 
 3. Contare per ogni volo il numero di passeggeri (del volo vogliamo solo l'ID) (1000)
 ```sql
-
+SELECT fp.flight_id, COUNT(*)
+FROM flight_passenger fp 
+GROUP BY fp.flight_id
 ```
 
 4. Ordinare gli aerei per numero di manutenzioni ricevute (da quello che ne ha di piu'; dell'aereo vogliamo solo l'ID) (100)
