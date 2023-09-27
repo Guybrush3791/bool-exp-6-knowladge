@@ -141,7 +141,9 @@ GROUP BY YEAR(p.date_of_birth);
 
 6. Contare quanti voli ci sono stati ogni anno (tenendo conto della data di partenza) (11)
 ```sql
-
+SELECT YEAR(f.departure_datetime), COUNT(*)
+FROM flights f 
+GROUP BY YEAR(f.departure_datetime);
 ```
 
 #### BONUS 
