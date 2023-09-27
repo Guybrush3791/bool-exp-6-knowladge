@@ -331,10 +331,25 @@ WHERE e.name LIKE 'Aaliyah'
 
 12. Contare quanti piloti ha la compagnia `Maldivian (Q2)` (10)
 ```sql
-
+SELECT COUNT(*)
+FROM airlines a 
+	JOIN airline_employee ae 
+		ON a.id = ae.airline_id
+	JOIN employees e 
+		ON ae.employee_id = e.id
+	JOIN roles r 
+		ON e.role_id = r.id
+WHERE a.name LIKE 'Maldivian (Q2)'
+	AND r.name = 'pilot'
+	AND ae.layoff_date IS NULL;
 ```
 
 13. Contare quanti dipendenti ha ogni compagnia aerea (286)
 ```sql
-
+SELECT a.id, a.code, a.name, COUNT(*)
+FROM airlines a 
+	JOIN airline_employee ae 
+		ON a.id = ae.airline_id
+GROUP BY a.id
+	
 ```
