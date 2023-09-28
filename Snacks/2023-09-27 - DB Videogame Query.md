@@ -96,34 +96,47 @@ WHERE videogame_id = 412
 
 12. Selezionare il numero di videogame che la software house con ID = 1 ha rilasciato nel 2018 (13)
 ```sql
-
+SELECT DISTINCT *
+FROM videogames v 
+WHERE software_house_id = 1
+	AND YEAR(release_date) = 2018;
 ```
 
 
 #### GROUP BY
 1. Contare quante software house ci sono per ogni paese (3)
 ```sql
-
+SELECT country, COUNT(*) 
+FROM software_houses sh 
+GROUP BY country 
 ```
 
 2. Contare quante recensioni ha ricevuto ogni videogioco (del videogioco vogliamo solo l'ID) (500)
 ```sql
-
+SELECT videogame_id, COUNT(*)
+FROM reviews r 
+GROUP BY videogame_id;
 ```
 
 3. Contare quanti videogiochi hanno ciascuna classificazione PEGI (della classificazione PEGI vogliamo solo l'ID) (13)
 ```sql
-
+SELECT pegi_label_id, COUNT(*) 
+FROM pegi_label_videogame plv 
+GROUP BY pegi_label_id;
 ```
 
 4. Mostrare il numero di videogiochi rilasciati ogni anno (11)
 ```sql
-
+SELECT YEAR(release_date), COUNT(*)
+FROM videogames v 
+GROUP BY YEAR(release_date);
 ```
 
 5. Contare quanti videogiochi sono disponbiili per ciascun device (del device vogliamo solo l'ID) (7)
 ```sql
-
+SELECT device_id, COUNT(*)
+FROM device_videogame dv 
+GROUP BY device_id;
 ```
 
 6. Ordinare i videogame in base alla media delle recensioni (del videogioco vogliamo solo l'ID) (500)
