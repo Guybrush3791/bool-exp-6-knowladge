@@ -4,6 +4,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Hello, World!");
+		final String url = "jdbc:mysql://localhost:$PORT/$DB_NAME";
+		final String user = "root";
+		final String password = "code";
 	}
 }
