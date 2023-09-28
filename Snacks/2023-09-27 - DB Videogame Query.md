@@ -141,19 +141,31 @@ GROUP BY device_id;
 
 6. Ordinare i videogame in base alla media delle recensioni (del videogioco vogliamo solo l'ID) (500)
 ```sql
-
+SELECT videogame_id, AVG(rating) 'avgRating'
+FROM reviews r 
+GROUP BY videogame_id 
+ORDER BY avgRating DESC;
 ```
 
 
 #### JOIN
 1. Selezionare i dati di tutti giocatori che hanno scritto almeno una recensione, mostrandoli una sola volta (996)
 ```sql
-
+SELECT DISTINCT p.*
+FROM reviews r 
+	JOIN players p 
+		ON r.player_id = p.id;
 ```
 
 2. Sezionare tutti i videogame dei tornei tenuti nel 2016, mostrandoli una sola volta (226)
 ```sql
-
+SELECT DISTINCT v.*
+FROM tournaments t 
+	JOIN tournament_videogame tv 
+		ON t.id = tv.tournament_id 
+	JOIN videogames v 
+		ON tv.videogame_id = v.id
+WHERE t.`year` = 2016;
 ```
 
 3. Mostrare le categorie di ogni videogioco (1718)
