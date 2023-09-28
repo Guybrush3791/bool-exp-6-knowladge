@@ -1,5 +1,5 @@
 ## Repo
-
+`db-nations`
 
 ## Todo
 Importare il seguente database
@@ -29,3 +29,4 @@ restituiscano:
 - **le statistiche più recenti** per quella country
 
 Stampare a video i risultati. Di seguito un esempio di programma completo:
+![[Pasted image 20230928151246.png]]
