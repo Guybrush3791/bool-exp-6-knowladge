@@ -218,7 +218,7 @@ WHERE r.rating >= 4;
 
 7. Selezionare quali giochi erano presenti nei tornei nei quali hanno partecipato i giocatori il cui nome inizia per 'S' (474)
 ```sql
-SELECT v.name 
+SELECT DISTINCT v.id, v.name 
 FROM players p 
 	JOIN player_tournament pt 
 		ON p.id = pt.player_id 
@@ -231,12 +231,23 @@ FROM players p
 WHERE p.name LIKE 's%';
 ```
 
-8. Selezionare le cittÃ  in cui Ã¨ stato giocato il gioco dell'anno del 2018 (36)
+8. Selezionare le citta'  in cui e' stato giocato il gioco dell'anno del 2018 (36)
 ```sql
-
+SELECT DISTINCT t.city 
+FROM awards a 
+	JOIN award_videogame av 
+		ON a.id = av.award_id 
+	JOIN videogames v 
+		ON av.videogame_id = v.id
+	JOIN tournament_videogame tv 
+		ON v.id = tv.videogame_id 
+	JOIN tournaments t 
+		ON tv.tournament_id = t.id 
+WHERE a.name LIKE "gioco dell'anno"
+	AND av.`year` = 2018;
 ```
 
-9. Selezionare i giocatori che hanno giocato al gioco piÃ¹ atteso del 2018 in un torneo del 2019 (3306)
+9. Selezionare i giocatori che hanno giocato al gioco piu' atteso del 2018 in un torneo del 2019 (3306)
 ```sql
 
 ```
