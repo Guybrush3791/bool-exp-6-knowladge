@@ -247,9 +247,25 @@ WHERE a.name LIKE "gioco dell'anno"
 	AND av.`year` = 2018;
 ```
 
-9. Selezionare i giocatori che hanno giocato al gioco piu' atteso del 2018 in un torneo del 2019 (3306)
+9. Selezionare i giocatori che hanno giocato al gioco piu' atteso del 2018 in un torneo del 2019 (3306 = **NO DISTINCT**; 991 = **DISTINCT**)
 ```sql
-
+SELECT DISTINCT p.*
+FROM awards a
+	JOIN award_videogame av 
+		ON a.id = av.award_id 
+	JOIN videogames v 
+		ON av.videogame_id = v.id
+	JOIN tournament_videogame tv 
+		ON v.id = tv.videogame_id 
+	JOIN tournaments t 
+		ON tv.tournament_id = t.id 
+	JOIN player_tournament pt 
+		ON t.id = pt.tournament_id 
+	JOIN players p 
+		ON pt.player_id = p.id
+WHERE a.name LIKE 'Gioco più atteso'
+	AND av.`year` = 2018
+	AND t.`year` = 2019;
 ```
 
 
