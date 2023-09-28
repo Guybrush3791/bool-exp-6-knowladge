@@ -29,7 +29,17 @@ public class Main {
 						 + " SET name = ? "
 						 + " WHERE id = 1 ";		
 		
-		PreparedStatement ps = con.prepareStatement(passName)
+		try {
+			
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, passName);
+			
+			int afRow = ps.executeUpdate();
+			System.out.println("updated row: " +  afRow);			
+		} catch (Exception e) { 
+			
+			System.out.println(e.getMessage());
+		}
 	}
 	private static final void readAllPassagerTable(Connection con) {
 		
