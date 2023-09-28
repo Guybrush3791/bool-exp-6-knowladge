@@ -65,24 +65,33 @@ WHERE category_id = 2
 
 8. Selezionare tutte le recensioni con voto compreso tra 2 e 4 (2947)
 ```sql
-
+SELECT *
+FROM reviews r 
+WHERE rating >= 2
+	AND rating <= 4;
 ```
 
 9. Selezionare tutti i dati dei videogiochi rilasciati nell'anno 2020 (46)
 ```sql
-
+SELECT *
+FROM videogames v 
+WHERE YEAR(release_date) = 2020; 
 ```
 
 10. Selezionare gli id dei videogame che hanno ricevuto almeno una recensione da 5 stelle, mostrandoli una sola volta (443)
 ```sql
-
+SELECT DISTINCT videogame_id 
+FROM reviews r 
+WHERE rating >= 5;
 ```
 
 
 ##### BONUS
 11. Selezionare il numero e la media delle recensioni per il videogioco con ID = 412 (review number = 12, avg_rating = 3.16 circa)
 ```sql
-
+SELECT COUNT(*), AVG(rating)
+FROM reviews r 
+WHERE videogame_id = 412
 ```
 
 12. Selezionare il numero di videogame che la software house con ID = 1 ha rilasciato nel 2018 (13)
