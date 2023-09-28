@@ -170,17 +170,33 @@ WHERE t.`year` = 2016;
 
 3. Mostrare le categorie di ogni videogioco (1718)
 ```sql
-
+SELECT v.name, c.name 
+FROM videogames v 
+	JOIN category_videogame cv
+		ON v.id = cv.videogame_id 
+	JOIN categories c 
+		ON cv.category_id = c.id;
 ```
 
 4. Selezionare i dati di tutte le software house che hanno rilasciato almeno un gioco dopo il 2020, mostrandoli una sola volta (6)
 ```sql
-
+SELECT DISTINCT sh.*
+FROM videogames v 
+	JOIN software_houses sh 
+		ON v.software_house_id = sh.id 
+WHERE YEAR(v.release_date) >= 2020;
 ```
 
 5. Selezionare i premi ricevuti da ogni software house per i videogiochi che ha prodotto (55)
 ```sql
-
+SELECT sh.*, a.*
+FROM software_houses sh 
+	JOIN videogames v 
+		ON sh.id = v.software_house_id 
+	JOIN award_videogame av 
+		ON v.id = av.videogame_id 
+	JOIN awards a 
+		ON av.award_id = a.id;
 ```
 
 6. Selezionare categorie e classificazioni PEGI dei videogiochi che hanno ricevuto recensioni da 4 e 5 stelle, mostrandole una sola volta (3363)
