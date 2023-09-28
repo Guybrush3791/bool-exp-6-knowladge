@@ -7,25 +7,37 @@ import java.sql.ResultSet;
 
 public class Main {
 
+	static final String passName = "pluto"; // from ext
+	
+	static final String url = "jdbc:mysql://localhost:3306/db-aeroporto";
+	static final String user = "root";
+	static final String password = "code";
+		
 	public static void main(String[] args) {
-		
-		final String passName = "pluto"; // from ext
-		
-		final String url = "jdbc:mysql://localhost:3306/db-aeroporto";
-		final String user = "root";
-		final String password = "code";
-		
-		final String sql = " SELECT id, name, lastname, date_of_birth "
-						 + " FROM passengers p "
-						 + " WHERE name LIKE ? ";	
 		
 		try (Connection con = DriverManager.getConnection(url, user, password)) {
 			  
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, passName);
-			
-			
-			
+//			readAllPassagerTable(con);
+			updateId1Name(con);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	private static final void updateId1Name(Connection con) {
+		
+		final String sql = " UPDATE passengers "
+						 + " SET name = ? "
+						 + " WHERE id = 1 ";		
+		
+		PreparedStatement ps = con.prepareStatement(passName)
+	}
+	private static final void readAllPassagerTable(Connection con) {
+		
+		final String sql = " SELECT id, name, lastname, date_of_birth "
+				 + " FROM passengers p ";
+		
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);			
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
@@ -42,6 +54,7 @@ public class Main {
 				System.out.println("\n------------------------------\n");
 			}
 		} catch (Exception e) {
+			
 			System.out.println(e.getMessage());
 		}
 	}
