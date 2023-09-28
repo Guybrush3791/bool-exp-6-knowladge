@@ -272,12 +272,40 @@ WHERE a.name LIKE 'Gioco più atteso'
 ##### BONUS
 10. Selezionare i dati della prima software house che ha rilasciato un gioco, assieme ai dati del gioco stesso (software house id : 5)
 ```sql
-
+SELECT *
+FROM videogames v 
+	JOIN software_houses sh 
+		ON v.software_house_id = sh.id 
+ORDER BY release_date 
+LIMIT 1;
 ```
 
-11. Selezionare i dati del videogame (id, name, release_date, totale recensioni) con piÃ¹ recensioni (videogame id : potrebbe uscire 449 o 398, sono entrambi a 20)
+11. Selezionare i dati del videogame (id, name, release_date, totale recensioni) con piu' recensioni (videogame id : potrebbe uscire 449 o 398, sono entrambi a 20)
 ```sql
+-- VER 1
+SELECT v.id, v.name, COUNT(*) 'revCount'
+FROM  videogames v 
+	JOIN reviews r 
+		ON v.id = r.videogame_id 
+GROUP BY v.id
+ORDER BY revCount DESC 
+LIMIT 1;
 
+-- VER 2: ADV
+SELECT v.id, v.name, COUNT(*) 'revCount'
+FROM  videogames v 
+	JOIN reviews r 
+		ON v.id = r.videogame_id 
+GROUP BY v.id
+HAVING revCount = (
+	SELECT COUNT(*) 'revCount'
+	FROM  videogames v 
+		JOIN reviews r 
+			ON v.id = r.videogame_id 
+	GROUP BY v.id
+	ORDER BY revCount DESC 
+	LIMIT 1
+)
 ```
 
 12. Selezionare la software house che ha vinto piÃ¹ premi tra il 2015 e il 2016 (software house id : potrebbe uscire 3 o 1, sono entrambi a 3)
