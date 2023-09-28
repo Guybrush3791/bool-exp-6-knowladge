@@ -9,16 +9,23 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		final String passName = "pluto"; // from ext
+		
 		final String url = "jdbc:mysql://localhost:3306/db-aeroporto";
 		final String user = "root";
 		final String password = "code";
 		
 		final String sql = " SELECT id, name, lastname, date_of_birth "
-						 + " FROM passengers p ";	
+						 + " FROM passengers p "
+						 + " WHERE name LIKE ? ";	
 		
 		try (Connection con = DriverManager.getConnection(url, user, password)) {
 			  
 			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, passName);
+			
+			
+			
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
@@ -28,7 +35,7 @@ public class Main {
 				String lastname = rs.getString("lastname");
 				String dateOfBirth = rs.getString("date_of_birth");
 				
-				System.out.println("Passegero\n");
+				System.out.println("Passegero: " + id + "\n");
 				System.out.println("name: " + name + " " + lastname);
 				System.out.println("date of birth: " + dateOfBirth);
 				
