@@ -350,5 +350,14 @@ HAVING awCount = (
 
 13. Selezionare le categorie dei videogame i quali hanno una media recensioni inferiore a 2 (10)
 ```sql
-
+SELECT DISTINCT c.name, c.description 
+FROM videogames v 
+	JOIN reviews r 
+		ON v.id = r.videogame_id 
+	JOIN category_videogame cv 
+		ON v.id = cv.videogame_id 
+	JOIN categories c 
+		ON cv.category_id = c.id 
+GROUP BY v.id, c.id
+HAVING AVG(r.rating) < 2;
 ```
