@@ -1,4 +1,5 @@
 import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class Main {
 
@@ -8,6 +9,9 @@ public class Main {
 		String user = "root";
 		String password = "rootpassword";
 		 
-		Connection con;
+		try {
+			
+//			Connection c = DriverManager.
+		} catch (Exception e) { }
 	}
 }
