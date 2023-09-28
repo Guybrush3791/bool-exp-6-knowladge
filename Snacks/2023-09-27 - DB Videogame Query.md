@@ -201,7 +201,19 @@ FROM software_houses sh
 
 6. Selezionare categorie e classificazioni PEGI dei videogiochi che hanno ricevuto recensioni da 4 e 5 stelle, mostrandole una sola volta (3363)
 ```sql
-
+SELECT DISTINCT v.name, c.name, pl.name 
+FROM videogames v 
+	JOIN reviews r 
+		ON v.id = r.videogame_id 
+	JOIN category_videogame cv 
+		ON v.id = cv.videogame_id 
+	JOIN categories c 
+		ON cv.category_id = c.id 
+	JOIN pegi_label_videogame plv 
+		ON v.id = plv.videogame_id 
+	JOIN pegi_labels pl 
+		ON plv.pegi_label_id = pl.id
+WHERE r.rating >= 4;
 ```
 
 7. Selezionare quali giochi erano presenti nei tornei nei quali hanno partecipato i giocatori il cui nome inizia per 'S' (474)
