@@ -1,12 +1,16 @@
 package org.java;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class People {
 
 	private List<Person> people;
 	
 	public People() {
+		
+		people = new ArrayList<>();
 		
 		Person p1 = new Person(10, "Guybrush");
 		Person p2 = new Person(20, "Marco");
@@ -17,5 +21,15 @@ public class People {
 		people.add(p2);
 		people.add(p3);
 		people.add(p4);
+	}
+	
+	public void addPerson(int age, String name) {
+		
+		Person p = new Person(age, name);
+		people.add(p);
+	}
+	public List<Person> searchPeople(String name) {
+		
+		return people.stream().filter(p -> p.getName().contains(name)).collect(Collectors.toList());
 	}
 }
