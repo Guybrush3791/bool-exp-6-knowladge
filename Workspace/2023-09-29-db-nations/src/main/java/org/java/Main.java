@@ -76,9 +76,17 @@ public class Main {
 				langs += lang + ", ";
 			}
 			
+			ps = conn.prepareStatement(statsByCountryId);
+			ps.setInt(1, countryId);
+			rs = ps.executeQuery();
+			rs.next();
+			
 			System.out.println("Details:");
 			System.out.println("Languages: " + langs);
-			
+			System.out.println("Most recent stats:");
+			System.out.println("Year: " + rs.getString("year"));
+			System.out.println("Population: " + rs.getString("population"));
+			System.out.println("GDP: " + rs.getString("gdp"));			
 		} catch (Exception e) {
 			
 			System.out.println("Errore di connessione: " + e.getMessage());
