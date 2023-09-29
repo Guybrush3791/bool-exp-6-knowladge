@@ -4,10 +4,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Search: ");
+		String search = sc.nextLine();
 		
 		final String url = "jdbc:mysql://localhost:3306/db_nations";
 		final String user = "root";
@@ -21,8 +27,11 @@ public class Main {
 							 + "		ON c.region_id = r.region_id"
 							 + "	JOIN continents c2 "
 							 + "		ON r.continent_id = c2.continent_id "
+							 + " WHERE c.name LIKE ? "
 							 + " ORDER BY c.name ";
+			
 			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, "%" + search + "%");
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
