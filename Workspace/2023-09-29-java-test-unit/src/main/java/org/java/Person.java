@@ -24,7 +24,11 @@ public class Person {
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
+	public void setName(String name) throws Exception {
+		
+		if (name == null || name.isEmpty())
+			throw new Exception("Name can't be empty");
+		
 		this.name = name;
 	}
 	

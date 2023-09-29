@@ -1,6 +1,7 @@
 package org.java;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -37,5 +38,14 @@ public class PeopleTest {
 		
 		int afterSize = people.getSize();
 		assertEquals(5, afterSize);
+	}
+	
+	@Test
+	@DisplayName("Test add 0 age exception")	
+	public void checkWrogPersonParameters() {
+		
+		assertThrows(Exception.class,
+				() -> people.addPerson(0, "Marco"),
+				"0 age must throws an Exception");
 	}
 }
