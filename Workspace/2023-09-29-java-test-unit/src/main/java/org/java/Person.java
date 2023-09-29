@@ -16,8 +16,8 @@ public class Person {
 	}
 	public void setAge(int age) throws Exception {
 		
-		if (age <= 0)
-			throw new Exception("Age must be greater then 0");
+//		if (age <= 0)
+//			throw new Exception("Age must be greater then 0");
 		
 		this.age = age;
 	}

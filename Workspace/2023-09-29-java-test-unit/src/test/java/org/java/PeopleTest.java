@@ -1,10 +1,10 @@
 package org.java;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -42,10 +42,18 @@ public class PeopleTest {
 	
 	@Test
 	@DisplayName("Test add 0 age exception")	
-	public void checkWrogPersonParameters() {
+	public void checkWrongPersonParameters() {
 		
 		assertThrows(Exception.class,
 				() -> people.addPerson(0, "Marco"),
+				"0 age must throws an Exception");
+	}
+	
+	@Test
+	@DisplayName("Test add valid age not exception")	
+	public void checkValidPersonParameters() {
+		
+		assertDoesNotThrow(() -> people.addPerson(10, "Marco"),
 				"0 age must throws an Exception");
 	}
 }
