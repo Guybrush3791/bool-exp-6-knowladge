@@ -13,10 +13,12 @@ public class People {
 		
 		people = new ArrayList<>();
 		
-		Person p1 = new Person(10, "Guybrush");
-		Person p2 = new Person(20, "Marco");
-		Person p3 = new Person(30, "Francesca");
-		Person p4 = new Person(40, "Chiara");
+		// search: 'a'
+		
+		Person p1 = new Person(10, "Guybrush"); // no
+		Person p2 = new Person(20, "Marco"); // si'
+		Person p3 = new Person(30, "Francesca"); // si'
+		Person p4 = new Person(40, "Chiara"); // si'
 		
 		people.add(p1);
 		people.add(p2);
