@@ -1,5 +1,6 @@
 package org.java;
 
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,5 +32,9 @@ public class People {
 	public List<Person> searchPeople(String name) {
 		
 		return people.stream().filter(p -> p.getName().contains(name)).collect(Collectors.toList());
+	}
+	public int getSize() {
+		
+		return people.size();
 	}
 }
