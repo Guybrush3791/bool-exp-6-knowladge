@@ -21,7 +21,8 @@ public class Main {
 		
 		try (Connection conn = DriverManager.getConnection(url, user, password)) {
 			
-			final String sql = " SELECT c.country_id, c.name 'nation', r.name 'country', c2.name 'continent'  "
+			final String countryByName = 
+							   " SELECT c.country_id, c.name 'nation', r.name 'country', c2.name 'continent'  "
 							 + " FROM countries c  "
 							 + "	JOIN regions r "
 							 + "		ON c.region_id = r.region_id"
@@ -29,8 +30,20 @@ public class Main {
 							 + "		ON r.continent_id = c2.continent_id "
 							 + " WHERE c.name LIKE ? "
 							 + " ORDER BY c.name ";
+			final String statsByCountryId = 
+							   " SELECT * "
+							 + " FROM country_stats cs "
+							 + " WHERE cs.country_id = ? "
+							 + " ORDER BY `year` DESC "
+							 + " LIMIT 1; ";
+			final String languagesByCountryId = 
+							   " SELECT * "
+							 + " FROM languages l "
+							 + "	JOIN country_languages cl "
+							 + "		ON l.language_id = cl.language_id "
+							 + " WHERE cl.country_id = ? ";
 			
-			PreparedStatement ps = conn.prepareStatement(sql);
+			PreparedStatement ps = conn.prepareStatement(countryByName);
 			ps.setString(1, "%" + search + "%");
 			ResultSet rs = ps.executeQuery();
 			
@@ -48,6 +61,24 @@ public class Main {
 				System.out.println("\n---------------------------------\n");
 						
 			}
+			
+			System.out.print("Choose a country id: ");
+			int countryId = Integer.valueOf(sc.nextLine());
+			
+			ps = conn.prepareStatement(languagesByCountryId);
+			ps.setInt(1, countryId);
+			rs = ps.executeQuery();
+			
+			String langs = "";
+			while(rs.next()) {
+				
+				String lang = rs.getString("language");
+				langs += lang + ", ";
+			}
+			
+			System.out.println("Details:");
+			System.out.println("Languages: " + langs);
+			
 		} catch (Exception e) {
 			
 			System.out.println("Errore di connessione: " + e.getMessage());
