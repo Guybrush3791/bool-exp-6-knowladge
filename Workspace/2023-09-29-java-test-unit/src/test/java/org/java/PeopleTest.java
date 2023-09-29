@@ -14,19 +14,28 @@ public class PeopleTest {
 	@BeforeEach
 	public void beforeEach() {
 
-		people = new People();
+		try {
+			
+			people = new People();
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 	}
 	
 	@Test
 	@DisplayName("Test add person to people")	
 	public void addPersonToPeople() {
 		
-//		int beforeSize = people.getSize();
+		try {
 		
-		people.addPerson(50, "Tulio");
+			people.addPerson(50, "Tulio");
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 		
-		int afterSize = 15; // people.getSize();
-		
+		int afterSize = people.getSize();
 		assertEquals(5, afterSize);
 	}
 }

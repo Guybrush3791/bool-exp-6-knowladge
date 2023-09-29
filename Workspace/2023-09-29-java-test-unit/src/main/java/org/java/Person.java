@@ -5,7 +5,7 @@ public class Person {
 	private int age;
 	private String name;
 	
-	public Person(int age, String name) {
+	public Person(int age, String name) throws Exception {
 		
 		setAge(age);
 		setName(name);
@@ -14,7 +14,11 @@ public class Person {
 	public int getAge() {
 		return age;
 	}
-	public void setAge(int age) {
+	public void setAge(int age) throws Exception {
+		
+		if (age <= 0)
+			throw new Exception("Age must be greater then 0");
+		
 		this.age = age;
 	}
 	public String getName() {

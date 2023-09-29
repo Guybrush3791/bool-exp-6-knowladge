@@ -9,7 +9,7 @@ public class People {
 
 	private List<Person> people;
 	
-	public People() {
+	public People() throws Exception {
 		
 		people = new ArrayList<>();
 		
@@ -24,7 +24,7 @@ public class People {
 		people.add(p4);
 	}
 	
-	public void addPerson(int age, String name) {
+	public void addPerson(int age, String name) throws Exception {
 		
 		Person p = new Person(age, name);
 		people.add(p);
