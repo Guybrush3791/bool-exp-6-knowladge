@@ -25,7 +25,7 @@ public class PeopleTest {
 		
 		people.addPerson(50, "Tulio");
 		
-		int afterSize = people.getSize();
+		int afterSize = 15; // people.getSize();
 		
 		assertEquals(5, afterSize);
 	}
