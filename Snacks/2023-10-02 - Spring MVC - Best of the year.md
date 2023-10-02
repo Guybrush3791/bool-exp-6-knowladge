@@ -22,16 +22,12 @@ Aggiungere al controller altri due metodi, che rispondono agli url:
 - `/movies`
 - `/songs`
 
-In ognuno di questi *metodi* aggiungere al `model` un attributo stringa con una lista di titoli di migliori film o canzoni (in base al metodo che stiamo implementando) separati da virgole.
-Utilizzare i due metodi getBest… per recuperare i film e le canzoni.
+In ognuno di questi *metodi* aggiungere al `model` un attributo di tipo stringa che rappresentera' la lista di `movie`/`song` seaprati da virgola (utilizzare i `metodi privati` dello [[#Step 2]] per recuperare la lista di `movie`/`song`).
 
-Creare i rispettivi template Thymeleaf.
+Creare i rispettivi template Thymeleaf per rappresentare le due rotte.
+#### Step 3 - Bonus
+Creare due metodi:
+- `/movies/{id}`
+- `/songs/{id}`
 
-Creare due metodi
-- “/movies/{id}”
-- “/songs/{id}”
-che dato il parametro id passato tramite il path, mostri in pagina il titolo relativo al film / canzone.
-
-Testare chiamando dal browser i diversi url.
-
-Buon lavoro!
+I due metodi dovranno restituire il titolo del `movie`/`song` all'indice indicato dalla rotta.
