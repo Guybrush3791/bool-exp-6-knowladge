@@ -9,6 +9,9 @@ public class CalculatorTest {
 
 	static Calculator c = null;
 	
+	static final float x = 10f;
+	static final float y = 20f;
+	
 	@BeforeAll
 	public static void init() {
 		
@@ -18,9 +21,8 @@ public class CalculatorTest {
 	@Test
 	public void testAddPositiveNumber() {
 		
-		float x = 10;
-		float y = 20;
 		float res = 30;
+		
 		float testRes = c.add(x, y);
 		
 		assertEquals(res, testRes);
@@ -29,9 +31,8 @@ public class CalculatorTest {
 	@Test
 	public void testSubtractNegativeNumber() {
 		
-		float x = 10;
-		float y = 20;
 		float res = -10;
+		
 		float testRes = c.subtract(x, y);
 		
 		assertEquals(res, testRes);
@@ -40,9 +41,8 @@ public class CalculatorTest {
 	@Test
 	public void testDividePositiveNumber() {
 		
-		float x = 10;
-		float y = 20;
 		float res = .5f;
+		
 		float testRes = c.divide(x, y);
 		
 		assertEquals(res, testRes);
@@ -51,9 +51,8 @@ public class CalculatorTest {
 	@Test
 	public void testMultiplyPositiveNumber() {
 		
-		float x = 10;
-		float y = 20;
 		float res = 200;
+		
 		float testRes = c.multiply(x, y);
 		
 		assertEquals(res, testRes);
