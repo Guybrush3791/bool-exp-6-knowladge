@@ -11,6 +11,12 @@ public class MainController {
 	@ResponseBody
 	public String test() {
 		
-		return "Hello, World!";
+		return "<html><body><h1>Hello, World!</h1></body></html>";
+	}
+	
+	@GetMapping("/test1")
+	public String test1() {
+		
+		return "test-1";
 	}
 }
