@@ -1,6 +1,7 @@
 package org.java.app.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -15,7 +16,11 @@ public class MainController {
 	}
 	
 	@GetMapping("/test1")
-	public String test1() {
+	public String test1(Model model) {
+	
+		final String name = "Pluto";
+		
+		model.addAttribute("name", name);
 		
 		return "test-1";
 	}
