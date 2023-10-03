@@ -13,5 +13,17 @@
 	<a th:href="@{http://google.com/search(q='hello')}">Google.com</a>
 	<br />
 	<a th:href="@{/testObj/{id}(id=${to.getId()})}">Test Obj</a>
+	<h1>To id: [[${to.getId()} + 2]]</h1>
+	<h1
+		th:if="${to.getId()} > 20"
+	>Id of TO is greater then 20</h1>
+	
+	<h1>Objs:</h1>
+	<ul>
+		<li 
+		>
+			test
+		</li>
+	</ul>
 </body>
 </html>

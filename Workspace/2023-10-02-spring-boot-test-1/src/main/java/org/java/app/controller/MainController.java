@@ -1,5 +1,8 @@
 package org.java.app.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.java.app.pojo.TestObj;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,8 +42,16 @@ public class MainController {
 	public String test3(Model model) {
 		
 		TestObj to = new TestObj(10, "my name");
+		List<TestObj> objs = Arrays.asList(new TestObj[] {
+				new TestObj(1, "my name 1"),
+				new TestObj(2, "my name 2"),
+				new TestObj(3, "my name 3"),
+				new TestObj(4, "my name 4"),
+				new TestObj(5, "my name 5")
+		});
 		
 		model.addAttribute("to", to);
+		model.addAttribute("objs", objs);
 		
 		return "test-3";
 	}
