@@ -59,7 +59,7 @@ public class MainController {
 		
 		Movie movie = getMovies().stream()
 							.filter(m -> m.getId() == id)
-						.toList().get(0);
+						.findFirst().get();
 		String movieTitle = movie.getTitle();
 		
 		model.addAttribute("movieTitle", movieTitle);

@@ -1,5 +1,6 @@
 package org.java.app.controller;
 
+import org.java.app.pojo.TestObj;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,5 +33,15 @@ public class MainController {
 		model.addAttribute("id", id);
 		
 		return "test-2";
+	}
+	
+	@GetMapping("/test3")
+	public String test3(Model model) {
+		
+		TestObj to = new TestObj(10, "my name");
+		
+		model.addAttribute("to", to);
+		
+		return "test-3";
 	}
 }
