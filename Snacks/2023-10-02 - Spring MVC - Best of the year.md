@@ -32,26 +32,20 @@ Creare due metodi:
 
 I due metodi dovranno restituire il titolo del `movie`/`song` all'indice indicato dalla rotta.
 ### Day 2
-Ciao!
+Includere `Bootstrap` e fare il **refactoring del layout come da allegato**, cercando di creare componenti riutilizzabili con i `fragments`.
 
-Continuiamo a lavorare sul nostro progetto Best of the year (anche stessa repo).
+Modificare i metodi che rispondono ai seguenti url, in modo che restituiscano una lista di oggetti (`Movie` o `Song`) invece di una stringa:
+- `/movies`
+- `/songs`
 
-Includere Bootstrap e fare il refactoring del layout come da allegato, cercando di creare componenti riutilizzabili con i fragments.
-
-Modificare i metodi che rispondono agli url
-- “/movies”
-- “/songs”
-in modo che i Model restituiscano una lista di oggetti (Movie o Song) invece di una stringa.
 Modificare anche le rispettive view.
 
-Ogni elemento mostrato nella lista (film o canzone) deve essere un link che punta alla rispettiva pagina di dettaglio (e anche in questo caso restituire il Model al posto della stringa col titolo).
+Ogni elemento mostrato nella lista (film o canzone) deve essere un link che punta alla rispettiva pagina di dettaglio (e anche in questo caso restituire il `model` *al posto della stringa col titolo*).
 
-Nella pagina home (quella che risponde alla root dell’applicazione) aggiungere due link che portano agli url /movies e /songs.
+Nella pagina home (quella che risponde alla root dell’applicazione) aggiungere due link che portano agli url `/movies` e `/songs`.
 
-Nelle pagine con le liste aggiungere un link che riporta alla home page.
+Nelle pagine con le liste aggiungere un link che riporta alla `home page`.
 
-Testare navigando l’applicazione.
-
-Buon lavoro!
-
+#### Allegato
+##### Layout
 ![[Pasted image 20231003115542.png]]
