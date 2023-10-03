@@ -1,7 +1,10 @@
 @charset "UTF-8";
 
+*, a {
+	color: white;
+}
+
 body {
 	
 	background-color: purple;
-	color: white;
 }
