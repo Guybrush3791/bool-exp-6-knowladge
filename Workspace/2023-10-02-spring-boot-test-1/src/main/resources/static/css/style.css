@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 *, a {
-	color: white;
+	color: white !important;
 }
 
 body {
 	
-	background-color: purple;
+	background-color: purple !important;
 }

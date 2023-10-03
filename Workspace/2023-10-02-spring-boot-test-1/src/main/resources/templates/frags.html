@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<a 
+		th:fragment="btn(link, title)"
+		th:href="${link}"
+		class="btn btn-primary"
+	>
+		[[${title}]]
+	</a>
+</body>
+</html>
