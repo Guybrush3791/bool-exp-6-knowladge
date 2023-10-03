@@ -57,7 +57,9 @@ public class MainController {
 	@GetMapping("/movies/{id}")
 	public String getMovieDetails(@PathVariable int id, Model model) {
 		
-		Movie movie = getMovies().get(id);
+		Movie movie = getMovies().stream()
+							.filter(m -> m.getId() == id)
+						.toList().get(0);
 		String movieTitle = movie.getTitle();
 		
 		model.addAttribute("movieTitle", movieTitle);
