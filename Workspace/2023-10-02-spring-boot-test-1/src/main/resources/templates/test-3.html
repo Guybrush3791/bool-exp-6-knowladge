@@ -21,8 +21,10 @@
 	<h1>Objs:</h1>
 	<ul>
 		<li 
+			th:each="obj : ${objs}"
+			th:object="${obj}"
 		>
-			test
+			[[*{name}]] - [[${obj.name}]] - [[${obj.getName()}]]
 		</li>
 	</ul>
 </body>
