@@ -9,6 +9,7 @@ import org.java.app.pojo.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class MainController {
@@ -51,6 +52,27 @@ public class MainController {
 		model.addAttribute("strSongs", strSongs);
 		
 		return "songs-index";
+	}
+	
+	@GetMapping("/movies/{id}")
+	public String getMovieDetails(@PathVariable int id, Model model) {
+		
+		Movie movie = getMovies().get(id);
+		String movieTitle = movie.getTitle();
+		
+		model.addAttribute("movieTitle", movieTitle);
+		
+		return "movie-details";
+	}
+	@GetMapping("/songs/{id}")
+	public String getSongDetails(@PathVariable int id, Model model) {
+		
+		Song song = getSongs().get(id);
+		String songTitle = song.getTitle();
+		
+		model.addAttribute("songTitle", songTitle);
+		
+		return "song-details";
 	}
 	
 	private List<Movie> getMovies() {
