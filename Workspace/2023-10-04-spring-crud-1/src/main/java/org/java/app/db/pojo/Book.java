@@ -2,11 +2,14 @@ package org.java.app.db.pojo;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 
 @Entity
 public class Book {
@@ -20,7 +23,9 @@ public class Book {
 	private String subTitle;
 	
 	private LocalDate releaseDate;
-	@Column(unique = true)
+	
+	@Lob @Basic(fetch = FetchType.LAZY)
+	@Column(unique = true, columnDefinition = "text")
 	private String isbn;
 	
 	public Book() { }
