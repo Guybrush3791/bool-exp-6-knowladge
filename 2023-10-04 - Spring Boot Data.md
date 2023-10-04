@@ -116,3 +116,20 @@ public class Book {
 #### Risultato
 Dopo aver creato la classe correttamente e' possibile compilare nuovamente il progetto e verificare in **DBEaver** che la tabella sia stata creata correttamente in db
 ![[Pasted image 20231004122752.png]]
+
+## Fase 3: Insert
+#### Repository
+Generare l'interfaccia **repository** che estendera' `JpaRepository<E, T>` passandogli come parametri **generics** (tra le parentesi angolari) prima la classe **model**, poi il relativo tipo di dato della chiave primaria (quasi sempre `Integer`)
+```java
+import org.java.app.db.pojo.Book;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface BookRepo extends JpaRepository<Book, Integer> {
+
+}
+```
+
+#### Service
+Generare la classe **service** per esporre i metodi del **repository**. Dopo aver 
