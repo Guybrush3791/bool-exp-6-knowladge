@@ -197,3 +197,7 @@ public class Application implements CommandLineRunner {
 #### Risultato
 Dopo aver ri-compilato il progetto, sara' possibile vedere i dati salvati in **persistenza** all'interno del db tramite **DBEaver**
 ![[Pasted image 20231004124401.png]]
+
+## Fase 4: MVC
+#### Controller
+All'interno del controller e' possibile utilizzare il `service` dei `Book` importato tramite ``
