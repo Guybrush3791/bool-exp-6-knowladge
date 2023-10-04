@@ -5,6 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body th:object="${song}">
+	<header th:insert="frags/header :: header"/>
 	<h1>Song: [[*{title}]]</h1>
 </body>
 </html>

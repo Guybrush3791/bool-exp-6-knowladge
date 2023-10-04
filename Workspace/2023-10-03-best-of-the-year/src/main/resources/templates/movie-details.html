@@ -5,6 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body th:object="${movie}">
+	<header th:insert="frags/header :: header"/>
 	<h1>Movie: [[*{title}]]</h1>
 </body>
 </html>
