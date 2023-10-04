@@ -11,10 +11,11 @@
 			th:each="book : ${books}"
 			th:object="${book}"
 		>
-			[[*{isbn}]] - [[*{title}]] <br />
-			<small>[[*{subTitle}]]</small> <br />	
-			[[*{releaseDate}]]	
-			
+			<a th:href="@{/books/{id}(id=*{id})}">
+				[[*{isbn}]] - [[*{title}]] <br />
+				<small>[[*{subTitle}]]</small> <br />	
+				[[*{releaseDate}]]		
+			</a>
 		</li>
 	</ul>
 </body>
