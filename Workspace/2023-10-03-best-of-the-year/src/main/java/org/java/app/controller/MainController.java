@@ -32,12 +32,15 @@ public class MainController {
 //			strMovies += movie.getTitle() + ", ";
 //		}
 //		strMovies = strMovies.substring(0, strMovies.length() - 2);
-		String strMovies = getMovies().stream()
-//								.map(m -> m.getTitle())
-								.map(Movie::getTitle)
-							.collect(Collectors.joining(", "));
+		
+		// DAY 1
+//		String strMovies = getMovies().stream()
+////								.map(m -> m.getTitle())
+//								.map(Movie::getTitle)
+//							.collect(Collectors.joining(", "));
+		List<Movie> movies = getMovies();
 
-		model.addAttribute("strMovies", strMovies);
+		model.addAttribute("movies", movies);
 
 		return "movies-index";
 	}
