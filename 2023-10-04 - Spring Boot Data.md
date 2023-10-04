@@ -200,4 +200,88 @@ Dopo aver ri-compilato il progetto, sara' possibile vedere i dati salvati in **p
 
 ## Fase 4: MVC
 #### Controller
-All'interno del controller e' possibile utilizzare il `service` dei `Book` importato tramite ``
+All'interno del controller e' importare il `service` dei `Book` tramite `@Autowired`. Aggiungere poi almeno 2 rotte per le funzione di **show** e **index**. Recuperare i dati dal db tramite il `service` e mandarli al **front-end** tramite il `model`
+```java
+import java.util.List;
+
+import org.java.app.db.pojo.Book;
+import org.java.app.db.serv.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/books")
+public class BookController {
+
+	@Autowired
+	private BookService bookService;
+	
+	@GetMapping
+	public String getIndex(Model model) {
+		
+		List<Book> books = bookService.findAll();
+		model.addAttribute("books", books);
+		
+		return "book-index";
+	}
+	
+	@GetMapping("/{id}")
+	public String getShow(@PathVariable int id, Model model) {
+		
+		Book book = bookService.findById(id);
+		model.addAttribute("book", book);
+		
+		return "book-show";
+	}
+}
+```
+
+#### Thymeleaf
+Definire i due file `thymeleaf` per le due diverse rotte, che andranno a utilizzare **liste** e **model** per rappresentare i dati
+##### `book-index.html`
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Books:</h1>
+	<ul>
+		<li
+			th:each="book : ${books}"
+			th:object="${book}"
+		>
+			<a th:href="@{/books/{id}(id=*{id})}">
+				[[*{isbn}]] - [[*{title}]] <br />
+				<small>[[*{subTitle}]]</small> <br />	
+				[[*{releaseDate}]]		
+			</a>
+		</li>
+	</ul>
+</body>
+</html>
+```
+##### `book-show.html`
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body th:object="${book}">
+	[[*{isbn}]] - [[*{title}]] <br />
+	<small>[[*{subTitle}]]</small> <br />	
+	[[*{releaseDate}]]		
+</body>
+</html>
+```
+
+#### Risultato
+E' ora possibile accedere alla rotta definita nel controller (`/books`) per vedere la lista di libri presenti in db con il relativo collegamento ai dettagli del singolo libro
