@@ -16,3 +16,11 @@ Includere le dipendenze nel `pom.xml` per accedere al **database**:
 
 ### `application.properties`
 Definire le seguenti impostazioni nel file di configurazione `application.properties`:
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/db_library
+spring.datasource.username=root
+spring.datasource.password=root
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.hibernate.ddl-auto=create-drop
+```
