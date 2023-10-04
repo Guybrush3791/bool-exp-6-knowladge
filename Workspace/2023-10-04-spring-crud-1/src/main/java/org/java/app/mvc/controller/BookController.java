@@ -1,6 +1,12 @@
 package org.java.app.mvc.controller;
 
+import java.util.List;
+
+import org.java.app.db.pojo.Book;
+import org.java.app.db.serv.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -8,8 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/books")
 public class BookController {
 
+	@Autowired
+	private BookService bookService;
+	
 	@GetMapping
-	public String getIndex() {
+	public String getIndex(Model model) {
+		
+		List<Book> books = bookService.findAll();
+		model.addAttribute("books", books);
 		
 		return "book-index";
 	}

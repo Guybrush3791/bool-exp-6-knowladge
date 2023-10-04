@@ -5,6 +5,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h1>Books:</h1>
+	<ul>
+		<li
+			th:each="book : ${books}"
+			th:object="${book}"
+		>
+			[[*{isbn}]] - [[*{title}]] <br />
+			<small>[[*{subTitle}]]</small> <br />	
+			[[*{releaseDate}]]	
+			
+		</li>
+	</ul>
 </body>
 </html>
