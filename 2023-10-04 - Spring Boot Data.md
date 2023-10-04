@@ -19,7 +19,14 @@ Includere le dipendenze nel `pom.xml` per accedere al **database**:
 	<version>8.0.32</version>
 </dependency>
 ```
-
+#### MariaDB
+In caso in cui `MariaDB` desse problemi aggiungere `mariadb-java-client` come dipendenza
+```xml
+<dependency>
+	<groupId>org.mariadb.jdbc</groupId>
+	<artifactId>mariadb-java-client</artifactId>
+</dependency>
+```
 ### `application.properties`
 Definire le seguenti impostazioni nel file di configurazione `application.properties` avendo cura di modificare il **nome del database**:
 ```properties
@@ -31,6 +38,11 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 spring.jpa.hibernate.ddl-auto=create-drop
 ```
 
+#### MariaDB
+In caso in cui `MariaDB` desse problemi sostituire il `dialect` con la seguente riga
+```properties
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+```
 ### Risultato atteso
 In console non dovrebbero apparire errori, e dovrebbero essere visibili dei log riguardanti il boot della connessione con il database
 ![[Pasted image 20231004122358.png]]
