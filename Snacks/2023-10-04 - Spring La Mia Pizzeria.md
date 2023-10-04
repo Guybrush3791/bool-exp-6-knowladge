@@ -19,6 +19,9 @@ Implementare inoltre il `CommandLineRunner` come visto a lezione per caricare al
 
 Implementiamo  quindi il **controller** con il metodo `index` che restituisce una **view** per mostrare **l’elenco delle pizze caricate dal database**.
 
-L’elenco potrebbe essere vuoto: in quel caso dobbiamo mostrare un messaggio che indichi all’utente che non ci sono pizze presenti nella nostra applicazione. Testare anche questa eventualita' commentando gli inserimenti nel `CommandLineRunner`.
+> [!attention] L’elenco potrebbe essere vuoto
+> In quel caso dobbiamo mostrare un messaggio che indichi all’utente che non ci sono pizze presenti nella nostra applicazione. 
+> 
+> Testare anche questa eventualita' commentando gli inserimenti nel `CommandLineRunner`.
 
 Gestiamo i componenti riutilizzabili con i `fragments`.

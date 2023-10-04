@@ -23,14 +23,14 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Book book1 = new Book("mio titolo 1", "mio sottotitolo 1", LocalDate.now(), "1234234");
-		Book book2 = new Book("mio titolo 2", "mio sottotitolo 2", LocalDate.now(), "1234235");
-		Book book3 = new Book("mio titolo 3", "mio sottotitolo 3", LocalDate.now(), "1234236");
-		
-		bookService.save(book1);
-		bookService.save(book2);
-		bookService.save(book3);
-		
-		System.out.println("Insert OK!");
+//		Book book1 = new Book("mio titolo 1", "mio sottotitolo 1", LocalDate.now(), "1234234");
+//		Book book2 = new Book("mio titolo 2", "mio sottotitolo 2", LocalDate.now(), "1234235");
+//		Book book3 = new Book("mio titolo 3", "mio sottotitolo 3", LocalDate.now(), "1234236");
+//		
+//		bookService.save(book1);
+//		bookService.save(book2);
+//		bookService.save(book3);
+//		
+//		System.out.println("Insert OK!");
 	}
 }
