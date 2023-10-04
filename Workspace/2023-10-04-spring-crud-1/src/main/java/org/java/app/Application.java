@@ -31,7 +31,6 @@ public class Application implements CommandLineRunner {
 		bookService.save(book2);
 		bookService.save(book3);
 		
-		List<Book> books = bookService.findAll();
-		books.forEach(System.out::println);
+		System.out.println("Insert OK!");
 	}
 }
