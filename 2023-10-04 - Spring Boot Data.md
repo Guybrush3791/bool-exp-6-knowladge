@@ -258,9 +258,7 @@ Definire i due file `thymeleaf` per le due diverse rotte, che andranno a utilizz
 			th:object="${book}"
 		>
 			<a th:href="@{/books/{id}(id=*{id})}">
-				[[*{isbn}]] - [[*{title}]] <br />
-				<small>[[*{subTitle}]]</small> <br />	
-				[[*{releaseDate}]]		
+				[[*{isbn}]] - [[*{title}]]	
 			</a>
 		</li>
 	</ul>
@@ -285,3 +283,8 @@ Definire i due file `thymeleaf` per le due diverse rotte, che andranno a utilizz
 
 #### Risultato
 E' ora possibile accedere alla rotta definita nel controller (`/books`) per vedere la lista di libri presenti in db con il relativo collegamento ai dettagli del singolo libro
+##### `localhost:8080/books`
+![[Pasted image 20231004125158.png]]
+
+##### `localhost:8080/books/1`
+![[Pasted image 20231004125218.png]]
