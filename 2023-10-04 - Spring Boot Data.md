@@ -132,4 +132,68 @@ public interface BookRepo extends JpaRepository<Book, Integer> {
 ```
 
 #### Service
-Generare la classe **service** per esporre i metodi del **repository**. Dopo aver 
+Generare la classe **service** per esporre i metodi del **repository**. Dopo aver importato il **repository** tramite `@Autowire` definire almeno i 3 metodi principali per interfacciarsi con una tabella in db (**insert**, **findAll**, **findById**)
+```java
+@Service
+public class BookService {
+
+	@Autowired
+	private BookRepo bookRepo;
+	
+	public void save(Book book) {
+		
+		bookRepo.save(book);
+	}
+	public List<Book> findAll() {
+		
+		return bookRepo.findAll();
+	}
+	public Book findById(int id) {
+		
+		return bookRepo.findById(id).get();
+	}
+}
+```
+
+#### CommandLineRunner
+All'interno dello `@SpringBootApplication` (il file `java` principale) implementare l'intefaccia `CommandLineRunner` e il relativo metodo `void run(String... args) throw Exception` in cui verranno fatti alcuni inserimenti di prova nella tabella in db
+```java
+import java.time.LocalDate;
+import java.util.List;
+
+import org.java.app.db.pojo.Book;
+import org.java.app.db.serv.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application implements CommandLineRunner {
+
+	@Autowired
+	private BookService bookService;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		
+		Book book1 = new Book("mio titolo 1", "mio sottotitolo 1", LocalDate.now(), "1234234");
+		Book book2 = new Book("mio titolo 2", "mio sottotitolo 2", LocalDate.now(), "1234235");
+		Book book3 = new Book("mio titolo 3", "mio sottotitolo 3", LocalDate.now(), "1234236");
+		
+		bookService.save(book1);
+		bookService.save(book2);
+		bookService.save(book3);
+		
+		System.out.println("Insert OK!");
+	}
+}
+```
+
+#### Risultato
+Dopo aver ri-compilato il progetto, sara' possibile vedere i dati salvati in **persistenza** all'interno del db tramite **DBEaver**
+![[Pasted image 20231004124401.png]]
