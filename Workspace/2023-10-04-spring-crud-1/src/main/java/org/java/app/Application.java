@@ -1,6 +1,7 @@
 package org.java.app;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.java.app.db.pojo.Book;
 import org.java.app.db.serv.BookService;
@@ -29,5 +30,8 @@ public class Application implements CommandLineRunner {
 		bookService.save(book1);
 		bookService.save(book2);
 		bookService.save(book3);
+		
+		List<Book> books = bookService.findAll();
+		books.forEach(System.out::println);
 	}
 }

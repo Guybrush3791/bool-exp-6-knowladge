@@ -67,9 +67,9 @@ public class Book {
 	public String toString() {
 		
 		return "[" + getId() + "] Book:\n"
-					+ "title: " + getTitle()
-					+ "sub-title: " + getSubTitle()
-					+ "release date: " + getReleaseDate()
+					+ "title: " + getTitle() + "\n"
+					+ "sub-title: " + getSubTitle() + "\n"
+					+ "release date: " + getReleaseDate() + "\n"
 					+ "ISBN: " + getIsbn();
 	}
 }
