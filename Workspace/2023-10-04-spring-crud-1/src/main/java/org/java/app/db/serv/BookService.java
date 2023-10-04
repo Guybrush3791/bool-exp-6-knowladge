@@ -1,5 +1,7 @@
 package org.java.app.db.serv;
 
+import java.util.List;
+
 import org.java.app.db.pojo.Book;
 import org.java.app.db.repo.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +13,12 @@ public class BookService {
 	@Autowired
 	private BookRepo bookRepo;
 	
-	public void insertBook(Book book) {
+	public void save(Book book) {
 		
+		bookRepo.save(book);
+	}
+	public List<Book> findAll() {
 		
+		return bookRepo.findAll();
 	}
 }
