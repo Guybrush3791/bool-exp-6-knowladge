@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-	<h1>Song: [[${songTitle}]]</h1>
+<body th:object="${song}">
+	<h1>Song: [[*{title}]]</h1>
 </body>
 </html>

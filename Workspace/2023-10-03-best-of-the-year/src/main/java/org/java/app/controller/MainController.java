@@ -48,11 +48,14 @@ public class MainController {
 	@GetMapping("/songs")
 	public String getSongsIndex(Model model) {
 
-		String strSongs = getSongs().stream()
-								.map(Song::getTitle)
-							.collect(Collectors.joining(", "));
+		// DAY 1
+//		String strSongs = getSongs().stream()
+//								.map(Song::getTitle)
+//							.collect(Collectors.joining(", "));
+		
+		List<Song> songs = getSongs();
 
-		model.addAttribute("strSongs", strSongs);
+		model.addAttribute("songs", songs);
 
 		return "songs-index";
 	}
@@ -63,19 +66,26 @@ public class MainController {
 		Movie movie = getMovies().stream()
 							.filter(m -> m.getId() == id)
 						.findFirst().get();
-		String movieTitle = movie.getTitle();
+		// DAY 1
+//		String movieTitle = movie.getTitle();
 
-		model.addAttribute("movieTitle", movieTitle);
+		model.addAttribute("movie", movie);
 
 		return "movie-details";
 	}
 	@GetMapping("/songs/{id}")
 	public String getSongDetails(@PathVariable int id, Model model) {
 
-		Song song = getSongs().get(id);
-		String songTitle = song.getTitle();
+		// DAY 1
+//		Song song = getSongs().get(id);
+//		String songTitle = song.getTitle();
+		
+		// DAY 2
+		Song song = getSongs().stream()
+						.filter(s -> s.getId() == id)
+					.findFirst().get();
 
-		model.addAttribute("songTitle", songTitle);
+		model.addAttribute("song", song);
 
 		return "song-details";
 	}
