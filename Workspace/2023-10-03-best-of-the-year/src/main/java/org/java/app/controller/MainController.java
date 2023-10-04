@@ -16,19 +16,19 @@ public class MainController {
 
 	@GetMapping("/")
 	public String getIndex(Model model) {
-		
+
 		final String name = "Guybrush";
 		model.addAttribute("name", name);
-		
+
 		return "index";
 	}
-	
+
 	@GetMapping("/movies")
 	public String getMoviesIndex(Model model) {
-		
+
 //		String strMovies = "";
 //		for (Movie movie : getMovies()) {
-//			
+//
 //			strMovies += movie.getTitle() + ", ";
 //		}
 //		strMovies = strMovies.substring(0, strMovies.length() - 2);
@@ -36,49 +36,49 @@ public class MainController {
 //								.map(m -> m.getTitle())
 								.map(Movie::getTitle)
 							.collect(Collectors.joining(", "));
-				
+
 		model.addAttribute("strMovies", strMovies);
-		
+
 		return "movies-index";
 	}
-	
+
 	@GetMapping("/songs")
 	public String getSongsIndex(Model model) {
-		
+
 		String strSongs = getSongs().stream()
 								.map(Song::getTitle)
 							.collect(Collectors.joining(", "));
-		
+
 		model.addAttribute("strSongs", strSongs);
-		
+
 		return "songs-index";
 	}
-	
+
 	@GetMapping("/movies/{id}")
 	public String getMovieDetails(@PathVariable int id, Model model) {
-		
+
 		Movie movie = getMovies().stream()
 							.filter(m -> m.getId() == id)
 						.findFirst().get();
 		String movieTitle = movie.getTitle();
-		
+
 		model.addAttribute("movieTitle", movieTitle);
-		
+
 		return "movie-details";
 	}
 	@GetMapping("/songs/{id}")
 	public String getSongDetails(@PathVariable int id, Model model) {
-		
+
 		Song song = getSongs().get(id);
 		String songTitle = song.getTitle();
-		
+
 		model.addAttribute("songTitle", songTitle);
-		
+
 		return "song-details";
 	}
-	
+
 	private List<Movie> getMovies() {
-		
+
 		return Arrays.asList(new Movie[] {
 				new Movie(1, "movie 1"),
 				new Movie(2, "movie 2"),
@@ -88,7 +88,7 @@ public class MainController {
 		});
 	}
 	private List<Song> getSongs() {
-		
+
 		return Arrays.asList(new Song[] {
 				new Song(1, "song 1"),
 				new Song(2, "song 2"),

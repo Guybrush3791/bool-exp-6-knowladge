@@ -4,13 +4,13 @@ public class Movie {
 
 	private int id;
 	private String title;
-	
+
 	public Movie(int id, String title) {
-		
+
 		setId(id);
 		setTitle(title);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -23,10 +23,10 @@ public class Movie {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	
+
 	@Override
 	public String toString() {
-		
+
 		return "Movie: [" + getId() + "] " + getTitle();
 	}
 }
