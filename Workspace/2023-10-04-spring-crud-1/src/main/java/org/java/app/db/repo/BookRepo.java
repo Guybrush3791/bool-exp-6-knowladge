@@ -11,5 +11,5 @@ public interface BookRepo extends JpaRepository<Book, Integer> {
 
 	public List<Book> findByTitle(String title);
 	public List<Book> findByTitleContaining(String title);
-	public List<Book> findByTitleContainingOrSubtitleContaining(String title);
+	public List<Book> findByTitleOrSubtitleContaining(String title, String subtitle);
 }

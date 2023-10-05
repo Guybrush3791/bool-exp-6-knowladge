@@ -32,7 +32,7 @@ public class Book {
 	public Book(String title, String subtitle, LocalDate releaseDate, String isbn) {
 	
 		setTitle(title);
-		setSubTitle(subtitle);
+		setSubtitle(subtitle);
 		setReleaseDate(releaseDate);
 		setIsbn(isbn);
 	}
