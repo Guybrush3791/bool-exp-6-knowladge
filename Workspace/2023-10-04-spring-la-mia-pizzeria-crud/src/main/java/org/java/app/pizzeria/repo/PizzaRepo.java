@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PizzaRepo extends JpaRepository<Pizza, Integer> {
 
-	public void findByName(String name);
+	public List<Pizza> findByName(String name);
 }
