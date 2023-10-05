@@ -30,6 +30,7 @@ public class BookController {
 					: bookService.findByTitle(title);
 		
 		model.addAttribute("books", books);
+		model.addAttribute("title", title);
 		
 		return "book-index";
 	}

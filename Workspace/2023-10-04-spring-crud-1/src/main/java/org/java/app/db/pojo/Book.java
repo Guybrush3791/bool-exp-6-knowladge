@@ -20,7 +20,7 @@ public class Book {
 	
 	@Column(length = 128, nullable = false)
 	private String title;
-	private String subTitle;
+	private String subtitle;
 	
 	private LocalDate releaseDate;
 	
@@ -29,10 +29,10 @@ public class Book {
 	private String isbn;
 	
 	public Book() { }
-	public Book(String title, String subTitle, LocalDate releaseDate, String isbn) {
+	public Book(String title, String subtitle, LocalDate releaseDate, String isbn) {
 	
 		setTitle(title);
-		setSubTitle(subTitle);
+		setSubTitle(subtitle);
 		setReleaseDate(releaseDate);
 		setIsbn(isbn);
 	}
@@ -49,11 +49,11 @@ public class Book {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getSubTitle() {
-		return subTitle;
+	public String getSubtitle() {
+		return subtitle;
 	}
-	public void setSubTitle(String subTitle) {
-		this.subTitle = subTitle;
+	public void setSubtitle(String subTitle) {
+		this.subtitle = subTitle;
 	}
 	public LocalDate getReleaseDate() {
 		return releaseDate;
@@ -73,7 +73,7 @@ public class Book {
 		
 		return "[" + getId() + "] Book:\n"
 					+ "title: " + getTitle() + "\n"
-					+ "sub-title: " + getSubTitle() + "\n"
+					+ "sub-title: " + getSubtitle() + "\n"
 					+ "release date: " + getReleaseDate() + "\n"
 					+ "ISBN: " + getIsbn();
 	}
