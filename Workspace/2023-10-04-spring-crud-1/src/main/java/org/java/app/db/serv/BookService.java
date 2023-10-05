@@ -28,6 +28,6 @@ public class BookService {
 	
 	public List<Book> findByTitle(String title) {
 		
-		return bookRepo.findByTitle(title);
+		return bookRepo.findByTitleContaining(title);
 	}
 }

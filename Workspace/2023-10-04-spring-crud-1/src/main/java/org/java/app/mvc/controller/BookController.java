@@ -25,15 +25,11 @@ public class BookController {
 			@RequestParam(required = false) String title
 		) {
 		
+		List<Book> books = title == null 
+					? bookService.findAll()
+					: bookService.findByTitle(title);
 		
-		if (title == null) {
-		
-			List<Book> books = bookService.findAll();
-			model.addAttribute("books", books);
-		} else {
-			
-			// SEARCH BY TITLE
-		}
+		model.addAttribute("books", books);
 		
 		return "book-index";
 	}
