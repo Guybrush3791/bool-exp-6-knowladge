@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/books")
@@ -19,10 +20,20 @@ public class BookController {
 	private BookService bookService;
 	
 	@GetMapping
-	public String getIndex(Model model) {
+	public String getIndex(
+			Model model,
+			@RequestParam(required = false) String title
+		) {
 		
-		List<Book> books = bookService.findAll();
-		model.addAttribute("books", books);
+		
+		if (title == null) {
+		
+			List<Book> books = bookService.findAll();
+			model.addAttribute("books", books);
+		} else {
+			
+			// SEARCH BY TITLE
+		}
 		
 		return "book-index";
 	}

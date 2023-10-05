@@ -25,4 +25,9 @@ public class BookService {
 		
 		return bookRepo.findById(id).get();
 	}
+	
+	public List<Book> findByTitle(String title) {
+		
+		return bookRepo.findByTitle(title);
+	}
 }
