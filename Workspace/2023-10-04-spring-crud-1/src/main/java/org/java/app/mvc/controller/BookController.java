@@ -72,6 +72,8 @@ public class BookController {
 		} else 
 			System.out.println("No error");
 		
+		bookService.save(book);
+		
 		return "redirect:/books";
 	}
 }
