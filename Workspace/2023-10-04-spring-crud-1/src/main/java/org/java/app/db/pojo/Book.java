@@ -21,13 +21,16 @@ public class Book {
 	private int id;
 
 	@Column(length = 128, nullable = false)
-	@Length(min = 3, max = 128, message = "il titolo deve essere composto da 3~128 caratteri")
+	@Length(
+		min = 3, 
+		max = 128, 
+		message = "il titolo deve essere composto da 3~128 caratteri"
+	)
 	private String title;
 	private String subtitle;
 
 	private LocalDate releaseDate;
 
-	@Lob @Basic(fetch = FetchType.LAZY)
 	@Column(unique = true, columnDefinition = "text")
 	private String isbn;
 
