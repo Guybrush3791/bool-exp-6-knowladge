@@ -2,6 +2,8 @@ package org.java.app.db.pojo;
 
 import java.time.LocalDate;
 
+import org.hibernate.validator.constraints.Length;
+
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,6 +21,7 @@ public class Book {
 	private int id;
 
 	@Column(length = 128, nullable = false)
+	@Length(min = 3, max = 128, message = "il titolo deve essere composto da 3~128 caratteri")
 	private String title;
 	private String subtitle;
 
