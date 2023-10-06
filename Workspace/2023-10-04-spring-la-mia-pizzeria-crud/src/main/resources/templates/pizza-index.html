@@ -12,7 +12,9 @@
 			th:each="pizza : ${pizze}"
 			th:object="${pizza}"
 		>
-			[[*{name}]]
+			<a th:href="@{pizzas/{id}(id=*{id})}">
+				[[*{name}]]				
+			</a>
 		</li>
 	</ul>
 </body>
