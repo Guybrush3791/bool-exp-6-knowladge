@@ -6,18 +6,21 @@
 </head>
 <body>
 	<h1>CREATE NEW BOOK</h1>
-	<form>
+	<form 
+		th:object="${book}"
+		method="POST"	
+	>
 		<label for="title">Title</label>
-		<input type="text" name="title" />
+		<input type="text" name="title" th:field="*{title}" />
 		<br />
 		<label for="subtitle">Sub-title</label>
-		<input type="text" name="subtitle" />
+		<input type="text" name="subtitle" th:field="*{subtitle}" />
 		<br />
 		<label for="releaseDate">Release date</label>
-		<input type="text" name="releaseDate" />
+		<input type="date" name="releaseDate" th:field="*{releaseDate}" />
 		<br />
 		<label for="isbn">ISBN</label>
-		<input type="text" name="isbn" />
+		<input type="text" name="isbn" th:field="*{isbn}" />
 		<br />
 		<input type="submit" value="CREATE" />
 	</form>		
