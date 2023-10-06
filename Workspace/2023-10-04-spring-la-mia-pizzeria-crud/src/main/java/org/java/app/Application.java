@@ -20,10 +20,12 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Pizza pizza1 = new Pizza("pizza 1", "desc pizza 1", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fit.wikipedia.org%2Fwiki%2FPizza_napoletana&psig=AOvVaw1XtZhspNkgHeHJuy1umRvU&ust=1696577642654000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJD62K-y3oEDFQAAAAAdAAAAABAE", 10);
-		Pizza pizza2 = new Pizza("pizza 2", "desc pizza 2", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fit.wikipedia.org%2Fwiki%2FPizza_napoletana&psig=AOvVaw1XtZhspNkgHeHJuy1umRvU&ust=1696577642654000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJD62K-y3oEDFQAAAAAdAAAAABAE", 12);
-		Pizza pizza3 = new Pizza("pizza 3", "desc pizza 3", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fit.wikipedia.org%2Fwiki%2FPizza_napoletana&psig=AOvVaw1XtZhspNkgHeHJuy1umRvU&ust=1696577642654000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJD62K-y3oEDFQAAAAAdAAAAABAE", 14);
-		Pizza pizza4 = new Pizza("pizza 4", "desc pizza 4", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fit.wikipedia.org%2Fwiki%2FPizza_napoletana&psig=AOvVaw1XtZhspNkgHeHJuy1umRvU&ust=1696577642654000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJD62K-y3oEDFQAAAAAdAAAAABAE", 16);
+		String photo = "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg";
+		
+		Pizza pizza1 = new Pizza("pizza 1", "desc pizza 1", photo, 10);
+		Pizza pizza2 = new Pizza("pizza 2", "desc pizza 2", photo, 12);
+		Pizza pizza3 = new Pizza("pizza 3", "desc pizza 3", photo, 14);
+		Pizza pizza4 = new Pizza("pizza 4", "desc pizza 4", photo, 16);
 		
 		pizzaServ.save(pizza1);
 		pizzaServ.save(pizza2);
