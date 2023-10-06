@@ -44,8 +44,10 @@ public class BookController {
 		return "book-show";
 	}
 	
-	@GetMapping("/books/create")
-	public String getCreateForm() {
+	@GetMapping("/create")
+	public String getCreateForm(Model model) {
+		
+		model.addAttribute("book", new Book());
 		
 		return "book-create";
 	}
