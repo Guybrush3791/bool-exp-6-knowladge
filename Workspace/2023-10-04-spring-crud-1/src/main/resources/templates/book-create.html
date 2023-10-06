@@ -19,14 +19,36 @@
 			</ul>
 			<br />
 		</div>
+		<br />
 		<label for="subtitle">Sub-title</label>
 		<input type="text" name="subtitle" th:field="*{subtitle}" />
+		<br />
+		<div th:if="${#fields.hasErrors('subtitle')}">
+			<ul>
+			   <li th:each="err : ${#fields.errors('subtitle')}" th:text="${err}"></li>
+			</ul>
+			<br />
+		</div>
 		<br />
 		<label for="releaseDate">Release date</label>
 		<input type="date" name="releaseDate" th:field="*{releaseDate}" />
 		<br />
+		<div th:if="${#fields.hasErrors('releaseDate')}">
+			<ul>
+			   <li th:each="err : ${#fields.errors('releaseDate')}" th:text="${err}"></li>
+			</ul>
+			<br />
+		</div>
+		<br />
 		<label for="isbn">ISBN</label>
 		<input type="text" name="isbn" th:field="*{isbn}" />
+		<br />
+		<div th:if="${#fields.hasErrors('isbn')}">
+			<ul>
+			   <li th:each="err : ${#fields.errors('isbn')}" th:text="${err}"></li>
+			</ul>
+			<br />
+		</div>
 		<br />
 		<input type="submit" value="CREATE" />
 	</form>		
