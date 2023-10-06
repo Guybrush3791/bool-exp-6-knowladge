@@ -17,10 +17,16 @@ public class PizzaServ {
 		
 		pizzaRepo.save(pizza);
 	}
+	
 	public List<Pizza> findAll() {
 		
 		return pizzaRepo.findAll();
 	}
+	public List<Pizza> findByName(String name) {
+		
+		return pizzaRepo.findByNameContaining(name);
+	}
+	
 	public Pizza findById(int id) {
 		
 		return pizzaRepo.findById(id).get();

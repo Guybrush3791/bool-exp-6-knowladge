@@ -26,11 +26,13 @@ public class Application implements CommandLineRunner {
 		Pizza pizza2 = new Pizza("pizza 2", "desc pizza 2", photo, 12);
 		Pizza pizza3 = new Pizza("pizza 3", "desc pizza 3", photo, 14);
 		Pizza pizza4 = new Pizza("pizza 4", "desc pizza 4", photo, 16);
+		Pizza pizza5 = new Pizza("pizza 14", "desc pizza 5", photo, 18);
 		
 		pizzaServ.save(pizza1);
 		pizzaServ.save(pizza2);
 		pizzaServ.save(pizza3);
 		pizzaServ.save(pizza4);
+		pizzaServ.save(pizza5);
 		
 		System.out.println("Insert OK");
 	}

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PizzaController {
@@ -17,10 +18,17 @@ public class PizzaController {
 	private PizzaServ pizzaServ;
 	
 	@GetMapping
-	public String getIndex(Model model) {
+	public String getIndex(@RequestParam(required = false, name = "search") String searchTitle, Model model) {
 		
-		List<Pizza> pizze = pizzaServ.findAll();
+		System.out.println("search: " + searchTitle);
+		
+//		List<Pizza> pizze = pizzaServ.findAll();
+		List<Pizza> pizze = searchTitle == null
+								? pizzaServ.findAll()
+								: pizzaServ.findByName(searchTitle);
+		
 		model.addAttribute("pizze", pizze);
+		model.addAttribute("searchTitle", searchTitle);
 		
 		return "pizza-index";
 	}

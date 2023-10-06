@@ -10,7 +10,7 @@
 	<div th:if="${pizze.size() > 0}"></div>
 		<form>
 			<label for="search">Search</label>
-			<input type="text" name="search" />
+			<input type="text" name="search" th:value="${searchTitle}" />
 			<input type="submit" value="SEARCH" />
 		</form>
 		<ul>
