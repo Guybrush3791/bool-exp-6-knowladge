@@ -18,29 +18,29 @@ public class BookController {
 
 	@Autowired
 	private BookService bookService;
-	
+
 	@GetMapping
 	public String getIndex(
 			Model model,
 			@RequestParam(required = false) String title
 		) {
-		
-		List<Book> books = title == null 
+
+		List<Book> books = title == null
 					? bookService.findAll()
 					: bookService.findByTitle(title);
-		
+
 		model.addAttribute("books", books);
 		model.addAttribute("title", title);
-		
+
 		return "book-index";
 	}
-	
+
 	@GetMapping("/{id}")
 	public String getShow(@PathVariable int id, Model model) {
-		
+
 		Book book = bookService.findById(id);
 		model.addAttribute("book", book);
-		
+
 		return "book-show";
 	}
 }

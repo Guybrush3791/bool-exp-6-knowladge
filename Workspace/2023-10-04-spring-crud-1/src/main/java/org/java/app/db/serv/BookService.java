@@ -12,22 +12,22 @@ public class BookService {
 
 	@Autowired
 	private BookRepo bookRepo;
-	
+
 	public void save(Book book) {
-		
+
 		bookRepo.save(book);
 	}
 	public List<Book> findAll() {
-		
+
 		return bookRepo.findAll();
 	}
 	public Book findById(int id) {
-		
+
 		return bookRepo.findById(id).get();
 	}
-	
+
 	public List<Book> findByTitle(String title) {
-		
+
 		return bookRepo.findByTitleOrSubtitleContaining(title, title);
 	}
 }

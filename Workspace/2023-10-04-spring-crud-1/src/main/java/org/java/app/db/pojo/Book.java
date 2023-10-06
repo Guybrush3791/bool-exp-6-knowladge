@@ -17,26 +17,26 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	@Column(length = 128, nullable = false)
 	private String title;
 	private String subtitle;
-	
+
 	private LocalDate releaseDate;
-	
+
 	@Lob @Basic(fetch = FetchType.LAZY)
 	@Column(unique = true, columnDefinition = "text")
 	private String isbn;
-	
+
 	public Book() { }
 	public Book(String title, String subtitle, LocalDate releaseDate, String isbn) {
-	
+
 		setTitle(title);
 		setSubtitle(subtitle);
 		setReleaseDate(releaseDate);
 		setIsbn(isbn);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -67,10 +67,10 @@ public class Book {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-	
+
 	@Override
 	public String toString() {
-		
+
 		return "[" + getId() + "] Book:\n"
 					+ "title: " + getTitle() + "\n"
 					+ "sub-title: " + getSubtitle() + "\n"
