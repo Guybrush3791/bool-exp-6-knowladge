@@ -59,7 +59,8 @@ public class BookController {
 	@PostMapping("/create")
 	public String storeBook(
 			@Valid @ModelAttribute Book book,
-			BindingResult bindingResult
+			BindingResult bindingResult,
+			Model model
 			) {
 		
 		System.out.println("New book: " + book);
@@ -78,6 +79,8 @@ public class BookController {
 			
 			// CONSTRAIN VALIDATION (unique)
 			System.out.println("Errore constrain: " + e.getMessage());
+			
+			model.addAttribute("isbn_unique", "isbn deve essere unique");
 			
 			return "book-create";
 		}

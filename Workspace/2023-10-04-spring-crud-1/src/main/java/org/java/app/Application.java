@@ -24,9 +24,9 @@ public class Application implements CommandLineRunner {
 
 		LocalDate pastDate = LocalDate.parse("2023-01-01");
 		
-		Book book1 = new Book("mio titolo 1", "mio sottotitolo 1", pastDate, "1234234");
-		Book book2 = new Book("mio titolo 2", "mio sottotitolo 2", pastDate, "1234235");
-		Book book3 = new Book("mio titolo 3", "mio sottotitolo 3", pastDate, "1234236");
+		Book book1 = new Book("mio titolo 1", "mio sottotitolo 1", pastDate, "1234231234567894");
+		Book book2 = new Book("mio titolo 2", "mio sottotitolo 2", pastDate, "1234238473843835");
+		Book book3 = new Book("mio titolo 3", "mio sottotitolo 3", pastDate, "1234233948793486");
 
 		bookService.save(book1);
 		bookService.save(book2);

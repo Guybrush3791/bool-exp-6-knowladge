@@ -19,7 +19,6 @@
 			</ul>
 			<br />
 		</div>
-		<br />
 		<label for="subtitle">Sub-title</label>
 		<input type="text" name="subtitle" th:field="*{subtitle}" />
 		<br />
@@ -29,7 +28,6 @@
 			</ul>
 			<br />
 		</div>
-		<br />
 		<label for="releaseDate">Release date</label>
 		<input type="date" name="releaseDate" th:field="*{releaseDate}" />
 		<br />
@@ -39,7 +37,6 @@
 			</ul>
 			<br />
 		</div>
-		<br />
 		<label for="isbn">ISBN</label>
 		<input type="text" name="isbn" th:field="*{isbn}" />
 		<br />
@@ -49,7 +46,12 @@
 			</ul>
 			<br />
 		</div>
-		<br />
+		<div th:if="${isbn_unique}">
+			<ul>
+			   <li>[[${isbn_unique}]]</li>
+			</ul>
+			<br />
+		</div>
 		<input type="submit" value="CREATE" />
 	</form>		
 </body>
