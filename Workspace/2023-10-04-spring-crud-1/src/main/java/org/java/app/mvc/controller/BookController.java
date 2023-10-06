@@ -78,7 +78,7 @@ public class BookController {
 		} catch (Exception e) {
 			
 			// CONSTRAIN VALIDATION (unique)
-			System.out.println("Errore constrain: " + e.getMessage());
+			System.out.println("Errore constrain: " + e.getClass().getSimpleName());
 			
 			model.addAttribute("isbn_unique", "isbn deve essere unique");
 			
