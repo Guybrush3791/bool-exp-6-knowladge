@@ -3,7 +3,6 @@ package org.java.app.db.pojo;
 import java.time.LocalDate;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.UniqueElements;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.Basic;
@@ -14,7 +13,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
-import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.Past;
 
 @Entity
@@ -44,7 +42,6 @@ public class Book {
 		max = 16,
 		message = "isbn deve essere di 16 caratteri"
 	)
-	@UniqueElements(message = "isbn deve essere unique")
 	private String isbn;
 
 	public Book() { }

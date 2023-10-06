@@ -72,7 +72,15 @@ public class BookController {
 		} else 
 			System.out.println("No error");
 		
-		bookService.save(book);
+		try {
+			bookService.save(book);
+		} catch (Exception e) {
+			
+			// CONSTRAIN VALIDATION (unique)
+			System.out.println("Errore constrain: " + e.getMessage());
+			
+			return "book-create";
+		}
 		
 		return "redirect:/books";
 	}
