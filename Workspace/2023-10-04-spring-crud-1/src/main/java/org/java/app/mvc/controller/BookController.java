@@ -67,6 +67,8 @@ public class BookController {
 		if (bindingResult.hasErrors()) {
 			System.out.println("Error:");
 			bindingResult.getAllErrors().forEach(System.out::println);
+			
+			return "book-create";
 		} else 
 			System.out.println("No error");
 		
