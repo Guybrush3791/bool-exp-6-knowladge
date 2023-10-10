@@ -1,18 +1,16 @@
 package org.java.app.db.pojo;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import org.hibernate.validator.constraints.Length;
 
 import jakarta.annotation.Nullable;
-import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 import jakarta.validation.constraints.Past;
 
 @Entity
@@ -76,6 +74,15 @@ public class Book {
 	}
 	public void setReleaseDate(LocalDate releaseDate) {
 		this.releaseDate = releaseDate;
+	}
+	public String getHtmlDate() {
+		
+		return getReleaseDate().format(DateTimeFormatter.ofPattern("YYYY-MM-dd"));
+	}
+	public void setHtmlDate(String date) {
+		
+		// TODO
+		System.out.println("html date: " + date);
 	}
 	public String getIsbn() {
 		return isbn;

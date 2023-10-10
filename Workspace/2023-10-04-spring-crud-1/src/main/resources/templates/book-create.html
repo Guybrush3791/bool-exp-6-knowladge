@@ -35,12 +35,12 @@
 			</ul>
 			<br />
 		</div>
-		<label for="releaseDate">Release date</label>
-		<input type="date" name="releaseDate" value="2023-01-01" />
+		<label for="htmlDate">Release date</label>
+		<input type="date" name="htmlDate" th:field="*{htmlDate}" />
 		<br />
-		<div th:if="${#fields.hasErrors('releaseDate')}">
+		<div th:if="${#fields.hasErrors('htmlDate')}">
 			<ul>
-			   <li th:each="err : ${#fields.errors('releaseDate')}" th:text="${err}"></li>
+			   <li th:each="err : ${#fields.errors('htmlDate')}" th:text="${err}"></li>
 			</ul>
 			<br />
 		</div>
