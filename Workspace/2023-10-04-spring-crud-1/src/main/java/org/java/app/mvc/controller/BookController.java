@@ -5,6 +5,7 @@ import java.util.List;
 import org.java.app.db.pojo.Book;
 import org.java.app.db.serv.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -75,7 +76,7 @@ public class BookController {
 		
 		try {
 			bookService.save(book);
-		} catch (Exception e) {
+		} catch (DataIntegrityViolationException e) {
 			
 			// CONSTRAIN VALIDATION (unique)
 			System.out.println("Errore constrain: " + e.getClass().getSimpleName());
