@@ -81,8 +81,7 @@ public class Book {
 	}
 	public void setHtmlDate(String date) {
 		
-		// TODO
-		System.out.println("html date: " + date);
+		setReleaseDate(LocalDate.parse(date));
 	}
 	public String getIsbn() {
 		return isbn;
