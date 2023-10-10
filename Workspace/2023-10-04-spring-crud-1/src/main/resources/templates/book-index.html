@@ -21,6 +21,10 @@
 			<a th:href="@{/books/{id}(id=*{id})}">
 				[[*{isbn}]] - [[*{title}]]	
 			</a>
+			 - 
+			<a th:href="@{/books/update/{id}(id=*{id})}">
+				EDIT
+			</a>
 		</li>
 	</ul>
 </body>

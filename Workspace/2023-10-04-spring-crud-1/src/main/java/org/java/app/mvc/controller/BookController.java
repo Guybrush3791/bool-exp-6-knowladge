@@ -88,4 +88,13 @@ public class BookController {
 		
 		return "redirect:/books";
 	}
+	
+	@GetMapping("/update/{id}")
+	public String getBookUpdate(
+			@PathVariable int id,
+			Model model
+		) {
+		
+		return "book-update";
+	}
 }
