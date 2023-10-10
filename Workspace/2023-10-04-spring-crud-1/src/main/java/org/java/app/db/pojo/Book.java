@@ -77,7 +77,9 @@ public class Book {
 	}
 	public String getHtmlDate() {
 		
-		return getReleaseDate() == null ? null : getReleaseDate().format(DateTimeFormatter.ofPattern("YYYY-MM-dd"));
+		return getReleaseDate() == null 
+				? null 
+				: getReleaseDate().format(DateTimeFormatter.ofPattern("YYYY-MM-dd"));
 	}
 	public void setHtmlDate(String date) {
 		

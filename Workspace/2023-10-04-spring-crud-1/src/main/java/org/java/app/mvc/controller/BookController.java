@@ -66,29 +66,7 @@ public class BookController {
 		
 		System.out.println("New book: " + book);
 		
-		if (bindingResult.hasErrors()) {
-			System.out.println("Error:");
-			bindingResult.getAllErrors().stream()
-					.map(e -> e.getDefaultMessage())
-				.forEach(System.out::println);
-			
-			return "book-create";
-		} else 
-			System.out.println("No error");
-		
-		try {
-			bookService.save(book);
-		} catch (DataIntegrityViolationException e) {
-			
-			// CONSTRAIN VALIDATION (unique)
-			System.out.println("Errore constrain: " + e.getClass().getSimpleName());
-			
-			model.addAttribute("isbn_unique", "isbn deve essere unique");
-			
-			return "book-create";
-		}
-		
-		return "redirect:/books";
+		return saveBook(book, bindingResult, model);
 	}
 	
 	@GetMapping("/update/{id}")
@@ -110,6 +88,15 @@ public class BookController {
 		) {
 		
 		System.out.println("Update book:\n" + book);
+		
+		return saveBook(book, bindingResult, model);
+	}
+	
+	private String saveBook(
+			Book book,
+			BindingResult bindingResult,
+			Model model
+		) {
 		
 		if (bindingResult.hasErrors()) {
 			

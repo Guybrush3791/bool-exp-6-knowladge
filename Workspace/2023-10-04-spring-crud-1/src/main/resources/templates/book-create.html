@@ -38,9 +38,9 @@
 		<label for="htmlDate">Release date</label>
 		<input type="date" name="htmlDate" th:field="*{htmlDate}" />
 		<br />
-		<div th:if="${#fields.hasErrors('htmlDate')}">
+		<div th:if="${#fields.hasErrors('releaseDate')}">
 			<ul>
-			   <li th:each="err : ${#fields.errors('htmlDate')}" th:text="${err}"></li>
+			   <li th:each="err : ${#fields.errors('releaseDate')}" th:text="${err}"></li>
 			</ul>
 			<br />
 		</div>
