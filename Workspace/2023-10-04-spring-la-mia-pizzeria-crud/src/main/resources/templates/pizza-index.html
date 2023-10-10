@@ -6,7 +6,8 @@
 </head>
 <body>
 	<h1>Pizze!!</h1>
-	<a href="#">CREATE NEW PIZZA</a>
+	<a th:href="@{/pizzas/create}">CREATE NEW PIZZA</a>
+	<br /><br />
 	<h1 th:if="${pizze.size() < 1}">No pizze :-(</h1>
 	<div th:if="${pizze.size() > 0}"></div>
 		<form>
