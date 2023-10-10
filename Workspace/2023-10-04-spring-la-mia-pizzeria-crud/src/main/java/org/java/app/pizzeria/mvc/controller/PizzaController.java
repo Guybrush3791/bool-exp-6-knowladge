@@ -66,13 +66,15 @@ public class PizzaController {
 		if (bindingResult.hasErrors()) {
 			
 			System.out.println("Errors");
-			bindingResult.getAllErrors().stream().map(e -> e.getDefaultMessage()).forEach(System.out::println);
+			bindingResult.getAllErrors().stream()
+					.map(e -> e.getDefaultMessage())
+				.forEach(System.out::println);
 			
 			return "pizza-create";
 		}
 		
 		pizzaServ.save(pizza);
 		
-		return "redirect:/pizzas";
+		return "redirect:/";
 	}
 }
