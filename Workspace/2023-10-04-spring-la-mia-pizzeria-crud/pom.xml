@@ -35,6 +35,12 @@
 			<optional>true</optional>
 		</dependency>
 		
+		<!-- VALIDATION -->
+		<dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		
 		<!-- DATABASE -->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
