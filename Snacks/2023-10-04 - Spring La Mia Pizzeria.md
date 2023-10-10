@@ -52,7 +52,5 @@ Completiamo le pagine di gestione delle nostre pizze.
 Abbiamo la pagina con la lista di tutte le pizze, quella con i dettagli della singola pizza, quella per crearla...cosa manca?
 
 Dobbiamo realizzare :
-- pagina di modifica di una pizza
-- cancellazione di una pizza cliccando un pulsante presente nella grafica di ogni singolo prodotto mostrato nella lista in homepage
-
-Buon lavoro!! 🙂 
+- pagina di **modifica di una pizza**
+- **cancellazione di una pizza** cliccando un pulsante presente nella grafica di ogni singolo prodotto mostrato nella lista in homepage
