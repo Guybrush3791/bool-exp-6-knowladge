@@ -46,3 +46,13 @@ Ricordiamoci che l’utente potrebbe sbagliare inserendo dei dati **non consiste
 - i dati della pizza **siano tutti presenti**
 - il campi di **testo non superino una certa lunghezza**
 - il **prezzo abbia un valore valido** (ha senso una pizza con prezzo minore o uguale a zero?)
+### Day 4: update + delete
+Completiamo le pagine di gestione delle nostre pizze.
+
+Abbiamo la pagina con la lista di tutte le pizze, quella con i dettagli della singola pizza, quella per crearla...cosa manca?
+
+Dobbiamo realizzare :
+- pagina di modifica di una pizza
+- cancellazione di una pizza cliccando un pulsante presente nella grafica di ogni singolo prodotto mostrato nella lista in homepage
+
+Buon lavoro!! 🙂 
