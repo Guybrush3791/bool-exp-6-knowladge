@@ -92,6 +92,15 @@ public class BookController {
 		return saveBook(book, bindingResult, model);
 	}
 	
+	@PostMapping("/delete/{id}")
+	public String deleteBook(@PathVariable int id) {
+		
+		Book book = bookService.findById(id);
+		bookService.deleteBook(book);
+		
+		return "redirect:/books";
+	}
+	
 	private String saveBook(
 			Book book,
 			BindingResult bindingResult,

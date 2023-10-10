@@ -30,4 +30,9 @@ public class BookService {
 
 		return bookRepo.findByTitleOrSubtitleContaining(title, title);
 	}
+	
+	public void deleteBook(Book book) {
+		
+		bookRepo.delete(book);
+	}
 }

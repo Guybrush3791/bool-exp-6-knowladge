@@ -25,6 +25,14 @@
 			<a th:href="@{/books/update/{id}(id=*{id})}">
 				EDIT
 			</a>
+			 -
+			<form 
+				th:action="@{/books/delete/{id}(id=*{id})}" 
+				method="POST"
+				style="display: inline;"
+			>
+				<input type="submit" value="DELETE" >
+			</form>
 		</li>
 	</ul>
 </body>
