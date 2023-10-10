@@ -98,6 +98,6 @@ public class BookController {
 		Book book = bookService.findById(id);
 		model.addAttribute("book", book);
 		
-		return "book-update";
+		return "book-create";
 	}
 }

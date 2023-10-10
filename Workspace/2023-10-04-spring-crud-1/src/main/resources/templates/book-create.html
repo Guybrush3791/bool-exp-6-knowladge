@@ -5,7 +5,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>CREATE NEW BOOK</h1>
+	<h1>
+		<span th:if="${book.id < 1}">
+			CREATE NEW BOOK
+		</span>
+		<span th:if="${book.id > 0}">
+			UPDATE BOOK
+		</span>
+	</h1>
 	<form 
 		th:object="${book}"
 		method="POST"	
@@ -52,7 +59,7 @@
 			</ul>
 			<br />
 		</div>
-		<input type="submit" value="CREATE" />
+		<input type="submit" th:value="${book.id > 0 ? 'UPDATE' : 'CREATE'}" />
 	</form>		
 </body>
 </html>
