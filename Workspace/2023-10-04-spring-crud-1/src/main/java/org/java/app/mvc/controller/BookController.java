@@ -95,6 +95,9 @@ public class BookController {
 			Model model
 		) {
 		
+		Book book = bookService.findById(id);
+		model.addAttribute("book", book);
+		
 		return "book-update";
 	}
 }
