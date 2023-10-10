@@ -57,12 +57,19 @@ public class PizzaController {
 	@PostMapping("/pizzas/create")
 	public String storeNewPizza(
 			@Valid @ModelAttribute Pizza pizza,
-			BindingResult br,
+			BindingResult bindingResult,
 			Model model
 		) {
 		
 		System.out.println("pizza:\n" + pizza);
 		
-		return "redirect:/pizzas/create";
+		if (bindingResult.hasErrors()) {
+			
+			return "pizza-create";
+		}
+		
+		pizzaServ.save(pizza);
+		
+		return "redirect:/pizzas";
 	}
 }
