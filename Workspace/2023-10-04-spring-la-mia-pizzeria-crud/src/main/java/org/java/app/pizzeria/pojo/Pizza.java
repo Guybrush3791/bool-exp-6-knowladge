@@ -18,7 +18,7 @@ public class Pizza {
 	private int id;
 	
 	@Column(nullable = false, unique = true, length = 64)
-	@Length(min = 3, max = 64)
+	@Length(min = 3, max = 64, message = "Il nome deve essere compreso tra 3 e 64 caratteri")
 	private String name;
 	
 	@Length(max = 255)

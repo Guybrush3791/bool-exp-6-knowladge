@@ -13,15 +13,39 @@
 		<label for="name">Name</label>
 		<input type="text" name="name" th:value="*{name}" >
 		<br />
+		<div th:if="${#fields.hasErrors('name')}">
+			<ul>
+			   <li th:each="err : ${#fields.errors('name')}" th:text="${err}"></li>
+			</ul>
+			<br />
+		</div>
 		<label for="description">Description</label>
 		<input type="text" name="description" th:value="*{description}" >
 		<br />
+		<div th:if="${#fields.hasErrors('description')}">
+			<ul>
+			   <li th:each="err : ${#fields.errors('description')}" th:text="${err}"></li>
+			</ul>
+			<br />
+		</div>
 		<label for="photo">Photo</label>
 		<input type="text" name="photo" th:value="*{photo}" >
 		<br />
+		<div th:if="${#fields.hasErrors('photo')}">
+			<ul>
+			   <li th:each="err : ${#fields.errors('photo')}" th:text="${err}"></li>
+			</ul>
+			<br />
+		</div>
 		<label for="price">Price</label>
 		<input type="number" name="price" th:value="*{price}" >
 		<br />
+		<div th:if="${#fields.hasErrors('price')}">
+			<ul>
+			   <li th:each="err : ${#fields.errors('price')}" th:text="${err}"></li>
+			</ul>
+			<br />
+		</div>
 		<input type="submit" value="CREATE" >
 	</form>
 </body>
