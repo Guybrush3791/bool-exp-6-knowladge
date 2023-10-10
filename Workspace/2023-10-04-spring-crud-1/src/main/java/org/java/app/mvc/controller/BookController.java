@@ -100,4 +100,15 @@ public class BookController {
 		
 		return "book-create";
 	}
+	@PostMapping("/update/{id}")
+	public String updateBook(
+			@Valid @ModelAttribute Book book,
+			BindingResult bindingResult,
+			Model model
+		) {
+		
+		System.out.println("Update book:\n" + book);
+		
+		return "redirect:/books";
+	}
 }
