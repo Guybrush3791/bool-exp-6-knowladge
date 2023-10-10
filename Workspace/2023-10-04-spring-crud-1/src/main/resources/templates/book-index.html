@@ -13,7 +13,8 @@
 		<input type="text" name="title" th:value="${title}">
 		<input type="submit" value="SEARCH" >
 	</form>
-	<ul>
+	<h1 th:if="${books.size() < 1}">NO BOOKS</h1>
+	<ul th:if="${books.size() > 0}">
 		<li
 			th:each="book : ${books}"
 			th:object="${book}"
