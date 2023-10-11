@@ -123,7 +123,6 @@ public class BookController {
 		
 		return "borrow-form";
 	}
-	
 	@PostMapping("/borrow/{book_id}")
 	public String storeBorrowing(
 			@Valid @ModelAttribute Borrowing borrowing,
@@ -137,13 +136,19 @@ public class BookController {
 		borrowing.setBorrowingDate(LocalDate.now());
 		borrowing.setBook(book);
 		
-//		borrowing.setId(0);
-		
-		System.out.println("borrowing:\n" + borrowing);
-		
 		borrowingService.save(borrowing);
 		
 		return "redirect:/books/" + id;
+	}
+	
+	@PostMapping("/borrow/delete/{borrow_id}")
+	public String deleteBorrowing(
+			@PathVariable("borrow_id") int id
+		) {
+		
+		System.out.println("borrow id: " + id);
+		
+		return "redirect:/";
 	}
 	
 	// PRIVATE METHODS
