@@ -1,6 +1,7 @@
 package org.java.app.db.pojo;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -56,6 +57,16 @@ public class Borrowing {
 	}
 	public void setReturnDate(LocalDate returnDate) {
 		this.returnDate = returnDate;
+	}
+	public String getHtmlReturnDate() {
+
+		return getReturnDate() == null
+				? null
+				: getReturnDate().format(DateTimeFormatter.ofPattern("YYYY-MM-dd"));
+	}
+	public void setHtmlReturnDate(String date) {
+
+		setReturnDate(LocalDate.parse(date));
 	}
 	public String getNote() {
 		return note;

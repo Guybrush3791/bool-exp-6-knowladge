@@ -153,7 +153,20 @@ public class BookController {
 		return "redirect:/books/" + book.getId();
 	}
 	
-	
+	@GetMapping("/borrow/edit/{borrow_id}")
+	public String getBorrowEditForm(
+			@PathVariable("borrow_id") int id,
+			Model model
+		) {
+		
+		Borrowing borrowing = borrowingService.findById(id);
+		List<Book> books = bookService.findAll();
+		
+		model.addAttribute("borrowing", borrowing);
+		model.addAttribute("books", books);
+		
+		return "borrow-edit";
+	}
 	
 	// PRIVATE METHODS
 	private String saveBook(

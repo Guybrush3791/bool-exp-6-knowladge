@@ -13,10 +13,19 @@
 		method="POST"	
 	>
 		<label for="returnDate">Return date</label>
-		<input type="date" name="returnDate" th:field="*{returnDate}" >
+		<input type="date" name="returnDate" th:field="*{htmlReturnDate}" >
 		<br />
 		<label for="note">Note</label>
 		<input type="text" name="note" th:field="*{note}" >
+		<br />
+		<select>
+			<option 
+				th:each="book : ${books}"
+				th:object="${book}"
+				>
+				[[*{title}]]
+			</option>
+		</select>
 		<br />
 		<input type="submit" value="BORROW" >
 	</form>
