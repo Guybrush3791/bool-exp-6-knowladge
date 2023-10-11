@@ -23,9 +23,14 @@
 				Note: <br />
 				[[*{note}]]
 			</div>
+			<a th:href="@{/books/borrow/edit/{id}(id=*{id})}">
+				EDIT
+			</a>
+			 - 
 			<form 
 				th:action="@{/books/borrow/delete/{id}(id=*{id})}"
 				method="POST"
+				style="display: inline;"
 			>
 				<input type="submit" value="DELETE" >	
 			</form>

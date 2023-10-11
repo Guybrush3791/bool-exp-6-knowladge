@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>
+		BORROW EDIT
+	</h1>
+	<form
+		th:object="${borrowing}"
+		method="POST"	
+	>
+		<label for="returnDate">Return date</label>
+		<input type="date" name="returnDate" th:field="*{returnDate}" >
+		<br />
+		<label for="note">Note</label>
+		<input type="text" name="note" th:field="*{note}" >
+		<br />
+		<input type="submit" value="BORROW" >
+	</form>
+</body>
+</html>

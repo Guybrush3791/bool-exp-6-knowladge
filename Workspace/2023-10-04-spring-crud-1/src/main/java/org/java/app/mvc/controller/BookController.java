@@ -121,7 +121,7 @@ public class BookController {
 		model.addAttribute("book", book);		
 		model.addAttribute("borrowing", borrowing);
 		
-		return "borrow-form";
+		return "borrow-create";
 	}
 	@PostMapping("/borrow/{book_id}")
 	public String storeBorrowing(
@@ -152,6 +152,8 @@ public class BookController {
 		
 		return "redirect:/books/" + book.getId();
 	}
+	
+	
 	
 	// PRIVATE METHODS
 	private String saveBook(
