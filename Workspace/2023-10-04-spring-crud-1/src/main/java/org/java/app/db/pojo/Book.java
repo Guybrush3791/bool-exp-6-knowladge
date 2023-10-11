@@ -97,7 +97,14 @@ public class Book {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-
+	
+	public List<Borrowing> getBorrowings() {
+		return borrowings;
+	}
+	public void setBorrowings(List<Borrowing> borrowings) {
+		this.borrowings = borrowings;
+	}
+	
 	@Override
 	public String toString() {
 
