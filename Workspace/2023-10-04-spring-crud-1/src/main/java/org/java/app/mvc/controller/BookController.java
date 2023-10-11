@@ -137,6 +137,8 @@ public class BookController {
 		borrowing.setBorrowingDate(LocalDate.now());
 		borrowing.setBook(book);
 		
+//		borrowing.setId(0);
+		
 		System.out.println("borrowing:\n" + borrowing);
 		
 		borrowingService.save(borrowing);

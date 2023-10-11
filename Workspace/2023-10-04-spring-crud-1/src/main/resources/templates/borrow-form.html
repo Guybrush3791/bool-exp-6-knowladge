@@ -12,6 +12,7 @@
 		th:object="${borrowing}"
 		method="POST"	
 	>
+		<input type="text" name="id" th:field="*{id}" disabled hidden >
 		<label for="returnDate">Return date</label>
 		<input type="date" name="returnDate" th:field="*{returnDate}" >
 		<br />
