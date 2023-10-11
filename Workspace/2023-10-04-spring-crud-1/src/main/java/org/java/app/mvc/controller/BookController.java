@@ -1,6 +1,7 @@
 package org.java.app.mvc.controller;
 
-import org.hibernate.mapping.List;
+import java.util.List;
+
 import org.java.app.db.pojo.Book;
 import org.java.app.db.serv.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
 
 import jakarta.validation.Valid;
 

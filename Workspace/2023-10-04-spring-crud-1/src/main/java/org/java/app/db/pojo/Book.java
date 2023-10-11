@@ -5,7 +5,6 @@ import java.time.format.DateTimeFormatter;
 
 import org.hibernate.validator.constraints.Length;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.Column;

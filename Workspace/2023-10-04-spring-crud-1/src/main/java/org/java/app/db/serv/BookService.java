@@ -1,12 +1,13 @@
 package org.java.app.db.serv;
 
-import org.hibernate.mapping.List;
+
+import java.util.List;
+
 import org.java.app.db.pojo.Book;
 import org.java.app.db.repo.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
 
 @Service
 public class BookService {
