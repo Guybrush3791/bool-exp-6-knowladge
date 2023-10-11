@@ -1,10 +1,12 @@
 package org.java.app.mvc.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.java.app.db.pojo.Book;
 import org.java.app.db.pojo.Borrowing;
 import org.java.app.db.serv.BookService;
+import org.java.app.db.serv.BorrowingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
@@ -25,6 +27,9 @@ public class BookController {
 
 	@Autowired
 	private BookService bookService;
+	
+	@Autowired
+	private BorrowingService borrowingService; 
 
 	// BOOK
 	@GetMapping
@@ -104,7 +109,7 @@ public class BookController {
 	}
 
 	// BORROW
-	@GetMapping("/borrow/{id}")
+	@GetMapping("/borrow/book/{id}")
 	public String borrow(
 			@PathVariable int id,
 			Model model
@@ -119,13 +124,22 @@ public class BookController {
 		return "borrow-form";
 	}
 	
-	@PostMapping("/borrow/{id}")
+	@PostMapping("/borrow/book/{id}")
 	public String storeBorrowing(
 			@Valid @ModelAttribute Borrowing borrowing,
 			BindingResult bindingResult,			
 			@PathVariable int id,
 			Model model
 		) {
+		
+		Book book = bookService.findById(id);
+		
+		borrowing.setBorrowingDate(LocalDate.now());
+		borrowing.setBook(book);
+		
+		System.out.println("borrowing:\n" + borrowing);
+		
+		borrowingService.save(borrowing);
 		
 		return "redirect:/books/" + id;
 	}
