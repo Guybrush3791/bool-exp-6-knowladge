@@ -84,6 +84,17 @@ public class PizzaController {
 		return storePizza(pizza, bindingResult);
 	}
 	
+	@PostMapping("/pizzas/delete/{id}")
+	public String deletePizza(
+			@PathVariable int id
+		) {
+		
+		Pizza pizza = pizzaServ.findById(id);
+		pizzaServ.deletePizza(pizza);
+		
+		return "redirect:/";
+	}
+	
 	private String storePizza(Pizza pizza, BindingResult bindingResult) {
 		
 		System.out.println("pizza:\n" + pizza);

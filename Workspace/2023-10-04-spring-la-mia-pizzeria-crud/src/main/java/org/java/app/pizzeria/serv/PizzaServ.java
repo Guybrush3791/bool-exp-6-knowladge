@@ -32,4 +32,9 @@ public class PizzaServ {
 
 		return pizzaRepo.findById(id).get();
 	}
+	
+	public void deletePizza(Pizza pizza) {
+		
+		pizzaRepo.delete(pizza);
+	}
 }

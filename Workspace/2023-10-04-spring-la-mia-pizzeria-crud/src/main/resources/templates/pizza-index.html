@@ -9,7 +9,7 @@
 	<a th:href="@{/pizzas/create}">CREATE NEW PIZZA</a>
 	<br /><br />
 	<h1 th:if="${pizze.size() < 1}">No pizze :-(</h1>
-	<div th:if="${pizze.size() > 0}"></div>
+	<div th:if="${pizze.size() > 0}">
 		<form>
 			<label for="search">Search</label>
 			<input type="text" name="search" th:value="${searchTitle}" />
@@ -26,7 +26,11 @@
 				 - 
 				<a th:href="@{pizzas/edit/{id}(id=*{id})}">EDIT</a>
 				 - 
-				<form style="display: inline;" th:action="@{pizzas/delete/{id}(id=*{id})}">
+				<form 
+					style="display: inline;" 
+					th:action="@{pizzas/delete/{id}(id=*{id})}"
+					method="POST" 
+				>
 					<input type="submit" value="DELETE" >
 				</form>
 			</li>
