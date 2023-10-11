@@ -16,9 +16,9 @@ Dobbiamo quindi predisporre tutto il codice necessario per poter **collegare un�
 L’offerta speciale avrà :
 - `data di inizio`
 - `data di fine`
-- titolo
+- `titolo`
 
-La pagina di dettaglio della singola pizza mostrerà l’elenco delle offerte collegate e avrà un bottone “Crea nuova offerta speciale” per aggiungerne una nuova.
+La pagina di dettaglio della *singola pizza* mostrerà *l’elenco delle offerte collegate* e avrà un bottone `Crea nuova offerta speciale` per aggiungerne una nuova.
 
 Accanto ad ogni offerta speciale è previsto un bottone che mi porterà a una pagina per modificarla.
 
