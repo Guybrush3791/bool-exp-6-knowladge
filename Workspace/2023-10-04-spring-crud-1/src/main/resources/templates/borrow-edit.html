@@ -18,10 +18,11 @@
 		<label for="note">Note</label>
 		<input type="text" name="note" th:field="*{note}" >
 		<br />
-		<select>
+		<select name="book">
 			<option 
 				th:each="book : ${books}"
 				th:object="${book}"
+				th:value="*{id}"
 				>
 				[[*{title}]]
 			</option>
