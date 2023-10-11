@@ -25,6 +25,7 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 
+	// BOOK
 	@GetMapping
 	public String getIndex(
 			Model model,
@@ -101,6 +102,19 @@ public class BookController {
 		return "redirect:/books";
 	}
 
+	// BORROW
+	@GetMapping("/borrow/{id}")
+	public String borrow(
+			@PathVariable int id,
+			Model model
+		) {
+		
+		
+		
+		return "borrow-form";
+	}
+	
+	// PRIVATE METHODS
 	private String saveBook(
 			Book book,
 			BindingResult bindingResult,
