@@ -6,7 +6,14 @@
 </head>
 <body>
 	<h1>
-		BORROW BOOK
+		BORROW BOOK: [[${book.title}]]
 	</h1>
+	<form
+		th:object="${"
+		method="POST"	
+	>
+		<label for="returnDate">Return date</label>
+		<input type="date" name="returnDate" th:field=""
+	</form>
 </body>
 </html>

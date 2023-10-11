@@ -3,6 +3,7 @@ package org.java.app.mvc.controller;
 import java.util.List;
 
 import org.java.app.db.pojo.Book;
+import org.java.app.db.pojo.Borrowing;
 import org.java.app.db.serv.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -109,7 +110,11 @@ public class BookController {
 			Model model
 		) {
 		
+		Book book = bookService.findById(id);
+		Borrowing borrowing = new Borrowing();
 		
+		model.addAttribute("book", book);		
+		model.addAttribute("borrowing", borrowing);
 		
 		return "borrow-form";
 	}
