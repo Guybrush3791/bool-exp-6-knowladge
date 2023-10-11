@@ -2,6 +2,8 @@ package org.java.app.pizzeria.pojo;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,30 +18,30 @@ public class Pizza {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	@Column(nullable = false, unique = true, length = 64)
 	@Length(min = 3, max = 64, message = "Il nome deve essere compreso tra 3 e 64 caratteri")
 	private String name;
-	
+
 	@Length(max = 255)
 	private String description;
-	
+
 	@Length(max = 255)
 	private String photo;
-	
+
 	@Min(0)
 	@Max(100)
 	private int price;
-	
+
 	public Pizza() { }
 	public Pizza(String name, String description, String photo, int price) {
-		
+
 		setName(name);
 		setDescription(description);
 		setPhoto(photo);
 		setPrice(price);
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -70,13 +72,13 @@ public class Pizza {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
+
 	@Override
 	public String toString() {
-		
+
 		return "["+ getId() + "] " + getName() + ": " + getPrice() + "\n"
-				+ getDescription() + "\n" 
+				+ getDescription() + "\n"
 				+ getPhoto();
-				
+
 	}
 }
