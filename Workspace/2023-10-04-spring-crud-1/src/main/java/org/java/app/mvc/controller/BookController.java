@@ -109,9 +109,9 @@ public class BookController {
 	}
 
 	// BORROW
-	@GetMapping("/borrow/book/{id}")
+	@GetMapping("/borrow/{book_id}")
 	public String borrow(
-			@PathVariable int id,
+			@PathVariable("book_id") int id,
 			Model model
 		) {
 		
@@ -124,11 +124,11 @@ public class BookController {
 		return "borrow-form";
 	}
 	
-	@PostMapping("/borrow/book/{id}")
+	@PostMapping("/borrow/{book_id}")
 	public String storeBorrowing(
 			@Valid @ModelAttribute Borrowing borrowing,
 			BindingResult bindingResult,			
-			@PathVariable int id,
+			@PathVariable("book_id") int id,
 			Model model
 		) {
 		
