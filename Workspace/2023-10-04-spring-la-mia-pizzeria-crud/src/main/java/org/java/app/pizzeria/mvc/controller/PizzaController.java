@@ -29,7 +29,7 @@ public class PizzaController {
 		System.out.println("search: " + searchTitle);
 
 //		List<Pizza> pizze = pizzaServ.findAll();
-		List<Pizza> pizze = searchTitle == null
+		List pizze = searchTitle == null
 								? pizzaServ.findAll()
 								: pizzaServ.findByName(searchTitle);
 

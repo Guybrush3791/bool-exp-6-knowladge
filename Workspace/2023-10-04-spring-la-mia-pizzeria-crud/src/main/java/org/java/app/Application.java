@@ -6,8 +6,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
-
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
@@ -18,8 +16,8 @@ public class Application implements CommandLineRunner {
 		SpringApplication.run(Application.class, args);
 	}
 
-//	@Override
-//	public void run(String... args) throws Exception {
+	@Override
+	public void run(String... args) throws Exception {
 //
 //		String photo = "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg";
 //
@@ -36,5 +34,5 @@ public class Application implements CommandLineRunner {
 //		pizzaServ.save(pizza5);
 //
 //		System.out.println("Insert OK");
-//	}
+	}
 }

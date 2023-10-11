@@ -10,5 +10,5 @@ import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
 @Repository
 public interface PizzaRepo extends JpaRepository<Pizza, Integer> {
 
-	public List<Pizza> findByNameContaining(String name);
+	public List findByNameContaining(String name);
 }

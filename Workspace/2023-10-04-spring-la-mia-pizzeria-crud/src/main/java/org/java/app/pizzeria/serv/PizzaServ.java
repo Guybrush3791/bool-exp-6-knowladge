@@ -6,7 +6,6 @@ import org.java.app.pizzeria.repo.PizzaRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
 
 @Service
 public class PizzaServ {
@@ -19,11 +18,11 @@ public class PizzaServ {
 		pizzaRepo.save(pizza);
 	}
 
-	public List<Pizza> findAll() {
+	public List findAll() {
 
-		return pizzaRepo.findAll();
+		return (List) pizzaRepo.findAll();
 	}
-	public List<Pizza> findByName(String name) {
+	public List findByName(String name) {
 
 		return pizzaRepo.findByNameContaining(name);
 	}
