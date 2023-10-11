@@ -5,7 +5,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>CREATE NEW PIZZA</h1>
+	<h1 th:if="${pizza.id < 1}">CREATE NEW PIZZA</h1>
+	<h1 th:if="${pizza.id > 0}">UPDATE PIZZA</h1>
 	<form
 		th:object="${pizza}"
 		method="POST"
@@ -46,7 +47,7 @@
 			</ul>
 			<br />
 		</div>
-		<input type="submit" value="CREATE" >
+		<input type="submit" th:value="${pizza.id < 1 ? 'CREATE' : 'UPDATE'}" >
 	</form>
 </body>
 </html>

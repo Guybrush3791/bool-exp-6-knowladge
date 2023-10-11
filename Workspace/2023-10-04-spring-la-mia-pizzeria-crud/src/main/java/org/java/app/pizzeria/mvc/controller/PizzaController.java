@@ -52,7 +52,7 @@ public class PizzaController {
 
 		model.addAttribute("pizza", new Pizza());
 
-		return "pizza-create";
+		return "pizza-form";
 	}
 	@PostMapping("/pizzas/create")
 	public String storeNewPizza(
@@ -80,11 +80,22 @@ public class PizzaController {
 	
 	@GetMapping("/pizzas/edit/{id}")
 	public String getEditForm(
-			@PathVariable int id
+			@PathVariable int id,
+			Model model
 		) {
 		
-		System.out.println("id: " + id);
+		Pizza pizza = pizzaServ.findById(id);
+		model.addAttribute("pizza", pizza);
 		
-		return "pizza-edit";
+		return "pizza-form";
+	}
+	@PostMapping("/pizzas/edit/{id}")
+	public String updatePizza(
+			@Valid @ModelAttribute Pizza pizza,
+			BindingResult bindingResult,
+			Model model
+		) {
+		
+		return "redirect:/";
 	}
 }
