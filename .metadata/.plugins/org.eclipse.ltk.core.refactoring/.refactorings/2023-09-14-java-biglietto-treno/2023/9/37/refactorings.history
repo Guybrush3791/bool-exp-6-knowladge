@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;fullPrice&apos; in &apos;org.lessons.java.CalcolaBiglietto.main(...)&apos; to &apos;price&apos;&#x0A;- Original project: &apos;2023-09-14-java-biglietto-treno&apos;&#x0A;- Original element: &apos;org.lessons.java.CalcolaBiglietto.main(String[]).fullPrice&apos;&#x0A;- Renamed element: &apos;fullPrice&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;fullPrice&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;org.lessons.java{CalcolaBiglietto.java[CalcolaBiglietto~main~\[QString;@fullPrice!347!380!353!361!F!0!false" name="price" references="true" stamp="1694677176622" version="1.0"/>
+</session>

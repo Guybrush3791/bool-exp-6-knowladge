@@ -1,0 +1,5 @@
+package org.java.app.db.repo;
+
+public class BookRepo {
+
+}

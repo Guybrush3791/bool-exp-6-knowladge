@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+    <libraryInfo home="/usr/lib/jvm/java-21-openjdk" version="21"/>
+    <libraryInfo home="/home/guybrush/.sdkman/candidates/java/8.0.382-amzn" version="1.8.0_382">
+        <bootpath>
+            <entry path="/home/guybrush/.sdkman/candidates/java/8.0.382-amzn/jre/lib/resources.jar"/>
+            <entry path="/home/guybrush/.sdkman/candidates/java/8.0.382-amzn/jre/lib/rt.jar"/>
+            <entry path="/home/guybrush/.sdkman/candidates/java/8.0.382-amzn/jre/lib/sunrsasign.jar"/>
+            <entry path="/home/guybrush/.sdkman/candidates/java/8.0.382-amzn/jre/lib/jsse.jar"/>
+            <entry path="/home/guybrush/.sdkman/candidates/java/8.0.382-amzn/jre/lib/jce.jar"/>
+            <entry path="/home/guybrush/.sdkman/candidates/java/8.0.382-amzn/jre/lib/charsets.jar"/>
+            <entry path="/home/guybrush/.sdkman/candidates/java/8.0.382-amzn/jre/lib/jfr.jar"/>
+            <entry path="/home/guybrush/.sdkman/candidates/java/8.0.382-amzn/jre/classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="/home/guybrush/.sdkman/candidates/java/8.0.382-amzn/jre/lib/ext"/>
+            <entry path="/usr/java/packages/lib/ext"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="/home/guybrush/.sdkman/candidates/java/8.0.382-amzn/jre/lib/endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="/usr/lib/eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.7.v20230425-1502/jre" version="17.0.7"/>
+    <libraryInfo home="/home/guybrush/.sdkman/candidates/java/11.0.20-amzn" version="11.0.20"/>
+    <libraryInfo home="/usr/lib/jvm/java-11-openjdk" version="11.0.20.1"/>
+    <libraryInfo home="/usr/lib/eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.8.v20230831-1047" version="17.0.8.1"/>
+    <libraryInfo home="/usr/lib/eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.8.v20230831-1047/jre" version="17.0.8.1"/>
+    <libraryInfo home="/usr/lib/jvm/java-20-openjdk" version="20.0.2"/>
+    <libraryInfo home="/usr/lib/eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.7.v20230425-1502" version="17.0.7"/>
+</libraryInfos>

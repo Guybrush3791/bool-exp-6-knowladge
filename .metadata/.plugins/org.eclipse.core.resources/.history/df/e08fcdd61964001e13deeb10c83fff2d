@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body th:object="${pizza}">
+	<h1>Pizza: [[*{name}]] - [[*{price}]] euro</h1>
+	<h3>[[*{description}]]</h3>
+</body>
+</html>

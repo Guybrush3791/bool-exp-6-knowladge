@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>[[[${book.id}]]]BOOK UPDATE</h1>
+	<form 
+		th:object="${book}"
+		method="POST"	
+	>
+		<label for="title">Title</label>
+		<input type="text" name="title" th:field="*{title}" />
+		<br />
+		<div th:if="${#fields.hasErrors('title')}">
+			<ul>
+			   <li th:each="err : ${#fields.errors('title')}" th:text="${err}"></li>
+			</ul>
+			<br />
+		</div>
+		<label for="subtitle">Sub-title</label>
+		<input type="text" name="subtitle" th:field="*{subtitle}" />
+		<br />
+		<div th:if="${#fields.hasErrors('subtitle')}">
+			<ul>
+			   <li th:each="err : ${#fields.errors('subtitle')}" th:text="${err}"></li>
+			</ul>
+			<br />
+		</div>
+		<label for="releaseDate">Release date</label>
+		<input type="date" name="releaseDate" th:field="*{releaseDate}" />
+		<br />
+		<div th:if="${#fields.hasErrors('releaseDate')}">
+			<ul>
+			   <li th:each="err : ${#fields.errors('releaseDate')}" th:text="${err}"></li>
+			</ul>
+			<br />
+		</div>
+		<label for="isbn">ISBN</label>
+		<input type="text" name="isbn" th:field="*{isbn}" />
+		<br />
+		<div th:if="${#fields.hasErrors('isbn')}">
+			<ul>
+			   <li th:each="err : ${#fields.errors('isbn')}" th:text="${err}"></li>
+			</ul>
+			<br />
+		</div>
+		<div th:if="${isbn_unique}">
+			<ul>
+			   <li>[[${isbn_unique}]]</li>
+			</ul>
+			<br />
+		</div>
+		<input type="submit" value="CREATE" />
+	</form>		
+</body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="/home/guybrush/Documents/Vaults/bool-exp-6-knowladge/Workspace/2023-09-29-java-test-unit/src/test/java/org/java/PeopleTest.java"/>
+			<item value="/home/guybrush/Documents/Vaults/bool-exp-6-knowladge/Workspace/2023-09-29-db-nations"/>
+			<item value="/home/guybrush/Documents/Vaults/bool-exp-6-knowladge/Workspace/2023-09-28-java-jdbc-test-3/src/main/java/org/java/myjdbc/Main.java"/>
+			<item value="/home/guybrush/Documents/Vaults/bool-exp-6-knowladge/Workspace/2023-09-28-java-jdbc-test-3/src/main/java"/>
+			<item value="/home/guybrush/Documents/Vaults/bool-exp-6-knowladge/Workspace/2023-09-28-java-jdbc-maven/src/main/java/org/java/myjdbc/Main.java"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="org.java"/>
+			<item value="org.java.myjdbc"/>
+			<item value="2023-09-28-java-jdbc-test-3"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="2023-10-02-java-calculator-tester"/>
+			<item value="2023-09-29-java-test-unit"/>
+			<item value="2023-09-29-db-nations"/>
+			<item value="2023-09-28-java-jdbc-test-3"/>
+			<item value="org.java.myjdbc"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

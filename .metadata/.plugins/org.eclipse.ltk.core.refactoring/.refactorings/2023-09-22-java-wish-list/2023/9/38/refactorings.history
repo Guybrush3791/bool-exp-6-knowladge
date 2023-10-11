@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Es1Main.java&apos; to &apos;2023-09-22-java-wish-list/src/org.java.es1&apos;&#x0A;- Original project: &apos;2023-09-22-java-wish-list&apos;&#x0A;- Destination element: &apos;2023-09-22-java-wish-list/src/org.java.es1&apos;&#x0A;- Original element: &apos;org.java.Es1Main.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;org.java.es1" element1="/src&lt;org.java{Es1Main.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" log="/src&lt;org.java&#x09;/src&lt;org.java.es1" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1695367836294" units="1" version="1.0"/>
+</session>

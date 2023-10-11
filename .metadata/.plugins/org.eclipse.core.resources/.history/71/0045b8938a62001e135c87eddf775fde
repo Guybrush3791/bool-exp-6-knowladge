@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Songs</h1>
+	<ul>
+		<li
+			th:each="song : ${songs}"
+			th:object="${song}"
+		>
+			<a th:href="@{/songs/{id}(id=*{id})}">
+				[[*{title}]]				
+			</a>
+		</li>
+	</ul>
+</body>
+</html>

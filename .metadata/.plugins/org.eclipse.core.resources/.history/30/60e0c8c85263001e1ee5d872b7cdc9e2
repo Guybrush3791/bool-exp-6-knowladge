@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Pizze!!</h1>
+	<ul th:if="pizze.size() > 0">
+		<li
+			th:each="pizza : ${pizze}"
+			th:object="${pizza}"
+		>
+			[[*{name}]]
+		</li>
+	</ul>
+</body>
+</html>
