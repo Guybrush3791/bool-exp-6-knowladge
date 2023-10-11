@@ -9,11 +9,16 @@
 		BORROW BOOK: [[${book.title}]]
 	</h1>
 	<form
-		th:object="${"
+		th:object="${borrowing}"
 		method="POST"	
 	>
 		<label for="returnDate">Return date</label>
-		<input type="date" name="returnDate" th:field=""
+		<input type="date" name="returnDate" th:field="*{returnDate}" >
+		<br />
+		<label for="note">Note</label>
+		<input type="text" name="note" th:field="*{note}" >
+		<br />
+		<input type="submit" value="BORROW" >
 	</form>
 </body>
 </html>

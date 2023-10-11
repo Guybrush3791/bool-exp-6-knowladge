@@ -119,6 +119,17 @@ public class BookController {
 		return "borrow-form";
 	}
 	
+	@PostMapping("/borrow/{id}")
+	public String storeBorrowing(
+			@Valid @ModelAttribute Borrowing borrowing,
+			BindingResult bindingResult,			
+			@PathVariable int id,
+			Model model
+		) {
+		
+		return "redirect:/books/" + id;
+	}
+	
 	// PRIVATE METHODS
 	private String saveBook(
 			Book book,
