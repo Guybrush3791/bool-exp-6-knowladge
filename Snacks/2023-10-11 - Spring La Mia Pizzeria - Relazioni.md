@@ -7,7 +7,7 @@
 > Si consiglia quindi di eliminare la cartella nascosta `.git` e di procedere nuovamente con la fase di `init` su **nuova repo**.
 
 ## Continuazione
-Vedi
+Vedi [[2023-10-04 - Spring La Mia Pizzeria]]
 
 ## Todo
 Nuova importante funzionalità : le offerte speciali!
