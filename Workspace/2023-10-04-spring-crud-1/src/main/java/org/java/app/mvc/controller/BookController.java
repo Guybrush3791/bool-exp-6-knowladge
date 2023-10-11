@@ -146,9 +146,11 @@ public class BookController {
 			@PathVariable("borrow_id") int id
 		) {
 		
-		System.out.println("borrow id: " + id);
+		Borrowing borrowing = borrowingService.findById(id);
+		Book book = borrowing.getBook();
+		borrowingService.delete(borrowing);
 		
-		return "redirect:/";
+		return "redirect:/books/" + book.getId();
 	}
 	
 	// PRIVATE METHODS

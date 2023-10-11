@@ -17,12 +17,16 @@ public class BorrowingService {
 		
 		return borrowingRepo.findAll();
 	}
-	public Borrowing findbyId(int id) {
+	public Borrowing findById(int id) {
 		
 		return borrowingRepo.findById(id).get();
 	}
 	public void save(Borrowing borrowing) {
 		
 		borrowingRepo.save(borrowing);
+	}
+	public void delete(Borrowing borrowing) {
+		
+		borrowingRepo.delete(borrowing);
 	}
 }
