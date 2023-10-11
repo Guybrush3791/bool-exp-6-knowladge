@@ -14,6 +14,7 @@
 	>
 		<input type="text" name="id" th:field="*{id}" hidden >
 		<input type="text" name="borrowingDate" th:field="*{borrowingDate}" hidden>
+		
 		<label for="returnDate">Return date</label>
 		<input type="date" name="returnDate" th:field="*{htmlReturnDate}" >
 		<br />
@@ -25,6 +26,7 @@
 				th:each="book : ${books}"
 				th:object="${book}"
 				th:value="*{id}"
+				th:selected="${book.id == borrowing.book.id}"
 				>
 				[[*{title}]]
 			</option>
