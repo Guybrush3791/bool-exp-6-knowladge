@@ -48,7 +48,7 @@ public class PizzaController {
 	}
 
 	@GetMapping("/pizzas/create")
-	public String getCreateFormt(Model model) {
+	public String getCreateForm(Model model) {
 
 		model.addAttribute("pizza", new Pizza());
 
@@ -76,5 +76,15 @@ public class PizzaController {
 		pizzaServ.save(pizza);
 
 		return "redirect:/";
+	}
+	
+	@GetMapping("/pizzas/edit/{id}")
+	public String getEditForm(
+			@PathVariable int id
+		) {
+		
+		System.out.println("id: " + id);
+		
+		return "pizza-edit";
 	}
 }

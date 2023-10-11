@@ -23,6 +23,10 @@
 				<a th:href="@{pizzas/{id}(id=*{id})}">
 					[[*{name}]]				
 				</a>
+				 - 
+				<a th:href="@{pizzas/edit/{id}(id=*{id})}">EDIT</a>
+				 - 
+				<a href="#">DELETE</a>
 			</li>
 		</ul>
 	</div>
