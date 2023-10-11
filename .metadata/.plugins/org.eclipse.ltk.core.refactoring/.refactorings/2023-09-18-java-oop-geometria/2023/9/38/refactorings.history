@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;Main.java&apos; to &apos;2023-09-18-java-oop-geometria/src/org.lessons.java.geometria&apos;&#x0A;- Original project: &apos;2023-09-18-java-oop-geometria&apos;&#x0A;- Destination element: &apos;2023-09-18-java-oop-geometria/src/org.lessons.java.geometria&apos;&#x0A;- Original element: &apos;org.lessons.java.Main.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;org.lessons.java.geometria" element1="/src&lt;org.lessons.java{Main.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1695021827080" units="1" version="1.0"/>
-</session>

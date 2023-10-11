@@ -1,5 +1,0 @@
-	
-<div th:if="${#fields.hasErrors('isbn')}" class="invalid-feedback">
-<ul>
-   <li th:each="err : ${#fields.errors('isbn')}" th:text="${err}"></li>
-</ul>
