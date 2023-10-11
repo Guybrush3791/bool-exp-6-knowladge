@@ -1,6 +1,7 @@
 package org.java.app.pizzeria.serv;
 
-import org.hibernate.mapping.List;
+import java.util.List;
+
 import org.java.app.pizzeria.pojo.Pizza;
 import org.java.app.pizzeria.repo.PizzaRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +19,11 @@ public class PizzaServ {
 		pizzaRepo.save(pizza);
 	}
 
-	public List findAll() {
+	public List<Pizza> findAll() {
 
-		return (List) pizzaRepo.findAll();
+		return pizzaRepo.findAll();
 	}
-	public List findByName(String name) {
+	public List<Pizza> findByName(String name) {
 
 		return pizzaRepo.findByNameContaining(name);
 	}

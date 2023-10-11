@@ -1,6 +1,7 @@
 package org.java.app.pizzeria.mvc.controller;
 
-import org.hibernate.mapping.List;
+import java.util.List;
+
 import org.java.app.pizzeria.pojo.Pizza;
 import org.java.app.pizzeria.serv.PizzaServ;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
 
 import jakarta.validation.Valid;
 
@@ -29,7 +28,7 @@ public class PizzaController {
 		System.out.println("search: " + searchTitle);
 
 //		List<Pizza> pizze = pizzaServ.findAll();
-		List pizze = searchTitle == null
+		List<Pizza> pizze = searchTitle == null
 								? pizzaServ.findAll()
 								: pizzaServ.findByName(searchTitle);
 

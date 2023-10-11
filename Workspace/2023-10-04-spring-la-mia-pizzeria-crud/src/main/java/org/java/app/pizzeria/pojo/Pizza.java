@@ -2,8 +2,6 @@ package org.java.app.pizzeria.pojo;
 
 import org.hibernate.validator.constraints.Length;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
