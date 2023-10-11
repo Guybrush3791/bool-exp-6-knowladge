@@ -26,7 +26,9 @@
 				 - 
 				<a th:href="@{pizzas/edit/{id}(id=*{id})}">EDIT</a>
 				 - 
-				<a href="#">DELETE</a>
+				<form style="display: inline;" th:action="@{pizzas/delete/{id}(id=*{id})}">
+					<input type="submit" value="DELETE" >
+				</form>
 			</li>
 		</ul>
 	</div>

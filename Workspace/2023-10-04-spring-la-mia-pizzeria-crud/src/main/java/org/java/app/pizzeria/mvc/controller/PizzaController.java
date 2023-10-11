@@ -61,21 +61,7 @@ public class PizzaController {
 			Model model
 		) {
 
-		System.out.println("pizza:\n" + pizza);
-
-		if (bindingResult.hasErrors()) {
-
-			System.out.println("Errors");
-			bindingResult.getAllErrors().stream()
-					.map(e -> e.getDefaultMessage())
-				.forEach(System.out::println);
-
-			return "pizza-create";
-		}
-
-		pizzaServ.save(pizza);
-
-		return "redirect:/";
+		return storePizza(pizza, bindingResult);
 	}
 	
 	@GetMapping("/pizzas/edit/{id}")
@@ -92,10 +78,28 @@ public class PizzaController {
 	@PostMapping("/pizzas/edit/{id}")
 	public String updatePizza(
 			@Valid @ModelAttribute Pizza pizza,
-			BindingResult bindingResult,
-			Model model
+			BindingResult bindingResult
 		) {
 		
+		return storePizza(pizza, bindingResult);
+	}
+	
+	private String storePizza(Pizza pizza, BindingResult bindingResult) {
+		
+		System.out.println("pizza:\n" + pizza);
+
+		if (bindingResult.hasErrors()) {
+
+			System.out.println("Errors");
+			bindingResult.getAllErrors().stream()
+					.map(e -> e.getDefaultMessage())
+				.forEach(System.out::println);
+
+			return "pizza-form";
+		}
+
+		pizzaServ.save(pizza);
+
 		return "redirect:/";
 	}
 }
