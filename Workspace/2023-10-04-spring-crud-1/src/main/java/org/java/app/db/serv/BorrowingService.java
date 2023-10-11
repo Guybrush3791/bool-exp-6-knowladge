@@ -21,4 +21,8 @@ public class BorrowingService {
 		
 		return borrowingRepo.findById(id).get();
 	}
+	public void save(Borrowing borrowing) {
+		
+		borrowingRepo.save(borrowing);
+	}
 }

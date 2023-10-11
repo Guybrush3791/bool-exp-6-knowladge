@@ -3,7 +3,9 @@ package org.java.app;
 import java.time.LocalDate;
 
 import org.java.app.db.pojo.Book;
+import org.java.app.db.pojo.Borrowing;
 import org.java.app.db.serv.BookService;
+import org.java.app.db.serv.BorrowingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,6 +18,9 @@ public class Application implements CommandLineRunner {
 
 	@Autowired
 	private BookService bookService;
+	
+	@Autowired
+	private BorrowingService borrowingService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -35,5 +40,22 @@ public class Application implements CommandLineRunner {
 		bookService.save(book3);
 
 		System.out.println("Insert OK!");
+		
+		Borrowing borrowing1 = new Borrowing(
+				LocalDate.now(), 
+				LocalDate.parse("2023-02-01"), 
+				null, book1);
+		Borrowing borrowing2 = new Borrowing(
+				LocalDate.now(), 
+				LocalDate.parse("2023-01-15"), 
+				"Cliente da attenzionare!", book2);
+		Borrowing borrowing3 = new Borrowing(
+				LocalDate.parse("2023-01-16"), 
+				LocalDate.parse("2023-02-20"), 
+				null, book2);
+		
+		borrowingService.save(borrowing1);
+		borrowingService.save(borrowing2);
+		borrowingService.save(borrowing3);
 	}
 }
