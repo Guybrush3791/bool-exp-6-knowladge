@@ -169,18 +169,16 @@ public class BookController {
 	}
 	@PostMapping("/borrow/edit/{borrow_id}")
 	public String updateBorrow(
-			@PathVariable("borrow_id") int id,
 			@Valid @ModelAttribute Borrowing borrowing,
 			BindingResult bindingResult,
 			Model model
 		) {
 		
-		System.out.println("Borrowing:\n" + borrowing);
-		Book book = borrowing.getBook();
-		if (book != null) System.out.println(book);
-		else System.out.println("NO BOOK");
+		borrowingService.save(borrowing);
 		
-		return "redirect:/books";
+		Book borrowedBook = borrowing.getBook();
+		
+		return "redirect:/books/" + borrowedBook.getId();
 	}
 	
 	// PRIVATE METHODS
