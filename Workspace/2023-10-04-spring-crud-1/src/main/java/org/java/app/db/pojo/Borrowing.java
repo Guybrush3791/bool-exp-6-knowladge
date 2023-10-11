@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Borrowing {
@@ -23,12 +25,18 @@ public class Borrowing {
 	
 	private String note;
 	
+	@ManyToOne
+	@JoinColumn(nullable = false)
+	private Book book;
+	
 	public Borrowing() { }
-	public Borrowing(LocalDate borrowingDate, LocalDate returnDate, String note) {
+	public Borrowing(LocalDate borrowingDate, LocalDate returnDate, 
+					 String note, Book book) {
 		
 		setBorrowingDate(borrowingDate);
 		setReturnDate(returnDate);
 		setNote(note);
+		setBook(book);
 	}
 	
 	public int getId() {
@@ -54,6 +62,13 @@ public class Borrowing {
 	}
 	public void setNote(String note) {
 		this.note = note;
+	}
+	
+	public Book getBook() {
+		return book;
+	}
+	public void setBook(Book book) {
+		this.book = book;
 	}
 	
 	@Override
