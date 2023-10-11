@@ -2,6 +2,7 @@ package org.java.app.db.pojo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -12,6 +13,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Past;
 
 @Entity
@@ -42,6 +44,9 @@ public class Book {
 		message = "isbn deve essere di 16 caratteri"
 	)
 	private String isbn;
+	
+	@OneToMany(mappedBy = "book")
+	private List<Borrowing> borrowings;
 
 	public Book() { }
 	public Book(String title, String subtitle, LocalDate releaseDate, String isbn) {
