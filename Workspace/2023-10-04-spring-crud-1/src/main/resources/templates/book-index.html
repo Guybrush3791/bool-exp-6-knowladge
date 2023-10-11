@@ -20,7 +20,7 @@
 			th:object="${book}"
 		>
 			<a th:href="@{/books/{id}(id=*{id})}">
-				[[*{isbn}]] - [[*{title}]]	
+				[[*{title}]]	
 			</a>
 			 - 
 			<a th:href="@{/books/update/{id}(id=*{id})}">

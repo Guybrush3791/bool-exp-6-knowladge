@@ -8,7 +8,12 @@
 	[[*{isbn}]] - [[*{title}]] <br />
 	<small>[[*{subtitle}]]</small> <br />	
 	[[*{releaseDate}]]	
-	<ul>
+	<div th:if="*{borrowings.size() < 1}">
+		<b>
+			NEVER BORROWED
+		</b>
+	</div>
+	<ul th:if="*{borrowings.size() > 0}">
 		<li
 			th:each="borrowing : *{borrowings}"
 			th:object="${borrowing}"
