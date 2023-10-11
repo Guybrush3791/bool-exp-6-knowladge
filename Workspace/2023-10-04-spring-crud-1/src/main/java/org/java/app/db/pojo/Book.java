@@ -5,6 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
+
 import jakarta.annotation.Nullable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,12 +24,12 @@ public class Book {
 
 	@Column(length = 128, nullable = false)
 	@Length(
-		min = 3, 
-		max = 128, 
+		min = 3,
+		max = 128,
 		message = "il titolo deve essere composto da 3~128 caratteri"
 	)
 	private String title;
-	
+
 	@Nullable
 	private String subtitle;
 
@@ -76,13 +78,13 @@ public class Book {
 		this.releaseDate = releaseDate;
 	}
 	public String getHtmlDate() {
-		
-		return getReleaseDate() == null 
-				? null 
+
+		return getReleaseDate() == null
+				? null
 				: getReleaseDate().format(DateTimeFormatter.ofPattern("YYYY-MM-dd"));
 	}
 	public void setHtmlDate(String date) {
-		
+
 		setReleaseDate(LocalDate.parse(date));
 	}
 	public String getIsbn() {
