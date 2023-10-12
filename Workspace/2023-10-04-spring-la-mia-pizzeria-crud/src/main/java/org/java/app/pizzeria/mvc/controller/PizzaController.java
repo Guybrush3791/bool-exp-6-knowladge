@@ -5,6 +5,7 @@ import java.util.List;
 import org.java.app.pizzeria.pojo.Pizza;
 import org.java.app.pizzeria.pojo.SpecialOffert;
 import org.java.app.pizzeria.serv.PizzaServ;
+import org.java.app.pizzeria.serv.SpecialOffertService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +23,10 @@ public class PizzaController {
 
 	@Autowired
 	private PizzaServ pizzaServ;
-
+	
+	@Autowired
+	private SpecialOffertService specialOffertService;
+	
 	@GetMapping
 	public String getIndex(@RequestParam(required = false, name = "search") String searchTitle, Model model) {
 
@@ -104,13 +108,28 @@ public class PizzaController {
 		
 		Pizza pizza = pizzaServ.findById(id);
 		
-		model.addAttribute(pizza);
+		model.addAttribute("pizza", pizza);
 		model.addAttribute("specialOffert", new SpecialOffert());
 		
 		return "special-offert-form";
 	}
 	@PostMapping("/pizzas/specialoffert/{pizza_id}")
-	public String storeSpecialOffert() {
+	public String storeSpecialOffert(
+			@Valid @ModelAttribute SpecialOffert specialOffert,
+			BindingResult bindingResult,
+			@PathVariable("pizza_id") int id,
+			Model model
+		) {
+		
+		if (bindingResult.hasErrors()) {
+			
+			return "special-offert-form"; 
+		}
+		
+		Pizza pizza = pizzaServ.findById(id);
+		specialOffert.setPizza(pizza);
+		
+		specialOffertService.save(specialOffert);
 		
 		return "redirect:/";
 	}
