@@ -62,7 +62,7 @@ public class CategoryController {
 		
 		for (Book book : category.getBooks()) {
 			
-			book.addCategory(category);
+			book.getCategories().add(category);
 			bookService.save(book);
 		}
 		
