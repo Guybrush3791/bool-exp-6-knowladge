@@ -57,6 +57,16 @@ public class Category {
 		this.books = books;
 	}
 	
+	public boolean hasBook(Book book) {
+		
+		if (getBooks() == null) return false;
+		
+		for (Book b : getBooks()) 
+			if (b.getId() == book.getId())
+				return true;
+		
+		return false;
+	}
 	public void addBooks(Book... books) {
 		
 		getBooks().addAll(Arrays.asList(books));

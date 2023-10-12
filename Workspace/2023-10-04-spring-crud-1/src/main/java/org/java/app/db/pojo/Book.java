@@ -132,6 +132,10 @@ public class Book {
 		
 		getCategories().add(category);
 	}
+	public void removeCategory(Category category) {
+		
+		getCategories().remove(category);
+	}
 	
 	@Override
 	public String toString() {

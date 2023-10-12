@@ -60,11 +60,24 @@ public class CategoryController {
 		
 		categoryService.save(category);
 		
-		for (Book book : category.getBooks()) {
+//		// RELATION MANAGEMENT: CREATE ONLY
+//		for (Book book : category.getBooks()) {
+//			
+//			book.addCategory(category);
+//			bookService.save(book);
+//		}
+		
+//		// RELATION MANAGEMENT: CREATE & UPDATE
+		List<Book> books = bookService.findAll();
+		for (Book book : books) {
 			
-			book.getCategories().add(category);
+			if (category.hasBook(book)) 
+				book.addCategory(category);
+			else book.removeCategory(category);
+			
 			bookService.save(book);
 		}
+		
 		
 		return "redirect:/categories";
 	}
