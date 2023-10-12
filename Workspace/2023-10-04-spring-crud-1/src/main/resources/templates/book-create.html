@@ -59,6 +59,22 @@
 			</ul>
 			<br />
 		</div>
+		<div
+			th:each="category : ${categories}"
+			th:object="${category}"
+		>
+			<input 
+				type="checkbox" 
+				th:id="${'categories-' + category.id}"
+				name="categories"
+			>
+			<label
+				th:for="${'categories-' + category.id}"
+			>
+				[[*{name}]]
+			</label>
+		</div>
+		
 		<input type="submit" th:value="${book.id > 0 ? 'UPDATE' : 'CREATE'}" />
 	</form>		
 </body>
