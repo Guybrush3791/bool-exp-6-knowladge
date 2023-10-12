@@ -35,11 +35,12 @@ public class SpecialOffert {
 	private Pizza pizza;
 	
 	public SpecialOffert() { }
-	public SpecialOffert(String title, LocalDate startDate, LocalDate endDate) {
+	public SpecialOffert(String title, LocalDate startDate, LocalDate endDate, Pizza pizza) {
 		
 		setTitle(title);
 		setStartDate(startDate);
 		setEndDate(endDate);
+		setPizza(pizza);
 	}
 	public int getId() {
 		return id;
