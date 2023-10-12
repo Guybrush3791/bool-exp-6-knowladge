@@ -134,6 +134,22 @@ public class PizzaController {
 		return "redirect:/";
 	}
 	
+	@GetMapping("/pizzas/specialoffert/edit/{so_id}")
+	public String editSpecialOffert(
+			@PathVariable("so_id") int id,
+			Model model
+		) {
+		
+		SpecialOffert so = specialOffertService.findById(id);
+		Pizza pizza = so.getPizza();
+		
+		model.addAttribute("pizza", pizza);
+		model.addAttribute("specialOffert", so);
+		
+		return "special-offert-form";
+	}
+	
+	
 	private String storePizza(Pizza pizza, BindingResult bindingResult) {
 		
 		System.out.println("pizza:\n" + pizza);
