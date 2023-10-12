@@ -109,6 +109,11 @@ public class PizzaController {
 		
 		return "special-offert-form";
 	}
+	@PostMapping("/pizzas/specialoffert/{pizza_id}")
+	public String storeSpecialOffert() {
+		
+		return "redirect:/";
+	}
 	
 	private String storePizza(Pizza pizza, BindingResult bindingResult) {
 		
