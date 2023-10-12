@@ -2,6 +2,8 @@ package org.java.app.pizzeria.pojo;
 
 import java.time.LocalDate;
 
+import org.hibernate.validator.constraints.Length;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,8 +11,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 
 @Entity
 public class SpecialOffert {
@@ -20,8 +20,7 @@ public class SpecialOffert {
 	private int id;
 	
 	@Column(nullable = false)
-	@Min(3)
-	@Max(255)
+	@Length(min = 3, max = 255)
 	private String title;
 	
 	@Column(nullable = false)

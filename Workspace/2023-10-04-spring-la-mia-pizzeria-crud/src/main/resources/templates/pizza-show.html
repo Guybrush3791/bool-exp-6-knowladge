@@ -8,5 +8,13 @@
 	<h1>Pizza: [[*{name}]] - [[*{price}]] euro</h1>
 	<h3>[[*{description}]]</h3>
 	<img th:src="*{photo}" width="300px" />
+	<ul>
+		<li
+			th:each="so : *{offerts}"
+			th:object="${so}"
+		>
+			[[*{title}]]
+		</li>
+	</ul>
 </body>
 </html>
