@@ -13,6 +13,7 @@
 			NEVER BORROWED
 		</b>
 	</div>
+	<h3>Prestiti</h3>
 	<ul th:if="*{borrowings.size() > 0}">
 		<li
 			th:each="borrowing : *{borrowings}"
@@ -36,5 +37,14 @@
 			</form>
 		</li>
 	</ul>	
+	<h3>Categories:</h3>
+	<ul>
+		<li
+			th:each="category : *{categories}"
+			th:object="${category}"
+		>
+			[[*{name}]]
+		</li>
+	</ul>
 </body>
 </html>
