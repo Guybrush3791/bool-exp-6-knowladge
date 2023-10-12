@@ -13,6 +13,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Past;
 
@@ -48,6 +49,9 @@ public class Book {
 	@OneToMany(mappedBy = "book")
 	private List<Borrowing> borrowings;
 
+	@ManyToMany
+	private List<Category> categories;
+	
 	public Book() { }
 	public Book(String title, String subtitle, LocalDate releaseDate, String isbn) {
 
