@@ -21,7 +21,7 @@ public class Category {
 	private String name;
 	private String description;
 	
-	@ManyToMany
+	@ManyToMany(mappedBy = "categories")
 	private List<Book> books;
 	
 	public Category() { }

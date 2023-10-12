@@ -34,11 +34,25 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
+		Category c1 = new Category("cat 1", "desc cat 1");
+		Category c2 = new Category("cat 2", "desc cat 2");
+		Category c3 = new Category("cat 3", "desc cat 3");
+		
+		categoryService.save(c1);
+		categoryService.save(c2);
+		categoryService.save(c3);
+		
 		LocalDate pastDate = LocalDate.parse("2023-01-01");
 
-		Book book1 = new Book("mio titolo 1", "mio sottotitolo 1", pastDate, "1234231234567894");
-		Book book2 = new Book("mio titolo 2", "mio sottotitolo 2", pastDate, "1234238473843835");
-		Book book3 = new Book("mio titolo 3", "mio sottotitolo 3", pastDate, "1234233948793486");
+		Book book1 = new Book("mio titolo 1", "mio sottotitolo 1", 
+							  pastDate, "1234231234567894",
+							  c1, c3);
+		Book book2 = new Book("mio titolo 2", "mio sottotitolo 2", 
+							  pastDate, "1234238473843835",
+							  c1, c2);
+		Book book3 = new Book("mio titolo 3", "mio sottotitolo 3", 
+							  pastDate, "1234233948793486",
+							  c2, c3);
 
 		bookService.save(book1);
 		bookService.save(book2);
@@ -62,13 +76,5 @@ public class Application implements CommandLineRunner {
 		borrowingService.save(borrowing1);
 		borrowingService.save(borrowing2);
 		borrowingService.save(borrowing3);
-		
-		Category c1 = new Category("cat 1", "desc cat 1", book1, book2);
-		Category c2 = new Category("cat 2", "desc cat 2", book1, book3);
-		Category c3 = new Category("cat 3", "desc cat 3", book2, book3);
-		
-		categoryService.save(c1);
-		categoryService.save(c2);
-		categoryService.save(c3);
 	}
 }

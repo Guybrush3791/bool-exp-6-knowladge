@@ -2,6 +2,7 @@ package org.java.app.db.pojo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.validator.constraints.Length;
@@ -49,16 +50,19 @@ public class Book {
 	@OneToMany(mappedBy = "book")
 	private List<Borrowing> borrowings;
 
-	@ManyToMany(mappedBy = "books")
+	@ManyToMany
 	private List<Category> categories;
 	
 	public Book() { }
-	public Book(String title, String subtitle, LocalDate releaseDate, String isbn) {
+	public Book(String title, String subtitle, 
+				LocalDate releaseDate, String isbn,
+				Category... categories) {
 
 		setTitle(title);
 		setSubtitle(subtitle);
 		setReleaseDate(releaseDate);
 		setIsbn(isbn);
+		setCategories(Arrays.asList(categories));
 	}
 
 	public int getId() {
@@ -107,6 +111,12 @@ public class Book {
 	}
 	public void setBorrowings(List<Borrowing> borrowings) {
 		this.borrowings = borrowings;
+	}
+	public List<Category> getCategories() {
+		return categories;
+	}
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
 	}
 	
 	@Override
