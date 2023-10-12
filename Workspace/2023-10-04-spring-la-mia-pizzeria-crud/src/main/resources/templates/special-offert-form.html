@@ -12,6 +12,9 @@
 		method="POST"
 	>
 		
+		<input type="text" name="id" th:field="*{id}" hidden >
+		<input type="text" name="pizza" th:field="*{pizza}" hidden >
+		
 		<label for="title">Title</label>
 		<input type="text" name="title" th:field="*{title}" >
 		<br />

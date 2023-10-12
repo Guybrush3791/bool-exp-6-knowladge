@@ -163,7 +163,9 @@ public class PizzaController {
 		
 		specialOffertService.save(specialOffert);
 		
-		return "redirect:/";
+		Pizza pizza = specialOffert.getPizza();
+		
+		return "redirect:/pizzas/" + pizza.getId();
 	}
 	
 	private String storePizza(Pizza pizza, BindingResult bindingResult) {
