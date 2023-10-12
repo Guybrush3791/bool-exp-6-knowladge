@@ -1,12 +1,16 @@
 package org.java.app.pizzeria.pojo;
 
+import java.util.List;
+
 import org.hibernate.validator.constraints.Length;
+import org.springframework.orm.jpa.persistenceunit.SmartPersistenceUnitInfo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 
@@ -31,6 +35,9 @@ public class Pizza {
 	@Max(100)
 	private int price;
 
+	@OneToMany(mappedBy = "pizza")
+	private List<SpecialOffert> offerts;
+	
 	public Pizza() { }
 	public Pizza(String name, String description, String photo, int price) {
 
@@ -70,7 +77,13 @@ public class Pizza {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
+	public List<SpecialOffert> getOfferts() {
+		return offerts;
+	}
+	public void setOfferts(List<SpecialOffert> offerts) {
+		this.offerts = offerts;
+	}
+	
 	@Override
 	public String toString() {
 

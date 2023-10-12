@@ -65,6 +65,12 @@ public class SpecialOffert {
 	public void setEndDate(LocalDate endDate) {
 		this.endDate = endDate;
 	}
+	public Pizza getPizza() {
+		return pizza;
+	}
+	public void setPizza(Pizza pizza) {
+		this.pizza = pizza;
+	}
 	
 	@Override
 	public String toString() {
