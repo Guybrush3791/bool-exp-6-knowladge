@@ -3,6 +3,7 @@ package org.java.app.mvc.controller;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.java.app.db.dto.BookDTO;
 import org.java.app.db.pojo.Book;
 import org.java.app.db.pojo.Borrowing;
 import org.java.app.db.pojo.Category;
@@ -100,7 +101,7 @@ public class BookController {
 	}
 	@PostMapping("/update/{id}")
 	public String updateBook(
-			@Valid @ModelAttribute Book book,
+			@Valid @ModelAttribute BookDTO book,
 			BindingResult bindingResult,
 			Model model
 		) {
@@ -195,7 +196,7 @@ public class BookController {
 	
 	// PRIVATE METHODS
 	private String saveBook(
-			Book book,
+			BookDTO bookDto,
 			BindingResult bindingResult,
 			Model model
 		) {
@@ -207,10 +208,14 @@ public class BookController {
 					.map(e -> e.getDefaultMessage())
 				.forEach(System.out::println);
 
+			List<Category> categories = categoryService.findAll();
+			model.addAttribute("categories", categories);
+			
 			return "book-create";
 		}
 
 		try {
+			Book book = new Book(bookDto);
 			bookService.save(book);
 		} catch (DataIntegrityViolationException e) {
 

@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.validator.constraints.Length;
-
+import org.java.app.db.dto.BookDTO;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.Column;
@@ -63,6 +63,10 @@ public class Book {
 		setReleaseDate(releaseDate);
 		setIsbn(isbn);
 		setCategories(Arrays.asList(categories));
+	}
+	public Book(BookDTO bookDto) {
+		this(bookDto.getTitle(), bookDto.getSubtitle(), 
+				bookDto.getReleaseDate(), bookDto.getIsbn());
 	}
 
 	public int getId() {
