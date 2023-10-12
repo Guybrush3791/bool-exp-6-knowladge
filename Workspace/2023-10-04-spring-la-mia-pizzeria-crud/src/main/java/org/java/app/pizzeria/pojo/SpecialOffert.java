@@ -1,6 +1,7 @@
 package org.java.app.pizzeria.pojo;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -59,12 +60,36 @@ public class SpecialOffert {
 	public void setStartDate(LocalDate startDate) {
 		this.startDate = startDate;
 	}
+	
+	public String getHtmlStartDate() {
+		
+		return getStartDate() == null
+				? null
+				: getStartDate().format(DateTimeFormatter.ofPattern("YYYY-MM-dd"));
+	}
+	public void setHtmlStartDate(String startDate) {
+		
+		setStartDate(LocalDate.parse(startDate));
+	}
+	
 	public LocalDate getEndDate() {
 		return endDate;
 	}
 	public void setEndDate(LocalDate endDate) {
 		this.endDate = endDate;
 	}
+	
+	public String getHtmlEndDate() {
+		
+		return getEndDate() == null
+				? null
+				: getEndDate().format(DateTimeFormatter.ofPattern("YYYY-MM-dd"));
+	}
+	public void setHtmlEndDate(String endDate) {
+		
+		setEndDate(LocalDate.parse(endDate));
+	}
+	
 	public Pizza getPizza() {
 		return pizza;
 	}
