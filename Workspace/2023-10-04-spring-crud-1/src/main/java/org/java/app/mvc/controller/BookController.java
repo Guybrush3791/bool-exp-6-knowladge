@@ -106,6 +106,7 @@ public class BookController {
 		) {
 
 		System.out.println("Update book:\n" + book);
+		System.out.println("Categories:\n" + book.getCategories());
 
 		return saveBook(book, bindingResult, model);
 	}
