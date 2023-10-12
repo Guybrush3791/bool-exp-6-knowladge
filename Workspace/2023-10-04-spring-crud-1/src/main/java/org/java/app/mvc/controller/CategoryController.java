@@ -9,8 +9,13 @@ import org.java.app.db.serv.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/categories")
@@ -41,5 +46,18 @@ public class CategoryController {
 		model.addAttribute("books", books);
 		
 		return "category-create";
+	}
+	
+	@PostMapping("/create")
+	public String storeCategory(
+			@Valid @ModelAttribute Category category,
+			BindingResult bindingResult,
+			Model model
+		) {
+		
+		System.out.println("New category:\n" + category);
+		System.out.println("Category books:\n" + category.getBooks());
+		
+		return "redirect:/categories";
 	}
 }

@@ -6,7 +6,9 @@
 </head>
 <body th:object="${category}">
 	<h1>NEW CATEGORY</h1>
-	<form>
+	<form
+		method="POST"
+	>
 		<label for="name">Name</label>
 		<input type="text" id="name" th:field="*{name}">
 		<br />
@@ -22,6 +24,8 @@
 				th:id="${'book-' + book.id}"
 				th:value="*{id}"
 				th:field="${category.books}"
+			>
+			<label th:for="${'book-' + book.id}">[[*{title}]]</label>
 		</div>
 		<input type="submit" value="CREATE">
 	</form>
