@@ -148,7 +148,23 @@ public class PizzaController {
 		
 		return "special-offert-form";
 	}
-	
+	@PostMapping("/pizzas/specialoffert/edit/{so_id}")
+	public String updateSpecialOffert(
+			@Valid @ModelAttribute SpecialOffert specialOffert,
+			BindingResult bindingResult,
+			
+			Model model
+		) {
+		
+		if (bindingResult.hasErrors()) {
+			
+			return "special-offert-form"; 
+		}
+		
+		specialOffertService.save(specialOffert);
+		
+		return "redirect:/";
+	}
 	
 	private String storePizza(Pizza pizza, BindingResult bindingResult) {
 		

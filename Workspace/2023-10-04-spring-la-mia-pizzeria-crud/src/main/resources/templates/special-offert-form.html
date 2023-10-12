@@ -5,7 +5,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>[[${pizza.name}]]: NEW OFFERT!</h1>
+	<h1 th:if="${specialOffert.id < 1}">[[${pizza.name}]]: NEW OFFERT!</h1>
+	<h1 th:if="${specialOffert.id > 0}">[[${pizza.name}]]: UPDATE OFFERT!</h1>
 	<form
 		th:object="${specialOffert}"
 		method="POST"
@@ -15,12 +16,12 @@
 		<input type="text" name="title" th:field="*{title}" >
 		<br />
 		<label for="startDate">Start date</label>
-		<input type="date" name="startDate" th:field="*{startDate}" >
+		<input type="date" name="startDate" th:field="*{htmlStartDate}" >
 		<br />
 		<label for="endDate">End date</label>
-		<input type="date" name="endDate" th:field="*{endDate}" >
+		<input type="date" name="endDate" th:field="*{htmlEndDate}" >
 		<br />
-		<input type="submit" value="CREATE" >
+		<input type="submit" th:value="${specialOffert.id < 1 ? 'CREATE' : 'UPDATE'}" >
 	</form>
 </body>
 </html>
