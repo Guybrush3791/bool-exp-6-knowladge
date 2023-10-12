@@ -128,6 +128,10 @@ public class Book {
 		
 		return false;
 	}
+	public void addCategory(Category category) {
+		
+		getCategories().add(category);
+	}
 	
 	@Override
 	public String toString() {

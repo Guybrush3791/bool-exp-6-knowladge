@@ -58,6 +58,14 @@ public class CategoryController {
 		System.out.println("New category:\n" + category);
 		System.out.println("Category books:\n" + category.getBooks());
 		
+		categoryService.save(category);
+		
+		for (Book book : category.getBooks()) {
+			
+			book.addCategory(category);
+			bookService.save(book);
+		}
+		
 		return "redirect:/categories";
 	}
 }
