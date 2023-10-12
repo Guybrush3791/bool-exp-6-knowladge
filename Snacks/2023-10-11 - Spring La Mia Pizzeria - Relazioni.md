@@ -10,7 +10,7 @@
 Vedi [[2023-10-04 - Spring La Mia Pizzeria]]
 
 ## Todo
-Nuova importante funzionalità : le offerte speciali!
+Nuova importante funzionalità: le offerte speciali!
 
 In alcuni momenti potremmo voler vendere le nostre pizze a un prezzo scontato.
 
