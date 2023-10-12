@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Categories:</h1>
+	<a href="/categories/create">CREATE NEW</a>
+	<ul>
+		<li
+			th:each="category : ${categories}"
+			th:object="${category}"
+		>
+			[[*{name}]]
+		</li>
+	</ul>
+</body>
+</html>
