@@ -63,8 +63,12 @@ public class Application implements CommandLineRunner {
 		borrowingService.save(borrowing2);
 		borrowingService.save(borrowing3);
 		
-		Book[] books = new Book[] {book1, book2};
+		Category c1 = new Category("cat 1", "desc cat 1", book1, book2);
+		Category c2 = new Category("cat 2", "desc cat 2", book1, book3);
+		Category c3 = new Category("cat 3", "desc cat 3", book2, book3);
 		
-		Category c1 = new Category("cat 1", "desc cat 1");
+		categoryService.save(c1);
+		categoryService.save(c2);
+		categoryService.save(c3);
 	}
 }
