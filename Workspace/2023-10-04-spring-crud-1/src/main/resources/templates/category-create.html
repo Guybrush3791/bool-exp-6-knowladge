@@ -4,8 +4,26 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body th:object="${category}">
 	<h1>NEW CATEGORY</h1>
-	
+	<form>
+		<label for="name">Name</label>
+		<input type="text" id="name" th:field="*{name}">
+		<br />
+		<label for="description">Description</label>
+		<input type="text" id="name" th:field="*{description}">
+		<br />
+		<div
+			th:each="book : ${books}"
+			th:object="${book}"
+		>
+			<input 
+				type="checkbox" 
+				th:id="${'book-' + book.id}"
+				th:value="*{id}"
+				th:field="${category.books}"
+		</div>
+		<input type="submit" value="CREATE">
+	</form>
 </body>
 </html>
