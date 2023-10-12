@@ -49,7 +49,7 @@ public class Book {
 	@OneToMany(mappedBy = "book")
 	private List<Borrowing> borrowings;
 
-	@ManyToMany
+	@ManyToMany(mappedBy = "books")
 	private List<Category> categories;
 	
 	public Book() { }

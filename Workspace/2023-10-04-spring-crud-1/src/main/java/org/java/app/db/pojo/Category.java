@@ -21,7 +21,7 @@ public class Category {
 	private String name;
 	private String description;
 	
-	@ManyToMany(mappedBy = "categories")
+	@ManyToMany
 	private List<Book> books;
 	
 	public Category() { }
@@ -55,6 +55,15 @@ public class Category {
 	}
 	public void setBooks(List<Book> books) {
 		this.books = books;
+	}
+	
+	public void addBooks(Book... books) {
+		
+		getBooks().addAll(Arrays.asList(books));
+	}
+	public void removeBooks(Book... books) {
+		
+		getBooks().removeAll(Arrays.asList(books));
 	}
 	
 	@Override
