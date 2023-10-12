@@ -4,8 +4,10 @@ import java.time.LocalDate;
 
 import org.java.app.db.pojo.Book;
 import org.java.app.db.pojo.Borrowing;
+import org.java.app.db.pojo.Category;
 import org.java.app.db.serv.BookService;
 import org.java.app.db.serv.BorrowingService;
+import org.java.app.db.serv.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,6 +23,9 @@ public class Application implements CommandLineRunner {
 	
 	@Autowired
 	private BorrowingService borrowingService;
+	
+	@Autowired
+	private CategoryService categoryService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -57,5 +62,9 @@ public class Application implements CommandLineRunner {
 		borrowingService.save(borrowing1);
 		borrowingService.save(borrowing2);
 		borrowingService.save(borrowing3);
+		
+		Book[] books = new Book[] {book1, book2};
+		
+		Category c1 = new Category("cat 1", "desc cat 1");
 	}
 }

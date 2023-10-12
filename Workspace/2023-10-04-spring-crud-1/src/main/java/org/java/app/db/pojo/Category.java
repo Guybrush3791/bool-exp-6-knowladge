@@ -1,5 +1,6 @@
 package org.java.app.db.pojo;
 
+import java.util.Arrays;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -24,10 +25,11 @@ public class Category {
 	private List<Book> books;
 	
 	public Category() { }
-	public Category(String name, String description) {
+	public Category(String name, String description, Book... books) {
 		
 		setName(name);
 		setDescription(description);
+		setBooks(Arrays.asList(books));
 	}
 	
 	public int getId() {
@@ -47,6 +49,12 @@ public class Category {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public List<Book> getBooks() {
+		return books;
+	}
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 	
 	@Override
