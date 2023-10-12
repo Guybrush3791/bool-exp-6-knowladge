@@ -119,6 +119,17 @@ public class Book {
 		this.categories = categories;
 	}
 	
+	public boolean hasCategory(Category category) {
+		
+		if (getCategories() == null) return false;
+		
+		for (Category c : getCategories()) 
+			if (category.getId() == c.getId())
+				return true;
+		
+		return false;
+	}
+	
 	@Override
 	public String toString() {
 

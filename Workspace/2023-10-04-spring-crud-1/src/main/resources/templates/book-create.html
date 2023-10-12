@@ -67,7 +67,7 @@
 				type="checkbox" 
 				th:id="${'categories-' + category.id}"
 				name="categories"
-				
+				th:checked="${book.hasCategory(category)}"
 			>
 			<label
 				th:for="${'categories-' + category.id}"
