@@ -5,8 +5,10 @@ import java.util.List;
 
 import org.java.app.db.pojo.Book;
 import org.java.app.db.pojo.Borrowing;
+import org.java.app.db.pojo.Category;
 import org.java.app.db.serv.BookService;
 import org.java.app.db.serv.BorrowingService;
+import org.java.app.db.serv.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
@@ -30,6 +32,9 @@ public class BookController {
 	
 	@Autowired
 	private BorrowingService borrowingService; 
+	
+	@Autowired
+	private CategoryService categoryService;
 
 	// BOOK
 	@GetMapping
@@ -60,8 +65,11 @@ public class BookController {
 	@GetMapping("/create")
 	public String getCreateForm(Model model) {
 
+		List<Category> categories = categoryService.findAll();
+		
 		model.addAttribute("book", new Book());
-
+		model.addAttribute("categories", categories);
+		
 		return "book-create";
 	}
 	@PostMapping("/create")
@@ -82,8 +90,11 @@ public class BookController {
 			Model model
 		) {
 
+		List<Category> categories = categoryService.findAll();
 		Book book = bookService.findById(id);
+		
 		model.addAttribute("book", book);
+		model.addAttribute("categories", categories);
 
 		return "book-create";
 	}
