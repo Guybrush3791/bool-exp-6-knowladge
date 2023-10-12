@@ -3,7 +3,6 @@ package org.java.app.mvc.controller;
 import java.time.LocalDate;
 import java.util.List;
 
-import org.java.app.db.dto.BookDTO;
 import org.java.app.db.pojo.Book;
 import org.java.app.db.pojo.Borrowing;
 import org.java.app.db.pojo.Category;
@@ -75,14 +74,14 @@ public class BookController {
 	}
 	@PostMapping("/create")
 	public String storeBook(
-			@Valid @ModelAttribute BookDTO bookDto,
+			@Valid @ModelAttribute Book book,
 			BindingResult bindingResult,
 			Model model
 			) {
 
-		System.out.println("New book: " + bookDto);
+		System.out.println("New book: " + book);
 
-		return saveBook(bookDto, bindingResult, model);
+		return saveBook(book, bindingResult, model);
 	}
 
 	@GetMapping("/update/{id}")
@@ -101,7 +100,7 @@ public class BookController {
 	}
 	@PostMapping("/update/{id}")
 	public String updateBook(
-			@Valid @ModelAttribute BookDTO book,
+			@Valid @ModelAttribute Book book,
 			BindingResult bindingResult,
 			Model model
 		) {
@@ -196,13 +195,11 @@ public class BookController {
 	
 	// PRIVATE METHODS
 	private String saveBook(
-			BookDTO bookDto,
+			Book book,
 			BindingResult bindingResult,
 			Model model
 		) {
 
-		List<Category> categories = categoryService.findAll();
-		
 		if (bindingResult.hasErrors()) {
 
 			System.out.println("Error:");
@@ -210,21 +207,16 @@ public class BookController {
 					.map(e -> e.getDefaultMessage())
 				.forEach(System.out::println);
 
-			model.addAttribute("categories", categories);
-			
 			return "book-create";
 		}
 
 		try {
-			Book book = new Book(bookDto);
-			System.out.println("tmp book:\n" + book);
-//			bookService.save(book);
+			bookService.save(book);
 		} catch (DataIntegrityViolationException e) {
 
 			// CONSTRAIN VALIDATION (unique)
 			System.out.println("Errore constrain: " + e.getClass().getSimpleName());
 
-			model.addAttribute("categories", categories);
 			model.addAttribute("isbn_unique", "isbn deve essere unique");
 
 			return "book-create";
