@@ -75,14 +75,14 @@ public class BookController {
 	}
 	@PostMapping("/create")
 	public String storeBook(
-			@Valid @ModelAttribute Book book,
+			@Valid @ModelAttribute BookDTO bookDto,
 			BindingResult bindingResult,
 			Model model
 			) {
 
-		System.out.println("New book: " + book);
+		System.out.println("New book: " + bookDto);
 
-		return saveBook(book, bindingResult, model);
+		return saveBook(bookDto, bindingResult, model);
 	}
 
 	@GetMapping("/update/{id}")
@@ -201,6 +201,8 @@ public class BookController {
 			Model model
 		) {
 
+		List<Category> categories = categoryService.findAll();
+		
 		if (bindingResult.hasErrors()) {
 
 			System.out.println("Error:");
@@ -208,7 +210,6 @@ public class BookController {
 					.map(e -> e.getDefaultMessage())
 				.forEach(System.out::println);
 
-			List<Category> categories = categoryService.findAll();
 			model.addAttribute("categories", categories);
 			
 			return "book-create";
@@ -216,12 +217,14 @@ public class BookController {
 
 		try {
 			Book book = new Book(bookDto);
-			bookService.save(book);
+			System.out.println("tmp book:\n" + book);
+//			bookService.save(book);
 		} catch (DataIntegrityViolationException e) {
 
 			// CONSTRAIN VALIDATION (unique)
 			System.out.println("Errore constrain: " + e.getClass().getSimpleName());
 
+			model.addAttribute("categories", categories);
 			model.addAttribute("isbn_unique", "isbn deve essere unique");
 
 			return "book-create";
