@@ -3,6 +3,7 @@ package org.java.app.pizzeria.mvc.controller;
 import java.util.List;
 
 import org.java.app.pizzeria.pojo.Pizza;
+import org.java.app.pizzeria.pojo.SpecialOffert;
 import org.java.app.pizzeria.serv.PizzaServ;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -93,6 +94,20 @@ public class PizzaController {
 		pizzaServ.deletePizza(pizza);
 		
 		return "redirect:/";
+	}
+	
+	@GetMapping("/pizzas/specialoffert/{pizza_id}")
+	public String getSpecialOffertCreateForm(
+			@PathVariable("pizza_id") int id,
+			Model model
+		) {
+		
+		Pizza pizza = pizzaServ.findById(id);
+		
+		model.addAttribute(pizza);
+		model.addAttribute("specialOffert", new SpecialOffert());
+		
+		return "special-offert-form";
 	}
 	
 	private String storePizza(Pizza pizza, BindingResult bindingResult) {
