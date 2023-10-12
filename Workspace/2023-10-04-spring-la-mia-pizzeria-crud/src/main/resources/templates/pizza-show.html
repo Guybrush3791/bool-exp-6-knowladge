@@ -8,12 +8,17 @@
 	<h1>Pizza: [[*{name}]] - [[*{price}]] euro</h1>
 	<h3>[[*{description}]]</h3>
 	<img th:src="*{photo}" width="300px" />
+	<h3>
+		Special Offerts:
+		<a th:href="@{/pizzas/specialoffert/{id}(id=*{id})}">+</a>
+	</h3>
 	<ul>
 		<li
 			th:each="so : *{offerts}"
 			th:object="${so}"
 		>
-			[[*{title}]]
+			[[*{title}]] <br />
+			[[*{startDate}]] ~ [[*{endDate}]]
 		</li>
 	</ul>
 </body>
