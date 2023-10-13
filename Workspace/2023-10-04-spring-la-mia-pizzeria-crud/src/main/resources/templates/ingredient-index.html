@@ -15,7 +15,13 @@
 			th:object="${ingredient}"
 		>
 			[[*{name}]]
-			<a href="#">X</a>
+			<form
+				th:action="@{/ingredients/delete/{id}(id=*{id})}"
+				method="POST"
+				style="display: inline;"
+			>
+				<input type="submit" value="X" >			
+			</form>
 		</li>
 	</ul>
 </body>
