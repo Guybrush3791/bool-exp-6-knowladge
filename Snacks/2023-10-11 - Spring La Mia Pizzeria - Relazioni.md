@@ -28,7 +28,7 @@ Accanto ad ogni offerta speciale è previsto un bottone che mi porterà a una pa
 
 ### Day 2
 Ciao ragazzi,
-nuovo pezzettino per la nostra pizzeria : gli ingredienti!
+nuovo pezzettino per la nostra pizzeria: gli ingredienti!
 
 Ogni pizza può avere più **ingredienti**, e **ogni ingrediente può essere collegato a più pizze**.
 
