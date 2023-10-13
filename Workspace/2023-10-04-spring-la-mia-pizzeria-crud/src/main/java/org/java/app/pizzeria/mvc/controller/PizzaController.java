@@ -2,8 +2,10 @@ package org.java.app.pizzeria.mvc.controller;
 
 import java.util.List;
 
+import org.java.app.pizzeria.pojo.Ingredient;
 import org.java.app.pizzeria.pojo.Pizza;
 import org.java.app.pizzeria.pojo.SpecialOffert;
+import org.java.app.pizzeria.serv.IngredientService;
 import org.java.app.pizzeria.serv.PizzaServ;
 import org.java.app.pizzeria.serv.SpecialOffertService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,9 @@ public class PizzaController {
 	
 	@Autowired
 	private SpecialOffertService specialOffertService;
+	
+	@Autowired 
+	private IngredientService ingredientService;
 	
 	@GetMapping
 	public String getIndex(@RequestParam(required = false, name = "search") String searchTitle, Model model) {
@@ -55,7 +60,10 @@ public class PizzaController {
 	@GetMapping("/pizzas/create")
 	public String getCreateForm(Model model) {
 
+		List<Ingredient> ingredients = ingredientService.findAll();
+		
 		model.addAttribute("pizza", new Pizza());
+		model.addAttribute("ingredients", ingredients);
 
 		return "pizza-form";
 	}
@@ -75,8 +83,11 @@ public class PizzaController {
 			Model model
 		) {
 		
+		List<Ingredient> ingredients = ingredientService.findAll();
 		Pizza pizza = pizzaServ.findById(id);
+		
 		model.addAttribute("pizza", pizza);
+		model.addAttribute("ingredients", ingredients);
 		
 		return "pizza-form";
 	}
