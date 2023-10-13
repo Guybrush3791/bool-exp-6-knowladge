@@ -3,7 +3,9 @@ package org.java.app.pizzeria.mvc.controller;
 import java.util.List;
 
 import org.java.app.pizzeria.pojo.Ingredient;
+import org.java.app.pizzeria.pojo.Pizza;
 import org.java.app.pizzeria.serv.IngredientService;
+import org.java.app.pizzeria.serv.PizzaServ;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +22,9 @@ import jakarta.validation.Valid;
 @RequestMapping("/ingredients")
 public class IngredientController {
 
+	@Autowired
+	private PizzaServ pizzaServ;
+	
 	@Autowired
 	private IngredientService ingredientService;
 	
@@ -62,6 +67,13 @@ public class IngredientController {
 		) {
 		
 		Ingredient ingredient = ingredientService.findById(id);
+
+		for (Pizza p : ingredient.getPizzas()) {
+			
+			p.deleteIngredient(ingredient);
+			pizzaServ.save(p);
+		}
+
 		ingredientService.delete(ingredient);
 		
 		return "redirect:/ingredients";

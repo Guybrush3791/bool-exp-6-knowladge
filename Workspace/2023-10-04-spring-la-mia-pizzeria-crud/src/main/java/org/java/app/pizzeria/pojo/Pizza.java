@@ -97,6 +97,10 @@ public class Pizza {
 	public void setIngredients(List<Ingredient> ingredients) {
 		this.ingredients = ingredients;
 	}
+	public void deleteIngredient(Ingredient ingredient) {
+		
+		getIngredients().remove(ingredient);
+	}
 	
 	@Override
 	public String toString() {
