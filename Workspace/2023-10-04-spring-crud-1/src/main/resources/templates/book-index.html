@@ -6,10 +6,10 @@
 </head>
 <body>
 	<h1
-		sec:authorize="hasAuthority('USER')"
+		sec:authorize="hasAnyAuthority('USER')"
 	>
-		Logged user:
 		
+		<span sec:authentication="name"></span> 
 	</h1>
 	<h1>Books:</h1>
 	<a href="/books/create">CREATE NEW</a>

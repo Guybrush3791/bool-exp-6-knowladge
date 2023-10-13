@@ -17,8 +17,7 @@ public class AuthConfig {
 		throws Exception {
 			 
 			http.authorizeHttpRequests()
-		        .requestMatchers("/user/**").hasAuthority("USER")
-		        .requestMatchers("/admin/**").hasAuthority("ADMIN")
+		        .requestMatchers("/books/create").hasAuthority("ADMIN")
 		        .requestMatchers("/**").permitAll()
 		        .and().formLogin()
 		        .and().logout();
