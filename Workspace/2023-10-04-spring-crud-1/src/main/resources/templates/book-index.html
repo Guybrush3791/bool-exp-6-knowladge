@@ -29,12 +29,16 @@
 				[[*{title}]]	
 			</a>
 			 - 
-			<a th:href="@{/books/update/{id}(id=*{id})}">
+			<a 
+				th:href="@{/books/update/{id}(id=*{id})}"
+				sec:authorize="hasAnyAuthority('ADMIN')"	
+			>
 				EDIT
 			</a>
 			 -
 			<form 
 				th:action="@{/books/delete/{id}(id=*{id})}" 
+				sec:authorize="hasAnyAuthority('ADMIN')"
 				method="POST"
 				style="display: inline;"
 			>
