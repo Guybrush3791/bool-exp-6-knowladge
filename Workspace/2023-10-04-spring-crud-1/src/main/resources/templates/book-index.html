@@ -5,20 +5,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1
-		sec:authorize="hasAnyAuthority('USER', 'ADMIN')"
-	>
-		
-		<span sec:authentication="name"></span> 
-	</h1>
-	<h1
-		sec:authorize="!hasAnyAuthority('USER', 'ADMIN')"
-	>
-		
-		<a href="/login">LOGIN</a> 
-	</h1>
+	<th:block th:include="frags/frag-login.html :: login"></th:block>
 	<h1>Books:</h1>
-	<a href="/books/create">CREATE NEW</a>
+	<a 
+		href="/books/create"
+		sec:authorize="hasAnyAuthority('ADMIN')"
+	>
+		CREATE NEW
+	</a>
 	<br /><br />
 	<form>
 		<label for="title">Title</label>

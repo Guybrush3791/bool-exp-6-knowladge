@@ -11,6 +11,8 @@
 		>
 			
 			<span sec:authentication="name"></span> 
+			 - 
+			<a href="/logout">LOGOUT</a>
 		</h1>
 		<h1
 			sec:authorize="!hasAnyAuthority('USER', 'ADMIN')"
