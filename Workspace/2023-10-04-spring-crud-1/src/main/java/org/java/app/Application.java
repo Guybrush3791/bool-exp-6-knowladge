@@ -8,12 +8,13 @@ import org.java.app.db.pojo.Category;
 import org.java.app.db.serv.BookService;
 import org.java.app.db.serv.BorrowingService;
 import org.java.app.db.serv.CategoryService;
+import org.java.app.mvc.auth.pojo.Role;
+import org.java.app.mvc.auth.service.RoleService;
+import org.java.app.mvc.auth.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
@@ -26,6 +27,12 @@ public class Application implements CommandLineRunner {
 	
 	@Autowired
 	private CategoryService categoryService;
+	
+	@Autowired
+	private RoleService roleService;
+	
+	@Autowired
+	private UserService userService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -76,5 +83,14 @@ public class Application implements CommandLineRunner {
 		borrowingService.save(borrowing1);
 		borrowingService.save(borrowing2);
 		borrowingService.save(borrowing3);
+		
+		Role admin = new Role("ADMIN");
+		Role user = new Role("User");
+		
+		roleService.save(admin);
+		roleService.save(user);
+		
+		
+//		final String pws = new BCryptPasswordEncoder().encode("password");
 	}
 }
