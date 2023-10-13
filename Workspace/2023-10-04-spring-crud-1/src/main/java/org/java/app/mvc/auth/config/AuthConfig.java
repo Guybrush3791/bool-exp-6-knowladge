@@ -20,7 +20,7 @@ public class AuthConfig {
 		        .requestMatchers("/books/create").hasAuthority("ADMIN")
 		        .requestMatchers("/books/update/**").hasAuthority("ADMIN")
 		        .requestMatchers("/books/delete/**").hasAuthority("ADMIN")
-//		        .("/test/10").hasAnyAuthority("ADMIN")
+		        .requestMatchers("/test/(?!^\\d+$)^.+$").hasAnyAuthority("ADMIN")
 		        .requestMatchers("/**").permitAll()
 		        .and().formLogin().defaultSuccessUrl("/books")
 		        .and().logout();
