@@ -1,5 +1,6 @@
 package org.java.app.pizzeria.pojo;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.validator.constraints.Length;
@@ -43,12 +44,15 @@ public class Pizza {
 	private List<Ingredient> ingredients;
 	
 	public Pizza() { }
-	public Pizza(String name, String description, String photo, int price) {
+	public Pizza(String name, String description, 
+				 String photo, int price,
+				 Ingredient... ingredients) {
 
 		setName(name);
 		setDescription(description);
 		setPhoto(photo);
 		setPrice(price);
+		setIngredients(Arrays.asList(ingredients));
 	}
 
 	public int getId() {
@@ -86,6 +90,12 @@ public class Pizza {
 	}
 	public void setOfferts(List<SpecialOffert> offerts) {
 		this.offerts = offerts;
+	}
+	public List<Ingredient> getIngredients() {
+		return ingredients;
+	}
+	public void setIngredients(List<Ingredient> ingredients) {
+		this.ingredients = ingredients;
 	}
 	
 	@Override

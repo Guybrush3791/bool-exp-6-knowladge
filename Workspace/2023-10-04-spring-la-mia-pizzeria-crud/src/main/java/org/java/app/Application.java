@@ -2,8 +2,10 @@ package org.java.app;
 
 import java.time.LocalDate;
 
+import org.java.app.pizzeria.pojo.Ingredient;
 import org.java.app.pizzeria.pojo.Pizza;
 import org.java.app.pizzeria.pojo.SpecialOffert;
+import org.java.app.pizzeria.serv.IngredientService;
 import org.java.app.pizzeria.serv.PizzaServ;
 import org.java.app.pizzeria.serv.SpecialOffertService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,9 @@ public class Application implements CommandLineRunner {
 	
 	@Autowired
 	private SpecialOffertService specialOffertService;
+	
+	@Autowired
+	private IngredientService ingredientService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -27,13 +32,23 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
+		Ingredient ing1 = new Ingredient("ing 1");
+		Ingredient ing2 = new Ingredient("ing 2");
+		Ingredient ing3 = new Ingredient("ing 3");
+		Ingredient ing4 = new Ingredient("ing 4");
+		
+		ingredientService.save(ing1);
+		ingredientService.save(ing2);
+		ingredientService.save(ing3);
+		ingredientService.save(ing4);
+		
 		String photo = "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg";
 
-		Pizza pizza1 = new Pizza("pizza 1", "desc pizza 1", photo, 10);
-		Pizza pizza2 = new Pizza("pizza 2", "desc pizza 2", photo, 12);
-		Pizza pizza3 = new Pizza("pizza 3", "desc pizza 3", photo, 14);
-		Pizza pizza4 = new Pizza("pizza 4", "desc pizza 4", photo, 16);
-		Pizza pizza5 = new Pizza("pizza 14", "desc pizza 5", photo, 18);
+		Pizza pizza1 = new Pizza("pizza 1", "desc pizza 1", photo, 10, ing1, ing2, ing3);
+		Pizza pizza2 = new Pizza("pizza 2", "desc pizza 2", photo, 12, ing1);
+		Pizza pizza3 = new Pizza("pizza 3", "desc pizza 3", photo, 14, ing2, ing4);
+		Pizza pizza4 = new Pizza("pizza 4", "desc pizza 4", photo, 16, ing3, ing4);
+		Pizza pizza5 = new Pizza("pizza 14", "desc pizza 5", photo, 18, ing3);
 
 		pizzaServ.save(pizza1);
 		pizzaServ.save(pizza2);

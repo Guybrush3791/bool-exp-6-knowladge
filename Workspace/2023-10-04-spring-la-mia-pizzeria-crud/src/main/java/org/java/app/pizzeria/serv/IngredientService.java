@@ -19,6 +19,10 @@ public class IngredientService {
 	}
 	public Ingredient findById(int id) {
 		
-		return ingredientRepo.findById(id);
+		return ingredientRepo.findById(id).get();
+	}
+	public void save(Ingredient ingredient) {
+		
+		ingredientRepo.save(ingredient);
 	}
 }
