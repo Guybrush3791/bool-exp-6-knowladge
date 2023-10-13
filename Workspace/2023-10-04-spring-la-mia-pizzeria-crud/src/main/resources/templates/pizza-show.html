@@ -22,5 +22,14 @@
 			<a th:href="@{/pizzas/specialoffert/edit/{id}(id=*{id})}">EDIT</a>
 		</li>
 	</ul>
+	<h3>Ingredients:</h3>
+	<ul>
+		<li
+			th:each="ing : *{ingredients}"
+			th:object="${ing}"
+		>
+			[[*{name}]]
+		</li>
+	</ul>
 </body>
 </html>

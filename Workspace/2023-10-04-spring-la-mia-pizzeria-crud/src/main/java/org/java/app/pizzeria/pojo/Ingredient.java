@@ -50,4 +50,20 @@ public class Ingredient {
 		
 		return "[" + getId() + "] " + getName();
 	}
+	@Override
+	public int hashCode() {
+		
+		return getId();
+	}
+	@Override
+	public boolean equals(Object obj) {
+		
+		if (!(obj instanceof Ingredient)) return false;
+		
+		Ingredient objIng = (Ingredient) obj;
+		
+		return getId() == objIng.getId();
+	}
+	
+	
 }
