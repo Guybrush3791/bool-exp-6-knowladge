@@ -7,8 +7,13 @@ import org.java.app.pizzeria.serv.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/ingredients")
@@ -24,5 +29,29 @@ public class IngredientController {
 		model.addAttribute("ingredients", ingredients);
 		
 		return "ingredient-index";
+	}
+	
+	@GetMapping("/create")
+	public String getCreateForm(Model model) {
+		
+		model.addAttribute("ingredient", new Ingredient());
+		
+		return "ingredient-form";
+	}
+	@PostMapping("/create")
+	public String storeNewIngredient(
+			@Valid @ModelAttribute Ingredient ingredient,
+			BindingResult bindingResult,
+			Model model
+		) {
+		
+		if (bindingResult.hasErrors()) {
+			
+			return "ingredient-form";
+		}
+		
+		ingredientService.save(ingredient);
+		
+		return "redirect:/ingredients";
 	}
 }
