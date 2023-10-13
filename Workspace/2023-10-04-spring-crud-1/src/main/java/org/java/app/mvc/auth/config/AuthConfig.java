@@ -11,13 +11,14 @@ public class AuthConfig {
 	@Bean
 	SecurityFilterChain filterChain(HttpSecurity http)
 		throws Exception {
-			return 
-				http.authorizeHttpRequests()
-			        .requestMatchers("/user").hasAuthority("USER")
-			        .requestMatchers("/admin").hasAuthority("ADMIN")
-			        .requestMatchers("/").permitAll()
-			        .and().formLogin()
-			        .and().logout()
-			        .build();
+			 
+			http.authorizeHttpRequests()
+		        .requestMatchers("/user").hasAuthority("USER")
+		        .requestMatchers("/admin").hasAuthority("ADMIN")
+		        .requestMatchers("/").permitAll()
+		        .and().formLogin()
+		        .and().logout();
+			
+			return http.build();
   }
 }
