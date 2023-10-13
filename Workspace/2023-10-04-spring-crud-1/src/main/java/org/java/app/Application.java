@@ -95,7 +95,7 @@ public class Application implements CommandLineRunner {
 		final String pwsAdmin = new BCryptPasswordEncoder().encode("pws");
 		final String pwsUser = new BCryptPasswordEncoder().encode("pws");
 		
-		User guybrushAdmin = new User("guybrushAdmin", pwsAdmin, admin);
+		User guybrushAdmin = new User("guybrushAdmin", pwsAdmin, admin, user);
 		User guybrushUser = new User("guybrushUser", pwsUser, user);
 		
 		userService.save(guybrushAdmin);

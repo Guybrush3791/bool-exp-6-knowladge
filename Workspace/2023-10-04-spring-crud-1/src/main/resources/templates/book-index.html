@@ -5,6 +5,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h1
+		sec:authorize="hasAuthority('USER')"
+	>
+		Logged user:
+		
+	</h1>
 	<h1>Books:</h1>
 	<a href="/books/create">CREATE NEW</a>
 	<br /><br />
