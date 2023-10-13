@@ -19,7 +19,7 @@ public class AuthConfig {
 			http.authorizeHttpRequests()
 		        .requestMatchers("/books/create").hasAuthority("ADMIN")
 		        .requestMatchers("/**").permitAll()
-		        .and().formLogin()
+		        .and().formLogin().defaultSuccessUrl("/books")
 		        .and().logout();
 			
 			return http.build();
