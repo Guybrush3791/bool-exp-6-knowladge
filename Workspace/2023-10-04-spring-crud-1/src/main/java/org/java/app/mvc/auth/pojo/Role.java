@@ -3,6 +3,7 @@ package org.java.app.mvc.auth.pojo;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 
@@ -10,7 +11,7 @@ import jakarta.validation.constraints.NotNull;
 public class Role {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@Column(nullable = false)
@@ -40,5 +41,19 @@ public class Role {
 	public String toString() {
 		
 		return "[" + getId() + "] " + getName();
+	}
+	@Override
+	public int hashCode() {
+		
+		return getId();
+	}
+	@Override
+	public boolean equals(Object obj) {
+		
+		if (!(obj instanceof Role)) return false;
+		
+		Role objRole = (Role) obj;
+		
+		return getId() == objRole.getId();
 	}
 }
