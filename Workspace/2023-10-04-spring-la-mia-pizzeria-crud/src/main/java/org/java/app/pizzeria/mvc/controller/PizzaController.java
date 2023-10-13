@@ -163,7 +163,7 @@ public class PizzaController {
 	public String updateSpecialOffert(
 			@Valid @ModelAttribute SpecialOffert specialOffert,
 			BindingResult bindingResult,
-			
+			@PathVariable("so_id") int id,
 			Model model
 		) {
 		
@@ -172,9 +172,11 @@ public class PizzaController {
 			return "special-offert-form"; 
 		}
 		
-		specialOffertService.save(specialOffert);
+		SpecialOffert oldOffert = specialOffertService.findById(id);
+		Pizza pizza = oldOffert.getPizza();
+		specialOffert.setPizza(pizza);
 		
-		Pizza pizza = specialOffert.getPizza();
+		specialOffertService.save(specialOffert);
 		
 		return "redirect:/pizzas/" + pizza.getId();
 	}
