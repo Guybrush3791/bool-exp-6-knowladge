@@ -3,6 +3,7 @@ package org.java.app.api;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.hibernate.validator.constraints.Length;
 import org.java.app.db.pojo.Book;
 import org.java.app.db.serv.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.annotation.Nullable;
+import jakarta.validation.constraints.Past;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/api/v1.0")
@@ -23,8 +27,21 @@ public class BookRestController {
 	public static class BookDTO {
 		
 		private int id;
+		@Length(
+				min = 3,
+				max = 128,
+				message = "il titolo deve essere composto da 3~128 caratteri"
+			)
 		private String title;
+		@Nullable
+		private String subtitle;
+		@Past
 		private LocalDate releaseDate;
+		@Length(
+				min = 16,
+				max = 16,
+				message = "isbn deve essere di 16 caratteri"
+			)
 		private String isbn;
 		
 		public BookDTO() { }
@@ -60,7 +77,8 @@ public class BookRestController {
 		@Override
 		public String toString() {
 			
-			return "title: " + getTitle() 
+			return  "id: " + getId()
+					+ "\ntitle: " + getTitle() 
 					+ "\nrelease date: " + getReleaseDate() 
 					+ "\nisbn: " + getIsbn();
 		}
@@ -78,7 +96,7 @@ public class BookRestController {
 	}
 	@PostMapping
 	public ResponseEntity<String> save(
-			@RequestBody BookDTO bookDto
+			@RequestBody Book bookDto
 		) {
 		
 //		System.out.println("Api book:\n" + book);
