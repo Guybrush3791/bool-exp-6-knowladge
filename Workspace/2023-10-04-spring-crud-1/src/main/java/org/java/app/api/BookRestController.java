@@ -7,9 +7,7 @@ import org.java.app.api.dto.BookDTO;
 import org.java.app.db.pojo.Book;
 import org.java.app.db.serv.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.support.Repositories;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,6 +26,24 @@ public class BookRestController {
 	
 	@Autowired
 	private BookService bookService;
+	
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<Book> deleteBook(
+			@PathVariable int id
+		) {
+		
+		Optional<Book> optBook = bookService.findById(id);
+		
+		if (optBook.isEmpty()) {
+			
+			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+		}
+		
+		Book book = optBook.get();
+		bookService.deleteBook(book);
+		
+		return new ResponseEntity<>(book, HttpStatus.OK);
+	}
 	
 	@GetMapping
 	public ResponseEntity<List<Book>> getAll() {
@@ -91,22 +107,6 @@ public class BookRestController {
 		}
 	}
 	
-	@DeleteMapping("{id}")
-	public ResponseEntity<Book> deleteBook(
-			@PathVariable int id
-		) {
-		
-		Optional<Book> optBook = bookService.findById(id);
-		
-		if (optBook.isEmpty()) {
-			
-			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-		}
-		
-		Book book = optBook.get();
-		bookService.deleteBook(book);
-		
-		return new ResponseEntity<>(book, HttpStatus.OK);
-	}
+	
 			
 }
