@@ -17,11 +17,10 @@ public class AuthConfig {
 		throws Exception {
 			 
 			http.authorizeHttpRequests()
-				
+				.requestMatchers("/api/v1.0/**").permitAll()
 		        .requestMatchers("/books/create").hasAuthority("ADMIN")
 		        .requestMatchers("/books/update/**").hasAuthority("ADMIN")
 		        .requestMatchers("/books/delete/**").hasAuthority("ADMIN")
-		        .requestMatchers("/test/\\d").hasAnyAuthority("ADMIN")
 		        .requestMatchers("/**").permitAll()
 		        .and().formLogin().defaultSuccessUrl("/books")
 		        .and().logout();
