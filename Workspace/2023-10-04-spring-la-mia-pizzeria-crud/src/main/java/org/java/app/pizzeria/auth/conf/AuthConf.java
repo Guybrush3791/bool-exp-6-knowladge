@@ -18,7 +18,10 @@ public class AuthConf {
 		throws Exception {
 			 
 			http.authorizeHttpRequests()
-		        .requestMatchers("/**").permitAll()
+		        .requestMatchers("/login").permitAll()
+		        .requestMatchers("/").hasAuthority("USER")
+		        .requestMatchers(new RegexRequestMatcher("/pizzas/[0-9]+", null)).hasAuthority("USER")
+		        .requestMatchers("/pizzas/**").hasAuthority("ADMIN")
 		        .and().formLogin()
 		        .and().logout();
 			
