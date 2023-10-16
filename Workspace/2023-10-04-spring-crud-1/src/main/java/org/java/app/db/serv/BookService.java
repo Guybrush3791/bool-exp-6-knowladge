@@ -15,9 +15,9 @@ public class BookService {
 	@Autowired
 	private BookRepo bookRepo;
 
-	public void save(Book book) {
+	public Book save(Book book) {
 
-		bookRepo.save(book);
+		return bookRepo.save(book);
 	}
 	public List<Book> findAll() {
 

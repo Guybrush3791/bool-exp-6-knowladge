@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.validator.constraints.Length;
+import org.java.app.api.dto.BookDTO;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -68,6 +69,13 @@ public class Book {
 		setReleaseDate(releaseDate);
 		setIsbn(isbn);
 		setCategories(Arrays.asList(categories));
+	}
+	public Book(BookDTO bookDto) {
+		
+		setTitle(bookDto.getTitle());
+		setSubtitle(bookDto.getSubtitle());
+		setReleaseDate(bookDto.getReleaseDate());
+		setIsbn(bookDto.getIsbn());
 	}
 
 	public int getId() {
