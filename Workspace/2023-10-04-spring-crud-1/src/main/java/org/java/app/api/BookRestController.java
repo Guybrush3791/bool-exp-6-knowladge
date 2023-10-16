@@ -9,8 +9,10 @@ import org.java.app.db.serv.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.support.Repositories;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,7 +43,7 @@ public class BookRestController {
 		
 		Book book = new Book(bookDto);
 		
-		System.out.println("Api book:\n" + book);
+		System.out.println("Api book SAVE:\n" + book);
 		book = bookService.save(book);
 		
 		return new ResponseEntity<>(book.getId(), HttpStatus.OK);
@@ -87,6 +89,24 @@ public class BookRestController {
 			
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
+	}
+	
+	@DeleteMapping("{id}")
+	public ResponseEntity<Book> deleteBook(
+			@PathVariable int id
+		) {
+		
+		Optional<Book> optBook = bookService.findById(id);
+		
+		if (optBook.isEmpty()) {
+			
+			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+		}
+		
+		Book book = optBook.get();
+		bookService.deleteBook(book);
+		
+		return new ResponseEntity<>(book, HttpStatus.OK);
 	}
 			
 }
