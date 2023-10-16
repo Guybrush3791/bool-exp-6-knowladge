@@ -30,10 +30,11 @@ public class BookRestController {
 		return new ResponseEntity<>(books, HttpStatus.OK);
 	}
 	@PostMapping
-	public ResponseEntity<Book> save(@RequestBody int value) {
+	public ResponseEntity<String> save() {
 		
 //		System.out.println("Api book:\n" + book);
+//		System.out.println("Api value: " + value);
 		
-		return new ResponseEntity<>(HttpStatus.OK);
+		return new ResponseEntity<>("OK", HttpStatus.OK);
 	}
 }
