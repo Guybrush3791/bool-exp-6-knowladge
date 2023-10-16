@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,5 +28,12 @@ public class BookRestController {
 		List<Book> books = bookService.findAll();
 		
 		return new ResponseEntity<>(books, HttpStatus.OK);
+	}
+	@PostMapping
+	public ResponseEntity<Book> save(@RequestBody Book book) {
+		
+		System.out.println("Api book:\n" + book);
+		
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 }
