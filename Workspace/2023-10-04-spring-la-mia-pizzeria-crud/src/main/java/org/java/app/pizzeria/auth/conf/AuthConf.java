@@ -1,7 +1,6 @@
 package org.java.app.pizzeria.auth.conf;
 
 import org.java.app.pizzeria.auth.service.UserService;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -9,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.RegexRequestMatcher;
 
 @Configuration
 public class AuthConf {
@@ -19,8 +19,8 @@ public class AuthConf {
 			 
 			http.authorizeHttpRequests()
 		        .requestMatchers("/login").permitAll()
-		        .requestMatchers("/").hasAuthority("USER")
-		        .requestMatchers(new RegexRequestMatcher("/pizzas/[0-9]+", null)).hasAuthority("USER")
+		        .requestMatchers("/").hasAnyAuthority("USER", "ADMIN")
+		        .requestMatchers(new RegexRequestMatcher("/pizzas/[0-9]+", null)).hasAnyAuthority("USER", "ADMIN")
 		        .requestMatchers("/pizzas/**").hasAuthority("ADMIN")
 		        .and().formLogin()
 		        .and().logout();

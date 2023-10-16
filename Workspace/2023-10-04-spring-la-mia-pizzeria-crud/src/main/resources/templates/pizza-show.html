@@ -10,7 +10,12 @@
 	<img th:src="*{photo}" width="300px" />
 	<h3>
 		Special Offerts:
-		<a th:href="@{/pizzas/specialoffert/{id}(id=*{id})}">+</a>
+		<a 
+			th:href="@{/pizzas/specialoffert/{id}(id=*{id})}"
+			sec:authorize="hasAnyAuthority('ADMIN')"
+		>
+			+
+		</a>
 	</h3>
 	<ul>
 		<li
@@ -19,7 +24,12 @@
 		>
 			[[*{title}]] <br />
 			[[*{startDate}]] ~ [[*{endDate}]] <br />
-			<a th:href="@{/pizzas/specialoffert/edit/{id}(id=*{id})}">EDIT</a>
+			<a 
+				th:href="@{/pizzas/specialoffert/edit/{id}(id=*{id})}"
+				sec:authorize="hasAnyAuthority('ADMIN')"
+			>
+				EDIT
+			</a>
 		</li>
 	</ul>
 	<h3>Ingredients:</h3>

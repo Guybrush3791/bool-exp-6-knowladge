@@ -7,7 +7,12 @@
 <body>
 	<th:block th:include="frags/frag-login.html :: login"></th:block>
 	<h1>Pizze!!</h1>
-	<a th:href="@{/pizzas/create}">CREATE NEW PIZZA</a>
+	<a 
+		th:href="@{/pizzas/create}"
+		sec:authorize="hasAnyAuthority('ADMIN')"
+	>
+		CREATE NEW PIZZA
+	</a>
 	<br /><br />
 	<h1 th:if="${pizze.size() < 1}">No pizze :-(</h1>
 	<div th:if="${pizze.size() > 0}">
@@ -25,9 +30,15 @@
 					[[*{name}]]				
 				</a>
 				 - 
-				<a th:href="@{pizzas/edit/{id}(id=*{id})}">EDIT</a>
+				<a 
+					th:href="@{pizzas/edit/{id}(id=*{id})}"
+					sec:authorize="hasAnyAuthority('ADMIN')"
+				>
+					EDIT
+				</a>
 				 - 
 				<form 
+					sec:authorize="hasAnyAuthority('ADMIN')"
 					style="display: inline;" 
 					th:action="@{pizzas/delete/{id}(id=*{id})}"
 					method="POST" 
