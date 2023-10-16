@@ -3,7 +3,6 @@ package org.java.app.api;
 import java.time.LocalDate;
 import java.util.List;
 
-import org.hibernate.validator.constraints.Length;
 import org.java.app.db.pojo.Book;
 import org.java.app.db.serv.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import jakarta.annotation.Nullable;
-import jakarta.validation.constraints.Past;
 
 @RestController
 @CrossOrigin
