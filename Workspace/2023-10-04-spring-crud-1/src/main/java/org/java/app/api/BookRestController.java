@@ -7,6 +7,7 @@ import org.java.app.api.dto.BookDTO;
 import org.java.app.db.pojo.Book;
 import org.java.app.db.serv.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.support.Repositories;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -62,7 +63,7 @@ public class BookRestController {
 	}
 	
 	@PutMapping("{id}")
-	public ResponseEntity<Integer> updateBook(
+	public ResponseEntity<Book> updateBook(
 			@PathVariable int id,
 			@RequestBody BookDTO bookDto
 		) {
@@ -75,10 +76,17 @@ public class BookRestController {
 		}
 		
 		Book book = optBook.get();
-		
-		book.setTitle(bookDto.getTitle());
-		
-		return new ResponseEntity<>(HttpStatus.OK);
+		book.fillFromBookDto(bookDto);
+	
+		try {
+			
+			book = bookService.save(book);
+			
+			return new ResponseEntity<>(book, HttpStatus.OK);
+		} catch (Exception e) {
+			
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
 	}
 			
 }

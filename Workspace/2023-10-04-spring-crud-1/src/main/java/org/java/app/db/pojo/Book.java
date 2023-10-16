@@ -152,6 +152,14 @@ public class Book {
 		getCategories().remove(category);
 	}
 	
+	public void fillFromBookDto(BookDTO bookDto) {
+		
+		setTitle(bookDto.getTitle());
+		setSubtitle(bookDto.getSubtitle());
+		setReleaseDate(bookDto.getReleaseDate());
+		setIsbn(bookDto.getIsbn());
+	}
+	
 	@Override
 	public String toString() {
 
