@@ -27,21 +27,11 @@ public class BookRestController {
 	public static class BookDTO {
 		
 		private int id;
-		@Length(
-				min = 3,
-				max = 128,
-				message = "il titolo deve essere composto da 3~128 caratteri"
-			)
-		private String title;
-		@Nullable
+		
+		private String title;		
 		private String subtitle;
-		@Past
+		
 		private LocalDate releaseDate;
-		@Length(
-				min = 16,
-				max = 16,
-				message = "isbn deve essere di 16 caratteri"
-			)
 		private String isbn;
 		
 		public BookDTO() { }
@@ -61,6 +51,13 @@ public class BookRestController {
 		public void setTitle(String title) {
 			this.title = title;
 		}
+		
+		public String getSubtitle() {
+			return subtitle;
+		}
+		public void setSubtitle(String subtitle) {
+			this.subtitle = subtitle;
+		}
 		public LocalDate getReleaseDate() {
 			return releaseDate;
 		}
@@ -79,6 +76,7 @@ public class BookRestController {
 			
 			return  "id: " + getId()
 					+ "\ntitle: " + getTitle() 
+					+ "\nsub-title: " + getSubtitle()
 					+ "\nrelease date: " + getReleaseDate() 
 					+ "\nisbn: " + getIsbn();
 		}
@@ -96,11 +94,8 @@ public class BookRestController {
 	}
 	@PostMapping
 	public ResponseEntity<String> save(
-			@RequestBody Book bookDto
+			@RequestBody BookDTO bookDto
 		) {
-		
-//		System.out.println("Api book:\n" + book);
-//		System.out.println("Api value: " + value);
 		
 		System.out.println("Api book DTO:\n" + bookDto);
 		
