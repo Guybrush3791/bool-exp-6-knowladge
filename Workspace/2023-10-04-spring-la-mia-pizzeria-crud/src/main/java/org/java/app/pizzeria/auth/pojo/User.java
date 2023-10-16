@@ -1,4 +1,4 @@
-package org.java.app.pizzeria.auth;
+package org.java.app.pizzeria.auth.pojo;
 
 import java.util.Set;
 

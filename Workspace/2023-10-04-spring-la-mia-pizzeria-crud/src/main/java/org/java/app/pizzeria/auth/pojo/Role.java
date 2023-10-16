@@ -1,4 +1,4 @@
-package org.java.app.pizzeria.auth;
+package org.java.app.pizzeria.auth.pojo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

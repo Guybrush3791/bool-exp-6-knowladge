@@ -1,6 +1,6 @@
-package org.java.app.pizzeria.repo;
+package org.java.app.pizzeria.auth.repo;
 
-import org.java.app.pizzeria.auth.User;
+import org.java.app.pizzeria.auth.pojo.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
