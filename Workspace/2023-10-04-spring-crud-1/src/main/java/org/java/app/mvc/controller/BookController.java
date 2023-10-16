@@ -91,7 +91,7 @@ public class BookController {
 		) {
 
 		List<Category> categories = categoryService.findAll();
-		Book book = bookService.findById(id);
+		Book book = bookService.findById(id).get();
 		
 		model.addAttribute("book", book);
 		model.addAttribute("categories", categories);
@@ -114,7 +114,7 @@ public class BookController {
 	@PostMapping("/delete/{id}")
 	public String deleteBook(@PathVariable int id) {
 
-		Book book = bookService.findById(id);
+		Book book = bookService.findById(id).get();
 		bookService.deleteBook(book);
 
 		return "redirect:/books";
@@ -127,7 +127,7 @@ public class BookController {
 			Model model
 		) {
 		
-		Book book = bookService.findById(id);
+		Book book = bookService.findById(id).get();
 		Borrowing borrowing = new Borrowing();
 		
 		model.addAttribute("book", book);		
@@ -143,7 +143,7 @@ public class BookController {
 			Model model
 		) {
 		
-		Book book = bookService.findById(id);
+		Book book = bookService.findById(id).get();
 		
 		borrowing.setBorrowingDate(LocalDate.now());
 		borrowing.setBook(book);
