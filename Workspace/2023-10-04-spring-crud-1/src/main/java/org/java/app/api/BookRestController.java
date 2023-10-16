@@ -97,7 +97,15 @@ public class BookRestController {
 			@RequestBody BookDTO bookDto
 		) {
 		
-		System.out.println("Api book DTO:\n" + bookDto);
+		Book book = new Book(
+				bookDto.getTitle(),
+				bookDto.getSubtitle(),
+				bookDto.getReleaseDate(),
+				bookDto.getIsbn()
+		);		
+		
+		System.out.println("Api book:\n" + book);
+		bookService.save(book);
 		
 		return new ResponseEntity<>("OK", HttpStatus.OK);
 	}
