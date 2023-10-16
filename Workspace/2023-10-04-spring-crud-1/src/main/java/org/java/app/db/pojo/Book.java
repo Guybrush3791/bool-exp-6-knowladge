@@ -7,6 +7,10 @@ import java.util.List;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.annotation.Nullable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -47,9 +51,11 @@ public class Book {
 	private String isbn;
 	
 	@OneToMany(mappedBy = "book")
+	@JsonManagedReference
 	private List<Borrowing> borrowings;
 
 	@ManyToMany
+	@JsonManagedReference
 	private List<Category> categories;
 	
 	public Book() { }
@@ -88,6 +94,7 @@ public class Book {
 	public void setReleaseDate(LocalDate releaseDate) {
 		this.releaseDate = releaseDate;
 	}
+	@JsonIgnore
 	public String getHtmlDate() {
 
 		return getReleaseDate() == null

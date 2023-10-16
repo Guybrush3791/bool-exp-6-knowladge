@@ -3,6 +3,8 @@ package org.java.app.db.pojo;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,6 +30,7 @@ public class Borrowing {
 	
 	@ManyToOne
 	@JoinColumn(nullable = false)
+	@JsonBackReference
 	private Book book;
 	
 	public Borrowing() { }
