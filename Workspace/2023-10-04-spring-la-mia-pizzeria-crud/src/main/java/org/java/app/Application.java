@@ -2,6 +2,10 @@ package org.java.app;
 
 import java.time.LocalDate;
 
+import org.java.app.pizzeria.auth.pojo.Role;
+import org.java.app.pizzeria.auth.pojo.User;
+import org.java.app.pizzeria.auth.service.RoleService;
+import org.java.app.pizzeria.auth.service.UserService;
 import org.java.app.pizzeria.pojo.Ingredient;
 import org.java.app.pizzeria.pojo.Pizza;
 import org.java.app.pizzeria.pojo.SpecialOffert;
@@ -12,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
@@ -24,6 +29,12 @@ public class Application implements CommandLineRunner {
 	
 	@Autowired
 	private IngredientService ingredientService;
+	
+	@Autowired
+	private RoleService roleService;
+	
+	@Autowired
+	private UserService userService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -68,5 +79,20 @@ public class Application implements CommandLineRunner {
 		specialOffertService.save(so1);
 		specialOffertService.save(so2);
 		specialOffertService.save(so3);
+		
+		Role userRole = new Role("USER");
+		Role adminRole = new Role("ADMIN");
+		
+		roleService.save(userRole);
+		roleService.save(adminRole);
+		
+		final String pwsUser = new BCryptPasswordEncoder().encode("pws");
+		final String pwsAdmin = new BCryptPasswordEncoder().encode("pws");
+		
+		User guybrushUser = new User("guybrushUser", pwsUser, userRole);
+		User guybrushAdmin = new User("guybrushAdmin", pwsAdmin, adminRole);
+		
+		userService.save(guybrushUser);
+		userService.save(guybrushAdmin);
 	}
 }
