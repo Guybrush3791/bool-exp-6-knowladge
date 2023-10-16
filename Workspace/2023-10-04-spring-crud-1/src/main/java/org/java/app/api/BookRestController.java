@@ -27,24 +27,6 @@ public class BookRestController {
 	@Autowired
 	private BookService bookService;
 	
-	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<Book> deleteBook(
-			@PathVariable int id
-		) {
-		
-		Optional<Book> optBook = bookService.findById(id);
-		
-		if (optBook.isEmpty()) {
-			
-			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-		}
-		
-		Book book = optBook.get();
-		bookService.deleteBook(book);
-		
-		return new ResponseEntity<>(book, HttpStatus.OK);
-	}
-	
 	@GetMapping
 	public ResponseEntity<List<Book>> getAll() {
 		
@@ -107,6 +89,21 @@ public class BookRestController {
 		}
 	}
 	
-	
+	@DeleteMapping("{id}")
+	public ResponseEntity<Boolean> deleteBook(
+			@PathVariable int id
+		) {
+		
+		Optional<Book> optBook = bookService.findById(id);
+		
+		if (optBook.isEmpty()) {
 			
+			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+		}
+		
+		Book book = optBook.get();
+		bookService.deleteBook(book);
+		
+		return new ResponseEntity<>(true, HttpStatus.OK);
+	}		
 }
