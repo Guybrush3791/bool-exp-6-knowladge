@@ -56,7 +56,7 @@ public class BookController {
 	@GetMapping("/{id}")
 	public String getShow(@PathVariable int id, Model model) {
 
-		Book book = bookService.findById(id);
+		Book book = bookService.findById(id).get();
 		model.addAttribute("book", book);
 
 		return "book-show";

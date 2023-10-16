@@ -1,13 +1,12 @@
 package org.java.app.db.serv;
 
-
 import java.util.List;
+import java.util.Optional;
 
 import org.java.app.db.pojo.Book;
 import org.java.app.db.repo.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 
 @Service
 public class BookService {
@@ -23,9 +22,9 @@ public class BookService {
 
 		return bookRepo.findAll();
 	}
-	public Book findById(int id) {
+	public Optional<Book> findById(int id) {
 
-		return bookRepo.findById(id).get();
+		return bookRepo.findById(id);
 	}
 
 	public List<Book> findByTitle(String title) {

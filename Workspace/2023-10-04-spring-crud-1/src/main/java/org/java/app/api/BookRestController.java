@@ -1,13 +1,13 @@
 package org.java.app.api;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.java.app.api.dto.BookDTO;
 import org.java.app.db.pojo.Book;
 import org.java.app.db.serv.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,13 +50,14 @@ public class BookRestController {
 			@PathVariable int id
 		) {
 		
-		Book book = bookService.findById(id);
+		Optional<Book> optBook = bookService.findById(id);
 		
-		if (book == null) {
+		if (optBook.isEmpty()) {
 			
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 		}
 		
-		return new ResponseEntity<>(book, HttpStatus.OK);
+		
+		return new ResponseEntity<>(optBook.get(), HttpStatus.OK);
 	}
 }
