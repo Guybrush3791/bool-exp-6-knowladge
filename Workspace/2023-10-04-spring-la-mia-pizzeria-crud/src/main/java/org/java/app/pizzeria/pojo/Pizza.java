@@ -59,11 +59,9 @@ public class Pizza {
 		setPrice(price);
 		setIngredients(Arrays.asList(ingredients));
 	}
-	public Pizza(PizzaDTO pizzaDTO) {
+	public Pizza(PizzaDTO pizzaDto) {
 		
-		setName(pizzaDTO.getName());
-		setDescription(pizzaDTO.getDescription());
-		setPrice(pizzaDTO.getPrice());
+		fillFromDto(pizzaDto);
 	}
 
 	public int getId() {
@@ -111,6 +109,13 @@ public class Pizza {
 	public void deleteIngredient(Ingredient ingredient) {
 		
 		getIngredients().remove(ingredient);
+	}
+	
+	public void fillFromDto(PizzaDTO pizzaDto) {
+		
+		setName(pizzaDto.getName());
+		setDescription(pizzaDto.getDescription());
+		setPrice(pizzaDto.getPrice());
 	}
 	
 	@Override
