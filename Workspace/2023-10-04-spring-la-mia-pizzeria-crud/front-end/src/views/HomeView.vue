@@ -37,6 +37,9 @@
           :key="pizza.id"
         >
           {{ pizza.name }}
+          <button
+            @click="pizzaDelete(pizza.id)"
+          >X</button>
         </li>
       </ul>
     </div>
@@ -50,7 +53,7 @@ import axios from "axios";
 const API_URL = "http://localhost:8080/api/v1.0"
 
 const pizze = ref(null);
-const showCreateForm = ref(true); // DEBUG: ref(false); !!
+const showCreateForm =ref(false);
 const emptyPizza = {
   name: null,
   description: null,
@@ -74,6 +77,10 @@ function storePizza() {
         clearCreate();
        })
        .catch(err => console.log(err));
+}
+function pizzaDelete(id) {
+
+  console.log("pizza delete id: " + id);
 }
 
 onMounted(() => {
