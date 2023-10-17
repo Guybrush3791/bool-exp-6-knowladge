@@ -17,12 +17,14 @@ public class AuthConf {
 	SecurityFilterChain filterChain(HttpSecurity http)
 		throws Exception {
 			 
-			http.authorizeHttpRequests()
-		        .requestMatchers("/login").permitAll()
-		        .requestMatchers("/api/**").permitAll()
-		        .requestMatchers("/").hasAnyAuthority("USER", "ADMIN")
-		        .requestMatchers(new RegexRequestMatcher("/pizzas/[0-9]+", null)).hasAnyAuthority("USER", "ADMIN")
-		        .requestMatchers("/pizzas/**").hasAuthority("ADMIN")
+			http.csrf().disable()
+				.authorizeHttpRequests()
+				.requestMatchers("/**").permitAll()
+//		        .requestMatchers("/login").permitAll()
+//		        .requestMatchers("/api/**").permitAll()
+//		        .requestMatchers("/").hasAnyAuthority("USER", "ADMIN")
+//		        .requestMatchers(new RegexRequestMatcher("/pizzas/[0-9]+", null)).hasAnyAuthority("USER", "ADMIN")
+//		        .requestMatchers("/pizzas/**").hasAuthority("ADMIN")
 		        .and().formLogin()
 		        .and().logout();
 			
