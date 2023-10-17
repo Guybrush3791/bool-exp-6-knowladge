@@ -19,6 +19,7 @@ public class AuthConf {
 			 
 			http.authorizeHttpRequests()
 		        .requestMatchers("/login").permitAll()
+		        .requestMatchers("/api/**").permitAll()
 		        .requestMatchers("/").hasAnyAuthority("USER", "ADMIN")
 		        .requestMatchers(new RegexRequestMatcher("/pizzas/[0-9]+", null)).hasAnyAuthority("USER", "ADMIN")
 		        .requestMatchers("/pizzas/**").hasAuthority("ADMIN")
