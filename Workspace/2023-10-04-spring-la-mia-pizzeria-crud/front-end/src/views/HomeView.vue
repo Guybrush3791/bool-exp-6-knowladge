@@ -1,6 +1,14 @@
 <template>
   <main>
     <h1>Pizze</h1>    
+    <ul>
+      <li
+        v-for="pizza in pizze"
+        :key="pizza.id"
+      >
+        {{ pizza.name }}
+      </li>
+    </ul>
   </main>
 </template>
 
