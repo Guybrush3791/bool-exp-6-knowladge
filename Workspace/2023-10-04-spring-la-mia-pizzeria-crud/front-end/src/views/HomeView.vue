@@ -14,15 +14,15 @@
       <br>
       <label for="description">Description</label>
       <br>
-      <input type="text" name="description">
+      <input type="text" name="description" v-model="newPizza.description" >
       <br>
       <label for="photo">Photo</label>
       <br>
-      <input type="text" name="photo">
+      <input type="text" name="photo" v-model="newPizza.photo" >
       <br>
       <label for="price">Price</label>
       <br>
-      <input type="number" name="price">
+      <input type="number" name="price" v-model="newPizza.price" >
       <br><br>
       <input type="submit" value="CREATE">
       <button @click="clearCreate">CANCEL</button>
@@ -50,9 +50,13 @@ const API_URL = "http://localhost:8080/api/v1.0"
 
 const pizze = ref(null);
 const showCreateForm = ref(true); // DEBUG: ref(false); !!
-const newPizza = ref({
-  name: 'hello'
-});
+const emptyPizza = {
+  name: null,
+  description: null,
+  photo: null,
+  price: null
+};
+const newPizza = ref({...emptyPizza});
 
 onMounted(() => {
 
