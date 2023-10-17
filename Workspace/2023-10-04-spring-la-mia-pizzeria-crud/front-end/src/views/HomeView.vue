@@ -83,7 +83,7 @@ function pizzaDelete(id) {
   axios.delete(API_URL + "/pizzas/" + id)
        .then(res => {
 
-          getAllPizzas();        
+          getAllPizzas();
        })
        .catch(err => console.log(err))
 }
