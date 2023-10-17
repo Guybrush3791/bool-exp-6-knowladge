@@ -7,6 +7,7 @@
     >CREATE NEW PIZZA</button>
     <form
       v-if="showCreateForm"
+      @submit.prevent="storePizza"
     >
       <label for="name">Name</label>
       <br>
@@ -57,6 +58,16 @@ const emptyPizza = {
   price: null
 };
 const newPizza = ref({...emptyPizza});
+
+function clearCreate() {
+
+  showCreateForm.value = false;
+  newPizza.value = ref({...emptyPizza});
+}
+function storePizza() {
+
+  console.log("hello");
+}
 
 onMounted(() => {
 
