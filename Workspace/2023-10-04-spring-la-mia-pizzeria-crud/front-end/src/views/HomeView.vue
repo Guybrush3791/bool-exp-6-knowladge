@@ -66,7 +66,14 @@ function clearCreate() {
 }
 function storePizza() {
 
-  console.log("hello");
+  axios.post(API_URL + "/pizzas", newPizza.value)
+       .then(res => {
+
+        const data = res.data;
+        
+        clearCreate();
+       })
+       .catch(err => console.log(err));
 }
 
 onMounted(() => {
