@@ -6,6 +6,8 @@ import java.util.List;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.orm.jpa.persistenceunit.SmartPersistenceUnitInfo;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,9 +40,11 @@ public class Pizza {
 	private int price;
 
 	@OneToMany(mappedBy = "pizza")
+	@JsonManagedReference
 	private List<SpecialOffert> offerts;
 	
 	@ManyToMany
+	@JsonManagedReference
 	private List<Ingredient> ingredients;
 	
 	public Pizza() { }
