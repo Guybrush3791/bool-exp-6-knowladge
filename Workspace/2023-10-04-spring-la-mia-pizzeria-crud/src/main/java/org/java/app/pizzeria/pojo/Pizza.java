@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.validator.constraints.Length;
+import org.java.app.pizzeria.api.dto.PizzaDTO;
 import org.springframework.orm.jpa.persistenceunit.SmartPersistenceUnitInfo;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -57,6 +58,12 @@ public class Pizza {
 		setPhoto(photo);
 		setPrice(price);
 		setIngredients(Arrays.asList(ingredients));
+	}
+	public Pizza(PizzaDTO pizzaDTO) {
+		
+		setName(pizzaDTO.getName());
+		setDescription(pizzaDTO.getDescription());
+		setPrice(pizzaDTO.getPrice());
 	}
 
 	public int getId() {

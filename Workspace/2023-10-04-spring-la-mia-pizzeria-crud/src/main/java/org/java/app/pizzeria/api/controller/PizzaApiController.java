@@ -3,6 +3,7 @@ package org.java.app.pizzeria.api.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.java.app.pizzeria.api.dto.PizzaDTO;
 import org.java.app.pizzeria.pojo.Pizza;
 import org.java.app.pizzeria.serv.PizzaServ;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,10 +59,11 @@ public class PizzaApiController {
 	
 	@PostMapping
 	public ResponseEntity<Pizza> createPizza(
-			@RequestBody Pizza pizza
+			@RequestBody PizzaDTO pizzaDto
 		) {
 		
-		System.out.println("New pizza:\n" + pizza);
+		Pizza pizza = new Pizza(pizzaDto);
+		pizza = pizzaServ.save(pizza);
 		
 		return new ResponseEntity<>(pizza, HttpStatus.OK);
 	}
