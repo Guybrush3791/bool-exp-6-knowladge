@@ -80,10 +80,14 @@ function storePizza() {
 }
 function pizzaDelete(id) {
 
-  console.log("pizza delete id: " + id);
-}
+  axios.delete(API_URL + "/pizzas/" + id)
+       .then(res => {
 
-onMounted(() => {
+          getAllPizzas();        
+       })
+       .catch(err => console.log(err))
+}
+function getAllPizzas() {
 
   axios.get(API_URL + "/pizzas")
        .then(res => {
@@ -92,6 +96,10 @@ onMounted(() => {
           pizze.value = data;
         })
        .catch(err => console.log(err));
+}
+onMounted(() => {
+
+   getAllPizzas();
 });
 
 </script>
