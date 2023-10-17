@@ -9,7 +9,23 @@
       v-if="showCreateForm"
     >
       <label for="name">Name</label>
-      <input type="text" name="name">
+      <br>
+      <input type="text" name="name" v-model="newPizza.name" >
+      <br>
+      <label for="description">Description</label>
+      <br>
+      <input type="text" name="description">
+      <br>
+      <label for="photo">Photo</label>
+      <br>
+      <input type="text" name="photo">
+      <br>
+      <label for="price">Price</label>
+      <br>
+      <input type="number" name="price">
+      <br><br>
+      <input type="submit" value="CREATE">
+      <button @click="clearCreate">CANCEL</button>
     </form>
     <div
       v-if="!showCreateForm"
@@ -33,7 +49,10 @@ import axios from "axios";
 const API_URL = "http://localhost:8080/api/v1.0"
 
 const pizze = ref(null);
-const showCreateForm = ref(false);
+const showCreateForm = ref(true); // DEBUG: ref(false); !!
+const newPizza = ref({
+  name: 'hello'
+});
 
 onMounted(() => {
 
