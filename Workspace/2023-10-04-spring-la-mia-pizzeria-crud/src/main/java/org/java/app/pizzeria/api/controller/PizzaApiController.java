@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -21,9 +22,16 @@ public class PizzaApiController {
 	private PizzaServ pizzaServ;
 	
 	@GetMapping
-	public ResponseEntity<List<Pizza>> getAllPizzas() {
+	public ResponseEntity<List<Pizza>> getAllPizzas(
+			@RequestParam(required = false, name = "q") String query
+		) {
 		
-		List<Pizza> pizzas = pizzaServ.findAll();
+		List<Pizza> pizzas = null;
+		
+		if (query == null) 
+			pizzas = pizzaServ.findAll();
+		else 
+			pizzas = pizzaServ.findByName(query);
 		
 		return new ResponseEntity<>(pizzas, HttpStatus.OK);
 	}
