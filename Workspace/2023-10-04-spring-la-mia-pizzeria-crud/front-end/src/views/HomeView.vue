@@ -1,14 +1,28 @@
 <template>
   <main>
     <h1>Pizze</h1>    
-    <ul>
-      <li
-        v-for="pizza in pizze"
-        :key="pizza.id"
-      >
-        {{ pizza.name }}
-      </li>
-    </ul>
+    <button 
+      v-if="!showCreateForm"
+      @click="showCreateForm = true"
+    >CREATE NEW PIZZA</button>
+    <form
+      v-if="showCreateForm"
+    >
+      <label for="name">Name</label>
+      <input type="text" name="name">
+    </form>
+    <div
+      v-if="!showCreateForm"
+    >
+      <ul>
+        <li
+          v-for="pizza in pizze"
+          :key="pizza.id"
+        >
+          {{ pizza.name }}
+        </li>
+      </ul>
+    </div>
   </main>
 </template>
 
@@ -19,6 +33,7 @@ import axios from "axios";
 const API_URL = "http://localhost:8080/api/v1.0"
 
 const pizze = ref(null);
+const showCreateForm = ref(false);
 
 onMounted(() => {
 
