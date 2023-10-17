@@ -1,6 +1,7 @@
 package org.java.app.pizzeria.serv;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.java.app.pizzeria.pojo.Pizza;
 import org.java.app.pizzeria.repo.PizzaRepo;
@@ -28,9 +29,9 @@ public class PizzaServ {
 		return pizzaRepo.findByNameContaining(name);
 	}
 
-	public Pizza findById(int id) {
+	public Optional<Pizza> findById(int id) {
 
-		return pizzaRepo.findById(id).get();
+		return pizzaRepo.findById(id);
 	}
 	
 	public void deletePizza(Pizza pizza) {

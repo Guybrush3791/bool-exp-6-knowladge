@@ -1,14 +1,19 @@
 package org.java.app.pizzeria.api.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.java.app.pizzeria.pojo.Pizza;
 import org.java.app.pizzeria.serv.PizzaServ;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,5 +39,30 @@ public class PizzaApiController {
 			pizzas = pizzaServ.findByName(query);
 		
 		return new ResponseEntity<>(pizzas, HttpStatus.OK);
+	}
+	
+	@GetMapping("{id}")
+	public ResponseEntity<Pizza> getPizzaById(
+			@PathVariable int id
+		) {
+		
+		Optional<Pizza> optPizza = pizzaServ.findById(id);
+		
+		if (optPizza.isEmpty()) {
+			
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		
+		return new ResponseEntity<>(optPizza.get(), HttpStatus.OK);
+	}
+	
+	@PostMapping
+	public ResponseEntity<Pizza> createPizza(
+			@RequestBody Pizza pizza
+		) {
+		
+		System.out.println("New pizza:\n" + pizza);
+		
+		return new ResponseEntity<>(pizza, HttpStatus.OK);
 	}
 }
