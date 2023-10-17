@@ -5,9 +5,22 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import axios from "axios";
 
+const API_URL = "http://localhost:8080/api/v1.0"
 
-const str = ref("Hello, World!")
+const pizze = ref(null);
+
+onMounted(() => {
+
+  axios.get(API_URL + "/pizzas")
+       .then(res => {
+
+          const data = res.data;
+          pizze.value = data;
+        })
+       .catch(err => console.log(err));
+});
 
 </script>
