@@ -101,9 +101,12 @@ const newPizza = ref({...emptyPizza});
 
 const editPizza = ref({});
 
-function clearCreate() {
+function clearForm() {
 
-  showCreateForm.value = false;
+  showCreateForm.value
+    = showUpdateForm.value 
+    = false;
+
   newPizza.value = ref({...emptyPizza});
 }
 function storePizza() {
@@ -111,7 +114,7 @@ function storePizza() {
   axios.post(API_URL + "/pizzas", newPizza.value)
        .then(() => {
         
-        clearCreate();
+        clearForm();
        })
        .catch(err => console.log(err));
 }
@@ -134,11 +137,11 @@ function pizzaEdit(id) {
 }
 function pizzaUpdate() {
 
-  axios.put(API_URL + "/pizzas/" + editPizza.value.id, editPizza)
-       .then(res => {
+  axios.put(API_URL + "/pizzas/" + editPizza.value.id, editPizza.value)
+       .then(() => {
 
-        console.log("update res: " + res);
-
+          clearForm();
+          getAllPizzas();
        })
        .catch(err => console.log(err));
 }
