@@ -36,8 +36,5 @@ La pagina pubblica e l’invio dei messaggi di contatto devono essere gestiti tr
 ### Bonus
 La webapp originariamente progettata per un fotografo che vuole mostrare le sue foto, è stata evoluta in una piattaforma multiutente che consente a diversi utenti, come altri fotografi, di utilizzarla per condividere le loro foto. 
 Per fare queste operazioni gli utenti avranno il ruolo di **amministratori**, ma soltanto **delle loro foto**, non di quelle degli altri. E’ importante quindi poter gestire un livello di protezione adeguato.
-È stata inoltre introdotta la figura del superadmin, che ha il potere di nascondere qualsiasi foto presente nella piattaforma per aumentare la sicurezza e la moderazione delle foto. 
-Il superadmin quindi potrà agire sulla visibilità pubblica delle foto e nasconderle a tutti gli utenti.
-
-Buon lavoro!! 🙂
->
+È stata inoltre introdotta la figura del `SUPER-ADMIN`, che ha il potere di nascondere qualsiasi foto presente nella piattaforma per **aumentare la sicurezza** e la **moderazione delle foto**. 
+Il `SUPER-ADMIN` quindi potrà agire sulla visibilità pubblica delle foto e nasconderle **a tutti gli utenti**.
