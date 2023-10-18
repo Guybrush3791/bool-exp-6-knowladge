@@ -1,6 +1,10 @@
 <template>
   <main>
     <h1>Pizze</h1>    
+    <form @submit.prevent="getAllPizzas">
+      <input type="text" name="q" v-model="search" >
+      <input type="submit" value="SEARCH">
+    </form>
     <button 
       v-if="!showCreateForm"
       @click="showCreateForm = true"
@@ -52,6 +56,7 @@ import axios from "axios";
 
 const API_URL = "http://localhost:8080/api/v1.0"
 
+const search = ref("");
 const pizze = ref(null);
 const showCreateForm =ref(false);
 const emptyPizza = {
@@ -89,7 +94,11 @@ function pizzaDelete(id) {
 }
 function getAllPizzas() {
 
-  axios.get(API_URL + "/pizzas")
+  let param = "";
+  if (search != null && search.value.length > 0)
+    param = "?q=" + search.value;
+
+  axios.get(API_URL + "/pizzas" + param)
        .then(res => {
 
           const data = res.data;
