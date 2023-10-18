@@ -37,26 +37,26 @@
     </form>
     <form
       v-if="showUpdateForm"
-      @submit.prevent="storePizza"
+      
     >
       <label for="name">Name</label>
       <br>
-      <input type="text" name="name" v-model="newPizza.name" >
+      <input type="text" name="name" v-model="editPizza.name" >
       <br>
       <label for="description">Description</label>
       <br>
-      <input type="text" name="description" v-model="newPizza.description" >
+      <input type="text" name="description" v-model="editPizza.description" >
       <br>
       <label for="photo">Photo</label>
       <br>
-      <input type="text" name="photo" v-model="newPizza.photo" >
+      <input type="text" name="photo" v-model="editPizza.photo" >
       <br>
       <label for="price">Price</label>
       <br>
-      <input type="number" name="price" v-model="newPizza.price" >
+      <input type="number" name="price" v-model="editPizza.price" >
       <br><br>
-      <input type="submit" value="CREATE">
-      <button @click="clearCreate">CANCEL</button>
+      <input type="submit" value="UPDATE">
+      <button @click="showUpdateForm = false">CANCEL</button>
     </form>
     
     <div
@@ -99,6 +99,8 @@ const emptyPizza = {
 };
 const newPizza = ref({...emptyPizza});
 
+const editPizza = ref({});
+
 function clearCreate() {
 
   showCreateForm.value = false;
@@ -107,9 +109,7 @@ function clearCreate() {
 function storePizza() {
 
   axios.post(API_URL + "/pizzas", newPizza.value)
-       .then(res => {
-
-        const data = res.data;
+       .then(() => {
         
         clearCreate();
        })
@@ -126,7 +126,11 @@ function pizzaDelete(id) {
 }
 function pizzaEdit(id) {
 
-  console.log("edit id: " + id);
+  for (const pizza of pizze.value) 
+    if (pizza.id == id)
+      editPizza.value = pizza;
+
+  showUpdateForm.value = true;
 }
 function getAllPizzas() {
 
