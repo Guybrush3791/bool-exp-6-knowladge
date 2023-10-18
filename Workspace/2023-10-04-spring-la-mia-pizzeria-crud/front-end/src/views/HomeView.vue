@@ -37,7 +37,7 @@
     </form>
     <form
       v-if="showUpdateForm"
-      
+      @submit.prevent="pizzaUpdate"
     >
       <label for="name">Name</label>
       <br>
@@ -118,7 +118,7 @@ function storePizza() {
 function pizzaDelete(id) {
 
   axios.delete(API_URL + "/pizzas/" + id)
-       .then(res => {
+       .then(() => {
 
           getAllPizzas();
        })
@@ -128,14 +128,24 @@ function pizzaEdit(id) {
 
   for (const pizza of pizze.value) 
     if (pizza.id == id)
-      editPizza.value = pizza;
+      editPizza.value = {...pizza};
 
   showUpdateForm.value = true;
+}
+function pizzaUpdate() {
+
+  axios.put(API_URL + "/pizzas/" + editPizza.value.id, editPizza)
+       .then(res => {
+
+        console.log("update res: " + res);
+
+       })
+       .catch(err => console.log(err));
 }
 function getAllPizzas() {
 
   let param = "";
-  if (search != null && search.value.length > 0)
+  if (search.value != null && search.value.length > 0)
     param = "?q=" + search.value;
 
   axios.get(API_URL + "/pizzas" + param)
