@@ -1,12 +1,15 @@
 <template>
   <main>
     <h1>Pizze</h1>    
-    <form @submit.prevent="getAllPizzas">
+    <form 
+      v-if="!showCreateForm && !showUpdateForm"
+      @submit.prevent="getAllPizzas"
+    >
       <input type="text" name="q" v-model="search" >
       <input type="submit" value="SEARCH">
     </form>
     <button 
-      v-if="!showCreateForm"
+      v-if="!showCreateForm && !showUpdateForm"
       @click="showCreateForm = true"
     >CREATE NEW PIZZA</button>
     <form
@@ -32,8 +35,32 @@
       <input type="submit" value="CREATE">
       <button @click="clearCreate">CANCEL</button>
     </form>
+    <form
+      v-if="showUpdateForm"
+      @submit.prevent="storePizza"
+    >
+      <label for="name">Name</label>
+      <br>
+      <input type="text" name="name" v-model="newPizza.name" >
+      <br>
+      <label for="description">Description</label>
+      <br>
+      <input type="text" name="description" v-model="newPizza.description" >
+      <br>
+      <label for="photo">Photo</label>
+      <br>
+      <input type="text" name="photo" v-model="newPizza.photo" >
+      <br>
+      <label for="price">Price</label>
+      <br>
+      <input type="number" name="price" v-model="newPizza.price" >
+      <br><br>
+      <input type="submit" value="CREATE">
+      <button @click="clearCreate">CANCEL</button>
+    </form>
+    
     <div
-      v-if="!showCreateForm"
+      v-if="!showCreateForm && !showUpdateForm"
     >
       <ul>
         <li
@@ -44,6 +71,8 @@
           <button
             @click="pizzaDelete(pizza.id)"
           >X</button>
+          <button @click="pizzaEdit(pizza.id)"
+          >EDIT</button>
         </li>
       </ul>
     </div>
@@ -58,7 +87,10 @@ const API_URL = "http://localhost:8080/api/v1.0"
 
 const search = ref("");
 const pizze = ref(null);
+
 const showCreateForm =ref(false);
+const showUpdateForm =ref(false);
+
 const emptyPizza = {
   name: null,
   description: null,
@@ -91,6 +123,10 @@ function pizzaDelete(id) {
           getAllPizzas();
        })
        .catch(err => console.log(err))
+}
+function pizzaEdit(id) {
+
+  console.log("edit id: " + id);
 }
 function getAllPizzas() {
 
